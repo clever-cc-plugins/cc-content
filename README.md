@@ -18,13 +18,27 @@ A [Claude Code](https://claude.ai/code) plugin that provides a suite of content 
 
 ## Installation
 
-In Claude Code, run:
+Open Claude Code in any project and run:
 
 ```
-/install-plugin https://github.com/MichaelvanLaar/claude-code-skills-for-content-creation
+/plugin marketplace add MichaelvanLaar/claude-code-skills-for-content-creation
 ```
 
-This installs the `cc-content` plugin and makes all skills immediately available.
+```
+/plugin install cc-content@claude-code-content-creation-skills
+```
+
+This makes all skills immediately available.
+
+### Keeping Skills Current
+
+Auto-update is disabled by default for third-party marketplaces. To enable it:
+
+1. Run `/plugin` in Claude Code
+2. Go to the **Marketplaces** tab
+3. Toggle auto-update for `MichaelvanLaar/claude-code-skills-for-content-creation`
+
+Once enabled, skills update automatically on startup when new versions are available.
 
 ---
 
