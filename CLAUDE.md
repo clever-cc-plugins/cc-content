@@ -15,8 +15,7 @@ plugins/cc-content/
     ├── cc-content-new-skill/
     ├── cc-content-onboarding/
     ├── cc-content-samples-curation/
-    ├── cc-content-session-wrap/
-    └── cc-content-update/
+    └── cc-content-session-wrap/
 ```
 
 Each skill lives in its own subdirectory containing a `SKILL.md` and any
@@ -30,7 +29,6 @@ companion files (e.g., `format-guidelines.md`).
 | `cc-content-linkedin-post`    | Draft LinkedIn posts                               |
 | `cc-content-samples-curation` | Save and annotate gold-standard content examples   |
 | `cc-content-session-wrap`     | Review session, collect feedback, commit work      |
-| `cc-content-update`           | Update plugin files to their latest versions       |
 | `cc-content-new-skill`        | Build a new content-production skill from research |
 
 ## Learnings
