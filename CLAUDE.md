@@ -1,4 +1,4 @@
-# Claude Code Content Creation Skills
+# cc-content
 
 This repository distributes the `cc-content` Claude Code plugin — a suite of
 content creation skills for marketing projects.

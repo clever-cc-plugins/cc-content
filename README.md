@@ -1,4 +1,4 @@
-# Claude Code Content Creation Skills
+# cc-content
 
 A [Claude Code](https://claude.ai/code) plugin that provides a suite of content creation skills for marketing projects — brand onboarding, LinkedIn posts, sample curation, and session management.
 
@@ -21,11 +21,11 @@ A [Claude Code](https://claude.ai/code) plugin that provides a suite of content 
 Open Claude Code in any project and run:
 
 ```
-/plugin marketplace add MichaelvanLaar/claude-code-skills-for-content-creation
+/plugin marketplace add MichaelvanLaar/cc-content
 ```
 
 ```
-/plugin install cc-content@claude-code-content-creation-skills
+/plugin install cc-content@cc-content
 ```
 
 This makes all skills immediately available.
@@ -36,7 +36,7 @@ Auto-update is disabled by default for third-party marketplaces. To enable it:
 
 1. Run `/plugin` in Claude Code
 2. Go to the **Marketplaces** tab
-3. Toggle auto-update for `MichaelvanLaar/claude-code-skills-for-content-creation`
+3. Toggle auto-update for `MichaelvanLaar/cc-content`
 
 Once enabled, skills update automatically on startup when new versions are available.
 
