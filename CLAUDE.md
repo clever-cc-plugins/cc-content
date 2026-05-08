@@ -5,21 +5,7 @@ content creation skills for marketing projects.
 
 ## Plugin Structure
 
-```
-plugins/cc-content/
-├── .claude-plugin/
-│   └── plugin.json
-└── skills/
-    ├── _shared/                         shared reference files for skills
-    ├── cc-content-linkedin-post/
-    ├── cc-content-new-skill/
-    ├── cc-content-onboarding/
-    ├── cc-content-samples-curation/
-    └── cc-content-session-wrap/
-```
-
-Each skill lives in its own subdirectory containing a `SKILL.md` and any
-companion files (e.g., `format-guidelines.md`).
+Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containing a `SKILL.md` and any companion files. Shared reference files go in `plugins/cc-content/skills/_shared/`.
 
 ## Skills
 
@@ -30,6 +16,16 @@ companion files (e.g., `format-guidelines.md`).
 | `cc-content-samples-curation` | Save and annotate gold-standard content examples   |
 | `cc-content-session-wrap`     | Review session, collect feedback, commit work      |
 | `cc-content-new-skill`        | Build a new content-production skill from research |
+
+## Don't
+
+- Don't commit secrets or credentials to git
+- Don't use `--force` flags — fix the underlying issue instead
+- Don't modify CLAUDE.md directly when logging a correction — append to `.claude/learnings.md`
+
+## Compact Instructions
+
+When compacting, preserve: list of modified files, current open TODOs, and key decisions made.
 
 ## Learnings
 
