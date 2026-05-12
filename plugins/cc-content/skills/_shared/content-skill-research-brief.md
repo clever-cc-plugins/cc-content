@@ -1,8 +1,10 @@
 # Content Skill Research Brief Template
 
-Dev reference for skill authors in this repository. **Not deployed to target projects.
-Not @-imported by output skills.** Used by the `new-content-skill` skill to guide
-research and check coverage before synthesizing a `format-guidelines.md`.
+A set of research prompts used by the `cc-content-new-skill` skill when you need to
+gather background research for a new content format. Run these prompts before the skill
+synthesizes a `format-guidelines.md` — they give it the raw material it needs to produce
+accurate, nuanced guidelines. Useful both for end users creating a project-local skill
+and for contributors adding a pre-built skill to the plugin.
 
 ---
 
