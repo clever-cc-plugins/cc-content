@@ -73,8 +73,8 @@ and should be @-imported by any output skill rather than inlined or duplicated:
   proof, liking, authority, scarcity, unity) plus pre-suasion. Use whenever the
   output has persuasive intent — i.e., asks the reader to take an action.
 
-Frameworks shape *structure*; persuasion principles shape *psychological
-levers*. Strong content uses both — pick a framework for the spine, then layer
+Frameworks shape _structure_; persuasion principles shape _psychological
+levers_. Strong content uses both — pick a framework for the spine, then layer
 1–3 principles into the copy.
 
 ---
@@ -96,7 +96,7 @@ Common file names in target projects:
 ### 6. `reference-samples` — Optional
 
 What it covers: Curated examples of high-quality past content. Managed by the
-`samples-curation` skill; stored at `.claude/context/samples.md` by convention.
+`samples-curation` skill; stored at `context/samples.md` by convention.
 
 Recognition signals: Lists of past posts or copy with annotations like "what worked",
 quality ratings, or "use as reference" notes with a consistent per-entry structure.

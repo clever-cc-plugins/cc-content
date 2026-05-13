@@ -2,9 +2,9 @@
 name: cc-content-onboarding
 description: >
   Use this skill when setting up a new marketing project with Claude Code, populating
-  company-level context files, or initializing the .claude/context/ folder.
+  company-level context files, or initializing the context/ folder.
   Invoke when the user asks to "onboard a new client", "set up context files",
-  "create company profile", "populate .claude/context", "initialize marketing project",
+  "create company profile", "populate context", "initialize marketing project",
   or "set up brand context". Also use when context files are missing and the user
   wants to create them through an interview.
 allowed-tools: Read, Write, Edit, Bash
@@ -14,7 +14,7 @@ argument-hint: "[optional: context category to regenerate, e.g. writing-style]"
 # Onboarding Skill
 
 You are setting up the company-level context for a marketing project. Your goal is to
-populate `.claude/context/` with structured Markdown files that skills load on demand —
+populate `context/` with structured Markdown files that skills load on demand —
 and to register all those files in a context table in CLAUDE.md so skills can discover
 and read only what they need.
 
@@ -27,7 +27,7 @@ Run:
 
 ```bash
 grep -A 100 '## Context files' CLAUDE.md 2>/dev/null || echo "(no CLAUDE.md or no context table)"
-find .claude/context/ -type f -name "*.md" 2>/dev/null | sort || echo "(no .claude/context/)"
+find context/ -type f -name "*.md" 2>/dev/null | sort || echo "(no context/)"
 ```
 
 Read each discovered file. Classify it into one of these categories based on its
@@ -76,8 +76,8 @@ Ask:
 
 **Option (a) — Create via interview:**
 
-First ask: "Where should I save this file? (Suggested: `.claude/context/<name>.md` —
-or enter any path like `brand/voice.md` and I'll create it at `.claude/context/brand/voice.md`)"
+First ask: "Where should I save this file? (Suggested: `context/<name>.md` —
+or enter any path like `brand/voice.md` and I'll create it at `context/brand/voice.md`)"
 
 Then conduct the interview. Ask questions one at a time and wait for each answer.
 If the owner skips a question, use `TODO: [question text]` as a placeholder.
@@ -150,7 +150,7 @@ Write the file:
 <answer>
 ```
 
-After writing, confirm: "✓ Created `.claude/context/<path>`."
+After writing, confirm: "✓ Created `context/<path>`."
 
 **Option (b) — Existing file:**
 
@@ -170,7 +170,7 @@ This step runs regardless of whether a `content-defaults` file already exists.
 Check whether a `content-defaults` file is present:
 
 ```bash
-find .claude/context/ -type f -name "*.md" 2>/dev/null | xargs grep -l "Output language" 2>/dev/null | head -1
+find context/ -type f -name "*.md" 2>/dev/null | xargs grep -l "Output language" 2>/dev/null | head -1
 ```
 
 **If a file is found:** read it and show its current contents:
@@ -189,7 +189,7 @@ find .claude/context/ -type f -name "*.md" 2>/dev/null | xargs grep -l "Output l
 **If no file is found:** proceed with the interview.
 
 Ask: "Where should I save the content defaults file?
-(Suggested: `.claude/context/content-defaults.md`)"
+(Suggested: `context/content-defaults.md`)"
 
 Then ask:
 
@@ -204,7 +204,7 @@ Write the file:
 **Output language:** <answer>
 ```
 
-After writing, confirm: "✓ Created `.claude/context/<path>`."
+After writing, confirm: "✓ Created `context/<path>`."
 
 ## Step 4: Handle recommended category
 
@@ -220,7 +220,7 @@ Ask:
 
 **Option (a) — Create via interview:**
 
-Ask: "Where should I save this file? (Suggested: `.claude/context/target-audience.md`)"
+Ask: "Where should I save this file? (Suggested: `context/target-audience.md`)"
 
 Then ask:
 
@@ -247,7 +247,7 @@ Write the file:
 **Preferred channels:** <answer>
 ```
 
-After writing, confirm: "✓ Created `.claude/context/<path>`."
+After writing, confirm: "✓ Created `context/<path>`."
 
 Handle Options (b) and (c) the same as in Step 2.
 
@@ -267,7 +267,7 @@ Ask once, listing both at the same time to minimize questions:
 
 **storytelling-frameworks (if creating):**
 
-Ask: "Where should I save this file? (Suggested: `.claude/context/storytelling-frameworks.md`)"
+Ask: "Where should I save this file? (Suggested: `context/storytelling-frameworks.md`)"
 
 Note to the owner:
 
@@ -303,7 +303,7 @@ records project-specific preferences that override or constrain that library.
 
 **reference-materials (if creating):**
 
-Ask: "Where should I save this file? (Suggested: `.claude/context/reference-materials.md`)"
+Ask: "Where should I save this file? (Suggested: `context/reference-materials.md`)"
 
 Then: "What books, research, or external sources inform your content approach? For
 each, give the title and a brief note on what it contributes."
@@ -339,8 +339,8 @@ from its content. Use this guidance per category:
 Build the table rows — skip categories for which no file was confirmed:
 
 ```
-| organization-identity | .claude/context/company/acme.md | B2B SaaS platform for enterprise HR teams |
-| writing-style | .claude/context/brand-voice.md | Formal German, no exclamation marks, em-dash preferred |
+| organization-identity | context/company/acme.md | B2B SaaS platform for enterprise HR teams |
+| writing-style | context/brand-voice.md | Formal German, no exclamation marks, em-dash preferred |
 ```
 
 **If CLAUDE.md is missing:**
@@ -402,10 +402,10 @@ Print a final summary:
 ```
 Onboarding complete
 ──────────────────────────────────────────────────────
-content-defaults        ✓ .claude/context/<path>
-writing-style           ✓ .claude/context/<path>
+content-defaults        ✓ context/<path>
+writing-style           ✓ context/<path>
 organization-identity   ✗ skipped intentionally
-target-audience         ✓ .claude/context/<path>
+target-audience         ✓ context/<path>
 storytelling-frameworks ✗ skipped
 reference-materials     ✗ skipped
 CLAUDE.md               ✓ updated (or: ✓ created / ✗ skipped)

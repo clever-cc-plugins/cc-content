@@ -11,7 +11,7 @@ Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containi
 
 | Skill                         | Purpose                                            |
 | ----------------------------- | -------------------------------------------------- |
-| `cc-content-onboarding`       | Populate `.claude/context/` via interview          |
+| `cc-content-onboarding`       | Populate `context/` via interview                  |
 | `cc-content-linkedin-post`    | Draft LinkedIn posts                               |
 | `cc-content-samples-curation` | Save and annotate gold-standard content examples   |
 | `cc-content-session-wrap`     | Review session, collect feedback, commit work      |

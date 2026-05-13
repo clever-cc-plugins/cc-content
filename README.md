@@ -8,9 +8,9 @@ A [Claude Code](https://claude.ai/code) plugin that provides a suite of content 
 
 | Skill                                     | What it does                                                                                                                                                                                      |
 | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `/cc-content:cc-content-onboarding`       | Interviews you about your brand, voice, and audience, then populates `.claude/context/` with structured context files that all other skills can read                                              |
+| `/cc-content:cc-content-onboarding`       | Interviews you about your brand, voice, and audience, then populates `context/` with structured context files that all other skills can read                                                      |
 | `/cc-content:cc-content-linkedin-post`    | Drafts LinkedIn posts that match your brand voice, format guidelines, and audience — with a built-in feedback step                                                                                |
-| `/cc-content:cc-content-samples-curation` | Saves gold-standard content examples with annotations to `.claude/context/samples.md` so skills can use them as reference material                                                                |
+| `/cc-content:cc-content-samples-curation` | Saves gold-standard content examples with annotations to `context/samples.md` so skills can use them as reference material                                                                        |
 | `/cc-content:cc-content-session-wrap`     | Reviews session deliverables, logs feedback and corrections, detects recurring patterns, and commits your work                                                                                    |
 | `/cc-content:cc-content-new-skill`        | Turns research notes into a complete content-production skill for a new output format. Use it to build project-local custom skills, or add `--plugin` to create a pre-built skill for the plugin. |
 
@@ -52,7 +52,7 @@ Open your marketing project in Claude Code and run the onboarding skill:
 /cc-content:cc-content-onboarding
 ```
 
-This populates `.claude/context/` with your brand voice, company profile, and buyer personas. The other skills read this context automatically.
+This populates `context/` with your brand voice, company profile, and buyer personas. The other skills read this context automatically.
 
 **Step 2 — Create content**
 
@@ -101,16 +101,16 @@ Skills follow a three-level context model:
 
 | Level              | Location                                  | What goes here                                                                      |
 | ------------------ | ----------------------------------------- | ----------------------------------------------------------------------------------- |
-| **Company scope**  | `.claude/context/`                        | Brand voice, buyer personas, company profile — applies to all work for this company |
+| **Company scope**  | `context/`                                | Brand voice, buyer personas, company profile — applies to all work for this company |
 | **Format scope**   | Inside the plugin                         | Structure rules, length limits, tone calibrations for one output type               |
 | **Campaign scope** | Project subfolders (e.g. `campaigns/q3/`) | Campaign briefings, key messages, one-off constraints                               |
 
 Load company-scope context by importing it from your project-level `CLAUDE.md`:
 
 ```markdown
-@.claude/context/brand-voice.md **Read when:** producing any written content
-@.claude/context/company-profile.md **Read when:** working on any deliverable
-@.claude/context/buyer-personas.md **Read when:** targeting content at a specific audience segment
+@context/brand-voice.md **Read when:** producing any written content
+@context/company-profile.md **Read when:** working on any deliverable
+@context/buyer-personas.md **Read when:** targeting content at a specific audience segment
 ```
 
 ---

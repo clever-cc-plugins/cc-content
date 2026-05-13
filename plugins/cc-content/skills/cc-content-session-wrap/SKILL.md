@@ -36,8 +36,8 @@ If changes **exist**, group them into four categories and present them:
 ─────────────────────────────────────────────
 Session deliverables
 ─────────────────────────────────────────────
-Context files (.claude/context/):
-  <list of modified/untracked files in .claude/context/>
+Context files (context/):
+  <list of modified/untracked files in context/>
 
 Deliverables (content output files):
   <list of modified/untracked files that are not in .claude/ or skill folders>

@@ -12,7 +12,7 @@ allowed-tools: Read, Write, Bash
 # Samples Curation Skill
 
 You are helping the owner capture and annotate gold-standard content examples.
-These examples are saved to `.claude/context/samples.md` and used by output-format
+These examples are saved to `context/samples.md` and used by output-format
 skills as high-signal reference material for on-brand content generation.
 
 ## Step 1: Identify the content
@@ -65,7 +65,7 @@ Content:
 ─────────────────────────────────────────────
 ```
 
-Ask: "Shall I save this entry to `.claude/context/samples.md`? (yes / no / edit)"
+Ask: "Shall I save this entry to `context/samples.md`? (yes / no / edit)"
 
 - **Yes** → proceed to Step 4.
 - **No / cancel** → say "Entry discarded. Nothing was written." Then go to Step 5.
@@ -73,10 +73,10 @@ Ask: "Shall I save this entry to `.claude/context/samples.md`? (yes / no / edit)
 
 ## Step 4: Append to samples.md
 
-Check whether `.claude/context/samples.md` exists:
+Check whether `context/samples.md` exists:
 
 ```bash
-ls .claude/context/samples.md 2>/dev/null && echo "exists" || echo "missing"
+ls context/samples.md 2>/dev/null && echo "exists" || echo "missing"
 ```
 
 **If missing**, create it with a header first:
@@ -110,7 +110,7 @@ Then append the entry in this format:
 Omit `**Key qualities:**` and `**Caveats:**` lines if the owner skipped those fields.
 
 After writing, confirm:
-> "✓ Saved to `.claude/context/samples.md`."
+> "✓ Saved to `context/samples.md`."
 
 Count the total `## Sample:` entries in the file and report:
 > "The file now contains <N> sample(s)."
