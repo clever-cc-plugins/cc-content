@@ -15,6 +15,12 @@ skill. It reads research files from the staging folder, assesses coverage across
 axes, synthesizes a three-layer `format-guidelines.md`, and generates a `SKILL.md` skeleton
 ready for customization.
 
+## Step 0: Recall learnings
+
+If `.claude/learnings.md` exists, read it silently. Apply relevant entries — such as
+prior skill-creation observations or project-level defaults that would affect how this
+skill is structured. Do not announce this step. If the file is absent, continue normally.
+
 ## Step 1: Determine the format name and mode
 
 If the user passed a format name as `$ARGUMENTS`, use it. Normalize to kebab-case
@@ -261,6 +267,11 @@ Required @-imports at the top of the body (after frontmatter) — paths differ b
 
 Required skill steps — write each as a level-2 heading with full prose instructions:
 
+**Step 0 — Recall learnings**
+At the very start, if `.claude/learnings.md` exists, read it silently. Apply all
+relevant entries to inform this run. Do not announce this step. If the file is absent,
+continue normally.
+
 **Step 1 — Load context**
 Check for a `## Context files` table in CLAUDE.md via:
 `grep -A 100 '## Context files' CLAUDE.md 2>/dev/null || echo "(no context table)"`.
@@ -314,11 +325,26 @@ If output is degraded (missing required context), prepend:
 `⚠ DEGRADED OUTPUT — generated without: <list of missing categories>`
 
 **Step 8 — Feedback**
-Ask whether the output met expectations. If the user provides a correction, append a tagged,
-dated entry to `.claude/learnings.md` (create the file with a header if it doesn't exist).
-Confirm with "✓ Feedback saved to `.claude/learnings.md`." If the user confirms quality or
-skips, deliver a closing line and exit. Include a `[TODO: ...]` for any format-specific
-delivery note (e.g., "Paste into your CMS", "Send for review").
+This step has two phases:
+
+_Auto-store phase._ Before asking the user for feedback, review the run for qualifying
+observations. For each, append one tagged line to `.claude/learnings.md` (create with
+standard header if missing), tagged `[cc-content:<skill-name>]`. Qualifies: content
+preferences or constraints not already in any loaded context file or `CLAUDE.md`;
+corrections the user made; project-specific facts that would change future output;
+accepted/rejected suggestions deviating from best practices. Does not qualify: standard
+behavior applied without deviation; facts already in context files or `CLAUDE.md`;
+anything derivable by re-reading context files; facts semantically equivalent to any
+existing `.claude/learnings.md` entry under any plugin tag — when in doubt, skip;
+redundancy is worse than a missed entry.
+
+_Explicit feedback._ Ask whether the output met expectations. If the user provides a
+correction, append it as a tagged entry using the same criteria. Confirm total entries
+written across both phases: "✓ N learning(s) saved to `.claude/learnings.md`." If the
+user confirms quality or skips: if any entries were auto-stored, confirm
+"✓ N learning(s) auto-saved to `.claude/learnings.md`." Then deliver a closing line and
+exit. Include a `[TODO: ...]` for any format-specific delivery note (e.g.,
+"Paste into your CMS", "Send for review").
 
 ---
 
