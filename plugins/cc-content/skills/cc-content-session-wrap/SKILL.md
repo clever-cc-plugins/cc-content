@@ -15,6 +15,12 @@ was produced, (2) collect corrections for any skills used, (3) surface recurring
 patterns from past learnings, (4) promote patterns if warranted, and (5) commit
 all session work with a clean, well-labelled message.
 
+## Step 0: Recall learnings
+
+If `.claude/learnings.md` exists, read it silently. This ensures pattern detection
+in Step 5 operates on the most current state of the file. Do not announce this step.
+If the file is absent, continue normally.
+
 ## Step 1: Review deliverables
 
 Run git status to understand what changed during the session:
@@ -123,7 +129,10 @@ Read `.claude/learnings.md` (if it exists):
 cat .claude/learnings.md 2>/dev/null
 ```
 
-Parse all entries that follow the `[<skill-name>] <text> — <date>` format.
+Only scan entries prefixed `[cc-content:` — entries from other plugins are managed
+by their own tooling and must not be surfaced or promoted here.
+
+Parse the filtered entries that follow the `[cc-content:<skill-name>] <text> — <date>` format.
 Group them by skill tag. For each skill tag, look for three or more entries that
 express **semantically similar** corrections — same underlying concern, even if
 worded differently.
