@@ -15,6 +15,11 @@ You are helping the owner capture and annotate gold-standard content examples.
 These examples are saved to `context/samples.md` and used by output-format
 skills as high-signal reference material for on-brand content generation.
 
+## Step 0: Recall learnings
+
+If `.claude/learnings.md` exists, read it silently. Apply all entries relevant to
+this run. Do not announce this step. If the file is absent, continue normally.
+
 ## Step 1: Identify the content
 
 Ask the owner:
@@ -105,7 +110,7 @@ Then append the entry in this format:
 
 ---
 
-```
+````
 
 Omit `**Key qualities:**` and `**Caveats:**` lines if the owner skipped those fields.
 
@@ -120,5 +125,48 @@ Count the total `## Sample:` entries in the file and report:
 Ask: "Would you like to curate another example? (yes / no)"
 
 - **Yes** → return to Step 1.
-- **No** → say "Samples curation complete. You can invoke this skill again any time to add more."
+- **No** → proceed to Step 6.
+
+## Step 6: Store learnings
+
+Evaluate the full curation session — not individual loops — for patterns worth storing.
+
+For each qualifying observation, append one tagged line to `.claude/learnings.md`
+(create with standard header if missing):
+
+```text
+[cc-content:cc-content-samples-curation] <concise observation> — <YYYY-MM-DD>
+````
+
+**Qualifies:** patterns discovered across the session — e.g., consistent length or
+format preferences in the samples selected, recurrently skipped annotation fields,
+or constraints the owner mentioned about what counts as a good sample — that are not
+already captured in any `context/` file, `CLAUDE.md`, or any existing
+`.claude/learnings.md` entry under any plugin tag.
+
+**Does not qualify:** individual sample content; facts about what was saved (those
+are in `context/samples.md`); standard curation behavior applied without deviation;
+facts semantically equivalent to an existing entry under any plugin tag — when in
+doubt, skip; redundancy is worse than a missed entry.
+
+Check for the file before appending:
+
+```bash
+ls .claude/learnings.md 2>/dev/null && echo "exists" || echo "missing"
 ```
+
+Standard header when creating the file:
+
+```markdown
+# Learnings
+
+Corrections and feedback collected during content sessions.
+Entries are tagged by skill and dated.
+
+---
+```
+
+If any entries were written, confirm: "✓ N learning(s) saved to `.claude/learnings.md`."
+If nothing qualified, skip silently.
+
+Then say: "Samples curation complete. You can invoke this skill again any time to add more."
