@@ -18,6 +18,13 @@ You are helping the owner produce a complete, publishable LinkedIn post. The pos
 must comply with the format guidelines in this skill folder, reflect the company's
 brand voice, and — if a campaign briefing is present — serve the briefing's goals.
 
+## Step 0: Recall learnings
+
+If `.claude/learnings.md` exists, read it silently. Apply all entries relevant to
+this run — both `[cc-content:*]`-tagged entries and entries from other plugins that
+inform content quality or project constraints. Do not announce this step. If the file
+is absent, continue normally.
+
 ## Step 1: Load context
 
 Check whether CLAUDE.md contains a `## Context files` table:
@@ -128,36 +135,49 @@ If the output is degraded (missing required context categories), prepend:
 
 ## Step 5: Feedback
 
-After presenting the post, ask:
+**Auto-store phase.** Before asking for feedback, review this run. For each qualifying
+observation, append one tagged line to `.claude/learnings.md` (create with standard
+header if missing):
+
+```text
+[cc-content:cc-content-linkedin-post] <concise observation> — <YYYY-MM-DD>
+```
+
+Qualifies: content preferences or constraints not already in any loaded `context/` file
+or `CLAUDE.md`; corrections the owner made to the output; project-specific facts that
+would change future output; accepted/rejected suggestions deviating from best practices.
+
+Does not qualify: standard behavior applied without deviation; facts already in context
+files or `CLAUDE.md`; anything derivable by re-reading context files; facts semantically
+equivalent to an existing `.claude/learnings.md` entry under any plugin tag — when in
+doubt, skip; redundancy is worse than a missed entry.
+
+Check for the file before appending:
+
+```bash
+ls .claude/learnings.md 2>/dev/null && echo "exists" || echo "missing"
+```
+
+Standard header when creating the file:
+
+```markdown
+# Learnings
+
+Corrections and feedback collected during content sessions.
+Entries are tagged by skill and dated.
+
+---
+```
+
+**Explicit feedback.** After the auto-store phase, ask:
 
 > "Did this post meet expectations? If you have any corrections or notes for
 > future posts, share them here — or press Enter to finish."
 
-- If the owner **provides a correction**: append a tagged, dated entry to
-  `.claude/learnings.md`:
-
-  ```
-  [cc-content:cc-content-linkedin-post] <correction summary> — <YYYY-MM-DD>
-  ```
-
-  Check whether `.claude/learnings.md` exists:
-
-  ```bash
-  ls .claude/learnings.md 2>/dev/null && echo "exists" || echo "missing"
-  ```
-
-  If missing, create it with a header before appending:
-
-  ```markdown
-  # Learnings
-
-  Corrections and feedback collected during content sessions.
-  Entries are tagged by skill and dated.
-
-  ---
-  ```
-
-  After appending, confirm: "✓ Feedback saved to `.claude/learnings.md`."
-
-- If the owner **confirms quality or skips**: say "Great — the post is ready to
-  publish. Copy it above and paste directly into LinkedIn." and exit.
+- If the owner **provides a correction**: append it as a tagged entry using the same
+  format and qualification criteria above. Confirm total entries written across both
+  phases: "✓ N learning(s) saved to `.claude/learnings.md`."
+- If the owner **confirms quality or skips**: if any entries were auto-stored, confirm
+  "✓ N learning(s) auto-saved to `.claude/learnings.md`." Then say "Great — the post
+  is ready to publish. Copy it above and paste directly into LinkedIn." and exit. If
+  nothing was stored, skip the confirmation and exit directly.
