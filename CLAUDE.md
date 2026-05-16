@@ -3,6 +3,16 @@
 This repository distributes the `cc-content` Claude Code plugin — a suite of
 content creation skills for marketing projects.
 
+## Key Config Files
+
+| File                                              | Purpose                                    |
+| ------------------------------------------------- | ------------------------------------------ |
+| `CLAUDE.md`                                       | Project instructions, loaded every message |
+| `.claude/settings.json`                           | Permissions, hooks, environment variables  |
+| `.claude-plugin/marketplace.json`                 | Standalone marketplace manifest            |
+| `plugins/cc-content/.claude-plugin/plugin.json`   | Plugin manifest                            |
+| `plugins/cc-content/skills/<skill-name>/SKILL.md` | Skill definition                           |
+
 ## Plugin Structure
 
 Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containing a `SKILL.md` and any companion files. Shared reference files go in `plugins/cc-content/skills/_shared/`.
