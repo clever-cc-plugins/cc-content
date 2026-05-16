@@ -9,7 +9,6 @@ content creation skills for marketing projects.
 | ------------------------------------------------- | ------------------------------------------ |
 | `CLAUDE.md`                                       | Project instructions, loaded every message |
 | `.claude/settings.json`                           | Permissions, hooks, environment variables  |
-| `.claude-plugin/marketplace.json`                 | Standalone marketplace manifest            |
 | `plugins/cc-content/.claude-plugin/plugin.json`   | Plugin manifest                            |
 | `plugins/cc-content/skills/<skill-name>/SKILL.md` | Skill definition                           |
 
