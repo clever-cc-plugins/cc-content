@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+if command -v gitleaks &> /dev/null; then
+  gitleaks git --pre-commit --staged || exit 1
+else
+  echo "Warning: gitleaks not installed — secret scanning skipped."
+  echo "Install: brew install gitleaks (macOS) or https://github.com/gitleaks/gitleaks"
+fi
