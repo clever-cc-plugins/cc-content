@@ -30,6 +30,15 @@ Open Claude Code in any project and run:
 
 This makes all skills immediately available.
 
+### Or install via the cc-plugins umbrella
+
+To add all plugins from the [cc-plugins marketplace](https://github.com/MichaelvanLaar/cc-plugins) at once:
+
+```
+/plugin marketplace add MichaelvanLaar/cc-plugins
+/plugin install cc-content@cc-content
+```
+
 ### Keeping Skills Current
 
 Auto-update is disabled by default for third-party marketplaces. To enable it:
