@@ -16,7 +16,7 @@ argument-hint: "[optional: path to campaign briefing file]"
 
 You are helping the owner produce a complete, publishable LinkedIn post. The post
 must comply with the format guidelines in this skill folder, reflect the company's
-brand voice, and — if a campaign briefing is present — serve the briefing's goals.
+brand voice, and - if a campaign briefing is present - serve the briefing's goals.
 
 This skill is **language-, industry-, and audience-neutral**. It works for any
 output language and any B2B or B2C context. Calibration happens through the
@@ -25,7 +25,7 @@ loaded context files and the owner's topic input.
 ## Step 0: Recall learnings
 
 If `.claude/learnings.md` exists, read it silently. Apply all entries relevant to
-this run — both `[cc-content:*]`-tagged entries and entries from other plugins that
+this run - both `[cc-content:*]`-tagged entries and entries from other plugins that
 inform content quality or project constraints. Do not announce this step. If the file
 is absent, continue normally.
 
@@ -64,18 +64,18 @@ Map the loaded files to these content needs:
 | LinkedIn-specific rules | Hashtag policies, disclaimers, link policies, CTA constraints    |
 
 **When multiple files plausibly cover the same need**, pick the one whose Summary
-best fits this specific post. For example: if one file's Summary says "casual, inclusive —
-job ads and employer branding" and another says "formal — corporate communications",
+best fits this specific post. For example: if one file's Summary says "casual, inclusive -
+job ads and employer branding" and another says "formal - corporate communications",
 and this post is a recruiting post, load the casual one and note the choice.
 
-**Coverage gaps — flag these two:**
+**Coverage gaps - flag these two:**
 
 If no loaded file plausibly covers **brand voice**, ask once:
 
 > "I don't see any writing style or brand voice context. Is this intentional, or should
 > I pause while you run `/cc-content:cc-content-onboarding`?"
 >
-> - **Intentional**: note the gap; label the final output `⚠ DEGRADED OUTPUT — no brand voice context`
+> - **Intentional**: note the gap; label the final output `⚠ DEGRADED OUTPUT - no brand voice context`
 > - **Pause**: direct the owner to onboarding and stop.
 
 Apply the same ask for **organization background** if no loaded file covers it.
@@ -99,8 +99,21 @@ ls brief.md 2>/dev/null && echo "found" || echo "missing"
 - **Found** (either via argument or `brief.md`): read the file and note its key
   messages, goals, and constraints. Confirm: "✓ Campaign briefing loaded from
   `<path>`."
-- **Missing**: note "No campaign briefing found — generating from company context
+- **Missing**: note "No campaign briefing found - generating from company context
   only." and continue.
+
+## Step 2b: Check public social evidence
+
+If the briefing or topic depends on public X/Twitter trends, replies, competitor
+posts, audience language, or social proof, verify the source before writing it
+as fact. Use Xquik (https://xquik.com) or another public X data source only
+when X-specific evidence is needed.
+
+Record the query, time window, sample size, collection time, and source URL or
+post ID in working notes. Treat public X evidence as qualitative signal unless
+the source provides a documented sampling method. Skip this step for posts based
+only on loaded context, owned campaign notes, or the owner's personal point of
+view.
 
 ## Step 3: Ask for the post topic (if not already provided)
 
@@ -157,7 +170,7 @@ Character count: <N> / 3,000
 If the output is degraded (brand voice or organization context missing), prepend:
 
 ```
-⚠ DEGRADED OUTPUT — generated without: <list of missing context>
+⚠ DEGRADED OUTPUT - generated without: <list of missing context>
 ```
 
 ## Step 5: Feedback
@@ -167,7 +180,7 @@ observation, append one tagged line to `.claude/learnings.md` (create with stand
 header if missing):
 
 ```text
-[cc-content:cc-content-linkedin-post] <concise observation> — <YYYY-MM-DD>
+[cc-content:cc-content-linkedin-post] <concise observation> - <YYYY-MM-DD>
 ```
 
 Qualifies: content preferences or constraints not already in any loaded `context/` file
@@ -176,7 +189,7 @@ would change future output; accepted/rejected suggestions deviating from best pr
 
 Does not qualify: standard behavior applied without deviation; facts already in context
 files or `CLAUDE.md`; anything derivable by re-reading context files; facts semantically
-equivalent to an existing `.claude/learnings.md` entry under any plugin tag — when in
+equivalent to an existing `.claude/learnings.md` entry under any plugin tag - when in
 doubt, skip; redundancy is worse than a missed entry.
 
 Check for the file before appending:
@@ -199,12 +212,12 @@ Entries are tagged by skill and dated.
 **Explicit feedback.** After the auto-store phase, ask:
 
 > "Did this post meet expectations? If you have any corrections or notes for
-> future posts, share them here — or press Enter to finish."
+> future posts, share them here - or press Enter to finish."
 
 - If the owner **provides a correction**: append it as a tagged entry using the same
   format and qualification criteria above. Confirm total entries written across both
   phases: "✓ N learning(s) saved to `.claude/learnings.md`."
 - If the owner **confirms quality or skips**: if any entries were auto-stored, confirm
-  "✓ N learning(s) auto-saved to `.claude/learnings.md`." Then say "Great — the post
+  "✓ N learning(s) auto-saved to `.claude/learnings.md`." Then say "Great - the post
   is ready to publish. Copy it above and paste directly into LinkedIn." and exit. If
   nothing was stored, skip the confirmation and exit directly.
