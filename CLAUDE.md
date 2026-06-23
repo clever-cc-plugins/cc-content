@@ -24,6 +24,8 @@ Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containi
 | `cc-content-promote`          | Register a single file as context in CLAUDE.md (mid-session) |
 | `cc-content-linkedin-post`    | Draft LinkedIn posts                                         |
 | `cc-content-blog-article`     | Draft blog articles                                          |
+| `cc-content-ideation`         | Generate strategic content angles from an inspiration input  |
+| `cc-content-text`             | Draft text for any format without a dedicated skill          |
 | `cc-content-samples-curation` | Save and annotate gold-standard content examples             |
 | `cc-content-session-wrap`     | Review session, promote deliverables to context, commit work |
 | `cc-content-new-skill`        | Build a new content-production skill from research           |

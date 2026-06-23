@@ -13,6 +13,8 @@ The content-production skills work for any industry, audience, and output langua
 | `/cc-content:cc-content-onboarding`       | Interviews you about your brand, voice, and audience, then populates `context/` with structured context files that all other skills can read                                                      |
 | `/cc-content:cc-content-linkedin-post`    | Drafts LinkedIn posts that match your brand voice, format guidelines, and audience — with a built-in feedback step                                                                                |
 | `/cc-content:cc-content-blog-article`     | Drafts blog articles calibrated to your audience type (B2B / B2C), content goal, funnel stage, and reader expertise                                                                               |
+| `/cc-content:cc-content-ideation`         | Generates several distinct strategic angles (thesis / goal / perspective) from an article, briefing, or topic — the idea step before writing                                                      |
+| `/cc-content:cc-content-text`             | Drafts a finished text for any format without a dedicated skill (press release, newsletter, whitepaper, landing page, email …), routing you to a dedicated skill when one fits better             |
 | `/cc-content:cc-content-samples-curation` | Saves gold-standard content examples with annotations to `context/samples.md` so skills can use them as reference material                                                                        |
 | `/cc-content:cc-content-session-wrap`     | Reviews session deliverables, logs feedback and corrections, detects recurring patterns, and commits your work                                                                                    |
 | `/cc-content:cc-content-new-skill`        | Turns research notes into a complete content-production skill for a new output format. Use it to build project-local custom skills, or add `--plugin` to create a pre-built skill for the plugin. |
@@ -60,6 +62,13 @@ Run any output skill:
 
 ```
 /cc-content:cc-content-linkedin-post
+```
+
+For a format without its own skill (press release, newsletter, whitepaper …), use the general writer — or start from ideas first:
+
+```
+/cc-content:cc-content-ideation
+/cc-content:cc-content-text
 ```
 
 **Step 3 — Curate good examples**
