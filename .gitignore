@@ -1,3 +1,6 @@
 # Claude Code — personal files
 .claude/settings.local.json
 .claude/local.md
+
+# Temporary files
+temp/
