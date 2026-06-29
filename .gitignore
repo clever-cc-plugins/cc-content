@@ -4,3 +4,6 @@
 
 # Temporary files
 temp/
+
+# Headroom — machine-local session cache and learnings
+.headroom/
