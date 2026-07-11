@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/clever-cc-plugins/.github/main/assets/logo-dark.svg" />
+    <img src="https://raw.githubusercontent.com/clever-cc-plugins/.github/main/assets/logo.svg" width="220" alt="clever [cc] plugins" />
+  </picture>
+</p>
+
 # cc-content
 
 A [Claude Code](https://claude.ai/code) plugin that provides a suite of content creation skills for marketing projects — brand onboarding, LinkedIn posts, blog articles, sample curation, and session management.
@@ -21,13 +28,31 @@ The content-production skills work for any industry, audience, and output langua
 
 ---
 
+## See it in action
+
+**Input** — a rough note:
+
+> we shipped dark mode. finally. took forever. users have been asking for years
+
+**Output** — `/cc-content:cc-content-linkedin-post`:
+
+> Dark mode is here.
+>
+> Users have been asking for this for years — and honestly, it took us longer than we'd like to admit. But it's live today, and it was worth the wait.
+>
+> If you've been holding off because of this one thing, give it another look.
+
+The skill draws on the brand voice, tone, and audience set up during onboarding — this is an illustrative example, not a fixed template.
+
+---
+
 ## Installation
 
 Open Claude Code in any project and run:
 
 ```
 /plugin marketplace add clever-cc-plugins/marketplace
-/plugin install cc-content@cc-content
+/plugin install cc-content@clever-cc-plugins
 ```
 
 This makes all skills immediately available.
@@ -127,3 +152,9 @@ Load company-scope context by importing it from your project-level `CLAUDE.md`:
 ## License
 
 [MIT](LICENSE) — Copyright (c) 2026 Michael van Laar
+
+---
+
+<p align="center">
+  Part of the <a href="https://github.com/clever-cc-plugins">clever-cc-plugins</a> family · <a href="https://github.com/clever-cc-plugins/marketplace">marketplace</a> · <a href="https://github.com/clever-cc-plugins/cc-config">cc-config</a> · <a href="https://github.com/clever-cc-plugins/cc-chime">cc-chime</a>
+</p>
