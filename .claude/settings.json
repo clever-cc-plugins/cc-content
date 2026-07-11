@@ -47,13 +47,13 @@
     ]
   },
   "enabledPlugins": {
-    "cc-content@cc-plugins": true
+    "cc-content@clever-cc-plugins": true
   },
   "extraKnownMarketplaces": {
-    "cc-plugins": {
+    "clever-cc-plugins": {
       "source": {
         "source": "github",
-        "repo": "michaelvanlaar/cc-plugins"
+        "repo": "clever-cc-plugins/marketplace"
       },
       "autoUpdate": true
     }

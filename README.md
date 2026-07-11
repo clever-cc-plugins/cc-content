@@ -26,7 +26,7 @@ The content-production skills work for any industry, audience, and output langua
 Open Claude Code in any project and run:
 
 ```
-/plugin marketplace add MichaelvanLaar/cc-plugins
+/plugin marketplace add clever-cc-plugins/marketplace
 /plugin install cc-content@cc-content
 ```
 
@@ -38,7 +38,7 @@ Auto-update is disabled by default for third-party marketplaces. To enable it:
 
 1. Run `/plugin` in Claude Code
 2. Go to the **Marketplaces** tab
-3. Toggle auto-update for `MichaelvanLaar/cc-plugins`
+3. Toggle auto-update for `clever-cc-plugins/marketplace`
 
 Once enabled, skills update automatically on startup when new versions are available.
 
