@@ -7,3 +7,8 @@ temp/
 
 # Headroom — machine-local session cache and learnings
 .headroom/
+
+# MCP tool-local caches
+.codegraph/
+.serena/
+.tokensave/
