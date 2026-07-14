@@ -42,8 +42,8 @@ If changes **exist**, group them into four categories and present them:
 ─────────────────────────────────────────────
 Session deliverables
 ─────────────────────────────────────────────
-Context files (context/):
-  <list of modified/untracked files in context/>
+Context files (registered context location, e.g. context/):
+  <list of modified/untracked files in the registered context location>
 
 Deliverables (content output files):
   <list of modified/untracked files that are not in .claude/ or skill folders>
@@ -61,8 +61,8 @@ the labelled format so the owner sees what type of work was done.
 
 ## Step 1b: Promote deliverables to context
 
-Look at the deliverables listed in Step 1 — files that are not in `context/`,
-`.claude/`, or skill folders.
+Look at the deliverables listed in Step 1 — files that are not in the
+registered context location, `.claude/`, or skill folders.
 
 If any deliverables were created or significantly modified, ask:
 

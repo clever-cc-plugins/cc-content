@@ -12,8 +12,10 @@ allowed-tools: Read, Write, Bash
 # Samples Curation Skill
 
 You are helping the owner capture and annotate gold-standard content examples.
-These examples are saved to `context/samples.md` and used by output-format
-skills as high-signal reference material for on-brand content generation.
+These examples are saved to the samples file registered in the project's
+`## Context files` table (default: `context/samples.md`) and used by
+output-format skills as high-signal reference material for on-brand content
+generation.
 
 ## Step 0: Recall learnings
 
@@ -70,7 +72,7 @@ Content:
 ─────────────────────────────────────────────
 ```
 
-Ask: "Shall I save this entry to `context/samples.md`? (yes / no / edit)"
+Ask: "Shall I save this entry to the samples file? (yes / no / edit)"
 
 - **Yes** → proceed to Step 4.
 - **No / cancel** → say "Entry discarded. Nothing was written." Then go to Step 5.
@@ -78,10 +80,14 @@ Ask: "Shall I save this entry to `context/samples.md`? (yes / no / edit)"
 
 ## Step 4: Append to samples.md
 
-Check whether `context/samples.md` exists:
+Determine the target file: check the `## Context files` table in CLAUDE.md
+for an existing row whose summary indicates it holds curated content samples.
+If found, use that file's path. Otherwise, default to `context/samples.md`.
+
+Check whether the target file exists:
 
 ```bash
-ls context/samples.md 2>/dev/null && echo "exists" || echo "missing"
+ls "<target-path>" 2>/dev/null && echo "exists" || echo "missing"
 ```
 
 **If missing**, create it with a header first:
@@ -94,6 +100,10 @@ Skills reference this file to produce on-brand output.
 
 ---
 ```
+
+If the file was newly created and isn't already registered, mention it to
+the owner and suggest running `/cc-content:cc-content-promote` to register
+it in the `## Context files` table.
 
 Then append the entry in this format:
 
@@ -115,7 +125,7 @@ Then append the entry in this format:
 Omit `**Key qualities:**` and `**Caveats:**` lines if the owner skipped those fields.
 
 After writing, confirm:
-> "✓ Saved to `context/samples.md`."
+> "✓ Saved to `<target-path>`."
 
 Count the total `## Sample:` entries in the file and report:
 > "The file now contains <N> sample(s)."
@@ -145,7 +155,7 @@ already captured in any `context/` file, `CLAUDE.md`, or any existing
 `.claude/learnings.md` entry under any plugin tag.
 
 **Does not qualify:** individual sample content; facts about what was saved (those
-are in `context/samples.md`); standard curation behavior applied without deviation;
+are in the samples file); standard curation behavior applied without deviation;
 facts semantically equivalent to an existing entry under any plugin tag — when in
 doubt, skip; redundancy is worse than a missed entry.
 
