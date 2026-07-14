@@ -279,7 +279,7 @@ For each row in the table, Read the file listed in the **File** column for categ
 writing-style (Required), organization-identity (Required), target-audience (Recommended),
 content-defaults (Recommended). If the context table is absent or a Required category has
 no row, ask once: is this intentional or should the user run
-`/cc-content:cc-content-onboarding` first? Same pause / DEGRADED OUTPUT pattern as all
+`/cc-content-onboarding` first? Same pause / DEGRADED OUTPUT pattern as all
 output-format skills.
 
 **Step 2 — Check for campaign briefing**
@@ -396,8 +396,8 @@ Then list suggested next steps:
 Next steps:
 1. Open SKILL.md and replace all [TODO: ...] markers with format-specific content.
 2. Review format-guidelines.md — especially any ⚠ KNOWLEDGE-BASED sections.
-3. Run /cc-content:cc-content-onboarding in this project (if you haven't already) to set up context files, then test the skill.
-4. When output looks good, save strong examples with /cc-content:cc-content-samples-curation.
+3. Run /cc-content-onboarding in this project (if you haven't already) to set up context files, then test the skill.
+4. When output looks good, save strong examples with /cc-content-samples-curation.
 ```
 
 **Plugin-dev mode next steps:**
@@ -407,6 +407,6 @@ Next steps:
 1. Open SKILL.md and replace all [TODO: ...] markers with format-specific content.
 2. Review format-guidelines.md — especially any ⚠ KNOWLEDGE-BASED sections.
 3. Add the skill to `.claude-plugin/marketplace.json` if it's a new plugin entry.
-4. Test the skill in a target project: run /cc-content:cc-content-onboarding there, then invoke your new skill.
-5. When output looks good, save strong examples with /cc-content:cc-content-samples-curation.
+4. Test the skill in a target project: run /cc-content-onboarding there, then invoke your new skill.
+5. When output looks good, save strong examples with /cc-content-samples-curation.
 ```

@@ -58,7 +58,7 @@ take precedence over less specific ones.
 **If no context table is found** in any loaded CLAUDE.md, ask once:
 
 > "I don't see any context files registered. Would you like to:
-> (a) Pause and run `/cc-content:cc-content-onboarding` to set up context
+> (a) Pause and run `/cc-content-onboarding` to set up context
 > (b) Continue without project context (output will be generic)"
 
 Stop if (a); note "generating without project context" and continue if (b).
@@ -86,7 +86,7 @@ a press release, load the formal one and note the choice.
 If no loaded file plausibly covers **brand voice**, ask once:
 
 > "I don't see any writing style or brand voice context. Is this intentional, or
-> should I pause while you run `/cc-content:cc-content-onboarding`?"
+> should I pause while you run `/cc-content-onboarding`?"
 >
 > - **Intentional**: note the gap; label the output `⚠ DEGRADED OUTPUT — no brand voice context`
 > - **Pause**: direct the owner to onboarding and stop.

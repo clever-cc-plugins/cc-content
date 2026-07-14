@@ -80,7 +80,7 @@ If any deliverables were created or significantly modified, ask:
   5. Confirm: "✓ Registered `[path]` as context."
 - If the owner says 'none' or skips: continue to Step 2.
 
-You can also invoke `/cc-content:cc-content-promote` at any point during a session
+You can also invoke `/cc-content-promote` at any point during a session
 to register a file immediately, without waiting for session wrap.
 
 ## Step 2: Identify skills used
@@ -298,4 +298,4 @@ Committed:               <hash> (or "not committed")
 
 Then say:
 
-> "Session wrapped. Run `/cc-content:cc-content-session-wrap` again at the end of your next session."
+> "Session wrapped. Run `/cc-content-session-wrap` again at the end of your next session."

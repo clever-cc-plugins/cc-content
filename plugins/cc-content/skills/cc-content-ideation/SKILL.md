@@ -53,7 +53,7 @@ take precedence over less specific ones.
 **If no context table is found** in any loaded CLAUDE.md, ask once:
 
 > "I don't see any context files registered. Would you like to:
-> (a) Pause and run `/cc-content:cc-content-onboarding` to set up context
+> (a) Pause and run `/cc-content-onboarding` to set up context
 > (b) Continue without project context (ideas will be generic)"
 
 Stop if (a); note "generating without project context" and continue if (b).
@@ -80,7 +80,7 @@ If no loaded file plausibly covers **organization background**, ask once:
 
 > "I don't see any company or author profile in context. Without it, the angles
 > can't connect the topic to your organization — they'll be generic. Is this
-> intentional, or should I pause while you run `/cc-content:cc-content-onboarding`?"
+> intentional, or should I pause while you run `/cc-content-onboarding`?"
 >
 > - **Intentional**: note the gap; label the output `⚠ DEGRADED — no organization context`
 > - **Pause**: direct the owner to onboarding and stop.
@@ -168,7 +168,7 @@ Ideation feeds writing. After presenting the angles, offer the next step:
 > "Want me to turn one of these into a finished draft? Tell me the number and the
 > format. If a dedicated skill fits the format (e.g. a blog article or LinkedIn
 > post), I'll route you to it for a better result; otherwise I'll use the general
-> text skill (`/cc-content:cc-content-text`)."
+> text skill (`/cc-content-text`)."
 
 Do not auto-draft. Wait for the owner to choose.
 

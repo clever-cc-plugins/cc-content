@@ -260,7 +260,7 @@ Then say:
 > "Your project context is ready. Content skills will read the registered files and
 > load what's relevant for each task — producing more on-brand, targeted output.
 > You can run this skill again any time to add more context, or use
-> `/cc-content:cc-content-promote` to quickly register a file mid-session."
+> `/cc-content-promote` to quickly register a file mid-session."
 
 ## Step 8: Store learnings
 

@@ -15,16 +15,16 @@ A [Claude Code](https://claude.ai/code) plugin that provides a suite of content 
 
 The content-production skills work for any industry, audience, and output language. They automatically use the context files set up during onboarding, and prompt you for any required information that the context does not already cover.
 
-| Skill                                     | What it does                                                                                                                                                                                      |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `/cc-content:cc-content-onboarding`       | Interviews you about your brand, voice, and audience, then populates `context/` with structured context files that all other skills can read                                                      |
-| `/cc-content:cc-content-linkedin-post`    | Drafts LinkedIn posts that match your brand voice, format guidelines, and audience — with a built-in feedback step                                                                                |
-| `/cc-content:cc-content-blog-article`     | Drafts blog articles calibrated to your audience type (B2B / B2C), content goal, funnel stage, and reader expertise                                                                               |
-| `/cc-content:cc-content-ideation`         | Generates several distinct strategic angles (thesis / goal / perspective) from an article, briefing, or topic — the idea step before writing                                                      |
-| `/cc-content:cc-content-text`             | Drafts a finished text for any format without a dedicated skill (press release, newsletter, whitepaper, landing page, email …), routing you to a dedicated skill when one fits better             |
-| `/cc-content:cc-content-samples-curation` | Saves gold-standard content examples with annotations to `context/samples.md` so skills can use them as reference material                                                                        |
-| `/cc-content:cc-content-session-wrap`     | Reviews session deliverables, logs feedback and corrections, detects recurring patterns, and commits your work                                                                                    |
-| `/cc-content:cc-content-new-skill`        | Turns research notes into a complete content-production skill for a new output format. Use it to build project-local custom skills, or add `--plugin` to create a pre-built skill for the plugin. |
+| Skill                          | What it does                                                                                                                                                                                      |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/cc-content-onboarding`       | Interviews you about your brand, voice, and audience, then populates `context/` with structured context files that all other skills can read                                                      |
+| `/cc-content-linkedin-post`    | Drafts LinkedIn posts that match your brand voice, format guidelines, and audience — with a built-in feedback step                                                                                |
+| `/cc-content-blog-article`     | Drafts blog articles calibrated to your audience type (B2B / B2C), content goal, funnel stage, and reader expertise                                                                               |
+| `/cc-content-ideation`         | Generates several distinct strategic angles (thesis / goal / perspective) from an article, briefing, or topic — the idea step before writing                                                      |
+| `/cc-content-text`             | Drafts a finished text for any format without a dedicated skill (press release, newsletter, whitepaper, landing page, email …), routing you to a dedicated skill when one fits better             |
+| `/cc-content-samples-curation` | Saves gold-standard content examples with annotations to the samples file registered in the `## Context files` table (default `context/samples.md`) so skills can use them as reference material  |
+| `/cc-content-session-wrap`     | Reviews session deliverables, logs feedback and corrections, detects recurring patterns, and commits your work                                                                                    |
+| `/cc-content-new-skill`        | Turns research notes into a complete content-production skill for a new output format. Use it to build project-local custom skills, or add `--plugin` to create a pre-built skill for the plugin. |
 
 ---
 
@@ -34,7 +34,7 @@ The content-production skills work for any industry, audience, and output langua
 
 > we shipped dark mode. finally. took forever. users have been asking for years
 
-**Output** — `/cc-content:cc-content-linkedin-post`:
+**Output** — `/cc-content-linkedin-post`:
 
 > Dark mode is here.
 >
@@ -76,7 +76,7 @@ Once enabled, skills update automatically on startup when new versions are avail
 Open your marketing project in Claude Code and run the onboarding skill:
 
 ```
-/cc-content:cc-content-onboarding
+/cc-content-onboarding
 ```
 
 This populates `context/` with your brand voice, company profile, and buyer personas. The other skills read this context automatically.
@@ -86,14 +86,14 @@ This populates `context/` with your brand voice, company profile, and buyer pers
 Run any output skill:
 
 ```
-/cc-content:cc-content-linkedin-post
+/cc-content-linkedin-post
 ```
 
 For a format without its own skill (press release, newsletter, whitepaper …), use the general writer — or start from ideas first:
 
 ```
-/cc-content:cc-content-ideation
-/cc-content:cc-content-text
+/cc-content-ideation
+/cc-content-text
 ```
 
 **Step 3 — Curate good examples**
@@ -101,7 +101,7 @@ For a format without its own skill (press release, newsletter, whitepaper …), 
 When a piece of content lands well, save it as a reference sample:
 
 ```
-/cc-content:cc-content-samples-curation
+/cc-content-samples-curation
 ```
 
 **Step 4 — Wrap your session**
@@ -109,7 +109,7 @@ When a piece of content lands well, save it as a reference sample:
 At the end of each working session, commit your work and log any corrections:
 
 ```
-/cc-content:cc-content-session-wrap
+/cc-content-session-wrap
 ```
 
 ---
@@ -120,8 +120,8 @@ The plugin ships with LinkedIn post and blog article support today, and more pre
 
 **Workflow:**
 
-1. Run `/cc-content:cc-content-new-skill <format-name>` without any research files. The skill will guide you to a research brief template that tells you what to gather about your target format.
-2. Fill in the brief, then re-run `/cc-content:cc-content-new-skill <format-name>` with your research files attached. The skill interviews you about coverage gaps, synthesizes a `format-guidelines.md`, and generates a `SKILL.md` skeleton.
+1. Run `/cc-content-new-skill <format-name>` without any research files. The skill will guide you to a research brief template that tells you what to gather about your target format.
+2. Fill in the brief, then re-run `/cc-content-new-skill <format-name>` with your research files attached. The skill interviews you about coverage gaps, synthesizes a `format-guidelines.md`, and generates a `SKILL.md` skeleton.
 3. Open the generated `SKILL.md` and fill in the `[TODO: ...]` placeholders to tailor the skill to your exact needs.
 4. The finished skill lives in `.claude/skills/<format-name>/` and is ready to invoke from there.
 

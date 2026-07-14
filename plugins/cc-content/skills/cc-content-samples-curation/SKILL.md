@@ -102,7 +102,7 @@ Skills reference this file to produce on-brand output.
 ```
 
 If the file was newly created and isn't already registered, mention it to
-the owner and suggest running `/cc-content:cc-content-promote` to register
+the owner and suggest running `/cc-content-promote` to register
 it in the `## Context files` table.
 
 Then append the entry in this format:
