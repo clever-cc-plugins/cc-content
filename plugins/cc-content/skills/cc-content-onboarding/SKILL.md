@@ -31,16 +31,49 @@ Do not announce this step. If the file is absent, continue normally.
 
 ## Step 1: Discover existing context
 
-Check what is already registered:
+This skill runs inside the owner's project — an arbitrary repo that may already have its own
+structure, possibly with more than one `CLAUDE.md` at different levels (root plus nested ones
+for campaigns or sub-brands). Never assume a single root-level file. Scan the whole project:
 
 ```bash
-grep -A 200 '## Context files' CLAUDE.md 2>/dev/null || echo "(no context table)"
-find context/ -type f -name "*.md" 2>/dev/null | sort || echo "(no context/ folder)"
+find . -name 'CLAUDE.md' -not -path '*/.git/*' -not -path '*/node_modules/*' | sort
+find . -type d -iname 'context' -not -path '*/.git/*' -not -path '*/node_modules/*' | sort
 ```
 
-If a context table exists, show it to the owner:
+For each `context/`-like folder found, list its files too — registered tables only show what's
+already been formally added, and a folder can hold files nobody registered yet:
 
-> "Your project already has these context files registered:
+```bash
+for d in <each context-like folder path from the find above>; do
+  echo "=== $d ==="
+  find "$d" -type f -name '*.md' | sort
+done
+```
+
+For each `CLAUDE.md` found, check whether it already has a `## Context files` table:
+
+```bash
+for f in <each CLAUDE.md path from the find above>; do
+  echo "=== $f ==="
+  grep -A 200 '## Context files' "$f" 2>/dev/null || echo "(no context table)"
+done
+```
+
+Keep the full list of discovered `CLAUDE.md` paths — Step 5 needs it to decide where each newly
+registered file belongs.
+
+If any `CLAUDE.md` or `context/`-like folder was found, show the owner the full picture,
+grouped by location so the scope of each is clear:
+
+> "Here's what your project already has set up:
+>
+> **Root** (`CLAUDE.md`)
+>
+> | Label                                        | File | Summary |
+> | -------------------------------------------- | ---- | ------- |
+> | <existing rows, or "(no context table yet)"> |
+>
+> **`campaigns/q3/CLAUDE.md`** (nested)
 >
 > | Label           | File | Summary |
 > | --------------- | ---- | ------- |
@@ -48,8 +81,13 @@ If a context table exists, show it to the owner:
 >
 > Would you like to add more context? (yes / no)"
 
-If no context table and no context/ folder, continue to Step 2 directly.
-If the context table is empty or only partially filled, continue to Step 2.
+(Placement — which `CLAUDE.md` a new row belongs in — is decided per file in Step 5, not here;
+this step is only surfacing what already exists.)
+
+If nothing was found anywhere (no `CLAUDE.md`, no `context/`-like folder), this is a greenfield
+project — continue to Step 2 directly.
+If structure exists but tables are empty or only partially filled, continue to Step 2, keeping
+the discovered locations in mind for Step 5.
 
 ## Step 2: Surface common starting points
 
@@ -104,6 +142,9 @@ Show the proposed table row:
 > | [label] | [file path] | [summary] |
 >
 > Confirm? (yes / edit / skip)"
+
+(The `File` path shown here is illustrative — Step 5 determines the actual target `CLAUDE.md`
+and adjusts the path to be relative to that file's own directory.)
 
 - **Yes**: record the row for Step 5
 - **Edit**: ask what to change, update, show again
@@ -174,17 +215,34 @@ Collect all rows confirmed in Steps 3–4.
 
 If no rows were confirmed, skip to Step 6.
 
-Check the current CLAUDE.md state:
+For each row, determine its target `CLAUDE.md`: walk up from the registered file's directory
+and use the nearest `CLAUDE.md` found during Step 1's scan (the root file counts as the
+outermost ancestor). Group rows by target file — a single onboarding run can touch more than
+one `CLAUDE.md`.
+
+**If the nearest ancestor is more than one directory level above the file** (e.g. the file
+lives in `campaigns/q3/` but the nearest `CLAUDE.md` is at the project root), don't default
+silently — ask first:
+
+> "`[file]` lives in `campaigns/q3/`, but the nearest CLAUDE.md is at the project root.
+> Would it make more sense to create a `campaigns/q3/CLAUDE.md` scoped to that campaign,
+> or register it in the root table? (new nested file / root)"
+
+- **New nested file**: treat this location as "target CLAUDE.md does not exist" below.
+- **Root** (or whichever existing ancestor the owner picks): register the row there.
+
+For each target `CLAUDE.md`, check its current state:
 
 ```bash
-grep -c '## Context files' CLAUDE.md 2>/dev/null || echo "0"
+grep -c '## Context files' <target CLAUDE.md path> 2>/dev/null || echo "0"
 ```
 
-**If `## Context files` section exists:**
+**If `## Context files` section exists in the target file:**
 
-Show only rows that are not already in the table:
+Show only rows that are not already in its table, with `File` paths made relative to that
+target file's own directory:
 
-> "I'll add these rows to your context table:
+> "I'll add these rows to the context table in `[target CLAUDE.md path]`:
 >
 > | Label      | File | Summary |
 > | ---------- | ---- | ------- |
@@ -192,13 +250,13 @@ Show only rows that are not already in the table:
 >
 > Shall I proceed? (yes / edit / skip)"
 
-- **Yes**: append the rows to the table. Confirm: "✓ CLAUDE.md updated."
+- **Yes**: append the rows to that table. Confirm: "✓ `[target CLAUDE.md path]` updated."
 - **Edit**: ask what to change, update, show again.
-- **Skip**: note that the context table was not updated.
+- **Skip**: note that this table was not updated.
 
-**If CLAUDE.md exists but has no `## Context files` section:**
+**If the target CLAUDE.md exists but has no `## Context files` section:**
 
-> "I'll add a context table to your CLAUDE.md:
+> "I'll add a context table to `[target CLAUDE.md path]`:
 >
 > ## Context files
 >
@@ -210,14 +268,16 @@ Show only rows that are not already in the table:
 >
 > Shall I proceed? (yes / edit / skip)"
 
-**If CLAUDE.md does not exist:**
+**If the target CLAUDE.md does not exist** (no ancestor was found at all, or the owner chose
+to create a new nested one above):
 
-Ask: "There is no CLAUDE.md yet. What is the project or client name? (Used as the heading.)"
+Ask: "There is no CLAUDE.md at `[target folder]` yet. What should its heading say — a project,
+client, or campaign name?"
 
-Create:
+Create it at that location, with `File` paths relative to that new file's own directory:
 
 ```markdown
-# [Project Name]
+# [Name]
 
 ## Context files
 
@@ -228,7 +288,9 @@ Skills read all registered files and load what's relevant for each task.
 | <rows> |
 ```
 
-Confirm: "✓ CLAUDE.md created."
+Confirm: "✓ `[target CLAUDE.md path]` created."
+
+Repeat until every row has been placed in its target file.
 
 ## Step 6: Folder structure nudge
 
@@ -239,10 +301,12 @@ After updating CLAUDE.md, add a practical tip:
 > meaningful file names (e.g. `xyz-event-invitation-2025.md`, not `draft-v3-final.md`)
 > and a folder structure you can describe in a sentence.
 >
-> Want to add a one-line note to your CLAUDE.md describing how this project's content
+> Want to add a one-line note to your root CLAUDE.md describing how this project's content
 > is organized? (yes / describe it / skip)"
 
-- **Yes or owner describes it**: add a `## Folder structure` note to CLAUDE.md.
+- **Yes or owner describes it**: add a `## Folder structure` note to the root `CLAUDE.md`
+  (this is a project-wide orientation note, not campaign-scoped, so it belongs at the root
+  even if other context was registered in nested `CLAUDE.md` files during this run).
 - **Skip**: continue.
 
 ## Step 7: Summary
@@ -251,7 +315,8 @@ After updating CLAUDE.md, add a practical tip:
 Context setup complete
 ──────────────────────────────────────────────────────
 Registered:    <N> context file(s)
-CLAUDE.md:     ✓ updated (or: ✓ created / ✗ skipped)
+CLAUDE.md:     ✓ <path> updated (or: ✓ created / ✗ skipped)
+               ✓ <path> updated (repeat per target file touched)
 ──────────────────────────────────────────────────────
 ```
 

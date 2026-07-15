@@ -15,11 +15,15 @@ argument-hint: "[optional: path to the file to register as context]"
 You are registering an existing file as context in `CLAUDE.md` so content skills can
 discover and load it for future work.
 
-## Step 1: Identify the file
+## Step 1: Identify the file and target
 
 If `$ARGUMENTS` contains a file path, use it. Otherwise ask:
 
 > "Which file would you like to register as context? (Provide the file path.)"
+
+If `$ARGUMENTS` also names a target `CLAUDE.md` explicitly (e.g. "register x in
+`myproject/press/2026/CLAUDE.md`"), record that path. An explicit target is a deliberate
+choice — Step 4 uses it directly, no placement questions asked.
 
 Read the file.
 
@@ -55,32 +59,51 @@ Present the suggestion and ask the owner to confirm or change it:
 
 ## Step 4: Determine the target CLAUDE.md
 
-Check which CLAUDE.md files exist in or above the file's location:
+If an explicit target was named in `$ARGUMENTS` (Step 1), use it directly and skip to Step 5 —
+no placement question, that's the point of naming it explicitly.
+
+Otherwise, scan for candidates:
 
 ```bash
-find . -name "CLAUDE.md" | sort
+find . -name "CLAUDE.md" -not -path '*/.git/*' -not -path '*/node_modules/*' | sort
 ```
 
-If there is one obvious candidate (project root or closest parent folder), use it without asking.
+Find the nearest ancestor `CLAUDE.md` to the file (the root file counts as the outermost
+ancestor).
 
-If multiple exist at meaningfully different levels (e.g., project root vs. campaign subfolder),
-ask:
+**Use it without asking** only when there's no real choice to make: it's the only `CLAUDE.md`
+found anywhere in the project, and it's in the file's own directory or one level above it.
 
-> "Which CLAUDE.md should this be registered in?
-> <list paths with brief location notes>"
+**Otherwise ask** — either the nearest ancestor is more than one directory level above the file,
+or other `CLAUDE.md` files exist at different levels, so a vague command genuinely leaves the
+level open:
+
+> "`[file]` could be registered at more than one level:
+>
+> - `[nearest ancestor path]` (closest existing file)
+> - `[other candidate path]` (repeat for each other CLAUDE.md found)
+> - or a new `[file's directory]/CLAUDE.md`, scoped just to that folder
+>
+> Which should I use?"
+
+- Owner picks an existing path: use it as the target.
+- Owner picks "new": treat this as "target CLAUDE.md does not exist" in Step 5.
 
 ## Step 5: Add the row
 
+Make the `File` path relative to the target CLAUDE.md's own directory (not the project root —
+see the repo's context-architecture convention).
+
 Show the proposed row before writing:
 
-> "I'll add this row to `[CLAUDE.md path]`:
+> "I'll add this row to `[target CLAUDE.md path]`:
 >
 > | [label] | [file path] | [summary] |
 >
 > Proceed? (yes / edit / skip)"
 
-- **Yes**: add the row to the `## Context files` table in the target CLAUDE.md.
-  If the `## Context files` section does not exist yet, create it first:
+- **Yes**, target CLAUDE.md exists: add the row to its `## Context files` table.
+  If the section does not exist yet, create it first:
 
   ```markdown
   ## Context files
@@ -91,7 +114,25 @@ Show the proposed row before writing:
   | ----- | ---- | ------- |
   ```
 
-  Then append the row. Confirm: "✓ Registered `[file path]` as context in `[CLAUDE.md path]`."
+  Then append the row. Confirm: "✓ Registered `[file path]` as context in `[target CLAUDE.md path]`."
+
+- **Yes**, target CLAUDE.md does not exist (no ancestor found, or the owner chose to create a
+  new nested one in Step 4): ask "There is no CLAUDE.md at `[target folder]` yet. What should
+  its heading say — a project, client, or campaign name?", then create it:
+
+  ```markdown
+  # [Name]
+
+  ## Context files
+
+  Skills read all registered files and load what's relevant for each task.
+
+  | Label   | File        | Summary   |
+  | ------- | ----------- | --------- |
+  | [label] | [file path] | [summary] |
+  ```
+
+  Confirm: "✓ `[target CLAUDE.md path]` created and `[file path]` registered."
 
 - **Edit**: ask what to change, update label/summary/path, show again.
 

@@ -137,17 +137,46 @@ Skills follow a three-level context model:
 
 | Level              | Location                                  | What goes here                                                                      |
 | ------------------ | ----------------------------------------- | ----------------------------------------------------------------------------------- |
-| **Company scope**  | `context/`                                | Brand voice, buyer personas, company profile — applies to all work for this company |
+| **Company scope**  | `context/` (registered in `CLAUDE.md`)    | Brand voice, buyer personas, company profile — applies to all work for this company |
 | **Format scope**   | Inside the plugin                         | Structure rules, length limits, tone calibrations for one output type               |
 | **Campaign scope** | Project subfolders (e.g. `campaigns/q3/`) | Campaign briefings, key messages, one-off constraints                               |
 
-Load company-scope context by importing it from your project-level `CLAUDE.md`:
+Company-scope context is registered in a `## Context files` table in `CLAUDE.md` — not loaded via `@`-import. The distinction matters and applies to any plugin in this family that uses the same pattern.
+
+### `@`-imports vs. the `## Context files` table
+
+**`@`-imports** (e.g. `@DESIGN.md`, `@AGENTS.md`) are parsed by Claude Code and pull the referenced file's full content into the context window unconditionally — every message, every session. Reserve them for the handful of files that are genuinely relevant to every task.
+
+**The `## Context files` table** is plain Markdown, not an `@`-import. Only the table itself (labels, paths, one-line summaries) loads every message via `CLAUDE.md` — cheap. The underlying files load conditionally: a skill reads the table, matches the current task against each row's Summary, and reads only the file(s) that are actually relevant. A brand-voice file won't be loaded for a task that only needs buyer-persona data, even though both are registered in the same table.
+
+Use `@`-imports for material every task needs. Use the context table for anything that's only sometimes relevant — for company-scope context, that's almost everything.
+
+### Authoring the table by hand
 
 ```markdown
-@context/brand-voice.md **Read when:** producing any written content
-@context/company-profile.md **Read when:** working on any deliverable
-@context/buyer-personas.md **Read when:** targeting content at a specific audience segment
+## Context files
+
+Skills read all registered files and load what's relevant for each task.
+
+| Label       | File                     | Summary                                                                     |
+| ----------- | ------------------------ | --------------------------------------------------------------------------- |
+| Brand voice | `context/brand-voice.md` | Formal German, em-dash preferred, no exclamation marks — all corporate copy |
 ```
+
+- **Label** — free-form, whatever you'd recognize at a glance. No fixed taxonomy.
+- **File** — see path convention below.
+- **Summary** — one sentence, 10–25 words, specific enough to act as a relevance signal. Skills match against this, not the label.
+  - Too vague: "Writing style guidelines for the company"
+  - Good: "Formal German, em-dash preferred, no exclamation marks — all corporate copy"
+  - Good: "Casual and inclusive tone — job ads and employer branding only"
+
+`/cc-content-onboarding` builds this table through a guided interview; `/cc-content-promote` adds a single row mid-session. Both apply the same quality bar — hand-edits to the table should meet it too.
+
+### File paths in the table
+
+Write `File` paths relative to the `CLAUDE.md` file that contains the table — not relative to the repository root. This mirrors how Claude Code resolves `@`-import paths, so both mechanisms follow the same mental model, and it keeps a `CLAUDE.md` plus its registered context files self-contained if that subtree is moved or copied elsewhere.
+
+If a project has more than one `CLAUDE.md` (e.g. a nested one for a specific campaign or sub-brand), each table is scoped to its own file — a nested `CLAUDE.md`'s `File` column is relative to that nested folder, not the project root.
 
 ---
 
