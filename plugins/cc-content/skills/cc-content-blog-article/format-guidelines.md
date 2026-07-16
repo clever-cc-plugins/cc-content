@@ -2,8 +2,8 @@
 
 Format-scope rules for the `cc-content-blog-article` skill. These rules are language-
 and industry-neutral: they describe **structure, calibration, and persuasion architecture**,
-not voice or vocabulary. Voice comes from the loaded `writing-style` context; output
-language comes from the loaded `content-defaults` context. All word counts in this file
+not voice or vocabulary. Voice comes from the loaded brand voice context; output
+language comes from the loaded output language context. All word counts in this file
 are **English-equivalent units** — translate proportionally for other languages (German
 typically +10–20%, Romance languages roughly equivalent, CJK languages count characters
 instead, where ~1.6 CJK characters ≈ 1 English word).
@@ -348,8 +348,8 @@ Every draft must pass these gates before it is presented to the owner.
 - [ ] Length falls within the working range for the chosen content type — or deviation
       is intentional and the rationale is documented
 - [ ] Vocabulary, density, and credibility signals match the target expertise level
-- [ ] Tone is consistent with the loaded `writing-style` context (if present)
-- [ ] Output language matches the loaded `content-defaults` context (default: English
+- [ ] Tone is consistent with the loaded brand voice context (if present)
+- [ ] Output language matches the loaded output language context (default: English
       unless project specifies otherwise)
 
 ### Persuasion

@@ -5,29 +5,29 @@ content creation skills for marketing projects.
 
 ## Key Config Files
 
-| File                                                             | Purpose                                                             |
-| ---------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `.claude/format-markdown.sh`                                     | PostToolUse hook: formats Markdown files with prettier after edits  |
-| `.claude/guard-secret-files.sh`                                  | PreToolUse hook: blocks reads/edits/writes of secret .env files     |
-| `.claude/settings.json`                                          | Permissions, hooks, environment variables                           |
-| `.claudeignore`                                                  | Paths excluded from Claude Code indexing                            |
-| `.githooks/pre-commit`                                           | Secret scanning (gitleaks) + CLAUDE.md table sync                   |
-| `.github/workflows/claude-code-review.yml`                       | Automatic PR review via Claude Code                                 |
-| `.github/workflows/claude.yml`                                   | Trigger Claude via @claude mentions in issues/PRs                   |
-| `.gitignore`                                                     | Git ignore patterns                                                 |
-| `CLAUDE.md`                                                      | Project instructions, loaded every message                          |
-| `plugins/cc-content/.claude-plugin/plugin.json`                  | Plugin manifest                                                     |
-| `plugins/cc-content/skills/cc-content-blog-article/SKILL.md`     | Skill: Draft blog articles                                          |
-| `plugins/cc-content/skills/cc-content-ideation/SKILL.md`         | Skill: Generate strategic content angles from an inspiration input  |
-| `plugins/cc-content/skills/cc-content-linkedin-post/SKILL.md`    | Skill: Draft LinkedIn posts                                         |
-| `plugins/cc-content/skills/cc-content-new-skill/SKILL.md`        | Skill: Build a new content-production skill from research           |
-| `plugins/cc-content/skills/cc-content-onboarding/SKILL.md`       | Skill: Register and create context files; guide project setup       |
-| `plugins/cc-content/skills/cc-content-promote/SKILL.md`          | Skill: Register a single file as context in CLAUDE.md (mid-session) |
-| `plugins/cc-content/skills/cc-content-research-prompt/SKILL.md`  | Skill: Generate a vendor-neutral deep-research prompt for a topic   |
-| `plugins/cc-content/skills/cc-content-samples-curation/SKILL.md` | Skill: Save and annotate gold-standard content examples             |
-| `plugins/cc-content/skills/cc-content-session-wrap/SKILL.md`     | Skill: Review session, promote deliverables to context, commit work |
-| `plugins/cc-content/skills/cc-content-text/SKILL.md`             | Skill: Draft text for any format without a dedicated skill          |
-| `scripts/sync-config-table.sh`                                   | Keeps Key Config Files table in sync on each commit                 |
+| File | Purpose |
+|------|---------|
+| `.claude/format-markdown.sh` | PostToolUse hook: formats Markdown files with prettier after edits   |
+| `.claude/guard-secret-files.sh` | PreToolUse hook: blocks reads/edits/writes of secret .env files      |
+| `.claudeignore` | Paths excluded from Claude Code indexing                             |
+| `CLAUDE.md` | Project instructions, loaded every message                           |
+| `.claude/settings.json` | Permissions, hooks, environment variables                            |
+| `.githooks/pre-commit` | Secret scanning (gitleaks) + CLAUDE.md table sync                    |
+| `.github/workflows/claude-code-review.yml` | Automatic PR review via Claude Code                                  |
+| `.github/workflows/claude.yml` | Trigger Claude via @claude mentions in issues/PRs                    |
+| `.gitignore` | Git ignore patterns                                                  |
+| `plugins/cc-content/.claude-plugin/plugin.json` | Plugin manifest                                                      |
+| `plugins/cc-content/skills/cc-content-blog-article/SKILL.md` | Skill: Draft blog articles                                           |
+| `plugins/cc-content/skills/cc-content-ideation/SKILL.md` | Skill: Generate strategic content angles from an inspiration input   |
+| `plugins/cc-content/skills/cc-content-linkedin-post/SKILL.md` | Skill: Draft LinkedIn posts                                          |
+| `plugins/cc-content/skills/cc-content-new-skill/SKILL.md` | Skill: Build a new content-production skill from research            |
+| `plugins/cc-content/skills/cc-content-onboarding/SKILL.md` | Skill: Register and create context files; guide project setup        |
+| `plugins/cc-content/skills/cc-content-promote/SKILL.md` | Skill: Register a single file as context in CLAUDE.md (mid-session)  |
+| `plugins/cc-content/skills/cc-content-research-prompt/SKILL.md` | Skill: Generate a vendor-neutral deep-research prompt for a topic    |
+| `plugins/cc-content/skills/cc-content-samples-curation/SKILL.md` | Skill: Save and annotate gold-standard content examples              |
+| `plugins/cc-content/skills/cc-content-session-wrap/SKILL.md` | Skill: Review session, promote deliverables to context, commit work  |
+| `plugins/cc-content/skills/cc-content-text/SKILL.md` | Skill: Draft text for any format without a dedicated skill           |
+| `scripts/sync-config-table.sh` | Keeps Key Config Files table in sync on each commit                  |
 
 ## Plugin Structure
 

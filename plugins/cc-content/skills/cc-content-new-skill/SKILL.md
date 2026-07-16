@@ -274,13 +274,37 @@ continue normally.
 
 **Step 1 — Load context**
 Check for a `## Context files` table in CLAUDE.md via:
-`grep -A 100 '## Context files' CLAUDE.md 2>/dev/null || echo "(no context table)"`.
-For each row in the table, Read the file listed in the **File** column for categories:
-writing-style (Required), organization-identity (Required), target-audience (Recommended),
-content-defaults (Recommended). If the context table is absent or a Required category has
-no row, ask once: is this intentional or should the user run
-`/cc-content-onboarding` first? Same pause / DEGRADED OUTPUT pattern as all
-output-format skills.
+`grep -A 200 '## Context files' CLAUDE.md 2>/dev/null || echo "(no context table)"`.
+
+CLAUDE.md files may exist at multiple hierarchy levels (workspace root, project root,
+sub-directory) and the harness loads all applicable ones. Where multiple tables exist, rows
+from more specific CLAUDE.md files take precedence.
+
+**Do not enumerate required categories by name.** Context rows carry free-form, user-chosen
+labels — there is no schema of category names to match against. Instead, Read every file
+listed in the **File** column, then assess each row's **Summary** to work out what it covers,
+and map the loaded files to the skill's content needs:
+
+| Need                    | What to look for in the Summary                                  |
+| ----------------------- | ---------------------------------------------------------------- |
+| Brand voice             | Writing style, tone, vocabulary, phrasing rules, things to avoid |
+| Organization background | Who the company/author is, products, positioning, mission        |
+| Target audience         | Reader personas, goals, challenges, job titles                   |
+| Output language         | Default language, locale, or region                              |
+| Format-specific rules   | Rules governing this particular output format                    |
+
+Where multiple files plausibly cover the same need, pick the one whose Summary best fits the
+task at hand and note the choice.
+
+Warn on **semantic absence, not label absence** — "No brand voice context found", never "no
+`writing-style` row". Gate on two needs only: if no loaded file plausibly covers **brand
+voice**, or none covers **organization background**, ask once whether this is intentional or
+whether the user should pause and run `/cc-content-onboarding`. Same pause / DEGRADED OUTPUT
+pattern as all output-format skills. For absent audience, language, or format-specific rules:
+note silently and continue — never ask.
+
+See `../_shared/context-categories.md` for the full guide to common context patterns and the
+authoring rules this step follows.
 
 **Step 2 — Check for campaign briefing**
 Check `$ARGUMENTS` first, then `ls brief.md`. If found, read and confirm. If missing,
@@ -289,8 +313,10 @@ note "No campaign briefing found — generating from company context only." and 
 **Step 3 — Infer and confirm audience and goal**
 This is the content-production-specific step. Instruct the skill to:
 
-1. Read target-audience context and campaign brief (if any) to infer: B2B or B2C,
-   content goal, funnel stage, and audience expertise level.
+1. Use the loaded audience context and campaign brief (if any) to infer: B2B or B2C,
+   content goal, funnel stage, and audience expertise level. If the loaded context
+   genuinely does not support a confident inference, ask the owner the missing question
+   directly rather than guessing.
 2. Present a one-line inference summary to the user, for example:
    "Audience: B2B (mid-market) · Goal: lead generation · Stage: MOFU · Expertise: familiar"
 3. Ask the user to confirm or correct before generating. Do not silently apply assumptions.
@@ -321,8 +347,8 @@ specify for their use case.
 Present the output in a clearly delimited block showing the content and its word / character
 count.
 
-If output is degraded (missing required context), prepend:
-`⚠ DEGRADED OUTPUT — generated without: <list of missing categories>`
+If output is degraded (a required context need is uncovered), prepend:
+`⚠ DEGRADED OUTPUT — generated without: <list of missing needs>`
 
 **Step 8 — Feedback**
 This step has two phases:
