@@ -96,6 +96,27 @@ Apply the same ask for **organization background** if no loaded file covers it.
 For absent audience or language: note silently and continue. Format rules are handled
 explicitly in Step 2.
 
+## Step 1.5: Detect atomization requests
+
+If the owner's request names **2 or more target formats**, or explicitly asks to
+"repurpose," "atomize," or "turn this into multiple formats," switch to **atomization
+mode** for the rest of this run. Otherwise, proceed to Step 2 in normal single-format
+mode.
+
+**In atomization mode:**
+
+> "Which formats do you want this in? (e.g. LinkedIn post, Twitter/X thread,
+> newsletter, blog post, email) I'll draft each from the same core message."
+
+Collect the target format list. Then run **Step 2's Tier A/B/C routing separately for
+each format** in the list — a format with a dedicated skill (Tier A) is routed away
+exactly as it would be for a single-format request; only formats without a dedicated
+skill and without one the owner explicitly overrides continue through this skill's
+own drafting steps (5–9), once per remaining format.
+
+Note which formats were routed away and which remain, for the final summary in
+Step 9.
+
 ## Step 2: Identify the format and route correctly
 
 This is the step that keeps the general skill in its lane. First, settle on the
@@ -168,6 +189,12 @@ using general best practices."
    the finished text (unless the format or brand voice makes that inappropriate).
 
 ## Step 4: Get the content idea, audience, and length target
+
+**In atomization mode:** ask for the content idea, audience, and any core proof
+points **once**, not once per format. The core message, key value proposition, and
+proof points must stay identical across every format produced in this run — only
+structure, length, and tone vary per format's own conventions (handled in Steps 5–9
+below, run separately per format).
 
 If the owner has not said what the text should be about, ask:
 
@@ -253,6 +280,12 @@ full range rather than coming in thin.
 
 ## Step 9: Present the text
 
+**In atomization mode:** present each drafted format (i.e. every format that was not
+routed to a dedicated skill in Step 1.5) in its own delimited block using the format
+below, in sequence. After all blocks, add a one-line routing summary listing every
+format and where it ended up, e.g.: "LinkedIn → routed to `/cc-content-linkedin-post`;
+drafted here: newsletter, Twitter/X thread."
+
 Present the finished text in a clearly delimited block so the owner can copy it
 cleanly:
 
@@ -283,6 +316,10 @@ If the output is degraded (brand voice or organization context missing), prepend
 ```
 
 ## Step 10: Feedback
+
+**In atomization mode:** run this feedback step once for the whole batch of drafted
+formats, not once per format — the same tag and qualification rules apply to the
+batch as a whole.
 
 **Auto-store phase.** Before asking for feedback, review this run. For each qualifying
 observation, append one tagged line to `.claude/learnings.md` (create with the
