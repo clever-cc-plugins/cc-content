@@ -18,6 +18,7 @@ content creation skills for marketing projects.
 | `.gitignore`                                                     | Git ignore patterns                                                 |
 | `plugins/cc-content/.claude-plugin/plugin.json`                  | Plugin manifest                                                     |
 | `plugins/cc-content/skills/cc-content-blog-article/SKILL.md`     | Skill: Draft blog articles                                          |
+| `plugins/cc-content/skills/cc-content-humanize/SKILL.md`         | TODO: add description                                               |
 | `plugins/cc-content/skills/cc-content-ideation/SKILL.md`         | Skill: Generate strategic content angles from an inspiration input  |
 | `plugins/cc-content/skills/cc-content-linkedin-post/SKILL.md`    | Skill: Draft LinkedIn posts                                         |
 | `plugins/cc-content/skills/cc-content-new-skill/SKILL.md`        | Skill: Build a new content-production skill from research           |
