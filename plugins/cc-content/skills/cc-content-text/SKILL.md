@@ -2,9 +2,9 @@
 name: cc-content-text
 description: >
   Use this skill to draft a finished marketing or PR text for an output format
-  that does NOT have its own dedicated skill — for example a press release,
-  newsletter, whitepaper, landing-page copy, product description, email, webinar
-  abstract, or ad copy. Invoke when the user says "write a press release",
+  that does NOT have its own dedicated skill — for example a newsletter,
+  whitepaper, landing-page copy, product description, email, webinar
+  abstract, or ad copy. Invoke when the user says
   "draft a newsletter", "write the copy for this landing page", "turn this idea
   into a <format>", or names any text deliverable without a dedicated skill. This
   is the general-purpose writer for the long tail of formats. It deliberately
