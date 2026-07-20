@@ -70,7 +70,7 @@ Rules:
 
 - **Native content priority:** Native video gets 2–3x the reach of the same video shared as an external link (e.g., YouTube link); native photos rank second; off-platform links rank lowest
 - **Link impact:** Posts with off-platform links see significantly reduced visibility compared to native content; Facebook's algorithm actively deprioritizes external-link posts in favor of on-platform engagement
-- **Emojis:** Use 1–2 emojis max per post, reserved for punctuation and emphasis at natural pauses; not as bullet-point substitutes
+- **Emojis:** ⚠ KNOWLEDGE-BASED — Use 0–2 emojis max per post, reserved for punctuation and emphasis at natural pauses; not as bullet-point substitutes
 - **Formatting:** Use clear paragraph breaks, bullet points, or numbered lists for longer posts to improve scannability and completion rate
 
 **Sources:** [SocialBee](https://socialbee.com/blog/facebook-algorithm/)
@@ -81,7 +81,7 @@ Rules:
 - **Engagement hooks** (questions, problem-agitation) drive more comments and shares than static announcements
 - **Short, punchy copy** (40–80 characters) gets 66% higher engagement than longer alternatives, but only for non-value-driven content
 - **On-platform content** (images, video, text) ranks higher than content that directs users off-platform
-- **Audience warmth match:** Cold/unfamiliar audiences need more context (150–300 words) to build understanding; warm/familiar audiences convert better with short, specific copy (30–80 words) that references something they already know
+- **Audience warmth match:** Cold/unfamiliar audiences need more context (150–300 **words** — sourced from general ad-copy research, applied directionally to Facebook posts) to build understanding; warm/familiar audiences convert better with short, specific copy (30–80 **words**) that references something they already know
 
 **Sources:** [Deep Marketing](https://www.deepmarketing.it/en/blog/persuasive-content-social-ads-2026)
 
@@ -115,7 +115,7 @@ The following Cialdini principles and cognitive biases are most effective on Fac
 
 **Specificity as persuasion** — Direct, specific CTAs and claims ("See 3-minute demo") consistently outperform vague, aspirational ones ("Unlock your potential"). Specificity itself functions as a credibility signal, not just a clarity improvement.
 
-**Audience-warmth-matched framing** — Warm audiences (repeat visitors, engaged followers) respond to copy that references something specific they already engaged with, leveraging their prior commitment rather than re-arguing the case from scratch. Cold audiences need more context (150–300 words); warm audiences convert with short, punchy copy (30–80 words).
+**Audience-warmth-matched framing** — Warm audiences (repeat visitors, engaged followers) respond to copy that references something specific they already engaged with, leveraging their prior commitment rather than re-arguing the case from scratch. Cold audiences need more context (150–300 **words** — from general ad-copy research, applied directionally); warm audiences convert with short, punchy copy (30–80 **words**).
 
 **Scarcity and FOMO** — Limited-time or limited-availability framing drives short-form social action. Effective for time-limited offers, exclusive access announcements, or rare opportunity posts.
 
@@ -185,7 +185,7 @@ Before presenting output, verify:
 - [ ] For Page posts: acknowledge lower organic reach; if conversion goal, recommend native content or paid amplification
 - [ ] For Group posts: tone adjusted for community context (peer-to-peer, less promotional)
 - [ ] No clichéd openers ("Just a thought", "Hot take", "Unpopular opinion")
-- [ ] Emojis: 0–2 max, placed at natural pauses (not as bullet substitutes)
+- [ ] Emojis: 0–2 max, placed at natural pauses (not as bullet substitutes) — ⚠ KNOWLEDGE-BASED guideline, not platform-specific measurement
 - [ ] If post includes a link: acknowledge reach impact and recommend native content alternative
 - [ ] Conversation-inviting element present (question, call for input, or community hook)
 - [ ] Audience type, goal, and funnel stage inferences confirmed with user
