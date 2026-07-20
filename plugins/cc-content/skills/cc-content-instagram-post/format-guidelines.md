@@ -11,17 +11,17 @@ These guidelines apply to every Instagram post regardless of audience type, goal
 
 ### Length and Scope
 
-| Constraint                        | Limit              | Notes                                                                   |
-| --------------------------------- | ------------------ | ----------------------------------------------------------------------- |
-| Hard max                          | 2,200 characters   | Platform max; includes hashtags (each `#` counts as a character)        |
-| Mobile truncation / "…more" point | ~125 characters    | Feed truncates caption after ~125 chars before "…more" cutoff on mobile |
-| Optimal short caption (reach)     | 1–50 characters    | Highest engagement rate for pure hook/CTA posts                         |
-| Baseline short-medium (default)   | ~180 characters    | Safe baseline before testing longer; hook visible before truncation     |
-| Ideal hook + CTA structure        | 138–150 characters | Hook in first 125 chars, CTA visible without tap                        |
-| Long-form teaching / story        | 150–220 **words**  | Different axis than character-count guidance; suits educational content |
-| Carousel / multi-slide captions   | 150–300 characters | Captions that require sustained swipe-through attention                 |
+| Constraint                        | Limit                       | Notes                                                                                                             |
+| --------------------------------- | --------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Hard max                          | 2,200 characters            | Platform max; includes hashtags (each `#` counts as a character)                                                  |
+| Mobile truncation / "…more" point | ~125 characters             | Feed truncates caption after ~125 chars before "…more" cutoff on mobile                                           |
+| Optimal short caption (reach)     | 1–50 characters             | Highest engagement rate for pure hook/CTA posts                                                                   |
+| Baseline short-medium (default)   | ~180 characters             | Safe baseline before testing longer; hook visible before truncation                                               |
+| Ideal hook + CTA structure        | 138–150 characters          | Hook in first 125 chars, CTA visible without tap                                                                  |
+| Long-form teaching / story        | 150–220 **words**           | Different axis than character-count guidance; suits educational content                                           |
+| Carousel / multi-slide captions   | Medium-to-long (3–6+ lines) | Captions that require sustained swipe-through attention; ⚠ KNOWLEDGE-BASED for specific character count (150–300) |
 
-**Note:** The research sources conflict on units — some report character counts (40–125 range for high reach), others report word counts (150–220 for CTAs that drive 40% more comments). Both are valid on different post types: short hook-only posts optimize for character limits and reach; longer educational posts (stories, carousels) optimize for engagement/word counts and assume reader attention.
+**Note:** Research distinguishes character-based vs. word-based guidance for different post formats: character-count guidance (1–50 characters for highest engagement on pure hooks; 138–150 characters as ideal length; ~125 characters as the mobile truncation point) applies to shorter, hook-focused captions. Word-count guidance (150–220 words) applies to longer educational/story-format captions from a separate source and is not directly comparable. Hook-focused posts optimize for character limits and reach; longer educational posts (carousels, mini-stories) optimize for engagement and assume sustained reader attention.
 
 Design the hook for 125-character truncation to stand alone. Long-form captions must be clearly structured and value-driven to overcome reach penalties.
 
@@ -85,18 +85,18 @@ Rules:
 
 - Short (2 lines: hook + CTA) for pure reach/awareness goals
 - Medium (3–6 lines: hook + value + CTA) as the default for most posts
-- Long (mini-story/teaching) suits educational or case-study posts (150–300 characters or 150–220 **words**)
+- Long (mini-story/teaching) suits educational or case-study posts (150–220 **words** per research; ⚠ KNOWLEDGE-BASED for character-count equivalent of 150–300 characters)
 
 **Carousel posts** (multi-slide swipe-through):
 
 - Expect sustained reader attention — each swipe registers as an engagement signal
-- Medium-to-long captions (150–300 characters) work better; hook on first slide must earn the first swipe
+- Medium-to-long captions (3–6+ lines) work better; ⚠ KNOWLEDGE-BASED for specific character count (150–300); hook on first slide must earn the first swipe
 - Instagram re-serves carousels a second time (leading with slide 2) to users who didn't swipe through
 - Best suited to multi-step explainers, case studies, and content requiring reader engagement
 
 **Reels** (video format):
 
-- Short, punchy captions (40–80 characters) work best — the video does the heavy lifting
+- Short, punchy captions (2 lines: hook + CTA) work best — the video does the heavy lifting; ⚠ KNOWLEDGE-BASED for specific character count (40–80)
 - Hook must be visible on-screen before the caption expands
 - Reels get 1.36–2.35x more reach than carousels and 2.25x more reach than single-image posts
 - Instagram pushes Reels to non-followers aggressively as a new-user-acquisition driver
@@ -126,11 +126,11 @@ Hashtags count toward the 2,200-character limit (each `#` symbol and letter coun
 ### Formatting Conventions
 
 - **Native content priority:** Reels (video) get 1.36–2.35x more reach than carousels; carousels get 10.15% engagement rate vs. 7% for single images and 6% for Reels (engagement rate ≠ reach; see funnel section for nuance)
-- **Emojis:** Use 0–2 emojis max per caption, reserved for punctuation and emphasis at natural pauses (not as bullet-point substitutes); avoid emojis in the opening hook line specifically
+- **Emojis:** ⚠ KNOWLEDGE-BASED to cap at 0–2 emojis max per caption; research specifies to avoid emojis in the opening hook line specifically. Reserve any emojis for punctuation and emphasis at natural pauses (not as bullet-point substitutes).
 - **Line breaks:** Use clear paragraph breaks for longer captions to improve scannability and completion rate
 - **Watch time and shares:** For Reels specifically, watch time (how long users hold on the video) and sends-per-reach (DM shares) are the strongest distribution signals; they matter more than comments
 
-**Sources:** [SocialBee / Instagram Algorithm](https://socialbee.com/blog/facebook-algorithm/); [TrueFuture Media, ibid.](https://www.truefuturemedia.com/articles/instagram-reach-2026-algorithm-reels-carousels-caption-seo)
+**Sources:** [TrueFuture Media, ibid.](https://www.truefuturemedia.com/articles/instagram-reach-2026-algorithm-reels-carousels-caption-seo)
 
 ### What Separates High from Low Performers
 
@@ -150,14 +150,14 @@ Hashtags count toward the 2,200-character limit (each `#` symbol and letter coun
 
 These B2B/B2C differences inform both language and content approach:
 
-| Dimension            | B2B                                                    | B2C                                                                  |
-| -------------------- | ------------------------------------------------------ | -------------------------------------------------------------------- |
-| **Tone**             | Formal, expertise-signaling, direct                    | Fun, light-hearted, personality-driven                               |
-| **Content focus**    | Behind-the-scenes, process, team humanization          | Inspire to drive action (awareness, sales, new-customer acquisition) |
-| **Posting strategy** | Moderate frequency; strategic and authoritative        | Higher frequency; responsive to trends and community input           |
-| **Typical caption**  | Medium (150–300 chars) with expertise or process focus | Short-to-medium (40–150 chars) with visual/personality support       |
-| **Reputation risk**  | High — avoid unvetted takes or flippant humor          | Lower — authenticity over polish valued by audience                  |
-| **Success metric**   | Engagement + profile visits + DM inquiries             | Engagement + follows + direct product interest                       |
+| Dimension            | B2B                                                                    | B2C                                                                                                 |
+| -------------------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| **Tone**             | Formal, expertise-signaling, direct                                    | Fun, light-hearted, personality-driven                                                              |
+| **Content focus**    | Behind-the-scenes, process, team humanization                          | Inspire to drive action (awareness, sales, new-customer acquisition)                                |
+| **Posting strategy** | Moderate frequency; strategic and authoritative                        | Higher frequency; responsive to trends and community input                                          |
+| **Typical caption**  | Medium (3–6 lines: hook + value + CTA) with expertise or process focus | Short-to-medium (2–3 lines: hook + CTA or hook + brief value + CTA) with visual/personality support |
+| **Reputation risk**  | High — avoid unvetted takes or flippant humor                          | Lower — authenticity over polish valued by audience                                                 |
+| **Success metric**   | Engagement + profile visits + DM inquiries                             | Engagement + follows + direct product interest                                                      |
 
 **B2B-specific approach:** B2B brands need to balance humanness with an intact brand voice — the recommended approach is to highlight the people behind the brand (behind-the-scenes photos/video, team stories, brand process content) rather than leading with product/service content, since B2B accounts risk feeling impersonal on a visually-driven, personality-driven platform. Cited example: Slack's B2B voice on social is described as "clear, concise and human, like a friendly, intelligent coworker."
 
@@ -189,14 +189,14 @@ The following Cialdini principles and cognitive biases are most effective on Ins
 
 ### By Content Goal
 
-| Goal              | Format choice             | Length             | Proof type               | CTA directness        | Hook strategy                        |
-| ----------------- | ------------------------- | ------------------ | ------------------------ | --------------------- | ------------------------------------ |
-| **Awareness**     | Reels (primary), carousel | 40–80 characters   | Visual/surprising stat   | Low (follow for more) | Bold claim or surprising visual      |
-| **Consideration** | Carousel, long-form post  | 150–300 characters | Educational / how-to     | Moderate (engagement) | Problem hook + value promise         |
-| **Conversion**    | Carousel, single image    | 40–150 characters  | Proof/testimonial/result | High (direct CTA)     | Specific result ("Saved $5K/month")  |
-| **Retention**     | Reels, single image       | 40–80 characters   | Personal/behind-scenes   | Low (community)       | Personality, insider access          |
-| **Advocacy**      | Carousel, UGC             | 80–150 characters  | Customer success, social | Moderate (share)      | User wins or peer success            |
-| **Education**     | Carousel (primary), Reels | 150–300 characters | Step-by-step, examples   | Low (conversation)    | Problem recognition + curiosity hook |
+| Goal              | Format choice             | Length                                | Proof type               | CTA directness        | Hook strategy                        |
+| ----------------- | ------------------------- | ------------------------------------- | ------------------------ | --------------------- | ------------------------------------ |
+| **Awareness**     | Reels (primary), carousel | ⚠ KNOWLEDGE-BASED: 40–80 characters   | Visual/surprising stat   | Low (follow for more) | Bold claim or surprising visual      |
+| **Consideration** | Carousel, long-form post  | ⚠ KNOWLEDGE-BASED: 150–300 characters | Educational / how-to     | Moderate (engagement) | Problem hook + value promise         |
+| **Conversion**    | Carousel, single image    | ⚠ KNOWLEDGE-BASED: 40–150 characters  | Proof/testimonial/result | High (direct CTA)     | Specific result ("Saved $5K/month")  |
+| **Retention**     | Reels, single image       | ⚠ KNOWLEDGE-BASED: 40–80 characters   | Personal/behind-scenes   | Low (community)       | Personality, insider access          |
+| **Advocacy**      | Carousel, UGC             | ⚠ KNOWLEDGE-BASED: 80–150 characters  | Customer success, social | Moderate (share)      | User wins or peer success            |
+| **Education**     | Carousel (primary), Reels | ⚠ KNOWLEDGE-BASED: 150–300 characters | Step-by-step, examples   | Low (conversation)    | Problem recognition + curiosity hook |
 
 ⚠ KNOWLEDGE-BASED for goal-by-goal breakdown — research establishes format-reach mechanics (Reels dominate reach; carousels dominate engagement rate) but does not enumerate Instagram-specific tactics per goal directly. Reasonable adaptation: awareness/reach goals should favor Reels; engagement and community goals should favor carousels (each swipe registers as engagement); conversion goals should favor a short/medium caption with a save-or-share-oriented CTA given the algorithmic weighting.
 
@@ -206,11 +206,11 @@ The following Cialdini principles and cognitive biases are most effective on Ins
 
 **Format-funnel mapping:**
 
-| Stage             | Recommended format  | Why                                                                          | Vocabulary         | CTA directness    | Optimal length   | Common mistake                 |
-| ----------------- | ------------------- | ---------------------------------------------------------------------------- | ------------------ | ----------------- | ---------------- | ------------------------------ |
-| **TOFU (Top)**    | Reels               | Reels get 1.36–2.35x more reach than carousels and 2.25x more than images    | Accessible         | Low (follow/join) | 40–80 characters | Too product-focused for cold   |
-| **MOFU (Middle)** | Carousel, long-form | Carousels average 10.15% engagement rate vs. 7% for singles and 6% for Reels | Domain-familiar    | Moderate (engage) | 150–300 chars    | Overwhelming with too much CTA |
-| **BOFU (Bottom)** | Single image, Reels | Sends-per-reach (DM shares) strongest signal for reaching warm audiences     | Specific/technical | High (direct ask) | 40–80 characters | Unclear next step              |
+| Stage             | Recommended format  | Why                                                                          | Vocabulary         | CTA directness    | Optimal length                      | Common mistake                 |
+| ----------------- | ------------------- | ---------------------------------------------------------------------------- | ------------------ | ----------------- | ----------------------------------- | ------------------------------ |
+| **TOFU (Top)**    | Reels               | Reels get 1.36–2.35x more reach than carousels and 2.25x more than images    | Accessible         | Low (follow/join) | ⚠ KNOWLEDGE-BASED: 40–80 characters | Too product-focused for cold   |
+| **MOFU (Middle)** | Carousel, long-form | Carousels average 10.15% engagement rate vs. 7% for singles and 6% for Reels | Domain-familiar    | Moderate (engage) | ⚠ KNOWLEDGE-BASED: 150–300 chars    | Overwhelming with too much CTA |
+| **BOFU (Bottom)** | Single image, Reels | Sends-per-reach (DM shares) strongest signal for reaching warm audiences     | Specific/technical | High (direct ask) | ⚠ KNOWLEDGE-BASED: 40–80 characters | Unclear next step              |
 
 **Critical algorithm note:** Engagement metrics differ from reach:
 
@@ -231,7 +231,7 @@ The following Cialdini principles and cognitive biases are most effective on Ins
 | **Familiar**    | Domain vocabulary accepted; technical terms OK | Assume basic knowledge; fill gaps       | Authority + social proof              | Moderate; 2–3 ideas      | Peer-to-peer, authoritative   |
 | **Expert**      | Insider terminology OK; skip broad context     | Assume deep knowledge; jump to subtlety | Specific results, peer credibility    | Dense; multiple ideas    | Credible, specific, skeptical |
 
-⚠ KNOWLEDGE-BASED — no source directly addressed expertise adaptations for Instagram. Directional inference from caption-length-by-format findings: novice-audience captions should default to the short/medium format (hook + CTA, or hook + value + CTA, 40–150 characters) since it doesn't assume prior context; expert/familiar-audience captions can use the long/story format (150–300 characters or 150–220 **words**) that assumes sustained attention and prior interest.
+⚠ KNOWLEDGE-BASED — no source directly addressed expertise adaptations for Instagram. Directional inference from caption-length-by-format findings: novice-audience captions should default to the short/medium format (hook + CTA, or hook + value + CTA; ⚠ KNOWLEDGE-BASED for specific character count of 40–150 characters) since it doesn't assume prior context; expert/familiar-audience captions can use the long/story format (150–220 **words** per research; ⚠ KNOWLEDGE-BASED for character-count equivalent of 150–300 characters) that assumes sustained attention and prior interest.
 
 ---
 
@@ -241,7 +241,7 @@ Before presenting output, verify:
 
 - [ ] Hook grabs attention in the first line (within 1 second, fits in ~125 characters for mobile truncation)
 - [ ] Hook does NOT start with an emoji (emoji placement reserved for later pauses)
-- [ ] Length matches goal and format choice (40–80 chars for awareness/Reels, 150–300 for consideration/carousels)
+- [ ] Length matches goal and format choice (⚠ KNOWLEDGE-BASED: 40–80 chars for awareness/Reels, 150–300 for consideration/carousels)
 - [ ] One idea per caption
 - [ ] CTA is singular and easy to answer (never stack multiple asks)
 - [ ] CTA is specific, not vague (e.g., "Save this post" vs. "Let me know")
@@ -249,7 +249,7 @@ Before presenting output, verify:
 - [ ] Post format choice (single-image / carousel / Reels / Stories) aligns with goal and funnel stage (per Layer 3)
 - [ ] Hashtag count: 3–5 max, chosen for relevance over volume
 - [ ] No clichéd openers ("Just a thought", "Hot take", "Unpopular opinion")
-- [ ] Emojis: 0–2 max, placed at natural pauses (not as bullet substitutes or in opening hook)
+- [ ] Emojis: ⚠ KNOWLEDGE-BASED cap at 0–2 max; research specifies avoid in opening hook line; place at natural pauses (not as bullet substitutes)
 - [ ] Audience type, goal, funnel stage, and post format inferences confirmed with user
 - [ ] Tone consistent with brand voice (if loaded)
 - [ ] CTA prioritizes saves/shares when goal allows it (better algorithmic weight than comments in 2026)
