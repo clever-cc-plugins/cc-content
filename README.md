@@ -29,6 +29,7 @@ The content-production skills work for any industry, audience, and output langua
 | `/cc-content-performance-review` | Analyzes how published pieces performed from data you paste in, and generates iteration variants for the next piece                                                                               |
 | `/cc-content-session-wrap`       | Reviews session deliverables, logs feedback and corrections, detects recurring patterns, and commits your work                                                                                    |
 | `/cc-content-new-skill`          | Turns research notes into a complete content-production skill for a new output format. Use it to build project-local custom skills, or add `--plugin` to create a pre-built skill for the plugin. |
+| `/cc-content-x-post`             | Drafts X (Twitter) posts optimized for engagement, conversation, and goal-driven CTAs — with support for single posts and threads                                                                 |
 
 ---
 

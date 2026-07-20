@@ -29,6 +29,7 @@ content creation skills for marketing projects.
 | `plugins/cc-content/skills/cc-content-samples-curation/SKILL.md`   | Skill: Save and annotate gold-standard content examples                                       |
 | `plugins/cc-content/skills/cc-content-session-wrap/SKILL.md`       | Skill: Review session, promote deliverables to context, commit work                           |
 | `plugins/cc-content/skills/cc-content-text/SKILL.md`               | Skill: Draft text for any format without a dedicated skill; supports multi-format atomization |
+| `plugins/cc-content/skills/cc-content-x-post/SKILL.md`             | Skill: Draft X (Twitter) posts                                                                |
 | `scripts/sync-config-table.sh`                                     | Keeps Key Config Files table in sync on each commit                                           |
 
 ## Plugin Structure
@@ -44,6 +45,7 @@ Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containi
 | `cc-content-research-prompt`    | Generate a vendor-neutral deep-research prompt for a topic                             |
 | `cc-content-linkedin-post`      | Draft LinkedIn posts                                                                   |
 | `cc-content-blog-article`       | Draft blog articles                                                                    |
+| `cc-content-x-post`             | Draft X (Twitter) posts                                                                |
 | `cc-content-ideation`           | Generate strategic content angles from an inspiration input                            |
 | `cc-content-text`               | Draft text for any format without a dedicated skill; supports multi-format atomization |
 | `cc-content-samples-curation`   | Save and annotate gold-standard content examples                                       |
