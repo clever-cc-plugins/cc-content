@@ -21,6 +21,7 @@ content creation skills for marketing projects.
 | `plugins/cc-content/skills/cc-content-facebook-post/SKILL.md`      | Skill: Draft Facebook posts                                                                   |
 | `plugins/cc-content/skills/cc-content-humanize/SKILL.md`           | Skill: Remove AI tells from a draft and rewrite it to sound human, on-brand-voice             |
 | `plugins/cc-content/skills/cc-content-ideation/SKILL.md`           | Skill: Generate strategic content angles from an inspiration input                            |
+| `plugins/cc-content/skills/cc-content-instagram-post/SKILL.md`     | Skill: Draft Instagram posts and captions                                                     |
 | `plugins/cc-content/skills/cc-content-linkedin-post/SKILL.md`      | Skill: Draft LinkedIn posts                                                                   |
 | `plugins/cc-content/skills/cc-content-new-skill/SKILL.md`          | Skill: Build a new content-production skill from research                                     |
 | `plugins/cc-content/skills/cc-content-onboarding/SKILL.md`         | Skill: Register and create context files; guide project setup                                 |
@@ -47,6 +48,7 @@ Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containi
 | `cc-content-linkedin-post`      | Draft LinkedIn posts                                                                   |
 | `cc-content-blog-article`       | Draft blog articles                                                                    |
 | `cc-content-facebook-post`      | Draft Facebook posts                                                                   |
+| `cc-content-instagram-post`     | Draft Instagram posts and captions                                                     |
 | `cc-content-ideation`           | Generate strategic content angles from an inspiration input                            |
 | `cc-content-text`               | Draft text for any format without a dedicated skill; supports multi-format atomization |
 | `cc-content-x-post`             | Draft X (Twitter) posts                                                                |
