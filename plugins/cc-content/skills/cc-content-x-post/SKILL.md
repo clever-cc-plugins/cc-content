@@ -9,8 +9,8 @@ argument-hint: "[optional: path to campaign briefing file]"
 ---
 
 @./format-guidelines.md **Read when:** starting this skill
-@../_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework in Step 3b
-@../_shared/persuasion-principles.md **Read when:** selecting persuasion principles in Step 3c
+@../_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework in Step 5
+@../_shared/persuasion-principles.md **Read when:** selecting persuasion principles in Step 6
 
 # X (Twitter) Post Skill
 
@@ -125,7 +125,7 @@ This is the content-production-specific step.
    `format-guidelines.md` are being applied and why. For example:
    "Applying B2B expertise-signaling tone (Layer 2) and consideration-goal thread structure (Layer 3)."
 
-## Step 4: Ask for the post topic (if not provided)
+## Step 4: Ask for the post topic and format (if not provided)
 
 If the owner has not specified a topic or goal for the post, ask:
 
@@ -133,8 +133,6 @@ If the owner has not specified a topic or goal for the post, ask:
 > want to convey, paste a rough note, or link to a page you'd like promoted."
 
 Wait for the answer, then proceed.
-
-## Step 5: Ask about thread vs. single post
 
 Based on the topic and goal, determine whether a thread or single post is appropriate.
 Present a recommendation and ask for confirmation:
@@ -145,24 +143,24 @@ Present a recommendation and ask for confirmation:
 
 Accept the owner's preference, but note the strategic reason if they choose differently.
 
-## Step 6: Select storytelling framework
+## Step 5: Select storytelling framework
 
 Read `../_shared/storytelling-frameworks.md` and follow the selection process described
 there. Apply the chosen framework as the structural spine of the post or thread.
 
-## Step 7: Select persuasion principles
+## Step 6: Select persuasion principles
 
 Read `../_shared/persuasion-principles.md` and follow its selection process. Pick 1–3
 principles that fit the post's goal and the reader's state, plus a pre-suasive opener
 strategy. Note the choice in working notes (e.g., "Using **Scarcity + Social Proof**,
 opener leads with limited-time value").
 
-## Step 8: Generate the X post
+## Step 7: Generate the X post
 
 Produce a complete X post (single or thread) that:
 
 - **Single post (280 characters max):**
-  - Opens with a strong hook (max 190 chars, grabs attention in 1 second)
+  - Opens with a strong hook (grabs attention in 1 second per format-guidelines.md)
   - Contains one clear idea or call-to-action
   - Uses 0–2 hashtags only (never 3+)
   - Invites conversation or action via a specific, singular CTA
@@ -179,7 +177,7 @@ Produce a complete X post (single or thread) that:
 
 Internal verification checklist from `format-guidelines.md`:
 
-- Hook grabs attention in first line (max 190 chars)
+- Hook grabs attention in first line (strong opening within ~1 second)
 - Character count appropriate (280 for single posts; 5–7 posts for threads)
 - One idea per post
 - CTA is singular and easy to answer
@@ -212,7 +210,7 @@ If output is degraded (brand voice or organization context missing), prepend:
 ⚠ DEGRADED OUTPUT — generated without: <list of missing context>
 ```
 
-## Step 9: Feedback
+## Step 8: Feedback
 
 **Auto-store phase.** Before asking for feedback, review this run. For each qualifying
 observation, append one tagged line to `.claude/learnings.md` (create with standard

@@ -45,7 +45,8 @@ Effective hook types:
 Rules:
 
 - Open with the strongest claim or question first — never bury the lead
-- Maximum 190 characters including any opening emoji
+- Keep it short — you have about 1 second to grab attention, so lead with your
+  strongest claim or question before anything else
 - One idea only — avoid compound sentences in the hook
 - Avoid clichéd openers: "Just a thought...", "Hot take:", "Unpopular opinion:"
 - Use concrete specifics over vague praise
@@ -62,8 +63,7 @@ Rules:
 - The highest-leverage CTA pattern: "follow for more + retweet/share the first post"
   - Resharing pushes the post back through the algorithm
   - The follow is the durable asset
-- Make CTAs specific and easy to answer — a focused question drives ~72% more engagement
-  than a vague ask
+- Make CTAs specific and easy to answer — focused questions drive more engagement than vague asks
 - Good CTA examples: "Drop your answer in the comments", "What's your take?", "Retweet if you agree"
 - Avoid vague CTAs: "Let me know what you think", "Share if you relate"
 
@@ -214,7 +214,7 @@ credible claim.
 
 Before presenting output, verify:
 
-- [ ] Hook grabs attention in the first line (max 190 chars, no clichés)
+- [ ] Hook grabs attention in the first line (strong opening in ~1 second, no clichés)
 - [ ] Character count appropriate for goal (280 chars for single posts, 5–7 posts for threads)
 - [ ] One idea per post (single post) or one idea per thread post
 - [ ] CTA is singular and easy to answer (never stack multiple asks)

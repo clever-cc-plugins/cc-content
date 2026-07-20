@@ -45,9 +45,9 @@ Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containi
 | `cc-content-research-prompt`    | Generate a vendor-neutral deep-research prompt for a topic                             |
 | `cc-content-linkedin-post`      | Draft LinkedIn posts                                                                   |
 | `cc-content-blog-article`       | Draft blog articles                                                                    |
-| `cc-content-x-post`             | Draft X (Twitter) posts                                                                |
 | `cc-content-ideation`           | Generate strategic content angles from an inspiration input                            |
 | `cc-content-text`               | Draft text for any format without a dedicated skill; supports multi-format atomization |
+| `cc-content-x-post`             | Draft X (Twitter) posts                                                                |
 | `cc-content-samples-curation`   | Save and annotate gold-standard content examples                                       |
 | `cc-content-humanize`           | Remove AI tells from a draft and rewrite it to sound human, on-brand-voice             |
 | `cc-content-performance-review` | Analyze content performance data and generate iteration variants                       |
