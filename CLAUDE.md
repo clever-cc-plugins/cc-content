@@ -26,6 +26,7 @@ content creation skills for marketing projects.
 | `plugins/cc-content/skills/cc-content-new-skill/SKILL.md`          | Skill: Build a new content-production skill from research                                     |
 | `plugins/cc-content/skills/cc-content-onboarding/SKILL.md`         | Skill: Register and create context files; guide project setup                                 |
 | `plugins/cc-content/skills/cc-content-performance-review/SKILL.md` | Skill: Analyze content performance data and generate iteration variants                       |
+| `plugins/cc-content/skills/cc-content-press-release/SKILL.md`      | Skill: Draft press releases                                                                   |
 | `plugins/cc-content/skills/cc-content-promote/SKILL.md`            | Skill: Register a single file as context in CLAUDE.md (mid-session)                           |
 | `plugins/cc-content/skills/cc-content-research-prompt/SKILL.md`    | Skill: Generate a vendor-neutral deep-research prompt for a topic                             |
 | `plugins/cc-content/skills/cc-content-samples-curation/SKILL.md`   | Skill: Save and annotate gold-standard content examples                                       |
@@ -47,6 +48,7 @@ Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containi
 | `cc-content-research-prompt`    | Generate a vendor-neutral deep-research prompt for a topic                             |
 | `cc-content-linkedin-post`      | Draft LinkedIn posts                                                                   |
 | `cc-content-blog-article`       | Draft blog articles                                                                    |
+| `cc-content-press-release`      | Draft press releases                                                                   |
 | `cc-content-facebook-post`      | Draft Facebook posts                                                                   |
 | `cc-content-instagram-post`     | Draft Instagram posts and captions                                                     |
 | `cc-content-ideation`           | Generate strategic content angles from an inspiration input                            |
