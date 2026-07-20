@@ -1,46 +1,41 @@
 ---
-name: cc-content-text
+name: cc-content-atomize
 description: >
-  Use this skill to draft a finished marketing or PR text for an output format
-  that does NOT have its own dedicated skill — for example a press release,
-  newsletter, whitepaper, landing-page copy, product description, email, webinar
-  abstract, or ad copy. Invoke when the user says "write a press release",
-  "draft a newsletter", "write the copy for this landing page", "turn this idea
-  into a <format>", or names any text deliverable without a dedicated skill. This
-  is the general-purpose writer for the long tail of formats. It deliberately
-  defers: if a dedicated skill exists for the requested format (such as a blog
-  article or LinkedIn post, or a project-specific skill), it points the owner
-  there first. Do NOT use it for formats that already have a dedicated skill.
+  Use this skill to repurpose one core message across multiple content formats in a
+  single run — e.g. turning a campaign brief or a single piece into a LinkedIn post,
+  newsletter, and blog post at once, each properly adapted to its own conventions
+  while keeping the core claim and proof points identical. Invoke when the user
+  names 2+ target formats, says "repurpose this," "atomize this," "turn this into
+  multiple formats," or when a brief.md is present and the user wants it distributed
+  across channels. For a single format, use the dedicated format skill (e.g.
+  cc-content-blog-article) or cc-content-text instead — this skill is for the
+  fan-out case specifically.
 allowed-tools: Read, Write, Bash
-argument-hint: "[optional: path to campaign briefing or inspiration file]"
+argument-hint: "[optional: path to campaign briefing; defaults to brief.md if present]"
 ---
 
 @../\_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework in Step 5
 @../\_shared/persuasion-principles.md **Read when:** selecting persuasion principles in Step 6
 
-# General Text Skill
+# Distribution Engine (Atomization) Skill
 
-You are helping the owner produce a **complete, ready-to-use text** for a content
-format that does not have its own dedicated skill. The text must reflect the
-company's brand voice, speak to the right audience, follow any format rules the
-project has registered, and — if a campaign briefing is present — serve its goals.
+Takes one core message — either a `brief.md` campaign handoff or a manually
+described idea — and produces properly-adapted drafts for every named format in a
+single run, keeping the core claim and proof points identical across all of them
+while letting structure, length, and tone vary per format's own conventions.
 
-This skill is **format-, language-, industry-, and audience-neutral**. It carries
-the _craft_ (a two-pass draft-then-self-edit process, framework and persuasion
-selection) but holds **no built-in rules for any specific format**. Format rules
-come from the project's own context files when they exist, and otherwise from your
-own knowledge of best practices for the requested format.
-
-Because it is general, this skill must be careful **not to do work a dedicated skill
-would do better**. Step 2 is where it checks for that and, if needed, routes the
-owner away.
+**Key principle (from research):** fix the facts, vary the frame. The specific
+claim, statistics, named proof points, product/entity names, and quoted figures
+must stay **byte-identical** across every atomized piece; structure, length, hook,
+opening, tone, CTA, and formatting must be **rewritten per platform** to match its
+native conventions. This skill enforces that separation to prevent "copy-paste
+repurposing" — a truncated blog dumped onto LinkedIn — which audiences and
+algorithms both punish.
 
 ## Step 0: Recall learnings
 
-If `.claude/learnings.md` exists, read it silently. Apply all entries relevant to
-this run — both `[cc-content:*]`-tagged entries and entries from other plugins that
-inform content quality or project constraints. Do not announce this step. If the
-file is absent, continue normally.
+If `.claude/learnings.md` exists, read it silently, `[cc-content:*]` tags plus any
+cross-plugin entries relevant to distribution/repurposing. Never announce.
 
 ## Step 1: Load context
 
@@ -79,7 +74,7 @@ Map the loaded files to these content needs:
 **When multiple files plausibly cover the same need**, pick the one whose Summary
 best fits this specific task. For example, if one brand-voice file is "casual —
 employer branding" and another is "formal — corporate communications", and this is
-a press release, load the formal one and note the choice.
+for LinkedIn promotion, load the more casual one and note the choice.
 
 **Coverage gaps — flag these two:**
 
@@ -88,94 +83,35 @@ If no loaded file plausibly covers **brand voice**, ask once:
 > "I don't see any writing style or brand voice context. Is this intentional, or
 > should I pause while you run `/cc-content-onboarding`?"
 >
-> - **Intentional**: note the gap; label the output `⚠ DEGRADED OUTPUT — no brand voice context`
+> - **Intentional**: note the gap; label output `⚠ DEGRADED OUTPUT — no brand voice context`
 > - **Pause**: direct the owner to onboarding and stop.
 
 Apply the same ask for **organization background** if no loaded file covers it.
 
-For absent audience or language: note silently and continue. Format rules are handled
-explicitly in Step 2.
+For absent audience or language: note silently and continue.
 
-## Step 1.5: Detect multi-format requests
+## Step 2: Resolve the format list and the core message source
 
-If the owner's request names 2 or more target formats, or explicitly asks to
-"repurpose," "atomize," or "turn this into multiple formats," stop and say:
-"That's a multi-format request — `/cc-content-atomize` handles fan-out across
-formats from one core message. Switching you there." Do not continue this skill's
-own drafting steps for a multi-format request.
+Check for `brief.md` in the working directory first:
 
-## Step 2: Identify the format and route correctly
+```bash
+ls brief.md 2>/dev/null && echo "found" || echo "missing"
+```
 
-This is the step that keeps the general skill in its lane. First, settle on the
-**requested output format**. If the owner has not named one clearly, ask:
-_"What format is this for — e.g. press release, newsletter, landing page, whitepaper,
-email, product description?"_
+- **Found:** read it. If it names a channel mix (as `cc-concept-campaign-concept`'s
+  and `cc-concept-gtm`'s output does), propose that list as the target formats and
+  ask the owner to confirm or adjust before continuing.
+- **Missing:** ask: "Which formats do you want this in? (e.g. LinkedIn post,
+  newsletter, blog post) I'll draft each from the same core message." Then ask for
+  the core message/idea directly, same prompt `cc-content-text` uses today.
 
-Once you know the format, work through three tiers **in order**:
+## Step 3: Get the content idea, audience, and length target
 
-### Tier A — A dedicated skill exists for this format → offer to route
-
-Some formats have their own dedicated skill that applies format-specific best
-practices this general skill does not. Using the general skill for them produces
-weaker results, so check first.
-
-**How to check:** look at the skills available in this session (your available-skills
-list). The cc-content plugin ships dedicated skills for some formats — for example
-blog articles (`cc-content-blog-article`) and LinkedIn posts (`cc-content-linkedin-post`)
-— and **the project may have added its own** dedicated skills for other formats. Do
-**not** rely on a hardcoded list; judge from the skills actually available whether any
-one's purpose squarely covers the requested format.
-
-**If a dedicated skill covers the format**, stop and tell the owner:
-
-> "There's a dedicated skill — `/<skill-name>` — for <format>. It applies
-> format-specific best practices that this general skill doesn't, so it will usually
-> give you a better result. Do you want to:
-> (a) Switch to `/<skill-name>` (recommended)
-> (b) Continue here with the general text skill?"
-
-- **(a)** → direct the owner to the dedicated skill and stop.
-- **(b)** → note "owner chose the general skill over `<skill-name>`" and continue.
-
-If unsure whether a skill truly covers the format, surface the option rather than
-guessing silently — let the owner decide.
-
-### Tier B — No dedicated skill, but a format-guideline file is registered → load it
-
-From the context files you loaded in Step 1, check whether any file's Summary covers
-**best practices, structure, or length for the requested format** (e.g. a whitepaper
-guideline, e-mail best-practices, landing-page guideline, webinar guideline). If one
-exists, treat it as **authoritative** for this format: load it, and follow its rules
-on length, structure, mandatory sections, and conventions. Note: "Format rules loaded
-from `<file>`."
-
-### Tier C — Neither → use your own best practices
-
-If no dedicated skill and no registered guideline cover the format, draft using your
-own knowledge of current best practices for that format — appropriate length,
-structure, and conventions for the channel. Note: "No project guideline for <format>;
-using general best practices."
-
-## Step 3: Check for campaign briefing and inspiration input
-
-1. **Campaign briefing.** If the owner passed a file path as an argument
-   (`$ARGUMENTS`), use it; otherwise check for `brief.md` in the working directory:
-
-   ```bash
-   ls brief.md 2>/dev/null && echo "found" || echo "missing"
-   ```
-
-   - **Found**: read it; note key messages, goals, and constraints. Confirm:
-     "✓ Campaign briefing loaded from `<path>`."
-   - **Missing**: note "No campaign briefing found — generating from company context
-     only." and continue.
-
-2. **Inspiration input.** If the owner referenced or pasted an article, briefing, or
-   notes as the seed for the text, note its substance. If it is an **article with a
-   URL**, plan to weave a brief mention of the inspiration and its **full URL** into
-   the finished text (unless the format or brand voice makes that inappropriate).
-
-## Step 4: Get the content idea, audience, and length target
+Ask for the content idea, audience, and any core proof points **once**, not once
+per format. The core message, key value proposition, and proof points must stay
+identical across every format produced in this run — only structure, length, and
+tone vary per format's own conventions (handled in Steps 4–9 below, run separately
+per format).
 
 If the owner has not said what the text should be about, ask:
 
@@ -191,50 +127,99 @@ Then settle anything still open that materially shapes the draft:
 - **Audience:** if the loaded audience context has more than one persona, infer which
   one(s) this text targets and confirm in one line. If audience context is absent and
   the owner hasn't said, ask only if it would change the draft meaningfully.
-- **Length target:** use the Tier-B guideline's length if one was loaded; otherwise
-  use a sensible target for the format and state it. If a guideline specifies an
-  optimal length, use the full range to give the reader substance rather than
-  underfilling it.
+- **Core proof points & constraints:** if the owner names specific facts, statistics,
+  or claims that must appear in every format, note them explicitly — this is the
+  "substance layer" that stays byte-identical across all formats per the research.
 
-## Step 5: Select a storytelling framework
+## Step 4–9: Run per-format routing and drafting loop
+
+For each format in the confirmed format list:
+
+### Step 4: Identify the format and route correctly (per format)
+
+First, settle on the **requested output format** for this iteration. (If the owner
+has not named each clearly, they should have in Step 2's format list.)
+
+Once you know the format, work through three tiers **in order**:
+
+#### Tier A — A dedicated skill exists for this format → route away
+
+Some formats have their own dedicated skill that applies format-specific best
+practices this skill does not. Using this skill for them produces weaker results.
+
+**How to check:** look at the skills available in this session (your available-skills
+list). The cc-content plugin ships dedicated skills for some formats — for example
+blog articles (`cc-content-blog-article`) and LinkedIn posts (`cc-content-linkedin-post`)
+— and **the project may have added its own** dedicated skills for other formats. Do
+**not** rely on a hardcoded list; judge from the skills actually available whether any
+one's purpose squarely covers the requested format.
+
+**If a dedicated skill covers the format:**
+
+Tell the owner: "The format **<format>** has a dedicated skill — `/<skill-name>` —
+which applies format-specific best practices. I'll route this format there and
+draft the remaining formats here. (You can always run `/<skill-name>` standalone
+later if you want to adjust the <format> version independently.)"
+
+Then **stop drafting this format here**; it's handled by the dedicated skill.
+Note which formats are routed away for the final summary in Step 9.
+
+#### Tier B — No dedicated skill, but a format-guideline file is registered → load it
+
+From the context files you loaded in Step 1, check whether any file's Summary covers
+**best practices, structure, or length for the requested format** (e.g. a whitepaper
+guideline, e-mail best-practices, newsletter guideline, webinar guideline). If one
+exists, treat it as **authoritative** for this format: load it, and follow its rules
+on length, structure, mandatory sections, and conventions. Note: "Format rules loaded
+from `<file>`."
+
+#### Tier C — Neither → use your own best practices
+
+If no dedicated skill and no registered guideline cover the format, draft using your
+own knowledge of current best practices for that format — appropriate length,
+structure, and conventions for the channel. Note: "No project guideline for <format>;
+using general best practices."
+
+### Step 5: Select a storytelling framework (per format)
 
 Read `../_shared/storytelling-frameworks.md` and follow its selection process. Apply
-the chosen framework as the **structural spine** of the text, where it fits the
-format (a press release and a webinar abstract use structure differently than a
-narrative email). Where the SPIN logic (Situation → Problem → Implication →
+the chosen framework as the **structural spine** of the text for **this format**,
+where it fits (a press release and a webinar abstract use structure differently than
+a narrative email). Where the SPIN logic (Situation → Problem → Implication →
 Need-Payoff) fits the task, let it shape the argument's progression. Note the choice
 in working notes — e.g. "Using **PAS** as the spine; SPIN progression for the body."
 
-## Step 6: Select persuasion principles
+### Step 6: Select persuasion principles (per format)
 
 Read `../_shared/persuasion-principles.md` and follow its selection process. Pick
 **1–3 principles** that fit the goal and the reader's state, plus a pre-suasive opener
 strategy. Layer them naturally into the prose — not as labeled callouts. Note the
 choice — e.g. "Using **Authority + Social Proof**; opener primes credibility."
 
-## Step 7: Draft (pass 1)
+### Step 7: Draft (pass 1, per format)
 
 Write the text in the output language as a **creative, expressive** finished piece for
-the requested format. Hold to these rules:
+**this format specifically**. Hold to these rules:
 
-1. **Connect to the organization.** Tie the content idea (and any inspiration input)
-   to the organization's products, services, and experience — but keep it subtle.
-   Avoid overt self-promotion like "based on our X years of experience as …"; the
-   connection should read as relevance, not advertising.
-2. **Offer original value.** Go beyond the facts of any inspiration input — add a
-   framing, application, or insight the source itself doesn't provide.
-3. **Use the brand voice.** Follow the loaded brand-voice context closely; you are
+1. **Keep the core message fixed, adapt the frame.** The specific claim, statistics,
+   named proof points, product/entity names, and quoted figures from Step 3 must
+   appear unchanged. Everything else — hook, structure, length, tone, CTA, formatting
+   — is **rewritten for this platform's native conventions** (per research findings).
+2. **Connect to the organization.** Tie the content idea to the organization's
+   products, services, and experience — but keep it subtle. Avoid overt
+   self-promotion; the connection should read as relevance, not advertising.
+3. **Offer original value.** Go beyond the facts of the core message — add a
+   framing, application, or insight tailored to **this format's audience**.
+4. **Use the brand voice.** Follow the loaded brand-voice context closely; you are
    writing _as_ the organization.
-4. **Apply SPIN where it fits.** Let Situation → Problem → Implication → Need-Payoff
+5. **Apply SPIN where it fits.** Let Situation → Problem → Implication → Need-Payoff
    shape the structure when the task suits it.
-5. **Honor format best practices.** Apply the Tier-B guideline (if loaded) or your own
-   best practices for the format's length, structure, and conventions.
-6. **Cite the inspiration** if an article was provided: mention it and include its
-   full URL in the text (unless format/brand voice says otherwise).
-7. **Aim at the audience.** Shape content, structure, and tone for the confirmed
-   persona(s).
+6. **Honor format best practices.** Apply the Tier-B guideline (if loaded) or your own
+   best practices for **this format's** length, structure, and conventions.
+7. **Aim at this format's audience.** Shape content, structure, tone, and CTA for the
+   confirmed persona(s) and platform.
 
-## Step 8: Self-edit (pass 2)
+### Step 8: Self-edit (pass 2, per format)
 
 Now read your pass-1 draft **sentence by sentence** and revise it. Intervene **as
 much as necessary but as little as possible** — preserve what works.
@@ -255,11 +240,19 @@ Check and fix:
    ("–" or "—") and rewrite them as clean sentences so none of those enclosing dashes
    remain. This is a frequent, recognizable tell; removing it makes the text read as
    human-written.
+6. **Substance layer verification:** confirm that the core claim, statistics, and
+   proof points from Step 3 are still present and **unchanged**. If a platform's
+   constraints force abbreviation of a statistic, that's OK as long as the number and
+   meaning are preserved ("byte-identical" is practical, not literal).
 
 If a Tier-B guideline specifies an optimal length, make sure the edited text uses the
 full range rather than coming in thin.
 
-## Step 9: Present the text
+## Step 9: Present all drafted formats
+
+Present each drafted format (i.e. every format that was not routed to a dedicated
+skill in Step 4) in its own delimited block using the format below, in sequence.
+After all blocks, add a one-line routing summary.
 
 Present the finished text in a clearly delimited block so the owner can copy it
 cleanly:
@@ -276,9 +269,8 @@ Length: <count> <unit> (target: <range or "n/a">)
 ─────────────────────────────────────────────
 ```
 
-The block must contain **only the deliverable text** — the German source prompt was
-explicit that the asset itself carries no introduction or explanation. Put any notes
-in the footer rows, not inside the text.
+The block must contain **only the deliverable text** — no introduction, no explanation.
+Put any notes in the footer rows, not inside the text.
 
 **Channel formatting:** if the text is for a **social-media post or any channel that
 strips formatting**, do not use bold, italics, or their Markdown equivalents. Replace
@@ -290,20 +282,29 @@ If the output is degraded (brand voice or organization context missing), prepend
 ⚠ DEGRADED OUTPUT — generated without: <list of missing context>
 ```
 
+**Routing summary:** after all format blocks, add one line listing every format and
+where it ended up, e.g.: "Routed: LinkedIn → `/cc-content-linkedin-post`; Drafted
+here: newsletter, Twitter/X thread."
+
 ## Step 10: Feedback
+
+Run this feedback step once for the whole batch of drafted formats, not once per
+format — the same tag and qualification rules apply to the batch as a whole.
 
 **Auto-store phase.** Before asking for feedback, review this run. For each qualifying
 observation, append one tagged line to `.claude/learnings.md` (create with the
 standard header if missing):
 
 ```text
-[cc-content:cc-content-text] <concise observation> — <YYYY-MM-DD>
+[cc-content:cc-content-atomize] <concise observation> — <YYYY-MM-DD>
 ```
 
 Qualifies: content preferences or constraints not already in any loaded context file
 or `CLAUDE.md`; corrections the owner made to the output; project-specific facts that
-would change future output (e.g. "press releases here always end with a boilerplate
-paragraph"); accepted/rejected deviations from best practices.
+would change future output (e.g. "repurposing always targets these exact five
+formats"); accepted/rejected deviations from best practices; observations about which
+formats atomize well from the core message (relates to research findings on reliable
+vs. unreliable format pairs).
 
 Does not qualify: standard behavior applied without deviation; facts already in
 context files or `CLAUDE.md`; anything derivable by re-reading context files; facts
@@ -329,8 +330,8 @@ Entries are tagged by skill and dated.
 
 **Explicit feedback.** After the auto-store phase, ask:
 
-> "Did this text meet expectations? Any corrections or notes for future texts —
-> or press Enter to finish."
+> "Did this batch of formats meet expectations? Any corrections or notes for future
+> atomization runs — or press Enter to finish."
 
 - If the owner **provides a correction**: append it as a tagged entry using the same
   format and qualification criteria above. Confirm: "✓ N learning(s) saved to
