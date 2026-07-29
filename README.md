@@ -163,6 +163,8 @@ Use `@`-imports for material every task needs. Use the context table for anythin
 ```markdown
 ## Context files
 
+<!-- cc-config: context-toc-registered -->
+
 Skills read all registered files and load what's relevant for each task.
 
 | Label       | File                     | Summary                                                                     |
@@ -176,6 +178,7 @@ Skills read all registered files and load what's relevant for each task.
   - Too vague: "Writing style guidelines for the company"
   - Good: "Formal German, em-dash preferred, no exclamation marks — all corporate copy"
   - Good: "Casual and inclusive tone — job ads and employer branding only"
+- **`<!-- cc-config: context-toc-registered -->`** — include this marker comment if the project also uses `cc-config`'s `scripts/sync-config-table.sh` (v4+). It tells that script these files are already registered here with real summaries, so it won't re-list them in `## Key Config Files` under a generic placeholder. Harmless to include even without that script.
 
 `/cc-content-onboarding` builds this table through a guided interview; `/cc-content-promote` adds a single row mid-session. Both apply the same quality bar — hand-edits to the table should meet it too.
 

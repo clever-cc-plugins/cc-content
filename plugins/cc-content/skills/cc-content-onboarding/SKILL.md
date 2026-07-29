@@ -260,6 +260,8 @@ target file's own directory:
 >
 > ## Context files
 >
+> <!-- cc-config: context-toc-registered -->
+>
 > Skills read all registered files and load what's relevant for each task.
 >
 > | Label                | File | Summary |
@@ -267,6 +269,17 @@ target file's own directory:
 > | <all confirmed rows> |
 >
 > Shall I proceed? (yes / edit / skip)"
+
+The `<!-- cc-config: context-toc-registered -->` comment is load-bearing: if this
+project also uses `cc-config`'s `scripts/sync-config-table.sh`, that script greps
+for this exact marker to know these files are already registered here (with real
+summaries) and must not be re-listed in `## Key Config Files` under a generic
+placeholder. Always include it when creating this section — whether or not the
+sync script is present in this project, since it's harmless either way.
+
+If the section already exists but is missing the marker (e.g. it predates this
+convention or was written by hand), add the marker line as part of this update
+rather than leaving it out.
 
 **If the target CLAUDE.md does not exist** (no ancestor was found at all, or the owner chose
 to create a new nested one above):
@@ -280,6 +293,8 @@ Create it at that location, with `File` paths relative to that new file's own di
 # [Name]
 
 ## Context files
+
+<!-- cc-config: context-toc-registered -->
 
 Skills read all registered files and load what's relevant for each task.
 
