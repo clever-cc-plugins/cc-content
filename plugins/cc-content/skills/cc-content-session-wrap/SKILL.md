@@ -6,6 +6,7 @@ description: >
   Invoke when the user says "wrap up", "end session", "session wrap", "wrap session",
   "commit session work", or "close out this session".
 allowed-tools: Read, Write, Edit, Bash
+disable-model-invocation: true
 ---
 
 # Session Wrap Skill

@@ -1,15 +1,50 @@
 #!/usr/bin/env bash
+# sync-config-table-version: 6
 # Keeps the "Key Config Files" table in CLAUDE.md in sync with the filesystem.
 # - Removes rows for files that no longer exist
 # - Appends rows for new config files with a placeholder description
 # - Excludes gitignored files (they are per-machine, not part of the committed state)
 # Preserves all existing hand-written descriptions.
 # Invoked automatically by the pre-commit hook.
+#
+# Every scan below is directory-guarded, so this one script self-adapts to the
+# project shape: a plugin repo's `context/` scan is a no-op, a content repo's
+# `plugins/` scan is a no-op. Do not fork it per project — /cc-config-optimize
+# compares the version marker above against the plugin's copy and offers to
+# refresh, and local forks would be flagged as drift.
+#
+# One scan is content-guarded rather than directory-guarded: `context/` files
+# are skipped entirely when CLAUDE.md carries the
+# `<!-- cc-config: context-toc-registered -->` marker, since that marker means
+# the project already registers those files in its own `## Context files`
+# table (cc-config-init Step 3, cc-content-onboarding Step 5) — listing them
+# again here would just duplicate that table under a generic "TODO" summary.
+#
+# This script can only judge "is this a config-shaped file" (matches a scanned
+# directory/extension), never "is this file important enough to belong in a
+# lean CLAUDE.md" — that call needs human/agent judgment, which is what
+# /cc-config-optimize is for. When that skill decides a matched file isn't
+# worth a row, deleting the row alone doesn't stick: the file still matches a
+# scan on the next run and gets silently re-added with a placeholder. To make
+# a demotion stick (while staying reversible), /cc-config-optimize records it
+# in a `key-config-excluded` HTML comment block anywhere in CLAUDE.md:
+#
+#   <!-- cc-config: key-config-excluded
+#   path/to/file.ext — one-line reason — YYYY-MM-DD
+#   -->
+#
+# Any path listed there is dropped from the table regardless of which scan
+# matched it. Nothing here prunes stale entries or judges whether an excluded
+# file has since grown important again — that periodic reconsideration is
+# also /cc-config-optimize's job, not this script's.
 
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 CLAUDE_MD="$ROOT/CLAUDE.md"
+
+# CRLF-safe: carriage return computed at runtime (no literal CR in source).
+cr=$(printf '\r')
 
 if [[ ! -f "$CLAUDE_MD" ]]; then
   echo "sync-config-table: CLAUDE.md not found, skipping"
@@ -22,6 +57,7 @@ config_files=()
 # Root-level config files (by extension)
 while IFS= read -r -d '' f; do
   name="$(basename "$f")"
+  # Skip non-config files
   case "$name" in
     package-lock.json|README.md|CHANGELOG.md|AGENTS.md|CLAUDE.md|LICENSE) continue ;;
   esac
@@ -33,7 +69,8 @@ for dotfile in .gitignore .npmignore .prettierignore .editorconfig .nvmrc .node-
   [[ -f "$ROOT/$dotfile" ]] && config_files+=("$dotfile")
 done
 
-# Always include CLAUDE.md itself
+# CLAUDE.md is the table's own host and is excluded from the extension scan
+# above, so add it explicitly — it belongs in the table it lives in.
 config_files+=("CLAUDE.md")
 
 # Root-level named config files (non-dotfile conventions)
@@ -70,12 +107,21 @@ if [[ -d "$ROOT/.claude/skills" ]]; then
   done < <(find "$ROOT/.claude/skills" -maxdepth 2 -name 'SKILL.md' -type f -print0 2>/dev/null | sort -z)
 fi
 
-# plugins/ manifests and skills
+# plugins/ manifests, skills, and bundled hooks (plugin repos)
 if [[ -d "$ROOT/plugins" ]]; then
   while IFS= read -r -d '' f; do
     relpath="${f#$ROOT/}"
     config_files+=("$relpath")
-  done < <(find "$ROOT/plugins" -type f \( -name 'plugin.json' -o -name 'SKILL.md' \) -print0 2>/dev/null | sort -z)
+  done < <(find "$ROOT/plugins" -type f \( -name 'plugin.json' -o -name 'SKILL.md' -o -path '*/hooks/*.json' -o -path '*/hooks/*.sh' \) -print0 2>/dev/null | sort -z)
+fi
+
+# context/ reference files — skipped when CLAUDE.md carries the
+# context-toc-registered marker (see header comment above).
+if [[ -d "$ROOT/context" ]] && ! grep -qF '<!-- cc-config: context-toc-registered -->' "$CLAUDE_MD"; then
+  while IFS= read -r -d '' f; do
+    relpath="${f#$ROOT/}"
+    config_files+=("$relpath")
+  done < <(find "$ROOT/context" -maxdepth 2 -type f -name '*.md' -print0 2>/dev/null | sort -z)
 fi
 
 # .github/workflows/
@@ -85,7 +131,9 @@ if [[ -d "$ROOT/.github/workflows" ]]; then
   done < <(find "$ROOT/.github/workflows" -maxdepth 1 -type f -print0 2>/dev/null | sort -z)
 fi
 
-# Filter out gitignored files
+# Filter out gitignored files (per-machine / personal files don't belong
+# in the committed config table — they may not exist on other clones).
+# git check-ignore exits 0 if the path is ignored, 1 if tracked/untracked-but-not-ignored.
 filtered_files=()
 cd "$ROOT"
 for file in "${config_files[@]}"; do
@@ -95,8 +143,42 @@ for file in "${config_files[@]}"; do
 done
 config_files=("${filtered_files[@]}")
 
-# Sort config files
-mapfile -t sorted_files < <(printf '%s\n' "${config_files[@]}" | sort)
+# Sort config files, dropping duplicates that overlapping scans may have added
+mapfile -t sorted_files < <(printf '%s\n' "${config_files[@]}" | sort -u)
+
+# Drop paths listed in the key-config-excluded block (see header comment).
+# Format per line: <path> — <reason> — <date>; only the path before the first
+# em-dash is read, so reason/date wording never has to match anything here.
+excluded_files=()
+in_exclude_block=false
+while IFS= read -r line; do
+  if [[ "$line" == *"<!-- cc-config: key-config-excluded"* ]]; then
+    in_exclude_block=true
+    continue
+  fi
+  if $in_exclude_block; then
+    if [[ "$line" == *"-->"* ]]; then
+      in_exclude_block=false
+      continue
+    fi
+    path="${line%%—*}"
+    path="${path#"${path%%[![:space:]]*}"}"
+    path="${path%"${path##*[![:space:]]}"}"
+    [[ -n "$path" ]] && excluded_files+=("$path")
+  fi
+done < "$CLAUDE_MD"
+
+if ((${#excluded_files[@]})); then
+  remaining_files=()
+  for file in "${sorted_files[@]}"; do
+    excluded=false
+    for ex in "${excluded_files[@]}"; do
+      [[ "$file" == "$ex" ]] && { excluded=true; break; }
+    done
+    $excluded || remaining_files+=("$file")
+  done
+  sorted_files=("${remaining_files[@]}")
+fi
 
 # Parse existing descriptions from CLAUDE.md
 declare -A descriptions
@@ -129,11 +211,13 @@ for file in "${sorted_files[@]}"; do
 done
 
 # Replace the table in CLAUDE.md
+# Find the section, skip old blank lines + table rows, emit new table
 tmpfile="$(mktemp)"
 in_section=false
 table_replaced=false
 
 while IFS= read -r line; do
+  line="${line%$cr}"
   if [[ "$line" == *"## Key Config Files"* ]]; then
     in_section=true
     echo "$line" >> "$tmpfile"
@@ -141,9 +225,11 @@ while IFS= read -r line; do
   fi
 
   if $in_section && ! $table_replaced; then
+    # Skip blank lines and old table rows between heading and next content
     if [[ "$line" == "" ]] || [[ "$line" == "|"* ]]; then
       continue
     fi
+    # First non-blank, non-table line: emit new table, then this line
     echo "" >> "$tmpfile"
     echo "$new_table" >> "$tmpfile"
     echo "" >> "$tmpfile"
@@ -156,6 +242,7 @@ while IFS= read -r line; do
   echo "$line" >> "$tmpfile"
 done < "$CLAUDE_MD"
 
+# If we hit EOF while still in the section (table is the last thing)
 if $in_section && ! $table_replaced; then
   echo "" >> "$tmpfile"
   echo "$new_table" >> "$tmpfile"
@@ -170,11 +257,13 @@ if command -v prettier >/dev/null 2>&1; then
   prettier --write --parser markdown "$tmpfile" > /dev/null 2>&1 || true
 fi
 
+# Check for changes
 if diff -q "$CLAUDE_MD" "$tmpfile" > /dev/null 2>&1; then
   echo "sync-config-table: no changes"
   rm "$tmpfile"
 else
   mv "$tmpfile" "$CLAUDE_MD"
   echo "sync-config-table: updated CLAUDE.md"
+  # Auto-stage so the updated table is included in the triggering commit
   git add CLAUDE.md
 fi

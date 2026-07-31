@@ -3,22 +3,26 @@
 This repository distributes the `cc-content` Claude Code plugin — a suite of
 content creation skills for marketing projects.
 
+<!-- cc-config: last-optimize-run: 2026-07-31 247b4c0376af08a78871008a669dbbad11582d2f -->
+
 ## Key Config Files
 
 | File                                                               | Purpose                                                                                       |
 | ------------------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
 | `.claude/format-markdown.sh`                                       | PostToolUse hook: formats Markdown files with prettier after edits                            |
 | `.claude/guard-secret-files.sh`                                    | PreToolUse hook: blocks reads/edits/writes of secret .env files                               |
-| `.claudeignore`                                                    | Paths excluded from Claude Code indexing                                                      |
-| `CLAUDE.md`                                                        | Project instructions, loaded every message                                                    |
+| `.claude/learnings.md`                                             | TODO: add description                                                                         |
 | `.claude/settings.json`                                            | Permissions, hooks, environment variables                                                     |
+| `.claudeignore`                                                    | Paths excluded from Claude Code indexing                                                      |
 | `.githooks/pre-commit`                                             | Secret scanning (gitleaks) + CLAUDE.md table sync                                             |
 | `.github/workflows/claude-code-review.yml`                         | Automatic PR review via Claude Code                                                           |
 | `.github/workflows/claude.yml`                                     | Trigger Claude via @claude mentions in issues/PRs                                             |
 | `.gitignore`                                                       | Git ignore patterns                                                                           |
+| `CLAUDE.md`                                                        | Project instructions, loaded every message                                                    |
 | `plugins/cc-content/.claude-plugin/plugin.json`                    | Plugin manifest                                                                               |
 | `plugins/cc-content/skills/cc-content-atomize/SKILL.md`            | Skill: Repurpose one core message across multiple formats in a single run                     |
 | `plugins/cc-content/skills/cc-content-blog-article/SKILL.md`       | Skill: Draft blog articles                                                                    |
+| `plugins/cc-content/skills/cc-content-email/SKILL.md`              | Skill: Draft marketing and sales emails                                                       |
 | `plugins/cc-content/skills/cc-content-facebook-post/SKILL.md`      | Skill: Draft Facebook posts                                                                   |
 | `plugins/cc-content/skills/cc-content-humanize/SKILL.md`           | Skill: Remove AI tells from a draft and rewrite it to sound human, on-brand-voice             |
 | `plugins/cc-content/skills/cc-content-ideation/SKILL.md`           | Skill: Generate strategic content angles from an inspiration input                            |
@@ -51,6 +55,7 @@ Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containi
 | `cc-content-blog-article`       | Draft blog articles                                                                    |
 | `cc-content-press-release`      | Draft press releases                                                                   |
 | `cc-content-facebook-post`      | Draft Facebook posts                                                                   |
+| `cc-content-email`              | Draft marketing and sales emails                                                       |
 | `cc-content-instagram-post`     | Draft Instagram posts and captions                                                     |
 | `cc-content-ideation`           | Generate strategic content angles from an inspiration input                            |
 | `cc-content-atomize`            | Repurpose one core message across multiple formats in a single run                     |
