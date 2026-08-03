@@ -1,5 +1,7 @@
 # Storytelling Frameworks — Shared Reference
 
+_Last updated: 2026-08-03_
+
 Shared reference for all content-output skills. Apply a storytelling framework
 whenever the output is long enough to carry a narrative structure (roughly 300+
 words or ~600+ characters). For shorter outputs — single-paragraph social snippets,

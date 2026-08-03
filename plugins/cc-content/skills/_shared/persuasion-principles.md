@@ -1,5 +1,7 @@
 # Persuasion Principles — Shared Reference
 
+_Last updated: 2026-08-03_
+
 Shared reference for all content-output skills that aim to influence reader
 behavior — buy, sign up, click, agree, donate, share, change their mind, trust
 the brand. Apply these principles whenever the output has persuasive intent.
@@ -7,7 +9,7 @@ Skip if the content is purely informational with no requested action.
 
 The principles distilled here are the operational essence of the research-based
 behavioral science of influence — most prominently associated with Robert
-Cialdini's work in *Influence* and *Pre-Suasion*. The mechanisms and findings
+Cialdini's work in _Influence_ and _Pre-Suasion_. The mechanisms and findings
 themselves are not copyrightable; they are widely taught, replicated, and
 applied across marketing, fundraising, public health, and policy. This file
 reformulates them as content-creation triggers and writing tactics. Cite
@@ -31,7 +33,7 @@ Cialdini as the academic source if needed; do not reproduce his prose.
    authority on their own. The principle should be felt, not announced.
 5. **Use pre-suasive openers when content is long enough to carry a setup.**
    The first sentence, headline, or image primes how the reader interprets
-   what follows. See the *Pre-Suasion: Setting the Stage* section below.
+   what follows. See the _Pre-Suasion: Setting the Stage_ section below.
 6. **Note your choice silently** in the working notes — never expose the
    technique to the reader inside the copy.
 
@@ -44,21 +46,21 @@ State the choice in working notes:
 
 ## Quick-Selection Guide
 
-| Content goal                                  | Recommended principle(s)                                |
-| --------------------------------------------- | ------------------------------------------------------- |
-| Get a hesitant reader to take a small action  | Reciprocity, Commitment & Consistency                   |
-| Convert a cold prospect to a buyer            | Social Proof, Scarcity, Authority                       |
-| Build long-term loyalty or community          | Liking, Unity, Commitment & Consistency                 |
-| Move audience emotionally toward "us"         | Unity, Liking                                           |
-| Overcome status-quo bias / inertia            | Scarcity, Social Proof, Authority                       |
-| Position a premium offer                      | Authority, Scarcity, Social Proof                       |
-| Recover credibility after a mistake           | Authority (admit weakness), Liking, Commitment          |
-| Drive donations / advocacy                    | Reciprocity, Unity, Social Proof                        |
-| Encourage user-generated participation        | Commitment & Consistency, Unity, Social Proof           |
-| Fundraise from an existing community          | Unity, Reciprocity                                      |
-| Reduce decision risk for a large purchase     | Authority, Social Proof, Commitment & Consistency       |
-| Make an offer feel valuable / desirable       | Scarcity, Social Proof, Authority                       |
-| Defend a position against criticism           | Authority, Social Proof, Commitment & Consistency       |
+| Content goal                                 | Recommended principle(s)                          |
+| -------------------------------------------- | ------------------------------------------------- |
+| Get a hesitant reader to take a small action | Reciprocity, Commitment & Consistency             |
+| Convert a cold prospect to a buyer           | Social Proof, Scarcity, Authority                 |
+| Build long-term loyalty or community         | Liking, Unity, Commitment & Consistency           |
+| Move audience emotionally toward "us"        | Unity, Liking                                     |
+| Overcome status-quo bias / inertia           | Scarcity, Social Proof, Authority                 |
+| Position a premium offer                     | Authority, Scarcity, Social Proof                 |
+| Recover credibility after a mistake          | Authority (admit weakness), Liking, Commitment    |
+| Drive donations / advocacy                   | Reciprocity, Unity, Social Proof                  |
+| Encourage user-generated participation       | Commitment & Consistency, Unity, Social Proof     |
+| Fundraise from an existing community         | Unity, Reciprocity                                |
+| Reduce decision risk for a large purchase    | Authority, Social Proof, Commitment & Consistency |
+| Make an offer feel valuable / desirable      | Scarcity, Social Proof, Authority                 |
+| Defend a position against criticism          | Authority, Social Proof, Commitment & Consistency |
 
 ---
 
@@ -72,12 +74,14 @@ debt that the reader wants to discharge — often by complying with a later
 request.
 
 **Use when:**
+
 - The reader is cold, skeptical, or has no prior relationship with the brand
 - You can offer something genuinely useful before any ask (free guide, trial,
   template, audit, sample, content)
 - You're negotiating expectations (price, scope, commitment)
 
 **How to apply in writing:**
+
 - Lead with a concrete giveaway: a useful insight, framework, or data point
   the reader can take away without buying anything.
 - Make the gift personalized and unexpected when possible — generic discounts
@@ -92,6 +96,7 @@ request.
   before asking again.
 
 **Avoid / failure modes:**
+
 - Gifts that look like sales tools (heavily branded freebies with hard pitches
   attached) trigger suspicion instead of obligation.
 - Stacking small favors and then asking for a wildly disproportionate return
@@ -108,6 +113,7 @@ in writing — they feel pressure to act consistently with it afterward. A small
 first commitment makes a larger, aligned commitment easier later.
 
 **Use when:**
+
 - You want a long-term relationship, not a single conversion
 - Your offer involves behavior change (subscriptions, fitness, learning,
   habits, advocacy)
@@ -115,6 +121,7 @@ first commitment makes a larger, aligned commitment easier later.
   cares about X")
 
 **How to apply in writing:**
+
 - Open by reminding the reader of values, identities, or past actions they
   already endorse: "If you've ever shipped a side project, you know..."
 - Ask for a small first step before the big one: read a guide, take a short
@@ -128,6 +135,7 @@ first commitment makes a larger, aligned commitment easier later.
   of person who [X]. The next step is [Y]."
 
 **Avoid / failure modes:**
+
 - Manufactured commitments (forced clicks, tricked sign-ups) backfire when the
   reader notices.
 - The **low-ball** technique (advertising one price, then revealing add-ons)
@@ -144,11 +152,13 @@ especially similar others — do. Uncertainty amplifies this effect: the less
 sure the reader is, the more weight peer behavior carries.
 
 **Use when:**
+
 - The reader is uncertain, in a new category, or comparing options
 - Many credible others have already taken the action you want
 - The audience can identify with the people you cite
 
 **How to apply in writing:**
+
 - Use specific numbers over vague claims: "12,847 founders use this" beats
   "thousands trust us".
 - Cite **similar others**, not just famous ones. A SaaS for solo founders
@@ -162,6 +172,7 @@ sure the reader is, the more weight peer behavior carries.
   behavior as the norm.
 
 **Avoid / failure modes:**
+
 - Vague or unverifiable claims ("trusted by industry leaders") read as
   filler and erode trust.
 - Citing dissimilar others to a niche audience feels off-target.
@@ -178,11 +189,13 @@ compliments, cooperation toward shared goals, and physical or aesthetic
 attractiveness.
 
 **Use when:**
+
 - Brand or personal voice carries the message (not a faceless ad)
 - The audience values relationships over transactions
 - You're building or repairing rapport
 
 **How to apply in writing:**
+
 - Show shared traits with the audience: same problems, same context, same
   background, same humor. "We've all stared at a blank page at 11pm" beats
   generic empathy.
@@ -197,6 +210,7 @@ attractiveness.
   people more than logos.
 
 **Avoid / failure modes:**
+
 - Performative warmth that doesn't match the brand voice reads as fake.
 - Compliments without substance feel manipulative ("How are you, valued
   customer?").
@@ -211,11 +225,13 @@ attractiveness.
 credentials, credible institutions) carry weight beyond the underlying claim.
 
 **Use when:**
+
 - The topic is technical, high-stakes, or unfamiliar to the reader
 - The reader's default state is skepticism
 - You have real authority signals to deploy (don't fake them)
 
 **How to apply in writing:**
+
 - Open with a credential or signal the reader will recognize: years of
   experience, named clients, peer-reviewed source, role title, published
   book — but only mention what is true and verifiable.
@@ -232,6 +248,7 @@ credentials, credible institutions) carry weight beyond the underlying claim.
   executive audience trusts named peers and outcomes.
 
 **Avoid / failure modes:**
+
 - Borrowed authority that doesn't fit ("As Einstein said..." in a marketing
   email) cheapens the message.
 - Stacking unrelated credentials reads as insecurity.
@@ -246,11 +263,13 @@ or about to be unavailable. Loss aversion makes "you might miss out" stronger
 than "you could gain" for the same opportunity.
 
 **Use when:**
+
 - A genuine deadline, cap, or limit exists
 - The reader is on the fence and needs a reason to decide now
 - The offer is exclusive, custom, or restricted by nature
 
 **How to apply in writing:**
+
 - Be specific about the constraint: a number, a date, a remaining inventory
   count. "Only 12 spots left" beats "limited availability".
 - Frame in terms of loss, not gain, for high-stakes decisions: "Don't miss
@@ -265,6 +284,7 @@ than "you could gain" for the same opportunity.
   waitlist; we open 50 seats Monday."
 
 **Avoid / failure modes:**
+
 - Permanent "limited time offers" that reset every week destroy credibility.
 - Fake countdown timers, dishonest "X people viewing now" widgets — readers
   pattern-match these and disengage.
@@ -275,17 +295,19 @@ than "you could gain" for the same opportunity.
 ### 7. Unity
 
 **Mechanism:** People give exceptional weight to the views, requests, and
-recommendations of those they perceive as part of their *we* — same family,
+recommendations of those they perceive as part of their _we_ — same family,
 tribe, region, profession, fandom, faith, or movement. Unity goes beyond
 liking: it's shared identity, not shared affection.
 
 **Use when:**
+
 - The audience has a strong existing identity (profession, subculture,
   movement, alma mater, locality, fandom)
 - Building or strengthening community is a brand goal
 - You want loyalty that survives competitive offers
 
 **How to apply in writing:**
+
 - Use **we**, **us**, **our** when the brand legitimately belongs to the same
   category as the reader. Forced "we" from an outsider sounds patronizing.
 - Reference shared identity markers — language, in-jokes, references, rituals,
@@ -299,6 +321,7 @@ liking: it's shared identity, not shared affection.
   passive consumption.
 
 **Avoid / failure modes:**
+
 - Claiming insider status as an outsider is the fastest way to lose trust.
 - Generic "community" language without substance ("join our community of
   doers") reads as marketing filler.
@@ -309,8 +332,8 @@ liking: it's shared identity, not shared affection.
 
 ## Pre-Suasion: Setting the Stage
 
-The principle in one line: **what the reader is paying attention to *just
-before* the message lands changes how the message is interpreted.** Openers,
+The principle in one line: **what the reader is paying attention to _just
+before_ the message lands changes how the message is interpreted.** Openers,
 first images, headlines, opening questions, and surrounding context all
 pre-load the mind toward — or away from — agreement.
 
@@ -322,6 +345,7 @@ priming for the principle(s) you'll deploy in the body.
 
 Whatever the reader's mind focuses on first, they treat as more important and
 more causal. If the opener focuses attention on:
+
 - **A problem** → the body's solution becomes more relevant
 - **A specific number or detail** → it anchors later judgments
 - **A shared identity** → unity-based arguments land harder
@@ -332,6 +356,7 @@ more causal. If the opener focuses attention on:
 
 Word choice activates networks of related concepts. Choose openers that
 prime the principle you intend to use later:
+
 - Priming **trust** (case studies, named sources, "research shows") sets up
   Authority arguments.
 - Priming **community** ("our industry", "people like you") sets up Unity.
@@ -362,7 +387,8 @@ failure mode and trains the audience to ignore future hooks.
 ### Time the request to the moment
 
 Pre-suasion is partly about timing. In written content, this means:
-- Place the call-to-action *after* the principle has been deployed, not
+
+- Place the call-to-action _after_ the principle has been deployed, not
   before. CTAs at the top of cold content underperform.
 - Match the request to where the reader is in their decision process —
   awareness content gets soft asks (read more, follow, save); decision-stage
@@ -421,9 +447,9 @@ The principles, mechanisms, and named tactics in this file (reciprocity,
 commitment & consistency, social proof, liking, authority, scarcity, unity,
 rejection-then-retreat, foot-in-the-door, low-ball, pre-suasion, attention
 channeling) are drawn from the research-based work of Robert Cialdini and
-the broader behavioral-science literature, most prominently *Influence: The
-Psychology of Persuasion* (1984, with later editions adding Unity) and
-*Pre-Suasion: A Revolutionary Way to Influence and Persuade* (2016).
+the broader behavioral-science literature, most prominently _Influence: The
+Psychology of Persuasion_ (1984, with later editions adding Unity) and
+_Pre-Suasion: A Revolutionary Way to Influence and Persuade_ (2016).
 
 The underlying ideas, research findings, and named effects are not
 copyrightable. The specific prose, examples, and case stories from those

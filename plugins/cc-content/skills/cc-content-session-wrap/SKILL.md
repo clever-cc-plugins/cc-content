@@ -84,6 +84,48 @@ If any deliverables were created or significantly modified, ask:
 You can also invoke `/cc-content-promote` at any point during a session
 to register a file immediately, without waiting for session wrap.
 
+## Step 1c: Check shared reference files for updates
+
+`cc-content-new-skill` (end-user mode) copies two shared reference files into
+project-local custom skills: `.claude/skills/_shared/persuasion-principles.md`
+and `.claude/skills/_shared/storytelling-frameworks.md`. That copy happens once,
+at creation time — plugin updates to these files never reach a project
+automatically. This step closes that gap.
+
+Check whether either file exists in the project:
+
+```bash
+ls .claude/skills/_shared/persuasion-principles.md .claude/skills/_shared/storytelling-frameworks.md 2>/dev/null
+```
+
+If **neither exists**: skip this step silently — the project has no project-local
+custom skill using these files.
+
+For each file that **does** exist, compare it against this plugin's own bundled
+copy at `${CLAUDE_SKILL_DIR}/../_shared/<file>.md` (relative to this skill's own
+directory — same plugin, so this path always resolves regardless of install
+location):
+
+1. Read the `_Last updated: YYYY-MM-DD_` line (line 3) from both the project's
+   copy and the plugin's bundled copy. If the project's copy has no such line,
+   treat it as predating the marker — always older than the plugin's copy.
+2. If the dates match: say nothing for this file and move to the next.
+3. If the plugin's copy is newer (or the project's has no marker): ask, per file —
+
+   > "Your project's copy of `<file>` (last updated <project-date-or-'unknown'>)
+   > is older than the plugin's version (last updated <plugin-date>). Refresh it
+   > with the plugin's version? This overwrites any local edits to the file.
+   > (yes / no / show diff)"
+   - **show diff**: run `diff .claude/skills/_shared/<file> ${CLAUDE_SKILL_DIR}/../_shared/<file>`,
+     show the output, then re-ask yes/no.
+   - **yes**: copy the plugin's file over the project's copy, preserving the
+     project path. Confirm: "✓ Refreshed `.claude/skills/_shared/<file>` (now
+     <plugin-date>)."
+   - **no**: leave the file as-is. Note it will ask again at the next session wrap.
+
+Do not overwrite silently under any circumstance — the project's copy may have
+been deliberately customized.
+
 ## Step 2: Identify skills used
 
 Ask:
