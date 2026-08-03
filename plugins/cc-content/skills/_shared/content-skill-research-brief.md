@@ -1,6 +1,6 @@
 # Content Skill Research Brief Template
 
-A set of research prompts used by the `cc-content-new-skill` skill when you need to
+A set of research prompts used by the `new-content-skill` skill when you need to
 gather background research for a new content format. Run these prompts before the skill
 synthesizes a `format-guidelines.md` — they give it the raw material it needs to produce
 accurate, nuanced guidelines. Useful both for end users creating a project-local skill
@@ -19,7 +19,7 @@ and for contributors adding a pre-built skill to the plugin.
 3. Save each response as a `.md` file in `.claude/skill-drafts/<skill-name>/`
    (one file per pass, or a single combined file — the skill reads all `.md` files
    in that folder).
-4. When research is complete (or complete enough), run `/cc-content-new-skill <format-name>`
+4. When research is complete (or complete enough), run `/new-content-skill <format-name>`
    in Claude Code (add `--plugin` if you're creating a skill for the plugin repository).
    The skill checks coverage, flags any gaps, and synthesizes the files.
 

@@ -3,15 +3,15 @@
 **Status:** Written, not executed. This is an instruction doc for a **future** cc-content
 task — no code changes here. It was authored at the end of cc-concept Slice 1, once the
 shared-contract pattern had been proven by two working cc-concept skills
-(`cc-concept-onboarding` and `cc-concept-positioning`).
+(`strategy-onboarding` and `positioning`).
 
 ## Why
 
 Every content-production skill in this repo restates the same run scaffold: recall learnings,
 load context, briefing check, … generate, self-review, delimited output, two-phase feedback.
-That sequence is duplicated across `cc-content-linkedin-post`, `cc-content-blog-article`,
-`cc-content-text`, and the others — and, worst of all, it is **spelled out inline inside the
-generator**, `cc-content-new-skill` (`Step 5: Generate SKILL.md skeleton`, the "Required skill
+That sequence is duplicated across `linkedin-post`, `blog-article`,
+`long-tail-copy`, and the others — and, worst of all, it is **spelled out inline inside the
+generator**, `new-content-skill` (`Step 5: Generate SKILL.md skeleton`, the "Required skill
 steps" block). Because the generator emits the full sequence verbatim, every skill it produces
 inherits a private copy of the scaffold. That is the drift bug in the flesh: fix a step in one
 skill and the others — plus every future generated skill — silently fall out of sync.
@@ -42,10 +42,10 @@ Keep truly format-specific detail (e.g. LinkedIn character limits, blog SEO fiel
 contract and in each skill's own `format-guidelines.md`, exactly as today.
 
 **Scope the two layers correctly.** The content-production steps apply to **format skills only**
-(`cc-content-linkedin-post`, `cc-content-blog-article`, `cc-content-text`, and anything
-`cc-content-new-skill` generates). The utility skills — `cc-content-onboarding`,
-`cc-content-promote`, `cc-content-research-prompt`, `cc-content-samples-curation`,
-`cc-content-session-wrap` — run only the universal spine, not the content-production steps.
+(`linkedin-post`, `blog-article`, `long-tail-copy`, and anything
+`new-content-skill` generates). The utility skills — `content-onboarding`,
+`register-context`, `research-prompt`, `samples-curation`,
+`session-wrap` — run only the universal spine, not the content-production steps.
 Structure the contract so a skill can reference the spine without inheriting the format steps.
 
 ### 2. Refactor the existing skills to reference the contract
@@ -54,13 +54,13 @@ For each existing content skill, replace the inline step sequence with a referen
 `_shared/skill-contract.md`, leaving only the skill's own gating, generation target, and output
 specifics. Preserve the existing `@`-import mechanism and its **mode-specific paths** — skills
 use `@./…` and `@../_shared/…` in plugin-dev mode and `@.claude/skills/…` in end-user mode
-(see `cc-content-linkedin-post` for the established pattern). The contract import must be added
+(see `linkedin-post` for the established pattern). The contract import must be added
 in the same style, alongside the existing `storytelling-frameworks.md` and
 `persuasion-principles.md` imports.
 
 ### 3. Update the generator — this is the load-bearing step
 
-`cc-content-new-skill` is what makes this urgent: **it generates skills**, so unless the
+`new-content-skill` is what makes this urgent: **it generates skills**, so unless the
 generator itself is changed, the drift bug simply reappears through every skill it emits.
 
 - In `Step 5: Generate SKILL.md skeleton`, replace the inline "Required skill steps" block

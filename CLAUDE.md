@@ -7,38 +7,38 @@ content creation skills for marketing projects.
 
 ## Key Config Files
 
-| File                                                               | Purpose                                                                                       |
-| ------------------------------------------------------------------ | --------------------------------------------------------------------------------------------- |
-| `.claude/format-markdown.sh`                                       | PostToolUse hook: formats Markdown files with prettier after edits                            |
-| `.claude/guard-secret-files.sh`                                    | PreToolUse hook: blocks reads/edits/writes of secret .env files                               |
-| `.claude/learnings.md`                                             | Corrections and observations logged during config/session-wrap runs                           |
-| `.claude/settings.json`                                            | Permissions, hooks, environment variables                                                     |
-| `.claudeignore`                                                    | Paths excluded from Claude Code indexing                                                      |
-| `.githooks/pre-commit`                                             | Secret scanning (gitleaks) + CLAUDE.md table sync                                             |
-| `.github/workflows/claude-code-review.yml`                         | Automatic PR review via Claude Code                                                           |
-| `.github/workflows/claude.yml`                                     | Trigger Claude via @claude mentions in issues/PRs                                             |
-| `.gitignore`                                                       | Git ignore patterns                                                                           |
-| `CLAUDE.md`                                                        | Project instructions, loaded every message                                                    |
-| `plugins/cc-content/.claude-plugin/plugin.json`                    | Plugin manifest                                                                               |
-| `plugins/cc-content/skills/cc-content-atomize/SKILL.md`            | Skill: Repurpose one core message across multiple formats in a single run                     |
-| `plugins/cc-content/skills/cc-content-blog-article/SKILL.md`       | Skill: Draft blog articles                                                                    |
-| `plugins/cc-content/skills/cc-content-email/SKILL.md`              | Skill: Draft marketing and sales emails                                                       |
-| `plugins/cc-content/skills/cc-content-facebook-post/SKILL.md`      | Skill: Draft Facebook posts                                                                   |
-| `plugins/cc-content/skills/cc-content-humanize/SKILL.md`           | Skill: Remove AI tells from a draft and rewrite it to sound human, on-brand-voice             |
-| `plugins/cc-content/skills/cc-content-ideation/SKILL.md`           | Skill: Generate strategic content angles from an inspiration input                            |
-| `plugins/cc-content/skills/cc-content-instagram-post/SKILL.md`     | Skill: Draft Instagram posts and captions                                                     |
-| `plugins/cc-content/skills/cc-content-linkedin-post/SKILL.md`      | Skill: Draft LinkedIn posts                                                                   |
-| `plugins/cc-content/skills/cc-content-new-skill/SKILL.md`          | Skill: Build a new content-production skill from research                                     |
-| `plugins/cc-content/skills/cc-content-onboarding/SKILL.md`         | Skill: Register and create context files; guide project setup                                 |
-| `plugins/cc-content/skills/cc-content-performance-review/SKILL.md` | Skill: Analyze content performance data and generate iteration variants                       |
-| `plugins/cc-content/skills/cc-content-press-release/SKILL.md`      | Skill: Draft press releases                                                                   |
-| `plugins/cc-content/skills/cc-content-promote/SKILL.md`            | Skill: Register a single file as context in CLAUDE.md (mid-session)                           |
-| `plugins/cc-content/skills/cc-content-research-prompt/SKILL.md`    | Skill: Generate a vendor-neutral deep-research prompt for a topic                             |
-| `plugins/cc-content/skills/cc-content-samples-curation/SKILL.md`   | Skill: Save and annotate gold-standard content examples                                       |
-| `plugins/cc-content/skills/cc-content-session-wrap/SKILL.md`       | Skill: Review session, promote deliverables to context, commit work                           |
-| `plugins/cc-content/skills/cc-content-text/SKILL.md`               | Skill: Draft text for any format without a dedicated skill; supports multi-format atomization |
-| `plugins/cc-content/skills/cc-content-x-post/SKILL.md`             | Skill: Draft X (Twitter) posts                                                                |
-| `scripts/sync-config-table.sh`                                     | Keeps Key Config Files table in sync on each commit                                           |
+| File                                                            | Purpose                                                                                       |
+| --------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `.claude/format-markdown.sh`                                    | PostToolUse hook: formats Markdown files with prettier after edits                            |
+| `.claude/guard-secret-files.sh`                                 | PreToolUse hook: blocks reads/edits/writes of secret .env files                               |
+| `.claude/learnings.md`                                          | Corrections and observations logged during config/session-wrap runs                           |
+| `.claude/settings.json`                                         | Permissions, hooks, environment variables                                                     |
+| `.claudeignore`                                                 | Paths excluded from Claude Code indexing                                                      |
+| `.githooks/pre-commit`                                          | Secret scanning (gitleaks) + CLAUDE.md table sync                                             |
+| `.github/workflows/claude-code-review.yml`                      | Automatic PR review via Claude Code                                                           |
+| `.github/workflows/claude.yml`                                  | Trigger Claude via @claude mentions in issues/PRs                                             |
+| `.gitignore`                                                    | Git ignore patterns                                                                           |
+| `CLAUDE.md`                                                     | Project instructions, loaded every message                                                    |
+| `plugins/cc-content/.claude-plugin/plugin.json`                 | Plugin manifest                                                                               |
+| `plugins/cc-content/skills/atomize/SKILL.md`                    | Skill: Repurpose one core message across multiple formats in a single run                     |
+| `plugins/cc-content/skills/blog-article/SKILL.md`               | Skill: Draft blog articles                                                                    |
+| `plugins/cc-content/skills/content-ideation/SKILL.md`           | Skill: Generate strategic content angles from an inspiration input                            |
+| `plugins/cc-content/skills/content-onboarding/SKILL.md`         | Skill: Register and create context files; guide project setup                                 |
+| `plugins/cc-content/skills/content-performance-review/SKILL.md` | Skill: Analyze content performance data and generate iteration variants                       |
+| `plugins/cc-content/skills/facebook-post/SKILL.md`              | Skill: Draft Facebook posts                                                                   |
+| `plugins/cc-content/skills/humanize/SKILL.md`                   | Skill: Remove AI tells from a draft and rewrite it to sound human, on-brand-voice             |
+| `plugins/cc-content/skills/instagram-post/SKILL.md`             | Skill: Draft Instagram posts and captions                                                     |
+| `plugins/cc-content/skills/linkedin-post/SKILL.md`              | Skill: Draft LinkedIn posts                                                                   |
+| `plugins/cc-content/skills/long-tail-copy/SKILL.md`             | Skill: Draft text for any format without a dedicated skill; supports multi-format atomization |
+| `plugins/cc-content/skills/marketing-email/SKILL.md`            | Skill: Draft marketing and sales emails                                                       |
+| `plugins/cc-content/skills/new-content-skill/SKILL.md`          | Skill: Build a new content-production skill from research                                     |
+| `plugins/cc-content/skills/press-release/SKILL.md`              | Skill: Draft press releases                                                                   |
+| `plugins/cc-content/skills/register-context/SKILL.md`           | Skill: Register a single file as context in CLAUDE.md (mid-session)                           |
+| `plugins/cc-content/skills/research-prompt/SKILL.md`            | Skill: Generate a vendor-neutral deep-research prompt for a topic                             |
+| `plugins/cc-content/skills/samples-curation/SKILL.md`           | Skill: Save and annotate gold-standard content examples                                       |
+| `plugins/cc-content/skills/session-wrap/SKILL.md`               | Skill: Review session, promote deliverables to context, commit work                           |
+| `plugins/cc-content/skills/x-post/SKILL.md`                     | Skill: Draft X (Twitter) posts                                                                |
+| `scripts/sync-config-table.sh`                                  | Keeps Key Config Files table in sync on each commit                                           |
 
 ## Plugin Structure
 
@@ -46,26 +46,26 @@ Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containi
 
 ## Skills
 
-| Skill                           | Purpose                                                                                |
-| ------------------------------- | -------------------------------------------------------------------------------------- |
-| `cc-content-onboarding`         | Register and create context files; guide project setup                                 |
-| `cc-content-promote`            | Register a single file as context in CLAUDE.md (mid-session)                           |
-| `cc-content-research-prompt`    | Generate a vendor-neutral deep-research prompt for a topic                             |
-| `cc-content-linkedin-post`      | Draft LinkedIn posts                                                                   |
-| `cc-content-blog-article`       | Draft blog articles                                                                    |
-| `cc-content-press-release`      | Draft press releases                                                                   |
-| `cc-content-facebook-post`      | Draft Facebook posts                                                                   |
-| `cc-content-email`              | Draft marketing and sales emails                                                       |
-| `cc-content-instagram-post`     | Draft Instagram posts and captions                                                     |
-| `cc-content-ideation`           | Generate strategic content angles from an inspiration input                            |
-| `cc-content-atomize`            | Repurpose one core message across multiple formats in a single run                     |
-| `cc-content-text`               | Draft text for any format without a dedicated skill; supports multi-format atomization |
-| `cc-content-x-post`             | Draft X (Twitter) posts                                                                |
-| `cc-content-samples-curation`   | Save and annotate gold-standard content examples                                       |
-| `cc-content-humanize`           | Remove AI tells from a draft and rewrite it to sound human, on-brand-voice             |
-| `cc-content-performance-review` | Analyze content performance data and generate iteration variants                       |
-| `cc-content-session-wrap`       | Review session, promote deliverables to context, commit work                           |
-| `cc-content-new-skill`          | Build a new content-production skill from research                                     |
+| Skill                        | Purpose                                                                                |
+| ---------------------------- | -------------------------------------------------------------------------------------- |
+| `content-onboarding`         | Register and create context files; guide project setup                                 |
+| `register-context`           | Register a single file as context in CLAUDE.md (mid-session)                           |
+| `research-prompt`            | Generate a vendor-neutral deep-research prompt for a topic                             |
+| `linkedin-post`              | Draft LinkedIn posts                                                                   |
+| `blog-article`               | Draft blog articles                                                                    |
+| `press-release`              | Draft press releases                                                                   |
+| `facebook-post`              | Draft Facebook posts                                                                   |
+| `marketing-email`            | Draft marketing and sales emails                                                       |
+| `instagram-post`             | Draft Instagram posts and captions                                                     |
+| `content-ideation`           | Generate strategic content angles from an inspiration input                            |
+| `atomize`                    | Repurpose one core message across multiple formats in a single run                     |
+| `long-tail-copy`             | Draft text for any format without a dedicated skill; supports multi-format atomization |
+| `x-post`                     | Draft X (Twitter) posts                                                                |
+| `samples-curation`           | Save and annotate gold-standard content examples                                       |
+| `humanize`                   | Remove AI tells from a draft and rewrite it to sound human, on-brand-voice             |
+| `content-performance-review` | Analyze content performance data and generate iteration variants                       |
+| `session-wrap`               | Review session, promote deliverables to context, commit work                           |
+| `new-content-skill`          | Build a new content-production skill from research                                     |
 
 ## Don't
 

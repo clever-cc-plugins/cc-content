@@ -9,32 +9,34 @@
 
 A [Claude Code](https://claude.ai/code) plugin that provides a comprehensive suite of content creation skills for marketing projects — including blog articles, social posts, press releases, and more.
 
+> **Breaking change (v1.0.0):** skill names dropped the `cc-content-` prefix (e.g. `cc-content-blog-article` → `blog-article`). Plugin skills are already namespaced by Claude Code as `cc-content:<skill-name>`, so the prefix was redundant. Three names also changed wording to stay specific and avoid collisions: `cc-content-email` → `marketing-email`, `cc-content-text` → `long-tail-copy`, `cc-content-promote` → `register-context`, `cc-content-onboarding` → `content-onboarding`, `cc-content-performance-review` → `content-performance-review`, `cc-content-new-skill` → `new-content-skill`. Update any saved `/cc-content-...` invocations to the new names.
+
 ---
 
 ## Plugin: `cc-content`
 
 The content-production skills work for any industry, audience, and output language. They automatically use the context files set up during onboarding, and prompt you for any required information that the context does not already cover.
 
-| Skill                            | What it does                                                                                                                                                                                      |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `/cc-content-onboarding`         | Interviews you about your brand, voice, and audience, then populates `context/` with structured context files that all other skills can read                                                      |
-| `/cc-content-promote`            | Registers a single file as context in `CLAUDE.md` mid-session, without re-running full onboarding                                                                                                 |
-| `/cc-content-research-prompt`    | Generates a vendor-neutral deep-research prompt for a topic, ready to paste into Claude, ChatGPT, Gemini, Perplexity, or similar                                                                  |
-| `/cc-content-linkedin-post`      | Drafts LinkedIn posts that match your brand voice, format guidelines, and audience — with a built-in feedback step                                                                                |
-| `/cc-content-blog-article`       | Drafts blog articles calibrated to your audience type (B2B / B2C), content goal, funnel stage, and reader expertise                                                                               |
-| `/cc-content-press-release`      | Drafts press releases for direct-to-journalist pickup, SEO/backlink value via wire placement, or owned newsroom records                                                                           |
-| `/cc-content-facebook-post`      | Drafts Facebook posts optimized for Pages and Groups, with awareness of platform reach mechanics and audience-warmth-matched length guidance                                                      |
-| `/cc-content-email`              | Drafts marketing and sales emails — campaign email, newsletters, nurture sequences, and cold/warm sales outreach — with subject line and preview text                                             |
-| `/cc-content-instagram-post`     | Drafts Instagram posts and captions (feed, carousel, Reels) calibrated to your audience type, format choice, content goal, and funnel stage                                                       |
-| `/cc-content-ideation`           | Generates several distinct strategic angles (thesis / goal / perspective) from an article, briefing, or topic — the idea step before writing                                                      |
-| `/cc-content-atomize`            | Repurposes one core message across multiple formats in a single run, keeping claims and proof points identical while adapting structure, tone, and CTA per platform                               |
-| `/cc-content-text`               | Drafts a finished text for any format without a dedicated skill (newsletter, whitepaper, landing page, email …), routing you to a dedicated skill (like press release) when one fits better       |
-| `/cc-content-samples-curation`   | Saves gold-standard content examples with annotations to the samples file registered in the `## Context files` table (default `context/samples.md`) so skills can use them as reference material  |
-| `/cc-content-humanize`           | Removes AI "tells" from an existing draft and rewrites it to read as human-written, calibrated to your brand voice                                                                                |
-| `/cc-content-performance-review` | Analyzes how published pieces performed from data you paste in, and generates iteration variants for the next piece                                                                               |
-| `/cc-content-session-wrap`       | Reviews session deliverables, logs feedback and corrections, detects recurring patterns, and commits your work                                                                                    |
-| `/cc-content-new-skill`          | Turns research notes into a complete content-production skill for a new output format. Use it to build project-local custom skills, or add `--plugin` to create a pre-built skill for the plugin. |
-| `/cc-content-x-post`             | Drafts X (Twitter) posts optimized for engagement, conversation, and goal-driven CTAs — with support for single posts and threads                                                                 |
+| Skill                         | What it does                                                                                                                                                                                      |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/cc-content:content-onboarding`         | Interviews you about your brand, voice, and audience, then populates `context/` with structured context files that all other skills can read                                                      |
+| `/cc-content:register-context`           | Registers a single file as context in `CLAUDE.md` mid-session, without re-running full onboarding                                                                                                 |
+| `/cc-content:research-prompt`            | Generates a vendor-neutral deep-research prompt for a topic, ready to paste into Claude, ChatGPT, Gemini, Perplexity, or similar                                                                  |
+| `/cc-content:linkedin-post`              | Drafts LinkedIn posts that match your brand voice, format guidelines, and audience — with a built-in feedback step                                                                                |
+| `/cc-content:blog-article`               | Drafts blog articles calibrated to your audience type (B2B / B2C), content goal, funnel stage, and reader expertise                                                                               |
+| `/cc-content:press-release`              | Drafts press releases for direct-to-journalist pickup, SEO/backlink value via wire placement, or owned newsroom records                                                                           |
+| `/cc-content:facebook-post`              | Drafts Facebook posts optimized for Pages and Groups, with awareness of platform reach mechanics and audience-warmth-matched length guidance                                                      |
+| `/cc-content:marketing-email`            | Drafts marketing and sales emails — campaign email, newsletters, nurture sequences, and cold/warm sales outreach — with subject line and preview text                                             |
+| `/cc-content:instagram-post`             | Drafts Instagram posts and captions (feed, carousel, Reels) calibrated to your audience type, format choice, content goal, and funnel stage                                                       |
+| `/cc-content:content-ideation`           | Generates several distinct strategic angles (thesis / goal / perspective) from an article, briefing, or topic — the idea step before writing                                                      |
+| `/cc-content:atomize`                    | Repurposes one core message across multiple formats in a single run, keeping claims and proof points identical while adapting structure, tone, and CTA per platform                               |
+| `/cc-content:long-tail-copy`             | Drafts a finished text for any format without a dedicated skill (newsletter, whitepaper, landing page, email …), routing you to a dedicated skill (like press release) when one fits better       |
+| `/cc-content:samples-curation`           | Saves gold-standard content examples with annotations to the samples file registered in the `## Context files` table (default `context/samples.md`) so skills can use them as reference material  |
+| `/cc-content:humanize`                   | Removes AI "tells" from an existing draft and rewrites it to read as human-written, calibrated to your brand voice                                                                                |
+| `/cc-content:content-performance-review` | Analyzes how published pieces performed from data you paste in, and generates iteration variants for the next piece                                                                               |
+| `/cc-content:session-wrap`               | Reviews session deliverables, logs feedback and corrections, detects recurring patterns, and commits your work                                                                                    |
+| `/cc-content:new-content-skill`          | Turns research notes into a complete content-production skill for a new output format. Use it to build project-local custom skills, or add `--plugin` to create a pre-built skill for the plugin. |
+| `/cc-content:x-post`                     | Drafts X (Twitter) posts optimized for engagement, conversation, and goal-driven CTAs — with support for single posts and threads                                                                 |
 
 ---
 
@@ -44,7 +46,7 @@ The content-production skills work for any industry, audience, and output langua
 
 > we shipped dark mode. finally. took forever. users have been asking for years
 
-**Output** — `/cc-content-linkedin-post`:
+**Output** — `/cc-content:linkedin-post`:
 
 > Dark mode is here.
 >
@@ -86,7 +88,7 @@ Once enabled, skills update automatically on startup when new versions are avail
 Open your marketing project in Claude Code and run the onboarding skill:
 
 ```
-/cc-content-onboarding
+/cc-content:content-onboarding
 ```
 
 This populates `context/` with your brand voice, company profile, and buyer personas. The other skills read this context automatically.
@@ -96,14 +98,14 @@ This populates `context/` with your brand voice, company profile, and buyer pers
 Run any output skill:
 
 ```
-/cc-content-linkedin-post
+/cc-content:linkedin-post
 ```
 
 For a format without its own skill (press release, newsletter, whitepaper …), use the general writer — or start from ideas first:
 
 ```
-/cc-content-ideation
-/cc-content-text
+/cc-content:content-ideation
+/cc-content:long-tail-copy
 ```
 
 **Step 3 — Curate good examples**
@@ -111,7 +113,7 @@ For a format without its own skill (press release, newsletter, whitepaper …), 
 When a piece of content lands well, save it as a reference sample:
 
 ```
-/cc-content-samples-curation
+/cc-content:samples-curation
 ```
 
 **Step 4 — Wrap your session**
@@ -119,19 +121,19 @@ When a piece of content lands well, save it as a reference sample:
 At the end of each working session, commit your work and log any corrections:
 
 ```
-/cc-content-session-wrap
+/cc-content:session-wrap
 ```
 
 ---
 
 ## Extending with Custom Content Skills
 
-The plugin ships with support for multiple content formats (blog articles, social posts, press releases, and more). If you need a content format that isn't covered yet, you can build a project-local skill using `cc-content-new-skill` — no plugin contribution required.
+The plugin ships with support for multiple content formats (blog articles, social posts, press releases, and more). If you need a content format that isn't covered yet, you can build a project-local skill using `new-content-skill` — no plugin contribution required.
 
 **Workflow:**
 
-1. Run `/cc-content-new-skill <format-name>` without any research files. The skill will guide you to a research brief template that tells you what to gather about your target format.
-2. Fill in the brief, then re-run `/cc-content-new-skill <format-name>` with your research files attached. The skill interviews you about coverage gaps, synthesizes a `format-guidelines.md`, and generates a `SKILL.md` skeleton.
+1. Run `/cc-content:new-content-skill <format-name>` without any research files. The skill will guide you to a research brief template that tells you what to gather about your target format.
+2. Fill in the brief, then re-run `/cc-content:new-content-skill <format-name>` with your research files attached. The skill interviews you about coverage gaps, synthesizes a `format-guidelines.md`, and generates a `SKILL.md` skeleton.
 3. Open the generated `SKILL.md` and fill in the `[TODO: ...]` placeholders to tailor the skill to your exact needs.
 4. The finished skill lives in `.claude/skills/<format-name>/` and is ready to invoke from there.
 
@@ -181,7 +183,7 @@ Skills read all registered files and load what's relevant for each task.
   - Good: "Casual and inclusive tone — job ads and employer branding only"
 - **`<!-- cc-config: context-toc-registered -->`** — include this marker comment if the project also uses `cc-config`'s `scripts/sync-config-table.sh` (v4+). It tells that script these files are already registered here with real summaries, so it won't re-list them in `## Key Config Files` under a generic placeholder. Harmless to include even without that script.
 
-`/cc-content-onboarding` builds this table through a guided interview; `/cc-content-promote` adds a single row mid-session. Both apply the same quality bar — hand-edits to the table should meet it too.
+`/cc-content:content-onboarding` builds this table through a guided interview; `/cc-content:register-context` adds a single row mid-session. Both apply the same quality bar — hand-edits to the table should meet it too.
 
 ### File paths in the table
 

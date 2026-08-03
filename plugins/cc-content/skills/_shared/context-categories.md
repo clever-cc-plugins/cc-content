@@ -124,7 +124,7 @@ sources, research findings.
 ### Content samples
 
 **What it typically covers:** Curated examples of high-quality past content with annotations.
-Managed by the `cc-content:cc-content-samples-curation` skill; stored at `context/samples.md`
+Managed by the `cc-content:samples-curation` skill; stored at `context/samples.md`
 by convention.
 
 **Signals in summaries:** "Gold-standard examples", "curated samples", "reference posts".
