@@ -1,5 +1,7 @@
 # Blog Article Format Guidelines
 
+_Last updated: 2026-07-16_
+
 Format-scope rules for the `cc-content-blog-article` skill. These rules are language-
 and industry-neutral: they describe **structure, calibration, and persuasion architecture**,
 not voice or vocabulary. Voice comes from the loaded brand voice context; output

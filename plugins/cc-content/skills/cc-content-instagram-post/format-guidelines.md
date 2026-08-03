@@ -1,7 +1,14 @@
 # Instagram Post Format Guidelines
 
+_Last updated: 2026-08-03_
+
 Format-scope rules for the instagram-post skill. These constraints apply to every
 generated post regardless of campaign briefing, brand voice, audience type, or post format (single-image, carousel, Reels, or Stories).
+
+Word-count guidance in this file is **English-equivalent** — translate proportionally for
+other languages (German typically +10–20%, Romance languages roughly equivalent, CJK
+languages count characters instead, where ~1.6 CJK characters ≈ 1 English word).
+Character limits are platform mechanics and apply identically regardless of language.
 
 ---
 

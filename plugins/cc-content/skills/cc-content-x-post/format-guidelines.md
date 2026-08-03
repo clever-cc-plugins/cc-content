@@ -1,5 +1,7 @@
 # X (Twitter) Post Format Guidelines
 
+_Last updated: 2026-07-20_
+
 Format-scope rules for the x-post skill. These constraints apply to every
 generated post regardless of campaign briefing or brand voice.
 

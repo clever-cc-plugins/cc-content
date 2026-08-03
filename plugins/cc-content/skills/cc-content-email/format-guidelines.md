@@ -1,5 +1,7 @@
 # Email Format Guidelines
 
+_Last updated: 2026-08-03_
+
 These apply to every marketing or sales email regardless of audience type, goal, or
 funnel stage. This skill covers business/campaign email — bulk marketing campaigns,
 newsletters, nurture sequences, and 1:1 sales outreach (cold and warm). It does not
@@ -12,6 +14,10 @@ at scale). The two share nearly all structural and persuasion mechanics; they di
 mainly in personalization depth, list size, and proximity to a live buying decision.
 Deviations are called out inline as **Marketing:** / **Sales:** notes.
 
+All word counts in this file are **English-equivalent units** — translate proportionally
+for other languages (German typically +10–20%, Romance languages roughly equivalent,
+CJK languages count characters instead, where ~1.6 CJK characters ≈ 1 English word).
+
 ---
 
 ## Layer 1 — Universal Best Practices
@@ -23,15 +29,15 @@ relationship, funnel stage, and email type. Treat the ranges below as tested sta
 points, not fixed targets; sources genuinely disagree at the margins (e.g., cold-email
 length studies range from 20–150 words), so A/B test on your own list.
 
-| Context                          | Range                                                                          | Notes                                                                                                                                                                                           |
-| -------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Marketing — core message         | 50–125 words                                                                   | Boomerang (40M emails): >50% response rate in this range; response falls to ~48% by 200 words, ~44% by 500                                                                                      |
-| Marketing — newsletter/editorial | 150–300 words of copy, longer content pushed to a landing page                 | Constant Contact: ≤3 images and ~150–200 words maximizes CTR                                                                                                                                    |
-| Sales — cold outreach (initial)  | 40–125 words / 3–8 sentences                                                   | Multiple large studies disagree on the exact optimum (some argue 25–50, others 50–125) — the reconciling principle is "as short as possible, but long enough to earn relevance and credibility" |
-| Sales — follow-up                | Can run longer (30–150 words) if every sentence is personalized and adds value | Gong (304k emails): follow-ups of 4+ sentences that are direct and specific booked 15x more meetings than terse ones                                                                            |
-| Sentence length                  | 14–20 words average, mixed with shorter sentences for rhythm                   | —                                                                                                                                                                                               |
-| Paragraph length                 | 2–3 sentences max, then a blank line                                           | One idea per paragraph                                                                                                                                                                          |
-| Reading level                    | Flesch Reading Ease 60–70 (roughly 8th–9th grade)                              | Simpler language correlates with a 36% higher response rate; plain language helps expert readers too, not just novices                                                                          |
+| Context                          | Range                                                                                                                         | Notes                                                                                                                                                                                                                                                                                  |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Marketing — core message         | 50–125 words                                                                                                                  | Boomerang (40M emails): >50% response rate in this range; response falls to ~48% by 200 words, ~44% by 500                                                                                                                                                                             |
+| Marketing — newsletter/editorial | 150–300 words of copy, longer content pushed to a landing page                                                                | Constant Contact: ≤3 images and ~150–200 words maximizes CTR                                                                                                                                                                                                                           |
+| Sales — cold outreach (initial)  | 40–125 words / 3–8 sentences                                                                                                  | Multiple large studies disagree on the exact optimum (some argue 25–50, others 50–125) — the reconciling principle is "as short as possible, but long enough to earn relevance and credibility"                                                                                        |
+| Sales — follow-up                | Can run longer (30–150 words) if every sentence is personalized and adds value                                                | Gong (304k emails): follow-ups of 4+ sentences that are direct and specific booked 15x more meetings than terse ones                                                                                                                                                                   |
+| Sentence length                  | 14–20 words average, mixed with shorter sentences for rhythm                                                                  | —                                                                                                                                                                                                                                                                                      |
+| Paragraph length                 | 2–3 sentences max, then a blank line                                                                                          | One idea per paragraph                                                                                                                                                                                                                                                                 |
+| Reading level                    | Flesch Reading Ease 60–70 (roughly 8th–9th grade) — **English only**, this metric has no direct equivalent in other languages | Simpler language correlates with a 36% higher response rate; plain language helps expert readers too, not just novices. For non-English output, apply the same underlying principle (short sentences, common everyday words, minimal subordinate clauses) rather than the score itself |
 
 Deviate upward only when the topic demands it (complex B2B claims, thought
 leadership), and push supporting detail into an attachment or landing page rather

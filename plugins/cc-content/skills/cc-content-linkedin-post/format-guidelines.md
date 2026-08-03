@@ -1,7 +1,15 @@
 # LinkedIn Post Format Guidelines
 
+_Last updated: 2026-08-03_
+
 Format-scope rules for the linkedin-post skill. These constraints apply to every
 generated post regardless of campaign briefing or brand voice.
+
+Word- and sentence-length guidance in this file is **English-equivalent** — translate
+proportionally for other languages (German typically +10–20%, Romance languages roughly
+equivalent, CJK languages count characters instead, where ~1.6 CJK characters ≈ 1 English
+word). Character limits (e.g., the 3,000-character hard maximum) are platform mechanics
+and apply identically regardless of language.
 
 ---
 
@@ -47,8 +55,11 @@ Rules:
 
 - Short paragraphs: 1–3 lines each, separated by blank lines; aim for at least
   14 paragraphs total across hook, body, and CTA
-- Sentence length: 10–19 words per paragraph on average
-- Readability: target 5th–7th grade level; prefer short, common words
+- Sentence length: 10–19 words per paragraph on average (English-equivalent; longer in
+  languages with longer average word length — see note above)
+- Readability: target 5th–7th grade level (**English-only** metric, no direct equivalent
+  in other languages); for non-English output, apply the same underlying principle —
+  short sentences, common everyday words, minimal subordinate clauses
 - Use line breaks (not bullet points) as the primary rhythm device; bullets are
   acceptable for lists of 3+ parallel items
 - Maintain forward momentum: each paragraph should earn the next
@@ -103,7 +114,10 @@ Regardless of purpose:
 - Use "you" and "I/we" — not "one" or "professionals"
 - Contractions are acceptable (don't, we've, it's)
 - Avoid jargon unless the target audience uses it themselves
-- No exclamation marks except in product launch posts (max 1)
+- No exclamation marks except in product launch posts (max 1) — this reflects English
+  business-writing norms; adapt punctuation frequency to the target language's own
+  professional conventions (e.g., some languages tolerate exclamation marks more
+  freely in business contexts)
 
 ---
 
@@ -121,6 +135,10 @@ Regardless of purpose:
 ---
 
 ## Punctuation and Rhetoric
+
+The rules below describe English typographic and rhetorical conventions. Adapt them to
+the target language's own punctuation and rhetorical norms rather than translating them
+literally (e.g., dash usage and quotation conventions vary by language).
 
 - **No trailing em-dashes.** Do not use an em-dash to attach a trailing clause,
   adverbial, or list to the preceding sentence. Use a comma, colon, or a new

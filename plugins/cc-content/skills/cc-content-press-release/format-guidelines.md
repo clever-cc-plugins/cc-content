@@ -1,5 +1,7 @@
 # Press Release Format Guidelines
 
+_Last updated: 2026-08-03_
+
 Format-scope rules for the `cc-content-press-release` skill. These rules are language-
 and industry-neutral: they describe **structure, calibration, and persuasion architecture**,
 not voice or vocabulary. Voice comes from the loaded brand voice context; output
@@ -39,9 +41,13 @@ A defensible default structure has **five functional zones**, each with one job:
 
 2. **Dateline.** Place the release location at the very start of the first paragraph.
    Use city name in ALL CAPS followed by a long dash with a single space on each side,
-   then the body text begins: `CITY — Body text begins here`. Add the state abbreviation
-   if the city is not on AP's standalone-city list (e.g., `PORTLAND, Ore. —`, not
-   `PORTLAND —`). [eReleases, ibid.]
+   then the body text begins: `CITY — Body text begins here`. **In English-language
+   releases,** add the US state abbreviation if the city is not on AP's standalone-city
+   list (e.g., `PORTLAND, Ore. —`, not `PORTLAND —`); for a non-US city, use the country
+   instead of a state. [eReleases, ibid.] This convention (ALL-CAPS city + state/country
+   abbreviation) is specific to AP/US newswire style — for releases in other languages,
+   follow the dateline convention standard to that language's press/newswire tradition
+   instead of translating this one literally.
 
 3. **Lead paragraph.** The opening paragraph must answer the 5 Ws (who, what, when,
    where, why) within 50–75 words. [eReleases, ibid.] This is the hook — it must
@@ -76,6 +82,12 @@ over 600 words signal a lack of understanding of media needs. **400–600-word r
 get significantly higher pickup rates than longer ones.** [PressCable, ibid.]
 
 ### AP style conventions
+
+**AP (Associated Press) style is a US/English-language newswire convention**, not a
+universal rule. Apply the conventions below for English-language releases. For releases
+in other languages, follow the numeral, date, and title conventions standard to that
+language's own press/style tradition (e.g., DIN 5008 for German business correspondence)
+instead of translating AP style literally.
 
 Follow these conventions for numerals, dates, and titles:
 
@@ -245,9 +257,10 @@ a company newsroom or website — even absent any third-party pickup.
 - [ ] **Lead paragraph:** answers 5 Ws (who, what, when, where, why) in 50–75 words;
       uses specific, concrete language (not "excited," "thrilled," "innovative")
 - [ ] **Total length:** 300–500 words (ideally ~400); under 600 words
-- [ ] **AP style:** numerals 1–9 spelled out, 10+ as figures; percentages and money
-      as digits; months 6+ letters abbreviated with dates; titles capitalized before
-      names, lowercase after
+- [ ] **AP style (English-language releases only; substitute the target language's own
+      style convention otherwise):** numerals 1–9 spelled out, 10+ as figures;
+      percentages and money as digits; months 6+ letters abbreviated with dates; titles
+      capitalized before names, lowercase after
 - [ ] **Quotes:** 1–2 quotes maximum; each quote adds genuine insight or new information
       (not a restatement); multiple stakeholders represented if possible (customer,
       analyst, company)
