@@ -1,6 +1,6 @@
 # Persuasion Principles — Shared Reference
 
-_Last updated: 2026-08-03_
+_Last updated: 2026-08-04_
 
 Shared reference for all content-output skills that aim to influence reader
 behavior — buy, sign up, click, agree, donate, share, change their mind, trust
@@ -330,6 +330,180 @@ liking: it's shared identity, not shared affection.
 
 ---
 
+## Carnegie-Style Rapport and Framing Tactics
+
+These tactics come from Dale Carnegie's relationship-focused persuasion
+tradition (_How to Win Friends and Influence People_) rather than Cialdini's
+compliance research. They work through a different mechanism — self-generated
+belief and social rapport instead of automatic response triggers — so treat
+them as complements to the Seven Principles, not substitutes.
+
+### Let the reader believe the idea is their own
+
+**Mechanism:** People defend ideas they think they originated far more
+strongly than ideas handed to them. A conclusion the reader reaches on their
+own carries more conviction than the same conclusion stated as a claim.
+
+**Use when:**
+
+- The reader is likely to resist a direct claim (skeptical audience, contested
+  topic, competitive purchase decision)
+- The content has room to walk through evidence before stating a conclusion
+- You want durable belief, not just a one-time click
+
+**How to apply in writing:**
+
+- Present the evidence or scenario, then let the conclusion follow so
+  naturally the reader forms it a beat before you state it.
+- Use questions that lead the reader to the answer rather than assertions
+  that hand it to them: "What would it take to cut that in half?" before
+  revealing the answer.
+- In UGC or community content, structure prompts so participants articulate
+  the brand's key claim in their own words (reviews, testimonials, comments).
+
+**Avoid / failure modes:**
+
+- Over-engineering the setup so the "reveal" feels manipulative once noticed.
+- Using this for simple, low-stakes claims where a direct statement would be
+  faster and clearer — reserve it for claims that need to survive scrutiny.
+
+### Build a yes-ladder
+
+**Mechanism:** A sequence of easy, low-friction agreements lowers resistance
+to the next agreement in the chain. Related to foot-in-the-door, but applied
+as an in-copy structural device rather than a multi-touch campaign sequence.
+
+**Use when:**
+
+- Writing longer-form persuasive copy (landing pages, sales emails, scripts)
+  with a single throughline toward one ask
+- The final ask is larger or more effortful than the reader's default state
+
+**How to apply in writing:**
+
+- Open with statements the reader will reflexively agree with ("You've
+  probably felt X", "Most teams still do Y") before introducing the ask.
+- Structure sections so each one ends on a small confirmable point before the
+  next section builds on it.
+- Keep early agreements genuinely easy and true — a forced or exaggerated
+  "yes" breaks the chain.
+
+**Avoid / failure modes:**
+
+- Stacking so many agreement-beats that the copy feels padded or stalling.
+- Using obviously manipulative agreement bait ("Don't you want to save
+  money?") — readers recognize the pattern and disengage.
+
+### Appeal to nobler motives
+
+**Mechanism:** People act more readily when a request is framed as consistent
+with values or identity they want to hold ("the kind of person who...") than
+when it's framed as pure self-interest. Distinct from Commitment & Consistency,
+which anchors to past behavior — this anchors to aspiration.
+
+**Use when:**
+
+- The audience has a stated or implied value (sustainability, craftsmanship,
+  fairness, community) relevant to the offer
+- Pure self-interest framing feels transactional or undersells the decision
+
+**How to apply in writing:**
+
+- Name the value explicitly and connect the action to it: "for teams that
+  refuse to ship broken software" rather than "to reduce bugs".
+- Pair with, don't replace, the practical benefit — aspiration framing works
+  best alongside a concrete payoff, not instead of one.
+
+**Avoid / failure modes:**
+
+- Invoking a value the brand doesn't credibly hold reads as opportunistic.
+- Overusing lofty language for low-stakes offers (a checkout discount doesn't
+  need a moral framing) feels inflated and undermines trust.
+
+### Dramatize the idea
+
+**Mechanism:** Claims made concrete through story, demonstration, or vivid
+detail are more persuasive and more memorable than the same claim stated
+abstractly.
+
+**Use when:**
+
+- The claim is easy to state but hard to feel ("faster", "more reliable",
+  "saves time")
+- The format allows a scene, example, or before/after rather than a bare stat
+
+**How to apply in writing:**
+
+- Replace abstract claims with a single concrete scene: a named user, a
+  specific moment, a before/after contrast.
+- Pair numbers with a referent the reader can picture: "saves 6 hours a week
+  — a full workday back" beats "saves 6 hours a week" alone.
+- Use short, sensory, specific language over category adjectives ("cut the
+  deploy from 40 minutes to 90 seconds" beats "much faster deploys").
+
+**Avoid / failure modes:**
+
+- Dramatizing a weak or unverifiable claim just draws more attention to how
+  thin it is.
+- Overwrought dramatization on a plain, low-stakes offer reads as try-hard.
+
+### Throw down a challenge
+
+**Mechanism:** Competitive and achievement framing motivates action for
+audiences that respond to being tested, especially high-performers and
+in-group members with something to prove.
+
+**Use when:**
+
+- The audience skews competitive, ambitious, or performance-identified
+  (e.g. B2B decision-makers, athletes, developers, founders)
+- Scarcity or social proof framing would undersell the difficulty of the
+  achievement
+
+**How to apply in writing:**
+
+- Frame the action as a bar most people don't clear: "Most teams never get
+  past X — here's what it takes."
+- Use identity-linked stakes rather than generic urgency: "if you're serious
+  about Y" rather than "don't miss out."
+
+**Avoid / failure modes:**
+
+- Misreading the audience — challenge framing alienates risk-averse or
+  non-competitive readers instead of motivating them.
+- Overuse turns every claim into a dare, which reads as try-hard rather than
+  credible.
+
+### Concede a fault fast, before defending
+
+**Mechanism:** Related to the Authority section's trustworthiness amplifier,
+but distinct in purpose: this is a conflict-defusing move for when the reader
+holds a valid objection, not a credibility-building lead-in. Admitting the
+point immediately and fully — before pivoting to the counter-argument — lowers
+the reader's guard and makes the rebuttal easier to hear.
+
+**Use when:**
+
+- Responding to a known, valid objection or criticism in the content itself
+  (FAQ sections, comparison pages, post-mistake communications)
+- The reader is already primed to be defensive or skeptical
+
+**How to apply in writing:**
+
+- State the valid point plainly and without qualification before pivoting:
+  "You're right that we're more expensive than X. Here's the trade-off..."
+- Don't bury the concession in hedges ("well, in some cases...") — full,
+  fast acknowledgment is what disarms the objection.
+
+**Avoid / failure modes:**
+
+- Token concessions that immediately undercut themselves ("I might be wrong,
+  but...") read as insincere and fail to defuse anything.
+- Conceding a point that isn't actually valid just hands the reader a reason
+  to distrust the rest of the copy.
+
+---
+
 ## Pre-Suasion: Setting the Stage
 
 The principle in one line: **what the reader is paying attention to _just
@@ -450,6 +624,11 @@ channeling) are drawn from the research-based work of Robert Cialdini and
 the broader behavioral-science literature, most prominently _Influence: The
 Psychology of Persuasion_ (1984, with later editions adding Unity) and
 _Pre-Suasion: A Revolutionary Way to Influence and Persuade_ (2016).
+
+The Carnegie-Style Rapport and Framing Tactics section draws on the
+relationship-focused persuasion tradition popularized by Dale Carnegie in
+_How to Win Friends and Influence People_ (1936) and its long lineage of
+sales and rapport-building literature.
 
 The underlying ideas, research findings, and named effects are not
 copyrightable. The specific prose, examples, and case stories from those
