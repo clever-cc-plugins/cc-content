@@ -163,28 +163,35 @@ Produce a complete X post (single or thread) that:
   - Opens with a strong hook (grabs attention in 1 second per format-guidelines.md)
   - Contains one clear idea or call-to-action
   - Uses 0–2 hashtags only (never 3+)
-  - Invites conversation or action via a specific, singular CTA
+  - Invites conversation via a specific, singular, non-bait CTA (never "like if you agree",
+    "follow for more", "RT to win", or similar solicitation — see format-guidelines.md)
   - Includes 1–2 emojis at natural pauses (if brand voice permits)
-  - Omits links unless account is Premium (links reduce reach 50–90%)
+  - Omits links from the main post (or places them in the first reply) unless the click
+    itself is the goal — links measurably reduce reach across independent 2026 studies
+  - Chooses media because it serves the message, not on an assumption that video or images
+    automatically outperform text (recent large-sample data shows text is competitive)
   - Applies selected storytelling framework and persuasion principles
 
-- **Thread (5–7 posts):**
+- **Thread (5–8 posts):**
   - Post 1 (hook post): numbered "1/[N]" with value promise
   - Posts 2–[N-1] (body): one self-contained idea per post, clear logical flow
-  - Post [N] (final): explicit CTA (follow, retweet, answer question, etc.)
+  - Post [N] (final): explicit, non-bait CTA (a specific question, not a follow/retweet
+    solicitation)
   - Each post ≤280 characters
   - Total structure applies selected framework and persuasion principles
 
 Internal verification checklist from `format-guidelines.md`:
 
 - Hook grabs attention in first line (strong opening within ~1 second)
-- Character count appropriate (280 for single posts; 5–7 posts for threads)
+- Character count appropriate (280 for single posts; 5–8 posts for threads)
 - One idea per post
-- CTA is singular and easy to answer
+- CTA is singular, easy to answer, and free of engagement-bait phrasing
 - Hashtags: 0–2 only
-- No links (or Premium-only links)
+- Links omitted from the main post (or in the first reply) unless the click is the goal
+- Media choice serves the message, not an assumed algorithmic bonus
+- Any factual/statistical claim would hold up to a Community Note
 - Tone matches audience (B2B vs. B2C calibration)
-- If thread: 5–7 posts, hook/body/CTA structure
+- If thread: 5–8 posts, hook/body/CTA structure
 - Conversation-inviting element present
 - Emojis: 1–2 max
 
