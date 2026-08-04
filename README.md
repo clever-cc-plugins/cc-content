@@ -17,8 +17,8 @@ A [Claude Code](https://claude.ai/code) plugin that provides a comprehensive sui
 
 The content-production skills work for any industry, audience, and output language. They automatically use the context files set up during onboarding, and prompt you for any required information that the context does not already cover.
 
-| Skill                         | What it does                                                                                                                                                                                      |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Skill                                    | What it does                                                                                                                                                                                      |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `/cc-content:content-onboarding`         | Interviews you about your brand, voice, and audience, then populates `context/` with structured context files that all other skills can read                                                      |
 | `/cc-content:register-context`           | Registers a single file as context in `CLAUDE.md` mid-session, without re-running full onboarding                                                                                                 |
 | `/cc-content:research-prompt`            | Generates a vendor-neutral deep-research prompt for a topic, ready to paste into Claude, ChatGPT, Gemini, Perplexity, or similar                                                                  |
@@ -129,6 +129,8 @@ At the end of each working session, commit your work and log any corrections:
 ## Extending with Custom Content Skills
 
 The plugin ships with support for multiple content formats (blog articles, social posts, press releases, and more). If you need a content format that isn't covered yet, you can build a project-local skill using `new-content-skill` — no plugin contribution required.
+
+**Extending vs. customizing.** `new-content-skill` is for formats the plugin doesn't support yet. If the plugin already has a skill for your format (e.g. `blog-article`) and you just need brand- or company-specific rules applied to it (structure, length, mandatory sections), don't fork the skill — register those rules as context (`register-context` or `content-onboarding`) instead. The default skill loads and applies them automatically, and you keep benefiting from future improvements to the plugin's best-practice defaults.
 
 **Workflow:**
 
