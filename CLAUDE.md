@@ -11,14 +11,14 @@ content creation skills for marketing projects.
 | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `.claude/format-markdown.sh`                                    | PostToolUse hook: formats Markdown files with prettier after edits                            |
 | `.claude/guard-secret-files.sh`                                 | PreToolUse hook: blocks reads/edits/writes of secret .env files                               |
-| `.claude/learnings.md`                                          | Corrections and observations logged during config/session-wrap runs                           |
-| `.claude/settings.json`                                         | Permissions, hooks, environment variables                                                     |
 | `.claudeignore`                                                 | Paths excluded from Claude Code indexing                                                      |
+| `.claude/learnings.md`                                          | Corrections and observations logged during config/session-wrap runs                           |
+| `CLAUDE.md`                                                     | Project instructions, loaded every message                                                    |
+| `.claude/settings.json`                                         | Permissions, hooks, environment variables                                                     |
 | `.githooks/pre-commit`                                          | Secret scanning (gitleaks) + CLAUDE.md table sync                                             |
 | `.github/workflows/claude-code-review.yml`                      | Automatic PR review via Claude Code                                                           |
 | `.github/workflows/claude.yml`                                  | Trigger Claude via @claude mentions in issues/PRs                                             |
 | `.gitignore`                                                    | Git ignore patterns                                                                           |
-| `CLAUDE.md`                                                     | Project instructions, loaded every message                                                    |
 | `plugins/cc-content/.claude-plugin/plugin.json`                 | Plugin manifest                                                                               |
 | `plugins/cc-content/skills/atomize/SKILL.md`                    | Skill: Repurpose one core message across multiple formats in a single run                     |
 | `plugins/cc-content/skills/blog-article/SKILL.md`               | Skill: Draft blog articles                                                                    |
@@ -72,6 +72,15 @@ Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containi
 - Don't commit secrets or credentials to git
 - Don't use `--force` flags — fix the underlying issue instead
 - Don't modify CLAUDE.md directly when logging a correction — append to `.claude/learnings.md`
+- Don't recommend algorithm-gaming tactics in content-skill guidelines (e.g., hiding
+  a link in the first comment to dodge a suspected reach penalty, engagement-bait
+  CTAs) even when tutorials or coaches currently present them as best practice —
+  platforms iterate to detect and penalize exactly these tricks, so they're
+  short-lived by design. Same dynamic as black-hat SEO: keyword stuffing and link
+  farms didn't survive algorithm updates; genuine value and good UX did, because
+  that's what the algorithm was a proxy for. Prefer durable, user-aligned practices
+  over trend-chasing tricks, and file gaming tactics under "common mistakes /
+  outdated tactics" rather than as guidance to follow
 
 ## Compact Instructions
 

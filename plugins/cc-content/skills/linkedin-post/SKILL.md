@@ -111,6 +111,18 @@ If the owner has not specified a topic or goal for the post, ask:
 
 Wait for the answer, then proceed.
 
+## Step 3a: Determine account type (personal profile vs. company page)
+
+Format guidance in `format-guidelines.md` now diverges meaningfully between personal
+profiles and company pages — voice, length, CTA style, and tone all differ (see
+"Personal Profile vs. Company Page" in that file). Infer the account type from the
+campaign briefing or loaded context if it's stated there. If it isn't, ask once:
+
+> "Is this post for a personal profile (first-person, founder/employee voice) or a
+> company page (brand voice)?"
+
+Note the answer — it drives length target, voice, and CTA style in Step 4.
+
 ## Step 3b: Select a storytelling framework
 
 Read `../_shared/storytelling-frameworks.md` and follow the selection process described
@@ -127,16 +139,25 @@ opener primes credibility").
 
 Produce a complete LinkedIn post that:
 
-- Opens with a strong hook (max 190 chars, starts with an emoji)
+- Opens with a tight, unbroken hook within ~140 characters (mobile fold), no blank
+  line before the fold, starting with one structural emoji
+- Is calibrated to the account type from Step 3a — voice, length target, and CTA
+  style per the "Personal Profile vs. Company Page" table in `format-guidelines.md`
 - Is structured according to the framework chosen in Step 3b (if applicable)
 - Includes a body delivering the substance the hook promises
-- Ends with a specific, singular CTA that is easy to answer
-- Uses ~6 emojis placed at natural pauses (omit if brand voice prohibits)
-- Omits hashtags by default (add 1–2 only if the campaign requires them)
-- Stays within the recommended character target (1,242–2,500 characters)
+- Ends with a specific, singular CTA that invites a substantive reply — never an
+  engagement-bait phrase ("Comment YES", "Agree?", "Tag someone who needs this")
+- Uses 0–3 emojis placed structurally, not decoratively (omit if brand voice prohibits)
+- Hashtags are optional — if used, 3–5 relevant tags at the end; omitting them is a
+  fine default, not a compromise
+- Stays within the recommended character target for the account type (1,300–2,500
+  for personal profiles, ≤700–800 for company pages)
 - Reflects tone and vocabulary from loaded brand voice context
 - Addresses the audience from loaded audience context
-- Does NOT embed a link in the post body (reference "first comment" if a link is needed)
+- Avoids AI-slop clichés and uniform sentence rhythm; anchors every claim with a
+  specific number, name, or outcome
+- Includes a link directly in the post body if a link adds real value to the post —
+  never hides it in the first comment as a reach workaround
 
 Internally verify against the quality checklist in `format-guidelines.md` before
 presenting the output.

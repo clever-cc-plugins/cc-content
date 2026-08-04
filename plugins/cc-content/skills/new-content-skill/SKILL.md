@@ -152,6 +152,23 @@ Base every claim on the research files; use knowledge-based synthesis only for
 user-approved gaps, and mark those sections with
 `⚠ KNOWLEDGE-BASED — verify before treating this skill as production-ready`.
 
+**Filter out algorithm-gaming tactics.** Research files sourced from tutorials,
+"growth hacker" coaches, and marketing blogs often carry tactics whose sole purpose
+is manipulating a ranking algorithm rather than serving the reader (e.g., hiding a
+useful link in the first comment to dodge a suspected reach penalty, engagement-bait
+CTAs, keyword-stuffed profiles). Do not carry these into `format-guidelines.md` as
+recommended practice, even when a research file presents them as current best
+practice — platforms iterate to detect and penalize exactly these tricks, so they
+have a short shelf life by design (the same dynamic as black-hat SEO: keyword
+stuffing and link farms didn't survive Google's algorithm updates, while genuine
+value — useful content, real backlinks, good UX — did, because it was never a trick
+in the first place, just what the algorithm was a proxy for). When a research file
+surfaces a tactic like this, either omit it or, if it's worth flagging as a
+documented trend, present it under "Common Mistakes / Outdated Tactics" rather than
+as guidance to follow. Genuine platform mechanics that happen to also serve the
+reader (e.g., short paragraphs for scannability, a real hook because attention is
+finite) are not gaming tactics and belong in the guidelines normally.
+
 The file must follow this three-layer structure:
 
 ---
