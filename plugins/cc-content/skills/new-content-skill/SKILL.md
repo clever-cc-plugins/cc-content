@@ -248,6 +248,25 @@ The file must be a working content-production skill following the pattern establ
 the content-production authoring guide. Mark every section the user must customize with
 a `[TODO: ...]` tag.
 
+**Mode-dependent TODO policy.** `[TODO: ...]` markers left in the skill's own
+instructions are appropriate only in **end-user mode** — the file lives inside one
+specific consuming project, and the project owner is expected to open it and fill in
+project-specific specifics (their trigger phrasing, their mandatory elements, their
+delivery workflow).
+
+In **plugin-dev mode**, the generated skill ships to arbitrary downstream projects —
+nothing about "the project" is known in advance, so a TODO that asks a future plugin
+maintainer to hardcode a project-specific assumption (e.g., "confirm this matches your
+project's typical use", "add your CMS/provider here") is a defect, not a placeholder:
+no maintainer can correctly fill it in for every consumer. Every step below that would
+otherwise carry such a TODO must instead be written so the skill resolves the need at
+**runtime** — infer it from loaded context (Step 1) or the campaign brief (Step 2), and
+if genuinely unresolvable from either, ask the owner a single targeted question during
+the run. An inline `[TODO: ...]` may still appear in the _generated content itself_
+(the landing page, email, etc. the skill produces for that run) when a mandatory
+element is still unresolved after checking context and asking — that is a normal,
+per-run gap flag, not a design-time TODO in the skill's instructions.
+
 Required YAML frontmatter — the `name:` field is the same in both modes: `<format-name>`
 (e.g., `blog-article`). Plugin skills are namespaced automatically as `cc-content:<format-name>`,
 so the skill's own `name:` field must never repeat the `cc-content-` prefix.
@@ -257,11 +276,21 @@ so the skill's own `name:` field must never repeat the `cc-content-` prefix.
 name: <format-name>
 description: >
   Use this skill when the owner wants to write, draft, or generate a [FORMAT].
-  Invoke when the user says "[TODO: add trigger phrases for this format]".
+  Invoke when the user says "[TRIGGER PHRASES]".
 allowed-tools: Read, Write, Bash
 argument-hint: "[optional: path to campaign briefing file]"
 ---
 ```
+
+**End-user mode:** leave `[TODO: add trigger phrases for this format]` in place of
+`[TRIGGER PHRASES]` — the project owner may want project-specific phrasing (product
+nicknames, internal terminology) that only they know.
+
+**Plugin-dev mode:** do not leave a TODO here — write 3–5 concrete, natural-sounding
+trigger phrases directly, derived from the format name itself (e.g., for
+`landing-page`: "write a landing page", "draft a registration page", "create a webinar
+landing page"). The format name and its research files give you everything needed to
+write these; no downstream-project knowledge is required.
 
 Required @-imports at the top of the body (after frontmatter) — paths differ by mode:
 
@@ -356,9 +385,19 @@ framework, the selected persuasion principles, and any loaded brand-voice and au
 context. Internally verify against the quality checklist in `format-guidelines.md` before
 presenting.
 
-Include a `[TODO: ...]` placeholder for any format-specific mandatory elements — for example,
-word count requirements, mandatory section headers, or SEO constraints — that the user must
-specify for their use case.
+**End-user mode:** include a `[TODO: ...]` placeholder for any format-specific mandatory
+elements — for example, word count requirements, mandatory section headers, or SEO
+constraints — that the project owner must specify for their use case.
+
+**Plugin-dev mode:** do not leave a design-time `[TODO: ...]` for this — no plugin
+maintainer can correctly fill in a requirement that varies per downstream project.
+Instead write this step so the skill resolves mandatory elements at **runtime**: check
+the **format-specific rules** context loaded in Step 1 for anything that governs this
+element (legal disclaimers, provider-specific field names, jurisdiction-specific
+wording, word-count constraints); if nothing loaded covers a genuinely required
+element, ask the owner once rather than guessing or inventing it. Only mark an inline
+`[TODO: ...]` inside the _generated output itself_ (not the skill's instructions) as a
+last resort, when the element is still unresolved after checking context and asking.
 
 Present the output in a clearly delimited block showing the content and its word / character
 count.
@@ -385,8 +424,19 @@ correction, append it as a tagged entry using the same criteria. Confirm total e
 written across both phases: "✓ N learning(s) saved to `.claude/learnings.md`." If the
 user confirms quality or skips: if any entries were auto-stored, confirm
 "✓ N learning(s) auto-saved to `.claude/learnings.md`." Then deliver a closing line and
-exit. Include a `[TODO: ...]` for any format-specific delivery note (e.g.,
+exit.
+
+**End-user mode:** include a `[TODO: ...]` for a format-specific delivery note (e.g.,
 "Paste into your CMS", "Send for review").
+
+**Plugin-dev mode:** do not leave an author-facing TODO here either — no plugin
+maintainer knows every downstream project's tooling. Write the closing note so it is
+derived at **runtime** from what the run actually produced: reference the
+format-specific rules context if it named a CMS, builder, or provider; add a
+compliance reminder if the confirmed audience triggers one (e.g., a consent-wording
+review for a regulated jurisdiction, if the format's guidelines include a compliance
+section); and fall back to a sensible generic default (e.g., "ready to hand off to
+your [developer/builder/relevant tool]") when nothing more specific is known.
 
 ---
 
@@ -446,7 +496,11 @@ Next steps:
 
 ```
 Next steps:
-1. Open SKILL.md and replace all [TODO: ...] markers with format-specific content.
+1. Open SKILL.md and check for any remaining [TODO: ...] markers — per the mode-dependent
+   TODO policy (Step 5), plugin-dev mode should have none in the skill's own instructions;
+   if any slipped through, resolve them by writing runtime resolution logic (infer from
+   context, ask the owner, fall back to a generated-output TODO) instead of hardcoding a
+   project-specific assumption.
 2. Review format-guidelines.md — especially any ⚠ KNOWLEDGE-BASED sections.
 3. Add the skill to `.claude-plugin/marketplace.json` if it's a new plugin entry.
 4. Test the skill in a target project: run /content-onboarding there, then invoke your new skill.
