@@ -109,13 +109,15 @@ This is the content-production-specific step.
      (from the goal variations in format-guidelines.md)
    - **Funnel stage**: TOFU, MOFU, or BOFU (if applicable)
    - **Audience expertise level**: novice, familiar, or expert
-   - **Platform channel**: Page or Group (if relevant to the brand's strategy)
+   - **Platform channel**: Personal Profile, Professional Mode, Business Page, or Group —
+     confirm this explicitly; format-guidelines.md now shows reach differs by an order of
+     magnitude between these (Page ~1–6% vs. Group ~20–60% vs. Personal, highest)
 
 2. If the loaded context genuinely does not support a confident inference, ask the owner the
    missing question directly rather than guessing.
 
 3. Present a one-line inference summary to the user, for example:
-   "Audience: B2B (SaaS) · Goal: lead generation · Stage: MOFU · Expertise: familiar · Channel: Company Page"
+   "Audience: B2B (SaaS) · Goal: lead generation · Stage: MOFU · Expertise: familiar · Channel: Business Page"
 
 4. Ask the user to confirm or correct before generating. Do not silently apply assumptions.
 
@@ -148,32 +150,43 @@ concrete pain point").
 
 Produce a complete Facebook post that:
 
-- **Opens with a strong hook** (grabs attention in 1 second per format-guidelines.md)
-- **Fits the length target** for its goal (40–80 chars for awareness/conversion; 150–300 for
+- **Opens with a strong hook** that stands alone within ~125–140 characters (mobile truncation)
+- **Fits the length target** for its goal (under ~150 chars for awareness/conversion; 150–300 for
   consideration/education)
 - **Contains one clear idea or call-to-action**
-- **Uses 0–2 emojis** at natural pauses (if brand voice permits)
+- **Uses 0–2 emojis** at natural pauses (if brand voice permits) and 0–3 hashtags only if they
+  serve a specific campaign/event/location purpose (never as a discovery tactic)
 - **Includes a singular CTA** if the goal is conversion or consideration (e.g., "Leave your answer
-  below", "Watch the demo")
+  below", "Watch the demo") — never an engagement-bait phrase ("Like if you agree", "Comment YES",
+  "Tag a friend", "Share to win")
 - **Applies selected storytelling framework and persuasion principles**
 - **Reflects tone and vocabulary** from loaded brand voice context and audience context
-- **Acknowledges platform constraints:** If the post includes a link or is targeting a Page
-  (lower reach), note the reach implications and suggest native-content alternatives if applicable
+- **Acknowledges channel reach dynamics:** Page posts reach ~1–6% of followers organically;
+  Groups reach ~20–60% of members; Personal/Professional posts reach highest. Note this to the
+  owner and, for Page posts with a conversion goal, suggest paid amplification or a
+  founder/employee personal-profile share — not a Group cross-post, since Groups need
+  community-appropriate framing decided at the channel-selection stage (Step 3), not a reach
+  patch applied here
+- **If the post includes a link**, place it directly in the post body (never hidden in the first
+  comment as a reach workaround) and note the reach trade-off
+- **If the post includes an image or video**, flag that alt text / captions should be added
 - **If briefing is present**, the post must serve its stated goals and key messages
 
 Internal verification checklist from `format-guidelines.md`:
 
-- Hook grabs attention in first line (within ~1 second, ideally under 125 characters for mobile
-  truncation)
-- Length appropriate for goal (40–80 chars for awareness/conversion; 150–300 for
+- Hook grabs attention in first line and stands alone within ~125–140 characters
+- Length appropriate for goal (under ~150 chars for awareness/conversion; 150–300 for
   consideration/education)
 - One idea per post
-- CTA is singular and easy to answer
-- Emojis: 0–2 max
+- CTA is singular, easy to answer, and free of engagement-bait phrasing
+- Emojis: 0–2 max; hashtags: 0–3 max and only if purposeful
 - Tone matches audience (B2B vs. B2C calibration)
-- If Page post: note lower organic reach; recommend paid boost or native content if low reach
-  expected
+- Channel confirmed (Personal Profile / Professional Mode / Page / Group) and reach
+  expectations set accordingly
+- If Page post: note lower organic reach; recommend paid boost or a founder/employee
+  personal-profile share if low reach is a risk for the stated goal
 - If Group post: adjusted for community tone (peer-to-peer, less promotional)
+- If link included: placed in the post body, not hidden in the first comment
 - Conversation-inviting element present (question or call for input)
 
 Present the post in a clear block:
