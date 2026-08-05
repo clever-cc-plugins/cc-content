@@ -11,14 +11,14 @@ content creation skills for marketing projects.
 | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `.claude/format-markdown.sh`                                    | PostToolUse hook: formats Markdown files with prettier after edits                            |
 | `.claude/guard-secret-files.sh`                                 | PreToolUse hook: blocks reads/edits/writes of secret .env files                               |
-| `.claudeignore`                                                 | Paths excluded from Claude Code indexing                                                      |
 | `.claude/learnings.md`                                          | Corrections and observations logged during config/session-wrap runs                           |
-| `CLAUDE.md`                                                     | Project instructions, loaded every message                                                    |
 | `.claude/settings.json`                                         | Permissions, hooks, environment variables                                                     |
+| `.claudeignore`                                                 | Paths excluded from Claude Code indexing                                                      |
 | `.githooks/pre-commit`                                          | Secret scanning (gitleaks) + CLAUDE.md table sync                                             |
 | `.github/workflows/claude-code-review.yml`                      | Automatic PR review via Claude Code                                                           |
 | `.github/workflows/claude.yml`                                  | Trigger Claude via @claude mentions in issues/PRs                                             |
 | `.gitignore`                                                    | Git ignore patterns                                                                           |
+| `CLAUDE.md`                                                     | Project instructions, loaded every message                                                    |
 | `plugins/cc-content/.claude-plugin/plugin.json`                 | Plugin manifest                                                                               |
 | `plugins/cc-content/skills/atomize/SKILL.md`                    | Skill: Repurpose one core message across multiple formats in a single run                     |
 | `plugins/cc-content/skills/blog-article/SKILL.md`               | Skill: Draft blog articles                                                                    |

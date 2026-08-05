@@ -149,30 +149,31 @@ concrete pain point, CTA is specific call-to-action").
 
 Produce a complete Instagram caption that:
 
-- **Opens with a strong hook** (grabs attention in 1 second per format-guidelines.md)
-- **Fits the length target** for its format and goal (40–80 chars for awareness/Reels; 150–300 chars or 150–220 **words** for consideration/carousel)
+- **Opens with a strong hook** (grabs attention within 1–3 seconds per format-guidelines.md; for Reels, the hook must also work as on-screen text)
+- **Fits the length target** for its format and goal (100–220 chars for awareness/Reels; 126–800 chars for consideration/carousel; see Layer 3 tables for other goals)
 - **Contains one clear idea or call-to-action**
-- **Hook does NOT start with an emoji** (emojis reserved for later natural pauses, 0–2 max)
-- **Includes a singular CTA** if the goal extends beyond pure reach (e.g., "Save this post", "Tap the link in bio", "Share this with someone who needs it")
+- **Hook does NOT start with an emoji** (emojis reserved for later natural pauses, 1–5 max depending on format)
+- **Includes a singular CTA** if the goal extends beyond pure reach (e.g., "Save this post", "Tap the link in bio", "Share this with someone who needs it") — avoid generic bait prompts ("Comment YES")
 - **Applies selected storytelling framework and persuasion principles**
 - **Reflects tone and vocabulary** from loaded brand voice context and audience context
-- **For post format:** if Reels, keep caption short and let the video carry the narrative; if carousel, assume reader will swipe and can handle longer/multi-part captions; if single-image, hook must stand alone in ~125 characters
-- **Hashtags: 3–5 max**, chosen for topical relevance over volume (not the historical "use 30" ceiling)
+- **For post format:** if Reels, keep caption short and let the video carry the narrative; if carousel, assume reader will swipe and can handle longer/multi-part captions; if single-image, hook must stand alone within the truncation point (~125 characters Feed)
+- **Hashtags: 3–5 max** (the platform now enforces a hard cap around 5), chosen for topical relevance over volume
 - **Acknowledges format implications:** note whether this is feed/carousel/Reels/Stories and how the format choice serves the goal
 - **If briefing is present**, the post must serve its stated goals and key messages
 
 Internal verification checklist from `format-guidelines.md`:
 
-- Hook grabs attention in first line (within ~1 second, ideally under 125 characters for mobile truncation)
-- Hook does NOT start with emoji
-- Length appropriate for format and goal (40–80 chars for awareness/Reels, 150–300 chars or 150–220 **words** for consideration/carousels)
+- Hook grabs attention in first line (within 1–3 seconds, ideally under 125 characters for mobile truncation, ~55 for Reels)
+- Hook does NOT start with emoji; for Reels, hook also appears as on-screen text
+- Length appropriate for format and goal (see Layer 3 tables in format-guidelines.md)
 - One idea per caption
 - CTA is singular and easy to answer
-- CTA is specific, not vague
-- Emojis: 0–2 max, placed at natural pauses (not in opening hook)
+- CTA is specific and save/send-oriented, not vague or generic bait
+- Emojis: 1–5 max depending on format, placed at natural pauses (not in opening hook)
 - Tone matches audience (B2B vs. B2C calibration)
 - Hashtag count: 3–5, topically relevant
 - Post format choice aligns with goal and funnel stage (per Layer 3)
+- Content is native/original — no unaltered reposts or watermarked video
 - Conversation-inviting element present (question, call for saves/shares, or community hook)
 
 Present the output in a clearly delimited block showing the content and its character/word count:
