@@ -17,6 +17,7 @@ content creation skills for marketing projects.
 | `.githooks/pre-commit`                                          | Secret scanning (gitleaks) + CLAUDE.md table sync                                             |
 | `.github/workflows/claude-code-review.yml`                      | Automatic PR review via Claude Code                                                           |
 | `.github/workflows/claude.yml`                                  | Trigger Claude via @claude mentions in issues/PRs                                             |
+| `.github/workflows/release.yml`                                 | Triggers shared plugin-release workflow — version bump + GitHub release — on push to main     |
 | `.gitignore`                                                    | Git ignore patterns                                                                           |
 | `CLAUDE.md`                                                     | Project instructions, loaded every message                                                    |
 | `plugins/cc-content/.claude-plugin/plugin.json`                 | Plugin manifest                                                                               |
