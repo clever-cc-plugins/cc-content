@@ -26,7 +26,7 @@ content creation skills for marketing projects.
 | `plugins/cc-content/skills/content-onboarding/SKILL.md`         | Skill: Register and create context files; guide project setup                                 |
 | `plugins/cc-content/skills/content-performance-review/SKILL.md` | Skill: Analyze content performance data and generate iteration variants                       |
 | `plugins/cc-content/skills/facebook-post/SKILL.md`              | Skill: Draft Facebook posts                                                                   |
-| `plugins/cc-content/skills/gated-long-form-content/SKILL.md`    | TODO: add description                                                                         |
+| `plugins/cc-content/skills/gated-long-form-content/SKILL.md`    | Skill: Draft gated long-form lead-generation content (whitepapers, guides, ebooks)            |
 | `plugins/cc-content/skills/humanize/SKILL.md`                   | Skill: Remove AI tells from a draft and rewrite it to sound human, on-brand-voice             |
 | `plugins/cc-content/skills/instagram-post/SKILL.md`             | Skill: Draft Instagram posts and captions                                                     |
 | `plugins/cc-content/skills/landing-page/SKILL.md`               | TODO: add description                                                                         |
@@ -68,6 +68,7 @@ Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containi
 | `content-performance-review` | Analyze content performance data and generate iteration variants                       |
 | `session-wrap`               | Review session, promote deliverables to context, commit work                           |
 | `new-content-skill`          | Build a new content-production skill from research                                     |
+| `gated-long-form-content`    | Draft gated long-form lead-generation content (whitepapers, guides, ebooks)            |
 
 ## Don't
 
