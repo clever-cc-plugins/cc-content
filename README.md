@@ -195,6 +195,12 @@ Write `File` paths relative to the `CLAUDE.md` file that contains the table — 
 
 If a project has more than one `CLAUDE.md` (e.g. a nested one for a specific campaign or sub-brand), each table is scoped to its own file — a nested `CLAUDE.md`'s `File` column is relative to that nested folder, not the project root.
 
+### Always open Claude Code at the project root
+
+Open Claude Code at this project's root directory — not in a subfolder like `campaigns/campaign-xyz/`, even when your task only concerns that campaign. Reason: `.claude/settings.json` (permissions, hooks, sandbox-relevant env vars) loads **only** from the actual startup directory. Unlike `CLAUDE.md`, Claude Code does not search upward through the directory tree for it, so starting in a subfolder silently skips those project settings.
+
+This costs nothing in context precision. Nested `CLAUDE.md` files (e.g. a campaign-scoped one in `campaigns/campaign-xyz/`) still load automatically as soon as Claude Code reads any file inside that subfolder — no `cd` required. So when starting a task on a specific campaign, have Claude Code read a file from that subfolder first, ideally the campaign's own briefing or context document. That's a sensible first step before content creation anyway, and it pulls in the right nested `CLAUDE.md` as a side effect.
+
 ---
 
 ## License

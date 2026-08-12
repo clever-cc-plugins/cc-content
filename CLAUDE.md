@@ -11,14 +11,23 @@ content creation skills for marketing projects.
 | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `.claude/format-markdown.sh`                                    | PostToolUse hook: formats Markdown files with prettier after edits                            |
 | `.claude/guard-secret-files.sh`                                 | PreToolUse hook: blocks reads/edits/writes of secret .env files                               |
+| `.claude/hooks`                                                 | TODO: add description                                                                         |
+| `.claude/launch.json`                                           | TODO: add description                                                                         |
 | `.claude/learnings.md`                                          | Corrections and observations logged during config/session-wrap runs                           |
+| `.claude/loop.md`                                               | TODO: add description                                                                         |
+| `.claude/output-styles`                                         | TODO: add description                                                                         |
+| `.claude/routines`                                              | TODO: add description                                                                         |
+| `.claude/scheduled_tasks.json`                                  | TODO: add description                                                                         |
 | `.claude/settings.json`                                         | Permissions, hooks, environment variables                                                     |
+| `.claude/skills`                                                | TODO: add description                                                                         |
+| `.claude/workflows`                                             | TODO: add description                                                                         |
 | `.claudeignore`                                                 | Paths excluded from Claude Code indexing                                                      |
 | `.githooks/pre-commit`                                          | Secret scanning (gitleaks) + CLAUDE.md table sync                                             |
 | `.github/workflows/claude-code-review.yml`                      | Automatic PR review via Claude Code                                                           |
 | `.github/workflows/claude.yml`                                  | Trigger Claude via @claude mentions in issues/PRs                                             |
 | `.github/workflows/release.yml`                                 | Triggers shared plugin-release workflow — version bump + GitHub release — on push to main     |
 | `.gitignore`                                                    | Git ignore patterns                                                                           |
+| `.mcp.json`                                                     | TODO: add description                                                                         |
 | `CLAUDE.md`                                                     | Project instructions, loaded every message                                                    |
 | `plugins/cc-content/.claude-plugin/plugin.json`                 | Plugin manifest                                                                               |
 | `plugins/cc-content/skills/atomize/SKILL.md`                    | Skill: Repurpose one core message across multiple formats in a single run                     |
