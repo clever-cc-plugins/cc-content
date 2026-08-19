@@ -111,8 +111,8 @@ Ask for the content idea, audience, and any core proof points **once**, not once
 per format. The core message, key value proposition, and proof points must stay
 identical across every format produced in this run — only structure, length, and
 tone vary per format's own conventions (handled in Steps 4–5 below: Step 4 routes
-each format, Step 5 drafts each Tier-B/C format in its own isolated subagent, in
-parallel).
+each format, Step 5 drafts each Tier-B/C format — normally in its own isolated
+subagent, in parallel, or inline when only one format needs drafting).
 
 If the owner has not said what the text should be about, ask:
 
@@ -206,10 +206,11 @@ dispatching one — parallelization overhead isn't worth it for a single format.
 
 **Otherwise**, call the Agent tool once per Tier-B/C format, **all in a single
 message** (parallel tool calls — see the Agent tool's guidance on this). Fan-out
-scales with the format count confirmed in Step 2 — fine for the handful of formats a
-typical campaign targets, but if the owner names an unusually large format list,
-mention the fan-out size before dispatching so they can trim it if they'd rather not
-spin up that many subagents at once. Each dispatch call gets:
+scales with the number of Tier-B/C formats from Step 4, not the raw format count from
+Step 2 (formats routed to Tier A never reach this dispatch) — fine for the handful of
+formats a typical campaign leaves in Tier B/C, but if that count is unusually large,
+mention the fan-out size before dispatching so the owner can trim it if they'd rather
+not spin up that many subagents at once. Each dispatch call gets:
 
 - `subagent_type: "general-purpose"`
 - `run_in_background: false` — Step 6 needs every result before it can present
@@ -279,8 +280,11 @@ spin up that many subagents at once. Each dispatch call gets:
   9. The exact return contract — the subagent should return **only**: the finished
      text (nothing else mixed into it); the storytelling framework it used; the
      persuasion principles it used plus its opener strategy; the format-rules source
-     (guideline filename or "general best practices"); the length (count + unit);
-     and one line for the batch learnings step — a correction it had to make, or an
+     (guideline filename or "general best practices"); the length (count + unit) and,
+     if the Tier-B guideline specifies an optimal length range, that range too (else
+     "n/a" — the main session has no other way to know it, since it never reads the
+     guideline itself on this path); and one line for the batch learnings step — a
+     correction it had to make, or an
      observation about how well this format took the core message — or "none".
 
 Wait for every dispatched subagent to finish before continuing to Step 6. If a
