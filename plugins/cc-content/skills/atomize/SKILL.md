@@ -192,8 +192,14 @@ shared. Rather than running that pass sequentially for each format in this sessi
 context, dispatch one subagent per Tier-B/C format, all in parallel, and let each
 work in its own isolated context loaded with only what its format needs.
 
+**If zero formats landed in Tier B/C**, skip Step 5 entirely — there's nothing to
+draft, and Step 6 will just present the routing summary.
+
 **If exactly one format landed in Tier B/C**, skip dispatch and do the pass directly
-in this session instead — parallelization overhead isn't worth it for a single format.
+in this session instead, following the same task list laid out in item 7 below
+(framework selection, persuasion selection, draft pass 1, self-edit pass 2) applied
+to yourself rather than written into a subagent prompt — parallelization overhead
+isn't worth it for a single format.
 
 **Otherwise**, call the Agent tool once per Tier-B/C format, **all in a single
 message** (parallel tool calls — see the Agent tool's guidance on this), each with:
@@ -218,7 +224,15 @@ message** (parallel tool calls — see the Agent tool's guidance on this), each 
      the format-guideline file path noted in Step 4. For Tier C, state plainly that
      no guideline file exists and it should use its own best-practices knowledge for
      this format's length, structure, and conventions.
-  6. The full task, in order:
+  6. An explicit tool-scope constraint: state plainly that the subagent's job is
+     read-and-draft only — it must `Read` **only** the exact file paths listed above,
+     and must not use any other tool (no web access, no fetching URLs, no shell
+     commands, no writing files). This skill's own `allowed-tools` doesn't include
+     web or execution access, and a `general-purpose` subagent defaults to a much
+     wider tool surface than that; since the content idea and any `brief.md` this
+     prompt draws on may contain untrusted or externally-sourced text, don't let a
+     subagent's effective tool access exceed what this skill itself is scoped to.
+  7. The full task, in order:
      - Select a storytelling framework per `storytelling-frameworks.md`'s selection
        process; apply it as the structural spine where it fits; let SPIN (Situation →
        Problem → Implication → Need-Payoff) shape the argument's progression where
@@ -245,10 +259,10 @@ message** (parallel tool calls — see the Agent tool's guidance on this), each 
        unchanged (abbreviating a statistic to fit platform constraints is fine as
        long as the number and meaning survive). If a Tier-B guideline specifies an
        optimal length, use the full range rather than coming in thin.
-  7. The channel-formatting rule: if this format is a social-media post or any
+  8. The channel-formatting rule: if this format is a social-media post or any
      channel that strips formatting, no bold/italics/Markdown — replace bullet
      points with fitting emojis, keep the body plain.
-  8. The exact return contract — the subagent should return **only**: the finished
+  9. The exact return contract — the subagent should return **only**: the finished
      text (nothing else mixed into it); the storytelling framework it used; the
      persuasion principles it used plus its opener strategy; the format-rules source
      (guideline filename or "general best practices"); the length (count + unit);
