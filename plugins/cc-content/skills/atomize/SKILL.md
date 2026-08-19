@@ -202,15 +202,20 @@ subagent would do it, so the inline path has to do it explicitly here instead. T
 apply the drafting task below (framework selection, persuasion selection, draft
 pass 1, self-edit pass 2 — plus the channel-formatting rule if this format strips
 formatting) to yourself, the same as it's written for a subagent prompt, rather than
-dispatching one — parallelization overhead isn't worth it for a single format.
+dispatching one — parallelization overhead isn't worth it for a single format. Since
+there's no subagent to return item 9's batch-learnings note, jot down that same
+one-line observation (a correction you had to make, or how well this format took the
+core message — or nothing, if there's nothing notable) yourself for Step 7 to pick up.
 
 **Otherwise**, call the Agent tool once per Tier-B/C format, **all in a single
 message** (parallel tool calls — see the Agent tool's guidance on this). Fan-out
 scales with the number of Tier-B/C formats from Step 4, not the raw format count from
 Step 2 (formats routed to Tier A never reach this dispatch) — fine for the handful of
 formats a typical campaign leaves in Tier B/C. If that count is large (as a rough
-guide, more than ~6), mention the fan-out size before dispatching so the owner can
-trim it if they'd rather not spin up that many subagents at once. Each dispatch call
+guide, more than ~6), this is a heads-up, not a stop-and-wait: mention the fan-out
+size to the owner, then proceed with dispatching — don't block on a reply. The
+formats were already confirmed in Step 2, so this is informational (they can say
+"fewer formats" for next time) rather than a gate on this run. Each dispatch call
 gets:
 
 - `subagent_type: "general-purpose"`
@@ -285,7 +290,9 @@ Wait for every dispatched subagent to finish before continuing to Step 6. Treat
   returned nothing) — redo it the same way, no diagnosis needed since there's no
   prior draft to compare against.
 
-Redo either case by re-dispatching or drafting it directly. If the retry still
+**Prefer re-dispatching** for the retry, to keep the isolation benefit — only draft
+it directly instead if the dispatch mechanism itself seems to be the problem (e.g.
+the subagent errored out rather than just drifting on facts). If the retry still
 fails, stop retrying: draft that one format directly yourself, following the
 single-format fallback above (including the guideline-file read and the
 channel-formatting rule), and note in its footer (Step 6) that it needed a manual
