@@ -208,9 +208,10 @@ dispatching one — parallelization overhead isn't worth it for a single format.
 message** (parallel tool calls — see the Agent tool's guidance on this). Fan-out
 scales with the number of Tier-B/C formats from Step 4, not the raw format count from
 Step 2 (formats routed to Tier A never reach this dispatch) — fine for the handful of
-formats a typical campaign leaves in Tier B/C, but if that count is unusually large,
-mention the fan-out size before dispatching so the owner can trim it if they'd rather
-not spin up that many subagents at once. Each dispatch call gets:
+formats a typical campaign leaves in Tier B/C. If that count is large (as a rough
+guide, more than ~6), mention the fan-out size before dispatching so the owner can
+trim it if they'd rather not spin up that many subagents at once. Each dispatch call
+gets:
 
 - `subagent_type: "general-purpose"`
 - `run_in_background: false` — Step 6 needs every result before it can present
@@ -287,13 +288,21 @@ not spin up that many subagents at once. Each dispatch call gets:
      correction it had to make, or an
      observation about how well this format took the core message — or "none".
 
-Wait for every dispatched subagent to finish before continuing to Step 6. If a
-subagent's result is missing the substance-layer facts or contradicts them, treat
-that as a failed draft and redo that one format **once** — either by re-dispatching
-it or drafting it directly. If the retry still fails the substance-layer check, stop
-retrying: draft that one format directly yourself, following the single-format
-fallback above (including the guideline-file read and the channel-formatting rule),
-and note in its footer (Step 6) that it needed a manual substance-layer fix.
+Wait for every dispatched subagent to finish before continuing to Step 6. Treat
+**either** of the following as a failed draft, and redo that one format **once**:
+
+- the result is missing the substance-layer facts, or contradicts them — when
+  re-dispatching, tell the retry prompt specifically which fact was dropped or
+  altered last time, so it doesn't reproduce the same mistake; or
+- the dispatch returned no usable result at all (the subagent errored out or
+  returned nothing) — redo it the same way, no diagnosis needed since there's no
+  prior draft to compare against.
+
+Redo either case by re-dispatching or drafting it directly. If the retry still
+fails, stop retrying: draft that one format directly yourself, following the
+single-format fallback above (including the guideline-file read and the
+channel-formatting rule), and note in its footer (Step 6) that it needed a manual
+fix.
 
 ## Step 6: Present all drafted formats
 
