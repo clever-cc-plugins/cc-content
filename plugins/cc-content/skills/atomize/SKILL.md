@@ -203,7 +203,7 @@ apply the drafting task below (framework selection, persuasion selection, draft
 pass 1, self-edit pass 2 — plus the channel-formatting rule if this format strips
 formatting) to yourself, the same as it's written for a subagent prompt, rather than
 dispatching one — parallelization overhead isn't worth it for a single format. Since
-there's no subagent to return item 9's batch-learnings note, jot down that same
+there's no subagent to return item 8's batch-learnings note, jot down that same
 one-line observation (a correction you had to make, or how well this format took the
 core message — or nothing, if there's nothing notable) yourself for Step 7 to pick up.
 
@@ -255,7 +255,10 @@ gets:
        organization subtly (no overt self-promotion); offer original value beyond
        the core message's bare facts, tailored to this format's audience; use the
        loaded brand voice; honor the Tier-B guideline or general best practices for
-       this format's length/structure/conventions; aim at the confirmed persona(s).
+       this format's length/structure/conventions; aim at the confirmed persona(s);
+       and if this format is a social-media post or any channel that strips
+       formatting, no bold/italics/Markdown — replace bullet points with fitting
+       emojis, keep the body plain.
      - **Self-edit pass 2**: read the pass-1 draft sentence by sentence and fix, with
        minimal intervention: factual errors or ambiguous phrasing (cut rather than
        heavily rewrite if a fix would require it); unsupported claims about the
@@ -267,10 +270,7 @@ gets:
        unchanged (abbreviating a statistic to fit platform constraints is fine as
        long as the number and meaning survive). If a Tier-B guideline specifies an
        optimal length, use the full range rather than coming in thin.
-  8. The channel-formatting rule: if this format is a social-media post or any
-     channel that strips formatting, no bold/italics/Markdown — replace bullet
-     points with fitting emojis, keep the body plain.
-  9. The exact return contract — the subagent should return **only**: the finished
+  8. The exact return contract — the subagent should return **only**: the finished
      text (nothing else mixed into it); the storytelling framework it used; the
      persuasion principles it used plus its opener strategy; the format-rules source
      (guideline filename or "general best practices"); the length (count + unit) and,
@@ -281,22 +281,24 @@ gets:
      observation about how well this format took the core message — or "none".
 
 Wait for every dispatched subagent to finish before continuing to Step 6. Treat
-**either** of the following as a failed draft, and redo that one format **once**:
+**either** of the following as a failed draft, and **re-dispatch** that one format
+**once**:
 
-- the result is missing the substance-layer facts, or contradicts them — when
-  re-dispatching, tell the retry prompt specifically which fact was dropped or
-  altered last time, so it doesn't reproduce the same mistake; or
+- the result is missing the substance-layer facts, or contradicts them — tell the
+  retry prompt specifically which fact was dropped or altered last time, so it
+  doesn't reproduce the same mistake; or
 - the dispatch returned no usable result at all (the subagent errored out or
-  returned nothing) — redo it the same way, no diagnosis needed since there's no
-  prior draft to compare against.
+  returned nothing) — retry with the same prompt, no diagnosis needed since there's
+  no prior draft to compare against.
 
-**Prefer re-dispatching** for the retry, to keep the isolation benefit — only draft
-it directly instead if the dispatch mechanism itself seems to be the problem (e.g.
-the subagent errored out rather than just drifting on facts). If the retry still
-fails, stop retrying: draft that one format directly yourself, following the
-single-format fallback above (including the guideline-file read and the
-channel-formatting rule), and note in its footer (Step 6) that it needed a manual
-fix.
+Re-dispatching (not drafting inline) is the retry for both cases — it keeps the
+isolation benefit and is what "redo once" means here. The only time to skip straight
+to drafting inline, without a retry, is if dispatch itself looks broken across the
+**whole batch** (e.g. every subagent in this run is erroring out, not just one) —
+that's a sign the retry won't fare any better. If a single-format retry still fails,
+stop retrying: draft that one format directly yourself, following the single-format
+fallback above (including the guideline-file read and the channel-formatting rule),
+and note in its footer (Step 6) that it needed a manual fix.
 
 ## Step 6: Present all drafted formats
 
