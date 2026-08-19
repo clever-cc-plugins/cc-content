@@ -202,7 +202,11 @@ to yourself rather than written into a subagent prompt — parallelization overh
 isn't worth it for a single format.
 
 **Otherwise**, call the Agent tool once per Tier-B/C format, **all in a single
-message** (parallel tool calls — see the Agent tool's guidance on this), each with:
+message** (parallel tool calls — see the Agent tool's guidance on this). Fan-out
+scales with the format count confirmed in Step 2 — fine for the handful of formats a
+typical campaign targets, but if the owner names an unusually large format list,
+mention the fan-out size before dispatching so they can trim it if they'd rather not
+spin up that many subagents at once. Each dispatch call gets:
 
 - `subagent_type: "general-purpose"`
 - `run_in_background: false` — Step 6 needs every result before it can present
