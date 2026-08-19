@@ -203,9 +203,10 @@ apply the drafting task below (framework selection, persuasion selection, draft
 pass 1, self-edit pass 2 — plus the channel-formatting rule if this format strips
 formatting) to yourself, the same as it's written for a subagent prompt, rather than
 dispatching one — parallelization overhead isn't worth it for a single format. Since
-there's no subagent to return item 8's batch-learnings note, jot down that same
-one-line observation (a correction you had to make, or how well this format took the
-core message — or nothing, if there's nothing notable) yourself for Step 7 to pick up.
+there's no subagent to supply the batch-learnings note the return contract below
+asks for, jot down that same one-line observation (a correction you had to make, or
+how well this format took the core message — or nothing, if there's nothing notable)
+yourself for Step 7 to pick up.
 
 **Otherwise**, call the Agent tool once per Tier-B/C format, **all in a single
 message** (parallel tool calls — see the Agent tool's guidance on this). Fan-out
@@ -297,9 +298,10 @@ manual fix.
 
 Present each drafted format (i.e. every format that was not routed to a dedicated
 skill in Step 4) in its own delimited block using the format below, in sequence,
-using the text and metadata each Step 5 subagent returned (or that you drafted
-directly, if only one format needed drafting). After all blocks, add a one-line
-routing summary.
+using the text and metadata each Step 5 subagent returned, or that you drafted
+directly for any format that went through one of Step 5's inline paths (the
+single-format fallback, or the exhausted-retry manual fix within an otherwise
+subagent-dispatched batch). After all blocks, add a one-line routing summary.
 
 Present the finished text in a clearly delimited block so the owner can copy it
 cleanly:
@@ -321,8 +323,8 @@ The block must contain **only the deliverable text** — no introduction, no exp
 Put any notes in the footer rows, not inside the text. The `Note:` row is optional —
 include it only for a format that went through Step 5's exhausted-retry path.
 
-**Channel formatting is drafted in, not applied here:** Step 5 item 7's draft-pass-1
-bullet is the source of truth for the no-bold/no-italics/emoji-bullets rule on
+**Channel formatting is drafted in, not applied here:** Step 5's draft-pass-1
+instructions are the source of truth for the no-bold/no-italics/emoji-bullets rule on
 formats that strip formatting — that's where it actually gets applied, on every path
 (subagent-dispatched, single-format fallback, and manual-fix fallback alike). Before
 presenting, spot-check that the rule was actually followed for any such format; if it
