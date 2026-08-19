@@ -270,15 +270,7 @@ gets:
        unchanged (abbreviating a statistic to fit platform constraints is fine as
        long as the number and meaning survive). If a Tier-B guideline specifies an
        optimal length, use the full range rather than coming in thin.
-  8. The exact return contract — the subagent should return **only**: the finished
-     text (nothing else mixed into it); the storytelling framework it used; the
-     persuasion principles it used plus its opener strategy; the format-rules source
-     (guideline filename or "general best practices"); the length (count + unit) and,
-     if the Tier-B guideline specifies an optimal length range, that range too (else
-     "n/a" — the main session has no other way to know it, since it never reads the
-     guideline itself on this path); and one line for the batch learnings step — a
-     correction it had to make, or an
-     observation about how well this format took the core message — or "none".
+  8. The exact return contract — the subagent should return **only**: the finished text (nothing else mixed into it); the storytelling framework it used; the persuasion principles it used plus its opener strategy; the format-rules source (guideline filename or "general best practices"); the length (count + unit) and, if the Tier-B guideline specifies an optimal length range, that range too (else "n/a" — the main session has no other way to know it, since it never reads the guideline itself on this path); and one line for the batch learnings step — a correction it had to make, or an observation about how well this format took the core message — or "none".
 
 Wait for every dispatched subagent to finish before continuing to Step 6. Treat
 **either** of the following as a failed draft, and **re-dispatch** that one format
@@ -297,8 +289,9 @@ to drafting inline, without a retry, is if dispatch itself looks broken across t
 **whole batch** (e.g. every subagent in this run is erroring out, not just one) —
 that's a sign the retry won't fare any better. If a single-format retry still fails,
 stop retrying: draft that one format directly yourself, following the single-format
-fallback above (including the guideline-file read and the channel-formatting rule),
-and note in its footer (Step 6) that it needed a manual fix.
+fallback above (including the guideline-file read and the channel-formatting rule).
+Add the optional `Note:` footer line described in Step 6 to flag that it needed a
+manual fix.
 
 ## Step 6: Present all drafted formats
 
@@ -320,15 +313,20 @@ cleanly:
 Format rules: <Tier-B file name | "general best practices">
 Framework: <name> · Persuasion: <list>
 Length: <count> <unit> (target: <range or "n/a">)
+Note: <manual fix after a failed subagent retry — omit this line otherwise>
 ─────────────────────────────────────────────
 ```
 
 The block must contain **only the deliverable text** — no introduction, no explanation.
-Put any notes in the footer rows, not inside the text.
+Put any notes in the footer rows, not inside the text. The `Note:` row is optional —
+include it only for a format that went through Step 5's exhausted-retry path.
 
-**Channel formatting:** if the text is for a **social-media post or any channel that
-strips formatting**, do not use bold, italics, or their Markdown equivalents. Replace
-bullet points with fitting emojis, and keep the body plain.
+**Channel formatting is drafted in, not applied here:** Step 5 item 7's draft-pass-1
+bullet is the source of truth for the no-bold/no-italics/emoji-bullets rule on
+formats that strip formatting — that's where it actually gets applied, on every path
+(subagent-dispatched, single-format fallback, and manual-fix fallback alike). Before
+presenting, spot-check that the rule was actually followed for any such format; if it
+wasn't, fix it here rather than re-deriving the rule from scratch.
 
 If the output is degraded (brand voice or organization context missing), prepend:
 
