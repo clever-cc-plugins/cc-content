@@ -199,9 +199,10 @@ draft, and Step 6 will just present the routing summary.
 in this session instead. If it's Tier B, `Read` the guideline file noted in Step 4
 first — that load was deliberately deferred out of Step 4 on the assumption a Step 5
 subagent would do it, so the inline path has to do it explicitly here instead. Then
-follow the same task list laid out in item 7 below (framework selection, persuasion
-selection, draft pass 1, self-edit pass 2) applied to yourself rather than written
-into a subagent prompt — parallelization overhead isn't worth it for a single format.
+apply the drafting task below (framework selection, persuasion selection, draft
+pass 1, self-edit pass 2 — plus the channel-formatting rule if this format strips
+formatting) to yourself, the same as it's written for a subagent prompt, rather than
+dispatching one — parallelization overhead isn't worth it for a single format.
 
 **Otherwise**, call the Agent tool once per Tier-B/C format, **all in a single
 message** (parallel tool calls — see the Agent tool's guidance on this). Fan-out
@@ -286,9 +287,9 @@ Wait for every dispatched subagent to finish before continuing to Step 6. If a
 subagent's result is missing the substance-layer facts or contradicts them, treat
 that as a failed draft and redo that one format **once** — either by re-dispatching
 it or drafting it directly. If the retry still fails the substance-layer check, stop
-retrying: draft that one format directly yourself — `Read` its Tier-B guideline file
-from Step 4 first if it has one, same as the single-format fallback above — and note
-in its footer (Step 6) that it needed a manual substance-layer fix.
+retrying: draft that one format directly yourself, following the single-format
+fallback above (including the guideline-file read and the channel-formatting rule),
+and note in its footer (Step 6) that it needed a manual substance-layer fix.
 
 ## Step 6: Present all drafted formats
 
