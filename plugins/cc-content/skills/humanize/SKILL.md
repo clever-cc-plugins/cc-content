@@ -135,13 +135,13 @@ are counted.
 
 Present the counts and one brief example per marker type found, **before**
 rewriting — the owner should see the diagnosis first, in the single-line-per-marker
-format Step 5 defines. For too-perfect parallel structure, keep the two cases
-visible instead of collapsing them into one number: report `<count>` as
-`<total> (N within-passage, M cross-section)`, and use the `<brief example>` slot
-for whichever case is more informative — for cross-section repetition, the
-repeated opener plus the sections it recurs in (e.g. "'A good solution' — opens
-the closing sentence of 3 subsections: §2.1, §2.2, §2.3"), still fit on that one
-line.
+format Step 5 defines. For too-perfect parallel structure: if the cross-section
+count is zero, report a plain `<count>`, same as every other marker. Otherwise
+keep the two cases visible instead of collapsing them into one number — report
+`<count>` as `<total> (N within-passage, M cross-section)` — and use the
+`<brief example>` slot for the cross-section case: the repeated opener plus the
+sections it recurs in, e.g. "'A good solution' — opens the closing sentence of 3
+subsections: §2.1, §2.2, §2.3." That still fits on Step 5's one line.
 
 ## Step 4: Rewrite (Pass 2)
 
