@@ -121,9 +121,9 @@ Scan the draft for these markers and count each type:
        coincidence in genuine human writing and isn't on its own a strong signal —
        only count it when the full template (opener plus clause shape together) is
        specific enough that independent drafting would be unlikely to reproduce it
-       verbatim.
-       Report the count as the number of confirmed groups, and separately note the
-       total sentences and sections each group spans.
+       verbatim. Each confirmed group counts as one cross-section hit, regardless of
+       how many sentences or sections it spans — that detail belongs in the Step 5
+       example, not in the count itself.
 - **Hedge words** — "arguably," "potentially," "seemingly," used to soften claims
   without adding information.
 
@@ -134,12 +134,13 @@ are counted.
 
 Present the counts and one brief example per marker type found, **before**
 rewriting — the owner should see the diagnosis first, in the single-line-per-marker
-format Step 5 defines. For too-perfect parallel structure, that one line covers
-both cases together: sum within-passage and confirmed cross-section counts into
-the single `<count>`, and use the `<brief example>` slot for whichever case is
-more informative — for cross-section repetition, the repeated opener plus the
-sections it recurs in (e.g. "'A good solution' — opens the closing sentence of 3
-subsections: §2.1, §2.2, §2.3"), still fit on that one line.
+format Step 5 defines. For too-perfect parallel structure, keep the two cases
+visible instead of collapsing them into one number: report `<count>` as
+`<total> (N within-passage, M cross-section)`, and use the `<brief example>` slot
+for whichever case is more informative — for cross-section repetition, the
+repeated opener plus the sections it recurs in (e.g. "'A good solution' — opens
+the closing sentence of 3 subsections: §2.1, §2.2, §2.3"), still fit on that one
+line.
 
 ## Step 4: Rewrite (Pass 2)
 
