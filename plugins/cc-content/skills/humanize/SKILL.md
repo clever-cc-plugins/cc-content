@@ -113,10 +113,14 @@ Scan the draft for these markers and count each type:
        "The report describes…" next to "The report is…"). A confirmed group needs
        2 or more sentences sharing the same clause shape — a single matching
        sentence is not repetition. Count a confirmed group under this marker only
-       when those 2+ sentences also sit in structurally parallel sections — the same repeated structural role or position (sibling
-       subsections, rows, or list items in a repeated pattern). Heading level is
-       one signal for this but not a requirement: unheaded rows or list items
-       count too if they share the role. Weight confirmation toward _distinctive_
+       when those 2+ sentences also sit in _separate_ structurally parallel
+       sections — sibling subsections, rows, or list items that are themselves
+       distinct passages, each playing the same repeated structural role. Heading
+       level is one signal for this but not a requirement: unheaded rows or list
+       items count too if they share the role, as long as they're separate
+       passages. Repeated list items or table rows sitting inside one single
+       passage are within-passage, not cross-section, regardless of this wording.
+       Weight confirmation toward _distinctive_
        templates: a short, generic opener with an equally generic continuation
        (e.g. "This means…" followed by an unremarkable clause) can recur by
        coincidence in genuine human writing and isn't on its own a strong signal —
