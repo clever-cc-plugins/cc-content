@@ -132,13 +132,14 @@ Scan the draft for these markers and count each type:
        example, not in the count itself. A sentence already counted toward a
        within-passage hit doesn't also count toward a cross-section group, so the
        two counts never overlap.
+
+    This cross-section pass matters most on documents with multiple sibling
+    sections (subsections, comparison blocks, FAQ entries): a low per-passage
+    marker count can still hide a document that reads as "too polished" once
+    repeated section templates are counted.
+
 - **Hedge words** — "arguably," "potentially," "seemingly," used to soften claims
   without adding information.
-
-This cross-section pass matters most on documents with multiple sibling sections
-(subsections, comparison blocks, FAQ entries): a low per-passage marker count can
-still hide a document that reads as "too polished" once repeated section templates
-are counted.
 
 Present the counts and one brief example per marker type found, **before**
 rewriting — the owner should see the diagnosis first, in the single-line-per-marker
