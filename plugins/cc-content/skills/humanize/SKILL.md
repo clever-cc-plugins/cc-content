@@ -96,15 +96,28 @@ Scan the draft for these markers and count each type:
   - _Within-passage:_ every sentence in a single passage sharing the exact same
     grammatical shape.
   - _Cross-section template repetition:_ the same sentence-opening template (same
-    first few words, same clause shape) reused verbatim across multiple otherwise-
+    opening words, same clause shape) reused verbatim across multiple otherwise-
     unrelated parallel sections (sibling subsections, comparison blocks, FAQ
     answers). This case is invisible when scanning any one paragraph in isolation —
     it only surfaces by comparing sentence openers across the whole document. After
-    the within-passage scan, run a second, document-wide pass: group sentences by
-    their first 2–3 words, flag any group with 2+ hits, and count it under this
-    marker when the flagged sentences sit in structurally parallel sections (same
-    heading level, same role in a repeated pattern). This is a structural check, not
-    a vocabulary list — it applies the same way regardless of language.
+    the within-passage scan, run a second, document-wide pass in two stages:
+    1. **Candidate grouping:** group sentences by their opening span — the first
+       2–3 words for whitespace-delimited languages, or the comparable
+       clause-initial unit (e.g. the first few characters or morphemes) for
+       languages without whitespace word boundaries such as Chinese, Japanese, or
+       Thai. This is a structural check, not a vocabulary list — it applies the
+       same way regardless of language.
+    2. **Confirmation:** within each candidate group, compare clause shape (same
+       grammatical construction following the opener, not just the same opening
+       words) and discard groups that only share a prefix by coincidence (e.g.
+       "The report describes…" next to "The report is…"). Count a confirmed group
+       under this marker only when its sentences also sit in structurally parallel
+       sections — the same repeated structural role or position (sibling
+       subsections, rows, or list items in a repeated pattern). Heading level is
+       one signal for this but not a requirement: unheaded rows or list items
+       count too if they share the role.
+       Report the count as the number of confirmed groups, and separately note the
+       total sentences and sections each group spans.
 - **Hedge words** — "arguably," "potentially," "seemingly," used to soften claims
   without adding information.
 
