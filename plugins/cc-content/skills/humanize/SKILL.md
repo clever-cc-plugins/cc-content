@@ -121,7 +121,7 @@ Scan the draft for these markers and count each type:
        items count too if they share the role, as long as they're separate
        passages. Repeated list items or table rows sitting inside one single
        passage are within-passage, not cross-section, regardless of this wording.
-       Weight confirmation toward _distinctive_
+       Favor _distinctive_
        templates: a short, generic opener with an equally generic continuation
        (e.g. "This means…" followed by an unremarkable clause) can recur by
        coincidence in genuine human writing and isn't on its own a strong signal —
