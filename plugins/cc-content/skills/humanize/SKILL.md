@@ -92,13 +92,31 @@ Scan the draft for these markers and count each type:
   vocabulary.
 - **Excessive colons/semicolons** — used as a crutch for list-like sentences instead
   of natural prose.
-- **Too-perfect parallel structure** — every sentence in a passage sharing the exact
-  same grammatical shape.
+- **Too-perfect parallel structure** — this marker has two cases; scan for both:
+  - _Within-passage:_ every sentence in a single passage sharing the exact same
+    grammatical shape.
+  - _Cross-section template repetition:_ the same sentence-opening template (same
+    first few words, same clause shape) reused verbatim across multiple otherwise-
+    unrelated parallel sections (sibling subsections, comparison blocks, FAQ
+    answers). This case is invisible when scanning any one paragraph in isolation —
+    it only surfaces by comparing sentence openers across the whole document. After
+    the within-passage scan, run a second, document-wide pass: group sentences by
+    their first 2–3 words, flag any group with 2+ hits, and count it under this
+    marker when the flagged sentences sit in structurally parallel sections (same
+    heading level, same role in a repeated pattern). This is a structural check, not
+    a vocabulary list — it applies the same way regardless of language.
 - **Hedge words** — "arguably," "potentially," "seemingly," used to soften claims
   without adding information.
 
+For documents with multiple sibling sections (subsections, comparison blocks, FAQ
+entries), always run the cross-section pass above — a low per-passage marker count
+can still hide a document that reads as "too polished" once repeated section
+templates are counted.
+
 Present the counts and one brief example per marker type found, **before**
-rewriting — the owner should see the diagnosis first.
+rewriting — the owner should see the diagnosis first. When cross-section repetition
+is found, show the repeated opener and which sections it recurs in (e.g. "'A good
+solution' — opens the closing sentence of 3 subsections: §2.1, §2.2, §2.3").
 
 ## Step 4: Rewrite (Pass 2)
 
