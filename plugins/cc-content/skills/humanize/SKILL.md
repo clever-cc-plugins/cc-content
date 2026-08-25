@@ -95,10 +95,11 @@ Scan the draft for these markers and count each type:
 - **Too-perfect parallel structure** — this marker has two cases; scan for both:
   - _Within-passage:_ every sentence in a single passage sharing the exact same
     grammatical shape.
-  - _Cross-section template repetition:_ the same sentence-opening template (same
-    opening words, same clause shape) reused verbatim across multiple otherwise-
-    unrelated parallel sections (sibling subsections, comparison blocks, FAQ
-    answers). This case is invisible when scanning any one paragraph in isolation —
+  - _Cross-section template repetition:_ the same sentence-opening template — same
+    opening words, same clause shape, but not necessarily identical wording after
+    that (e.g. "delivers"/"scales"/"provides" filling the same slot still counts)
+    — reused across multiple otherwise-unrelated parallel sections (sibling
+    subsections, comparison blocks, FAQ answers). This case is invisible when scanning any one paragraph in isolation —
     it only surfaces by comparing sentence openers across the whole document. After
     the within-passage scan, run a second, document-wide pass in two stages:
     1. **Candidate grouping:** group sentences by their opening span — the first
