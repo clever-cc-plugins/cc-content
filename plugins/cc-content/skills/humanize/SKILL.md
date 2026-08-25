@@ -110,9 +110,10 @@ Scan the draft for these markers and count each type:
     2. **Confirmation:** within each candidate group, compare clause shape (same
        grammatical construction following the opener, not just the same opening
        words) and discard groups that only share a prefix by coincidence (e.g.
-       "The report describes…" next to "The report is…"). Count a confirmed group
-       under this marker only when its sentences also sit in structurally parallel
-       sections — the same repeated structural role or position (sibling
+       "The report describes…" next to "The report is…"). A confirmed group needs
+       2 or more sentences sharing the same clause shape — a single matching
+       sentence is not repetition. Count a confirmed group under this marker only
+       when those 2+ sentences also sit in structurally parallel sections — the same repeated structural role or position (sibling
        subsections, rows, or list items in a repeated pattern). Heading level is
        one signal for this but not a requirement: unheaded rows or list items
        count too if they share the role. Weight confirmation toward _distinctive_
