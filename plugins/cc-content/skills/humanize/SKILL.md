@@ -115,7 +115,13 @@ Scan the draft for these markers and count each type:
        sections — the same repeated structural role or position (sibling
        subsections, rows, or list items in a repeated pattern). Heading level is
        one signal for this but not a requirement: unheaded rows or list items
-       count too if they share the role.
+       count too if they share the role. Weight confirmation toward _distinctive_
+       templates: a short, generic opener with an equally generic continuation
+       (e.g. "This means…" followed by an unremarkable clause) can recur by
+       coincidence in genuine human writing and isn't on its own a strong signal —
+       only count it when the full template (opener plus clause shape together) is
+       specific enough that independent drafting would be unlikely to reproduce it
+       verbatim.
        Report the count as the number of confirmed groups, and separately note the
        total sentences and sections each group spans.
 - **Hedge words** — "arguably," "potentially," "seemingly," used to soften claims
@@ -127,9 +133,13 @@ can still hide a document that reads as "too polished" once repeated section
 templates are counted.
 
 Present the counts and one brief example per marker type found, **before**
-rewriting — the owner should see the diagnosis first. When cross-section repetition
-is found, show the repeated opener and which sections it recurs in (e.g. "'A good
-solution' — opens the closing sentence of 3 subsections: §2.1, §2.2, §2.3").
+rewriting — the owner should see the diagnosis first, in the single-line-per-marker
+format Step 5 defines. For too-perfect parallel structure, that one line covers
+both cases together: sum within-passage and confirmed cross-section counts into
+the single `<count>`, and use the `<brief example>` slot for whichever case is
+more informative — for cross-section repetition, the repeated opener plus the
+sections it recurs in (e.g. "'A good solution' — opens the closing sentence of 3
+subsections: §2.1, §2.2, §2.3"), still fit on that one line.
 
 ## Step 4: Rewrite (Pass 2)
 
