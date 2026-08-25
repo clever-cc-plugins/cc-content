@@ -129,7 +129,9 @@ Scan the draft for these markers and count each type:
        specific enough that independent drafting would be unlikely to reproduce it
        verbatim. Each confirmed group counts as one cross-section hit, regardless of
        how many sentences or sections it spans — that detail belongs in the Step 5
-       example, not in the count itself.
+       example, not in the count itself. A sentence already counted toward a
+       within-passage hit doesn't also count toward a cross-section group, so the
+       two counts never overlap.
 - **Hedge words** — "arguably," "potentially," "seemingly," used to soften claims
   without adding information.
 
@@ -145,8 +147,10 @@ count is zero, report a plain `<count>`, same as every other marker. Otherwise
 keep the two cases visible instead of collapsing them into one number — report
 `<count>` as `<total> (N within-passage, M cross-section)` — and use the
 `<brief example>` slot for the cross-section case: the repeated opener plus the
-sections it recurs in, e.g. "'A good solution' — opens the closing sentence of 3
-subsections: §2.1, §2.2, §2.3." That still fits on Step 5's one line.
+sections it recurs in, e.g. "'A good solution' opens the closing sentence of 3
+subsections: §2.1, §2.2, §2.3" (avoid an em dash inside the example itself — it
+collides with Step 5's own `<count> — <brief example>` separator). That still
+fits on Step 5's one line.
 
 ## Step 4: Rewrite (Pass 2)
 
