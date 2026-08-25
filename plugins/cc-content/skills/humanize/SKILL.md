@@ -92,13 +92,66 @@ Scan the draft for these markers and count each type:
   vocabulary.
 - **Excessive colons/semicolons** — used as a crutch for list-like sentences instead
   of natural prose.
-- **Too-perfect parallel structure** — every sentence in a passage sharing the exact
-  same grammatical shape.
+- **Too-perfect parallel structure** — this marker has two cases; scan for both:
+  - _Within-passage:_ every sentence in a single passage sharing the exact same
+    grammatical shape.
+  - _Cross-section template repetition:_ the same sentence-opening template — same
+    opening words, same clause shape, but not necessarily identical wording after
+    that (e.g. "delivers"/"scales"/"provides" filling the same slot still counts)
+    — reused across multiple otherwise-unrelated parallel sections (sibling
+    subsections, comparison blocks, FAQ answers). This case is invisible when scanning any one paragraph in isolation —
+    it only surfaces by comparing sentence openers across the whole document. After
+    the within-passage scan, run a second, document-wide pass in two stages:
+    1. **Candidate grouping:** group sentences by their opening span — the first
+       2–3 words for whitespace-delimited languages, or the comparable
+       clause-initial unit (e.g. the first few characters or morphemes) for
+       languages without whitespace word boundaries such as Chinese, Japanese, or
+       Thai. This is a structural check, not a vocabulary list — it applies the
+       same way regardless of language.
+    2. **Confirmation:** within each candidate group, compare clause shape (same
+       grammatical construction following the opener, not just the same opening
+       words) and discard groups that only share a prefix by coincidence (e.g.
+       "The report describes…" next to "The report is…"). A confirmed group needs
+       2 or more sentences sharing the same clause shape — a single matching
+       sentence is not repetition. Count a confirmed group under this marker only
+       when those 2+ sentences also sit in _separate_ structurally parallel
+       sections — sibling subsections, rows, or list items that are themselves
+       distinct passages, each playing the same repeated structural role. Heading
+       level is one signal for this but not a requirement: unheaded rows or list
+       items count too if they share the role, as long as they're separate
+       passages. Repeated list items or table rows sitting inside one single
+       passage are within-passage, not cross-section, regardless of this wording.
+       Favor _distinctive_
+       templates: a short, generic opener with an equally generic continuation
+       (e.g. "This means…" followed by an unremarkable clause) can recur by
+       coincidence in genuine human writing and isn't on its own a strong signal —
+       only count it when the full template (opener plus clause shape together) is
+       specific enough that independent drafting would be unlikely to reproduce it
+       verbatim. Each confirmed group counts as one cross-section hit, regardless of
+       how many sentences or sections it spans — that detail belongs in the Step 5
+       example, not in the count itself. A sentence already counted toward a
+       within-passage hit doesn't also count toward a cross-section group, so the
+       two counts never overlap.
+
+    This cross-section pass matters most on documents with multiple sibling
+    sections (subsections, comparison blocks, FAQ entries): a low per-passage
+    marker count can still hide a document that reads as "too polished" once
+    repeated section templates are counted.
+
 - **Hedge words** — "arguably," "potentially," "seemingly," used to soften claims
   without adding information.
 
 Present the counts and one brief example per marker type found, **before**
-rewriting — the owner should see the diagnosis first.
+rewriting — the owner should see the diagnosis first, in the single-line-per-marker
+format Step 5 defines. For too-perfect parallel structure: if the cross-section
+count is zero, report a plain `<count>`, same as every other marker. Otherwise
+keep the two cases visible instead of collapsing them into one number — report
+`<count>` as `<total> (N within-passage, M cross-section)` — and use the
+`<brief example>` slot for the cross-section case: the repeated opener plus the
+sections it recurs in, e.g. "'A good solution' opens the closing sentence of 3
+subsections: §2.1, §2.2, §2.3" (avoid an em dash inside the example itself — it
+collides with Step 5's own `<count> — <brief example>` separator). That still
+fits on Step 5's one line.
 
 ## Step 4: Rewrite (Pass 2)
 
