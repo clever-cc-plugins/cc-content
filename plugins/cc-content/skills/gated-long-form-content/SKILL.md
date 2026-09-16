@@ -148,8 +148,10 @@ Include a `[TODO: ...]` placeholder for any format-specific mandatory elements �
 example, a required word count, mandatory legal/compliance sections, or a specific
 design template — that the user must specify for their use case.
 
-Internally verify against the quality checklist in `format-guidelines.md` before
-presenting.
+Internally verify against the quality checklist in `format-guidelines.md`. For
+every unchecked gate, revise the draft and re-check — do not present until
+every gate passes or the failure genuinely cannot be fixed (e.g. missing
+context), in which case surface it in the output rather than hiding it.
 
 Present the output in a clearly delimited block showing the content and its word
 count:

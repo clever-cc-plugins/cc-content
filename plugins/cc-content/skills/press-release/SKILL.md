@@ -10,8 +10,8 @@ argument-hint: "[optional: path to campaign briefing file]"
 ---
 
 @./format-guidelines.md **Read when:** starting this skill
-@../_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework in Step 5
-@../_shared/persuasion-principles.md **Read when:** selecting persuasion principles in Step 6
+@../\_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework in Step 5
+@../\_shared/persuasion-principles.md **Read when:** selecting persuasion principles in Step 6
 
 # Press Release Skill
 
@@ -202,7 +202,7 @@ Produce a complete press release that applies:
 - Any loaded brand-voice and audience context
 - AP style conventions (numerals, dates, titles) per the format guidelines
 
-**Internally verify against the quality checklist** in `format-guidelines.md` before presenting:
+**Internally verify against the quality checklist** in `format-guidelines.md`:
 
 - [ ] Headline under 100 chars, title case, no end punctuation
 - [ ] Dateline format correct (`CITY — Body text`)
@@ -213,6 +213,10 @@ Produce a complete press release that applies:
 - [ ] Attribution format correct (full name + title first, last name after)
 - [ ] Boilerplate 50–100 words, third person, covers who/what/where
 - [ ] Media contact info present
+
+For every unchecked box, revise the draft and re-check — do not present until
+every gate passes or the failure genuinely cannot be fixed (e.g. missing
+context), in which case surface it in the output rather than hiding it.
 
 Present the output in a clearly delimited block showing the complete release and
 its word count.

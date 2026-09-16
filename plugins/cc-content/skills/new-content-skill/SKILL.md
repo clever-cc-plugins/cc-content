@@ -382,8 +382,10 @@ a pre-suasive opener strategy. Note the choices in working notes.
 **Step 7 — Generate the [FORMAT]**
 Produce a complete [FORMAT] that applies the confirmed format-guidelines variant, the chosen
 framework, the selected persuasion principles, and any loaded brand-voice and audience
-context. Internally verify against the quality checklist in `format-guidelines.md` before
-presenting.
+context. Internally verify against the quality checklist in `format-guidelines.md`.
+For every unmet gate, revise the draft and re-check — do not present until every
+gate passes or the failure genuinely cannot be fixed (e.g. missing context), in
+which case surface it in the output rather than hiding it.
 
 **End-user mode:** include a `[TODO: ...]` placeholder for any format-specific mandatory
 elements — for example, word count requirements, mandatory section headers, or SEO

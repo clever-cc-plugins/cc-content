@@ -9,8 +9,8 @@ argument-hint: "[optional: path to campaign briefing file]"
 ---
 
 @./format-guidelines.md **Read when:** starting this skill
-@../_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework in Step 5
-@../_shared/persuasion-principles.md **Read when:** selecting persuasion principles in Step 6
+@../\_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework in Step 5
+@../\_shared/persuasion-principles.md **Read when:** selecting persuasion principles in Step 6
 
 # Facebook Post Skill
 
@@ -188,6 +188,10 @@ Internal verification checklist from `format-guidelines.md`:
 - If Group post: adjusted for community tone (peer-to-peer, less promotional)
 - If link included: placed in the post body, not hidden in the first comment
 - Conversation-inviting element present (question or call for input)
+
+For every unmet item, revise the draft and re-check — do not present until
+every item is satisfied or the failure genuinely cannot be fixed (e.g. missing
+context), in which case surface it in the output rather than hiding it.
 
 Present the post in a clear block:
 

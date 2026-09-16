@@ -9,8 +9,8 @@ argument-hint: "[optional: path to campaign briefing file]"
 ---
 
 @./format-guidelines.md **Read when:** starting this skill
-@../_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework in Step 5
-@../_shared/persuasion-principles.md **Read when:** selecting persuasion principles in Step 6
+@../\_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework in Step 5
+@../\_shared/persuasion-principles.md **Read when:** selecting persuasion principles in Step 6
 
 # X (Twitter) Post Skill
 
@@ -194,6 +194,10 @@ Internal verification checklist from `format-guidelines.md`:
 - If thread: 5–8 posts, hook/body/CTA structure
 - Conversation-inviting element present
 - Emojis: 1–2 max
+
+For every unmet item, revise the draft and re-check — do not present until
+every item is satisfied or the failure genuinely cannot be fixed (e.g. missing
+context), in which case surface it in the output rather than hiding it.
 
 Reflect tone and vocabulary from loaded brand voice context and audience context. If the
 briefing is present, the post must serve its stated goals and key messages.
