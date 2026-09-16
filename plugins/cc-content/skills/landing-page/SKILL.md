@@ -151,8 +151,10 @@ section, social proof, closing CTA), and include:
   EU/German (see Privacy, Consent, and Compliance in `format-guidelines.md`), ask
   the owner once for the required consent wording rather than inventing it.
 
-Internally verify against the quality checklist in `format-guidelines.md` before
-presenting.
+Internally verify against the quality checklist in `format-guidelines.md`. For
+every unchecked gate, revise the draft and re-check — do not present until
+every gate passes or the failure genuinely cannot be fixed (e.g. missing
+context), in which case surface it in the output rather than hiding it.
 
 If, after applying the above, a mandatory element is still unresolved — no context
 covers it and the owner hasn't stated it — mark it inline with `[TODO: ...]` in the
