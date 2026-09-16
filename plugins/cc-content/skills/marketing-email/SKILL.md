@@ -177,8 +177,10 @@ placeholder:
 > not included above — that lives in your sending tool's template. Confirm it meets
 > current legal requirements and your company's policy before sending."
 
-Internally verify against the quality checklist in `format-guidelines.md` before
-presenting the output.
+Internally verify against the quality checklist in `format-guidelines.md`. For
+every unchecked gate, revise the draft and re-check — do not present until
+every gate passes or the failure genuinely cannot be fixed (e.g. missing
+context), in which case surface it in the output rather than hiding it.
 
 Present the output in a clearly delimited block:
 

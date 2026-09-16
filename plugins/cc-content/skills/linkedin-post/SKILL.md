@@ -159,8 +159,10 @@ Produce a complete LinkedIn post that:
 - Includes a link directly in the post body if a link adds real value to the post —
   never hides it in the first comment as a reach workaround
 
-Internally verify against the quality checklist in `format-guidelines.md` before
-presenting the output.
+Internally verify against the quality checklist in `format-guidelines.md`. For
+every unchecked gate, revise the draft and re-check — do not present until
+every gate passes or the failure genuinely cannot be fixed (e.g. missing
+context), in which case surface it in the output rather than hiding it.
 
 If the briefing is present, the post must serve its stated goals and key messages.
 

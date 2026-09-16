@@ -231,9 +231,10 @@ Produce a complete blog article that:
 - Is written in the output language from loaded context (default: English if none specified)
 - Satisfies every mandatory rule from any blog-specific rules file loaded in Step 1
 
-Internally verify against the **quality checklist** in `format-guidelines.md`
-before presenting the output. If any gate fails and cannot be fixed before
-delivery, surface the failure in the output rather than hiding it.
+Internally verify against the **quality checklist** in `format-guidelines.md`.
+For every unchecked gate, revise the draft and re-check — do not present until
+every gate passes or the failure is one that genuinely cannot be fixed (e.g.
+missing context), in which case surface it in the output rather than hiding it.
 
 If the briefing is present, the article must serve its stated goals and key
 messages.
