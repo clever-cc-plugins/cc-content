@@ -5,6 +5,8 @@
   </picture>
 </p>
 
+<img src="assets/icon.svg" align="right" width="96" height="96" alt="cc-content icon" />
+
 # cc-content
 
 A [Claude Code](https://claude.ai/code) plugin that provides a comprehensive suite of content creation skills for marketing projects — including blog articles, social posts, press releases, and more.
