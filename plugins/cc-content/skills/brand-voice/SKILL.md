@@ -41,19 +41,23 @@ grep -A 200 '## Context files' CLAUDE.md 2>/dev/null || echo "(no context table)
 
 CLAUDE.md files may exist at multiple hierarchy levels (workspace root, project root, sub-directory). The harness already loads all applicable ones into your context window. If multiple `## Context files` tables exist, rows from more specific CLAUDE.md files take precedence over less specific ones.
 
-**Arguments.** If `$ARGUMENTS` names the path of a voice guide, or the user asks to update or refine a guide, go to [Refine mode](#refine-mode). Sample files or URLs in `$ARGUMENTS` are kept for Step 3.
+**Arguments.** If `$ARGUMENTS` names the path of a voice guide, that is the guide to refine: go to [Refine mode](#refine-mode). Sample files or URLs in `$ARGUMENTS` are kept for Step 3.
 
 **Existing voice guides.** Assess each row by its **Summary**, not by its label: does the file govern how texts sound (writing style, tone, vocabulary, phrasing rules)? That includes guides built by this skill, short voice notes from onboarding, and imported guides.
 
-- **One guide found:** ask
+- **One guide found:** if the user asked to update or refine a guide, refine this one without asking. Otherwise ask
 
   > "There is already a voice guide: `{path}` ({whose voice, scope, language, from its summary}). Should I refine it, or build a separate guide, for example for another scope or language?"
 
-- **Several guides found:** list them with whose voice, scope, and language from their summaries, then ask
+- **Several guides found:** list them with whose voice, scope, and language from their summaries, then ask (if the user asked to update or refine a guide, ask only which one)
 
   > "Which of these guides should I refine, or should I build a new one?"
 
-- **Refine** → go to [Refine mode](#refine-mode). **Separate or new** → continue with Step 2 and keep the existing guide paths in mind for the file name in Step 8. An existing guide in another language can seed the new one (Step 2).
+- **No guide found, but the user asked to update or refine one:** say so, then ask
+
+  > "I can't find a registered voice guide. Should I build a new one, or is there a guide file I should refine? If so, give me its path."
+
+- **Refine** → go to [Refine mode](#refine-mode) with the chosen guide. **Separate or new** → continue with Step 2 and keep the existing guide paths in mind for the file name in Step 8. An existing guide in another language can seed the new one (Step 2).
 
 **Everything else.** Read the files whose summaries cover any of these: organization background, values, positioning, audience personas, competitive landscape, content strategy, `context/samples.md` (or another registered samples file), and for personal brands an author profile or CV. Note a registered default-language entry for Step 2. Note what is missing, but do not ask about it now: Steps 2–5 cover the gaps.
 
@@ -249,7 +253,7 @@ Entries are tagged by skill and dated.
 
 ## Refine mode
 
-Entry: Step 1 found a guide and the user chose to refine it, or the user asked to update a guide or passed its path.
+Entry: Step 1 selected the guide to refine: a path passed as an argument, the single registered guide, or the one the user picked.
 
 First load the context files listed under "Everything else" in Step 1, so changed strategy context can be compared with the guide.
 
