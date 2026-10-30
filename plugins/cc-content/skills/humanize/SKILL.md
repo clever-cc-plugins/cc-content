@@ -9,8 +9,8 @@ description: >
   "hard to read" or "too dense" — it removes the sentence-level patterns LLM text
   overuses (coinages, noun stacks, objects acting like people). Works on drafts from
   any source — the owner's own writing, another tool's output, or a previous
-  cc-content skill's draft. Do NOT use it to generate new content from scratch; it only revises
-  an existing draft.
+  cc-content skill's draft. Do NOT use it to generate new content from scratch; it
+  only revises an existing draft.
 allowed-tools: Read, Write, Bash
 argument-hint: "[optional: path to the draft to humanize]"
 ---
