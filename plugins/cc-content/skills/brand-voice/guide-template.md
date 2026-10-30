@@ -4,11 +4,13 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 
 ## How to use this template
 
-- **Translate every heading** into the guide's language. Keep the section numbers. The English names below are the reference names; other files in this skill refer to sections by their numbers (0–10, 4.1–4.10).
-- **Heading levels.** The finished guide has its title as the only `#` heading. The skeleton's `###` headings become `##` in the guide, and its `####` headings become `###`.
+- **Translate every heading** into the guide's language idiomatically: natural wording a native writer would choose, not a word-for-word rendering. Keep the section numbers. The English names below are the reference names; other files in this skill refer to sections by their numbers (0–10, 4.1–4.10).
+- **Section 0 is the title block.** The finished guide has its title as the only `#` heading, followed directly by the section 0 fields. Never emit a visible heading named "Header" (or its translation); "0. Header" is a reference name only.
+- **Heading levels.** The skeleton's `###` headings for sections 1–10 become `##` in the guide, and its `####` headings become `###`.
 - **Placeholders** look like `{…}`. Replace each with content. The instruction blocks (the quoted **What / Size / Evidence** lines) tell you what to write; they never appear in the guide.
 - **Bracketed sections are conditional.** Section 2 (values) and section 6 (persuasion and ethics) are omitted when there is no input for them: no values in context and none from the interview, or no answer on persuasion and red lines. Never fill them with filler. Section 5 is omitted when the scope has a single text type. Drop the brackets in the guide's heading when the section is kept.
 - **Omitting a section never renumbers the others.** The guide's numbered headings are stable (spec §5), so rules can be cited by number and refine mode and `session-wrap` can insert a rule into the matching section.
+- **No references to omitted sections.** When a section is omitted, drop or rewrite every reference to it elsewhere in the guide, including the "how to use this guide" paragraphs in section 0 (e.g. "sections 2–4, 6, 7" becomes "sections 3, 4, 7" when sections 2 and 6 are omitted).
 - **Perspective:** write the guide as "we" for an organization and "I" for an individual, throughout.
 - **Length:** no hard cap. Depth is wanted for LLM use. Section 1 stays at about one page; the priority core and the exemplars do most of the work, and the detailed specification (section 4) is where humans look things up.
 - **Shared references:** section 4.9 builds on `../_shared/readability-patterns.md` and section 6 on `../_shared/persuasion-principles.md`. The instruction blocks there say what to carry into the guide and what to leave in the shared file.
@@ -31,7 +33,7 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 > - Low-confidence notes: every text type with fewer than ~2,000 words of samples; text types with no samples, covered by interview and test drafts only; sections that rest on samples from outside the scope; rules carried over from a guide or samples in another language; for languages other than German and English, a note that the language-layer rules were set from general language knowledge and should be checked by a native speaker.
 > - **How to use this guide**, two short paragraphs:
 >   - _For writers:_ start with section 1, check section 5 for the text type at hand, look up details in section 4, and run the checklist in section 8 before handing in.
->   - _For AI:_ apply the guide in this order of precedence: priority core (section 1) → text-type section (section 5) → detailed rules (sections 2–4, 6, 7) → exemplars (section 9). Use the exemplars as style models, not templates: match their voice, never copy their wording or structure.
+>   - _For AI:_ apply the guide in this order of precedence: priority core (section 1) → text-type section (section 5) → detailed rules (sections 2–4, 6, 7) → exemplars (section 9). The priority core applies to every text type except where section 5 explicitly names an override of a numbered core rule or scale position for the text type at hand; core rules marked "fixed across text types" have no overrides. Use the exemplars as style models, not templates: match their voice, never copy their wording or structure.
 >
 > **Size:** about half a page.
 >
@@ -43,7 +45,7 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 >
 > - 3–5 traits, each as "X, not Y" with a one-line meaning (e.g. "Direct, not curt: …").
 > - Tone-scale positions on the four Nielsen Norman Group scales: formal–casual, serious–funny, respectful–irreverent, matter-of-fact–enthusiastic. Give each a position from 1 to 5 between the two poles plus a one-line note.
-> - 10–20 rules marked **must / should / may**, in priority order: the most important rule first.
+> - 10–20 numbered rules marked **must / should / may**, in priority order: the most important rule first. Mark a rule "fixed across text types" when section 5 must not change it for any text type.
 > - A do/don't table with the columns Do / Don't / Instead. Every "don't" has an "instead": the concrete wording to use in its place.
 > - 2–3 before/after rewrites, each one or two sentences, showing several rules at once.
 >
@@ -130,7 +132,10 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 
 ### 5. [How the voice shifts per text type]
 
-> **What:** one block per text type in scope: which scale positions and which rules change for it, and what stays fixed. Refer to rules by their section number instead of repeating them.
+> **What:** one block per text type in scope, with two parts:
+>
+> - _Changes:_ each changed scale position or rule, stated as an explicit override of the numbered core rule (e.g. "Overrides core rule 4: …"). Only these overrides take precedence over the priority core for that text type. Rules marked "fixed across text types" cannot be overridden.
+> - _Stays fixed:_ the core rules and scale positions that apply unchanged, referenced by number instead of repeated.
 >
 > **Size:** a few lines to half a page per text type.
 >
