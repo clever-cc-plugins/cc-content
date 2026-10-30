@@ -11,6 +11,7 @@ argument-hint: "[optional: path to campaign briefing file]"
 @./format-guidelines.md **Read when:** starting this skill
 @../\_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework in Step 5
 @../\_shared/persuasion-principles.md **Read when:** selecting persuasion principles in Step 6
+@../\_shared/readability-patterns.md **Read when:** running the readability pass in Step 7
 
 # Facebook Post Skill
 
@@ -172,6 +173,12 @@ Produce a complete Facebook post that:
 - **If the post includes an image or video**, flag that alt text / captions should be added
 - **If briefing is present**, the post must serve its stated goals and key messages
 
+Before the checklist, run the **readability pass** from
+`../_shared/readability-patterns.md` on the finished draft as its own step: scan
+for the six patterns and fix only the passages with a hit, keeping content, tone,
+and audience terms intact. Where the brand voice asks for brevity or imagery, read
+it the way that file defines it — cut redundancy, not grammatical signposts.
+
 Internal verification checklist from `format-guidelines.md`:
 
 - Hook grabs attention in first line and stands alone within ~125–140 characters
@@ -188,6 +195,7 @@ Internal verification checklist from `format-guidelines.md`:
 - If Group post: adjusted for community tone (peer-to-peer, less promotional)
 - If link included: placed in the post body, not hidden in the first comment
 - Conversation-inviting element present (question or call for input)
+- Readability pass run: no clusters of the six patterns in `readability-patterns.md`
 
 For every unmet item, revise the draft and re-check — do not present until
 every item is satisfied or the failure genuinely cannot be fixed (e.g. missing

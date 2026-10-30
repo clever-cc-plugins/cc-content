@@ -285,4 +285,7 @@ sometimes falsified contact data.
 - [ ] Audience type, content goal, funnel stage, and expertise level inferences
       confirmed with user
 - [ ] Tone consistent with brand voice (if loaded)
+- [ ] Readability pass run (`../_shared/readability-patterns.md`): no clusters of
+      coinages, long subject–verb gaps, dropped signpost words, noun stacks, ad-hoc
+      noun-verbs, or objects acting like people
 - [ ] CTA is singular and matches the stated content goal

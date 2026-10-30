@@ -5,13 +5,17 @@ description: >
   human-written, calibrated to the project's brand voice. Invoke when the user says
   "humanize this", "make this sound less AI", "remove AI tells from this", "this
   reads like ChatGPT wrote it", "polish this draft to sound human", or pastes a
-  draft and asks for a more authentic-sounding version. Works on drafts from any
-  source — the owner's own writing, another tool's output, or a previous cc-content
-  skill's draft. Do NOT use it to generate new content from scratch; it only revises
+  draft and asks for a more authentic-sounding version. Also use it when a draft is
+  "hard to read" or "too dense" — it removes the sentence-level patterns LLM text
+  overuses (coinages, noun stacks, objects acting like people). Works on drafts from
+  any source — the owner's own writing, another tool's output, or a previous
+  cc-content skill's draft. Do NOT use it to generate new content from scratch; it only revises
   an existing draft.
 allowed-tools: Read, Write, Bash
 argument-hint: "[optional: path to the draft to humanize]"
 ---
+
+@../\_shared/readability-patterns.md **Read when:** detecting markers in Step 3 and rewriting in Step 4
 
 # Humanize Skill
 
@@ -141,6 +145,24 @@ Scan the draft for these markers and count each type:
 - **Hedge words** — "arguably," "potentially," "seemingly," used to soften claims
   without adding information.
 
+Then scan for the six **readability patterns** defined in
+`../_shared/readability-patterns.md`, each counted as its own marker type:
+
+- **Unusual word combinations** — coinages and pairings a human writer wouldn't use.
+- **Long dependencies** — subject and verb (or the halves of a German verb bracket)
+  far apart.
+- **Dropped signpost words** — missing "that"/„dass“/„um … zu“, long participial
+  attributes.
+- **Noun stacks** — three or more nouns in a row, overlong compounds, long genitive
+  chains.
+- **Ad-hoc noun-verbs** — nouns used as verbs on the fly, including Denglisch.
+- **Acting objects** — inanimate things doing what living beings do.
+
+Apply that file's "don't overcorrect" limits while counting: terms the loaded audience
+or brand voice uses are established, not unusual; a single pointed metaphor or
+technical compound isn't a hit unless it stalls the reader. Count clusters and
+genuine stalls, not every compound.
+
 Present the counts and one brief example per marker type found, **before**
 rewriting — the owner should see the diagnosis first, in the single-line-per-marker
 format Step 5 defines. For too-perfect parallel structure: if the cross-section
@@ -161,7 +183,13 @@ Produce the rewritten draft. Rules:
    style pass, not a content rewrite — do not add, remove, or change what the draft
    asserts.
 2. **Remove every marker counted in Step 3.** None should remain in the output.
-3. **Calibrate reintroduced human texture to the loaded brand voice:**
+   Fix readability patterns with the fixes in `readability-patterns.md` — usually a
+   second sentence, a relative clause, a preposition, or a named actor.
+3. **Compress content, not grammar.** When cutting hedges, transitions, or filler,
+   keep the grammatical signpost words ("that", „dass“, relative pronouns,
+   prepositions that break up noun chains). Removing one AI tell must not create
+   another.
+4. **Calibrate reintroduced human texture to the loaded brand voice:**
    - If the brand voice allows casualness: use contractions, allow sentences to
      start with "And" or "But" where it reads naturally, vary sentence rhythm (mix
      short punchy sentences with longer natural ones), replace vague time references
@@ -173,7 +201,7 @@ Produce the rewritten draft. Rules:
      opposites.
    - If no brand voice is loaded (degraded per Step 1): default to varied rhythm,
      concrete detail, and marker removal only — do not guess a tone.
-4. **Intervene as much as necessary but as little as possible.** Preserve what
+5. **Intervene as much as necessary but as little as possible.** Preserve what
    already works in the draft; change only what a marker-removal or tone-calibration
    rule requires.
 

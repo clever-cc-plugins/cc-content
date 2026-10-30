@@ -12,6 +12,7 @@ argument-hint: "[optional: path to campaign briefing file]"
 @./format-guidelines.md **Read when:** starting this skill
 @../\_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework in Step 5
 @../\_shared/persuasion-principles.md **Read when:** selecting persuasion principles in Step 6
+@../\_shared/readability-patterns.md **Read when:** running the readability pass in Step 7
 
 # Press Release Skill
 
@@ -202,6 +203,12 @@ Produce a complete press release that applies:
 - Any loaded brand-voice and audience context
 - AP style conventions (numerals, dates, titles) per the format guidelines
 
+Before the checklist, run the **readability pass** from
+`../_shared/readability-patterns.md` on the finished draft as its own step: scan
+for the six patterns and fix only the passages with a hit, keeping content, tone,
+and audience terms intact. Where the brand voice asks for brevity or imagery, read
+it the way that file defines it — cut redundancy, not grammatical signposts.
+
 **Internally verify against the quality checklist** in `format-guidelines.md`:
 
 - [ ] Headline under 100 chars, title case, no end punctuation
@@ -213,6 +220,7 @@ Produce a complete press release that applies:
 - [ ] Attribution format correct (full name + title first, last name after)
 - [ ] Boilerplate 50–100 words, third person, covers who/what/where
 - [ ] Media contact info present
+- [ ] Readability pass run: no clusters of the six patterns in `readability-patterns.md`
 
 For every unchecked box, revise the draft and re-check — do not present until
 every gate passes or the failure genuinely cannot be fixed (e.g. missing

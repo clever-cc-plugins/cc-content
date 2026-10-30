@@ -318,6 +318,10 @@ Before presenting output, verify:
 - [ ] Media (if any) chosen because it serves the message, not assumed to auto-win over text
 - [ ] Any factual, statistical, or comparative claim would hold up to a Community Note
 - [ ] Tone matches audience (B2B: expertise-signaling; B2C: personality-driven)
+- [ ] Readability pass run (`../_shared/readability-patterns.md`): no clusters of
+      coinages, long subject–verb gaps, dropped signpost words, noun stacks, ad-hoc
+      noun-verbs, or objects acting like people; character-limit cuts removed content,
+      not function words
 - [ ] If thread: 5–8 posts max, with hook post (1/N), body posts (one idea each), CTA post
 - [ ] Conversation-inviting elements present (a specific, answerable question or similar)
 - [ ] Emojis: 1–2 max, placed at natural pauses (not as bullet substitutes)

@@ -134,6 +134,7 @@ mkdir -p .claude/skills/<format-name>
 mkdir -p .claude/skills/_shared
 cp -n "${CLAUDE_SKILL_DIR}/../_shared/storytelling-frameworks.md" ".claude/skills/_shared/" 2>/dev/null
 cp -n "${CLAUDE_SKILL_DIR}/../_shared/persuasion-principles.md" ".claude/skills/_shared/" 2>/dev/null
+cp -n "${CLAUDE_SKILL_DIR}/../_shared/readability-patterns.md" ".claude/skills/_shared/" 2>/dev/null
 ```
 
 **Plugin-dev mode:** do not copy shared files — they already exist in the repo at
@@ -228,6 +229,7 @@ these universal items:
 
 - Audience type, goal, and funnel stage inferences confirmed with user
 - Tone consistent with brand voice (if loaded)
+- Readability pass run (`readability-patterns.md`): no clusters of the six patterns
 - CTA is singular and matches the stated goal
 
 ---
@@ -300,6 +302,7 @@ Required @-imports at the top of the body (after frontmatter) — paths differ b
 @.claude/skills/<format-name>/format-guidelines.md **Read when:** starting this skill
 @.claude/skills/_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework
 @.claude/skills/_shared/persuasion-principles.md **Read when:** selecting persuasion principles
+@.claude/skills/_shared/readability-patterns.md **Read when:** running the readability pass in Step 7
 ```
 
 **Plugin-dev mode** (relative paths, same pattern as `linkedin-post`):
@@ -308,6 +311,7 @@ Required @-imports at the top of the body (after frontmatter) — paths differ b
 @./format-guidelines.md **Read when:** starting this skill
 @../_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework
 @../_shared/persuasion-principles.md **Read when:** selecting persuasion principles
+@../_shared/readability-patterns.md **Read when:** running the readability pass in Step 7
 ```
 
 Required skill steps — write each as a level-2 heading with full prose instructions:
@@ -382,10 +386,12 @@ a pre-suasive opener strategy. Note the choices in working notes.
 **Step 7 — Generate the [FORMAT]**
 Produce a complete [FORMAT] that applies the confirmed format-guidelines variant, the chosen
 framework, the selected persuasion principles, and any loaded brand-voice and audience
-context. Internally verify against the quality checklist in `format-guidelines.md`.
-For every unmet gate, revise the draft and re-check — do not present until every
-gate passes or the failure genuinely cannot be fixed (e.g. missing context), in
-which case surface it in the output rather than hiding it.
+context. Then run the readability pass from `readability-patterns.md` on the finished
+draft as its own step, fixing only the passages with a hit. Internally verify against
+the quality checklist in `format-guidelines.md`. For every unmet gate, revise the
+draft and re-check — do not present until every gate passes or the failure genuinely
+cannot be fixed (e.g. missing context), in which case surface it in the output rather than
+hiding it.
 
 **End-user mode:** include a `[TODO: ...]` placeholder for any format-specific mandatory
 elements — for example, word count requirements, mandatory section headers, or SEO
@@ -463,6 +469,7 @@ Files written:
 Shared reference files (copied to project if not already present):
   .claude/skills/_shared/storytelling-frameworks.md
   .claude/skills/_shared/persuasion-principles.md
+  .claude/skills/_shared/readability-patterns.md
 ```
 
 **Plugin-dev mode:**
