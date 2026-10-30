@@ -9,11 +9,15 @@ drafting. It complements, not replaces, the brand voice: the voice decides tone 
 vocabulary; this file decides how much grammatical work the reader has to do.
 
 **Source:** Clark, Martin & Mahowald (2026), _Why is AI-generated language so hard to
-understand?_, arXiv:2610.29162 (preprint, not peer-reviewed). Frontier models used all
-six patterns more often than comparable human text and more often than meaning-preserving
-paraphrases of their own sentences, i.e. an easier alternative was available and not
-chosen. The authors trace it to post-training that rewards correctness and brevity, not
-comprehensibility.
+understand?_, arXiv:2610.29162 (preprint, not peer-reviewed). Models used these
+patterns more often than meaning-preserving paraphrases of their own sentences, i.e. an
+easier alternative was available and not chosen. Against comparable human text, the
+picture depends on the pattern: all nine frontier models overused unusual word
+combinations and acting objects; most also overused long dependencies, noun stacks,
+and dropped function words in conversation; results vary across model families. The
+authors propose that optimizing models for math, code, and reasoning favors
+information density over communication, and support it with a small length-penalty
+experiment. That cause is a hypothesis, not established.
 
 **Evidence status — apply directionally, not as hard numbers:**
 
@@ -205,7 +209,7 @@ reliable than a separate pass.
 The pass is silent by default: don't list the changes unless the owner asks or the
 calling skill's output format includes a diagnosis (as `humanize` does).
 
-**Long sessions:** the study observed more of these patterns in long back-and-forth
-conversations than in single-shot tasks (an observation, not a tested cause). When a
-final text was drafted late in a long working session, suggest running `/humanize` on
-it in a fresh session as a last pass.
+**Long sessions (hypothesis):** several patterns were weaker in single-shot essays than
+in chats and coding sessions, and the authors speculate that long back-and-forth
+conversations add density. This wasn't tested. If a final text was drafted late in a
+long working session, a `/humanize` pass in a fresh session is a cheap precaution.
