@@ -23,6 +23,7 @@ content creation skills for marketing projects.
 | `plugins/cc-content/.claude-plugin/plugin.json`                 | Plugin manifest                                                                               |
 | `plugins/cc-content/skills/atomize/SKILL.md`                    | Skill: Repurpose one core message across multiple formats in a single run                     |
 | `plugins/cc-content/skills/blog-article/SKILL.md`               | Skill: Draft blog articles                                                                    |
+| `plugins/cc-content/skills/brand-voice/SKILL.md`                | Skill: Build or refine a brand voice guide from samples, interview, and project context       |
 | `plugins/cc-content/skills/content-ideation/SKILL.md`           | Skill: Generate strategic content angles from an inspiration input                            |
 | `plugins/cc-content/skills/content-onboarding/SKILL.md`         | Skill: Register and create context files; guide project setup                                 |
 | `plugins/cc-content/skills/content-performance-review/SKILL.md` | Skill: Analyze content performance data and generate iteration variants                       |
