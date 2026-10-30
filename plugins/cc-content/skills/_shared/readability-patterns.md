@@ -202,7 +202,9 @@ reliable than a separate pass.
    - [ ] Inanimate things doing what living beings do
 2. Change **only** the passages with a hit, applying the fixes above and the
    "don't overcorrect" limits. Content, claims, tone, and audience terms stay as they
-   are; the substance survives simplification.
+   are; the substance survives simplification. Never edit verbatim material:
+   quotes attributed to people, cited text, legal or compliance wording, and product
+   or entity names stay exactly as given.
 3. Re-check anything the fix touched against the format's own constraints (length,
    hook, character limits) and against the brand voice.
 

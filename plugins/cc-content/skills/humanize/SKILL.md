@@ -184,7 +184,9 @@ Produce the rewritten draft. Rules:
    asserts.
 2. **Remove every marker counted in Step 3.** None should remain in the output.
    Fix readability patterns with the fixes in `readability-patterns.md` — usually a
-   second sentence, a relative clause, a preposition, or a named actor.
+   second sentence, a relative clause, a preposition, or a named actor. Only what
+   Step 3 counted is a marker: under that file's "don't overcorrect" limits, single
+   compounds, audience terms, and verbatim quotes aren't hits and stay as they are.
 3. **Compress content, not grammar.** When cutting hedges, transitions, or filler,
    keep the grammatical signpost words ("that", „dass“, relative pronouns,
    prepositions that break up noun chains). Removing one AI tell must not create
