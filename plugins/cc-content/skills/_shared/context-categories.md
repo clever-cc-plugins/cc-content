@@ -26,6 +26,11 @@ lists, "words to avoid", examples of preferred phrasing, style rules, language/l
 recruiting content and another for corporate communications. Each gets a distinct label
 and summary so skills can pick the right one for each task.
 
+**Brevity and imagery rules** ("be concise", "use vivid language") are read by drafting
+skills as defined in `readability-patterns.md`: cut redundancy, not grammatical
+signposts; concrete examples over invented metaphors. Onboarding offers to write that
+precise version into the file.
+
 **Typical file names in target projects:**
 `brand-voice.md`, `writing-style.md`, `copy-guidelines.md`, `Schreibstil.md`,
 `tone-of-voice.md`, `editorial-guidelines.md`, `recruiting-voice.md`

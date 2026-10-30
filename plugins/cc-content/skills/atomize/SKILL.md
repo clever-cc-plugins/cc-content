@@ -16,6 +16,7 @@ argument-hint: "[optional: path to campaign briefing; defaults to brief.md if pr
 
 @../\_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework in Step 5 (or by the Step 5 subagent, per-format)
 @../\_shared/persuasion-principles.md **Read when:** selecting persuasion principles in Step 5 (or by the Step 5 subagent, per-format)
+@../\_shared/readability-patterns.md **Read when:** running the readability pass in Step 5 (or by the Step 5 subagent, per-format)
 
 # Distribution Engine (Atomization) Skill
 
@@ -186,9 +187,9 @@ length, structure, and conventions.
 ### Step 5: Dispatch drafting subagents (parallel, per format)
 
 Every format assigned Tier B or Tier C in Step 4 needs a full pass — framework
-selection, persuasion-principle selection, draft, self-edit — but none of those
-formats depend on each other's output; only the fixed core message from Step 3 is
-shared. Rather than running that pass sequentially for each format in this session's
+selection, persuasion-principle selection, draft, self-edit, readability pass — but
+none of those formats depend on each other's output; only the fixed core message
+from Step 3 is shared. Rather than running that pass sequentially for each format in this session's
 context, dispatch one subagent per Tier-B/C format, all in parallel, and let each
 work in its own isolated context loaded with only what its format needs.
 
@@ -200,8 +201,8 @@ in this session instead. If it's Tier B, `Read` the guideline file noted in Step
 first — that load was deliberately deferred out of Step 4 on the assumption a Step 5
 subagent would do it, so the inline path has to do it explicitly here instead. Then
 apply the drafting task below (framework selection, persuasion selection, draft
-pass 1, self-edit pass 2 — plus the channel-formatting rule if this format strips
-formatting) to yourself, the same as it's written for a subagent prompt, rather than
+pass 1, self-edit pass 2, readability pass 3 — plus the channel-formatting rule if
+this format strips formatting) to yourself, the same as it's written for a subagent prompt, rather than
 dispatching one — parallelization overhead isn't worth it for a single format. Since
 there's no subagent to supply the batch-learnings note the return contract below
 asks for, jot down that same one-line observation (a correction you had to make, or
@@ -234,7 +235,7 @@ gets:
   4. The single target **format** this subagent is drafting — nothing else.
   5. File paths for the subagent to `Read` itself:
      - the brand-voice and organization-background context file(s) identified in Step 1 (project-relative, same as the context table).
-     - the two shared reference files — but **resolve `${CLAUDE_SKILL_DIR}` to an absolute path yourself first** (e.g. run `echo "$CLAUDE_SKILL_DIR"`) and embed that resolved absolute path in the prompt, as `<resolved-path>/../_shared/storytelling-frameworks.md` and `<resolved-path>/../_shared/persuasion-principles.md`. A dispatched subagent has no `CLAUDE_SKILL_DIR` of its own to expand, and a hardcoded `plugins/cc-content/skills/_shared/...` guess only resolves inside this dev checkout, not a normal plugin install.
+     - the three shared reference files — but **resolve `${CLAUDE_SKILL_DIR}` to an absolute path yourself first** (e.g. run `echo "$CLAUDE_SKILL_DIR"`) and embed that resolved absolute path in the prompt, as `<resolved-path>/../_shared/storytelling-frameworks.md`, `<resolved-path>/../_shared/persuasion-principles.md`, and `<resolved-path>/../_shared/readability-patterns.md`. A dispatched subagent has no `CLAUDE_SKILL_DIR` of its own to expand, and a hardcoded `plugins/cc-content/skills/_shared/...` guess only resolves inside this dev checkout, not a normal plugin install.
      - for Tier B, the format-guideline file path noted in Step 4. For Tier C, state plainly that no guideline file exists and it should use its own best-practices knowledge for this format's length, structure, and conventions.
   6. An explicit tool-scope constraint:
      - state plainly that the subagent's job is read-and-draft only — it must `Read` **only** the exact file paths listed above, and must not use any other tool (no web access, no fetching URLs, no shell commands, no writing files).
@@ -271,6 +272,11 @@ gets:
        unchanged (abbreviating a statistic to fit platform constraints is fine as
        long as the number and meaning survive). If a Tier-B guideline specifies an
        optimal length, use the full range rather than coming in thin.
+     - **Readability pass 3**: run the readability pass from
+       `readability-patterns.md` on the edited draft as its own step: scan for the six
+       patterns and fix only the passages with a hit, keeping the substance layer,
+       tone, and audience terms intact. When a platform's length limit forces cuts,
+       cut a point or qualifier, not grammatical signpost words.
   8. The exact return contract — the subagent should return **only**:
      - the finished text (nothing else mixed into it).
      - the storytelling framework it used.

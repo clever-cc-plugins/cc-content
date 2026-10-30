@@ -122,6 +122,13 @@ For each file the owner wants to register:
 
 Read the file.
 
+If the file is a brand voice or writing style guide and asks for brevity or imagery
+without defining it (e.g. just "be concise" or "use vivid language"), mention once
+that drafting skills read these rules as "cut redundancy, not grammar" and
+"concrete examples over invented metaphors" (see
+`../_shared/readability-patterns.md`), and offer to add a clarifying line to the
+file. Edit the file only on a yes.
+
 Suggest a label based on the file content — brief, descriptive, and free-form. The label
 appears in the CLAUDE.md table and is what the owner will recognize at a glance.
 
@@ -172,6 +179,19 @@ described — the following are starting points, not a fixed script:
 3. "What words or phrases should never appear?"
 4. "Any formatting or punctuation rules? (e.g. no exclamation marks, em-dash preferred)"
 5. "Any reading level or vocabulary target?"
+
+If the answers ask for brevity ("concise", "punchy", "no filler", „prägnant“) or for
+imagery ("vivid", "metaphorical", „bildhaft“), write the precise version into the
+file in its own language, because a model reads both literally and compresses grammar
+to comply (see `../_shared/readability-patterns.md`):
+
+- **Brevity:** "Cut repetition, stock phrases, and empty openers. Keep the words that
+  show how a sentence hangs together — 'that', relative pronouns, prepositions instead
+  of noun chains."
+- **Imagery:** "Concrete examples and established idioms, yes. Invented metaphors and
+  things acting like people only occasionally, and only when instantly clear."
+
+Show the owner the wording before writing it, so the file still says what they mean.
 
 **For organization or author profile:**
 

@@ -17,6 +17,7 @@ argument-hint: "[optional: path to campaign briefing or inspiration file]"
 
 @../\_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework in Step 5
 @../\_shared/persuasion-principles.md **Read when:** selecting persuasion principles in Step 6
+@../\_shared/readability-patterns.md **Read when:** running the readability pass in Step 8
 
 # General Text Skill
 
@@ -255,6 +256,12 @@ Check and fix:
    ("–" or "—") and rewrite them as clean sentences so none of those enclosing dashes
    remain. This is a frequent, recognizable tell; removing it makes the text read as
    human-written.
+6. **Readability patterns.** Run the readability pass from
+   `../_shared/readability-patterns.md` as the last check: scan for the six patterns
+   (coinages, long subject–verb gaps, dropped signpost words, noun stacks, ad-hoc
+   noun-verbs, objects acting like people) and fix only the passages with a hit. Where
+   the brand voice asks for brevity or imagery, read it the way that file defines it —
+   cut redundancy, not grammatical signposts.
 
 If a Tier-B guideline specifies an optimal length, make sure the edited text uses the
 full range rather than coming in thin.

@@ -233,6 +233,11 @@ the problem; publishing generic output with no specific insight is. Concretely:
 - **Every claim needs a specific anchor** — a real number, a named example, a
   concrete outcome. Generic advice with no anchoring detail is the single strongest
   AI-slop tell, independent of phrasing
+- **Compress content, not grammar.** Coinages, noun stacks, ad-hoc verbs, objects
+  acting like people ("the process eats the margin"), and dropped signpost words
+  make a post harder to read on a phone, not tighter. When the character target
+  forces cuts, drop a point or a qualifier instead — see
+  `../_shared/readability-patterns.md`
 - **Keep one distinctive voice choice per post** where brand voice allows it (a
   specific word the author actually uses, a recognizable opinion) — differentiation,
   not polish, is what reads as human in 2026
@@ -288,4 +293,7 @@ Before presenting output, verify:
 - [ ] Voice and length are calibrated to personal-profile or company-page use, per
       the table above
 - [ ] Tone is consistent with brand voice (if brand-voice.md is present)
+- [ ] Readability pass run (`../_shared/readability-patterns.md`): no clusters of
+      coinages, long subject–verb gaps, dropped signpost words, noun stacks, ad-hoc
+      noun-verbs, or objects acting like people
 - [ ] No exclamation marks (or max 1 in launch posts)

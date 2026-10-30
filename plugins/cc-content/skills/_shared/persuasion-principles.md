@@ -446,6 +446,10 @@ abstractly.
 - Dramatizing a weak or unverifiable claim just draws more attention to how
   thin it is.
 - Overwrought dramatization on a plain, low-stakes offer reads as try-hard.
+- Dramatizing through invented metaphors or objects that act like people ("the
+  process eats your margin") makes the claim harder to parse, not easier to feel.
+  Dramatize with a real scene, a named example, or a number the reader can picture
+  — see `readability-patterns.md`.
 
 ### Throw down a challenge
 

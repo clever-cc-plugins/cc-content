@@ -273,4 +273,7 @@ Before presenting output, verify:
 - [ ] Content is native/original to Instagram — no unaltered reposts or watermarked video
 - [ ] Audience type, goal, funnel stage, and post format inferences confirmed with user
 - [ ] Tone consistent with brand voice (if loaded)
+- [ ] Readability pass run (`../_shared/readability-patterns.md`): no clusters of
+      coinages, long subject–verb gaps, dropped signpost words, noun stacks, ad-hoc
+      noun-verbs, or objects acting like people
 - [ ] Alt text drafted for image posts/carousel slides if the owner will be uploading manually (not relying on auto-generated descriptions)

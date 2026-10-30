@@ -330,4 +330,7 @@ diluting the main copy for everyone at once.
 - [ ] Audience type (B2B/B2C), goal, funnel stage, and expertise level inferences
       confirmed with the user
 - [ ] Tone consistent with brand voice (if loaded)
+- [ ] Readability pass run (`../_shared/readability-patterns.md`): no clusters of
+      coinages, long subject–verb gaps, dropped signpost words, noun stacks, ad-hoc
+      noun-verbs, or objects acting like people
 - [ ] No guilt-based or manufactured-urgency language in follow-ups

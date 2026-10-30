@@ -406,4 +406,7 @@ Before presenting output, verify:
       explicitly stated and matches the confirmed audience/goal/funnel inputs
 - [ ] Audience type, goal, and funnel stage inferences confirmed with user
 - [ ] Tone consistent with brand voice (if loaded)
+- [ ] Readability pass run (`../_shared/readability-patterns.md`): no clusters of
+      coinages, long subject–verb gaps, dropped signpost words, noun stacks, ad-hoc
+      noun-verbs, or objects acting like people
 - [ ] CTA is singular and matches the stated goal

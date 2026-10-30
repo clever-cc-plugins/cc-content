@@ -272,5 +272,8 @@ a company newsroom or website — even absent any third-party pickup.
 - [ ] **Audience type, goal (pickup / SEO / owned record), and distribution channel
       confirmed with user**
 - [ ] **Tone consistent with brand voice** (if loaded)
+- [ ] Readability pass run (`../_shared/readability-patterns.md`): no clusters of
+      coinages, long subject–verb gaps, dropped signpost words, noun stacks, ad-hoc
+      noun-verbs, or objects acting like people
 - [ ] **All claims in the release are either cited in the research files or marked
       ⚠ KNOWLEDGE-BASED** (release-specific, not brand-voice rules)

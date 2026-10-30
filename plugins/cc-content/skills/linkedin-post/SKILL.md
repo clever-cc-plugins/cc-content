@@ -11,6 +11,7 @@ argument-hint: "[optional: path to campaign briefing file]"
 @./format-guidelines.md **Read when:** starting this skill
 @../\_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework in Step 3b
 @../\_shared/persuasion-principles.md **Read when:** selecting persuasion principles in Step 3c
+@../\_shared/readability-patterns.md **Read when:** running the readability pass in Step 4
 
 # LinkedIn Post Skill
 
@@ -158,6 +159,12 @@ Produce a complete LinkedIn post that:
   specific number, name, or outcome
 - Includes a link directly in the post body if a link adds real value to the post —
   never hides it in the first comment as a reach workaround
+
+Before the checklist, run the **readability pass** from
+`../_shared/readability-patterns.md` on the finished draft as its own step: scan
+for the six patterns and fix only the passages with a hit, keeping content, tone,
+and audience terms intact. Where the brand voice asks for brevity or imagery, read
+it the way that file defines it — cut redundancy, not grammatical signposts.
 
 Internally verify against the quality checklist in `format-guidelines.md`. For
 every unchecked gate, revise the draft and re-check — do not present until

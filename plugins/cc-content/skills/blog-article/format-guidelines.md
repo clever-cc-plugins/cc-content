@@ -351,6 +351,9 @@ Every draft must pass these gates before it is presented to the owner.
       is intentional and the rationale is documented
 - [ ] Vocabulary, density, and credibility signals match the target expertise level
 - [ ] Tone is consistent with the loaded brand voice context (if present)
+- [ ] Readability pass run (`../_shared/readability-patterns.md`): no clusters of
+      coinages, long subject–verb gaps, dropped signpost words, noun stacks, ad-hoc
+      noun-verbs, or objects acting like people
 - [ ] Output language matches the loaded output language context (default: English
       unless project specifies otherwise)
 
