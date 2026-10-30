@@ -22,6 +22,8 @@ produce generic prose.
 **Signals in summaries:** Tone descriptors ("authoritative", "conversational"), vocabulary
 lists, "words to avoid", examples of preferred phrasing, style rules, language/locale.
 
+Produced by `cc-content:brand-voice`, which builds a full voice guide from your texts, an interview, or both; the quick five-question note from `content-onboarding` is the lighter alternative.
+
 **Note:** Projects often have more than one writing style file — for example, one for
 recruiting content and another for corporate communications. Each gets a distinct label
 and summary so skills can pick the right one for each task.

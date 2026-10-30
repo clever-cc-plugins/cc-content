@@ -66,6 +66,7 @@ Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containi
 | `long-tail-copy`             | Draft text for any format without a dedicated skill; supports multi-format atomization |
 | `x-post`                     | Draft X (Twitter) posts                                                                |
 | `samples-curation`           | Save and annotate gold-standard content examples                                       |
+| `brand-voice`                | Build or refine a brand voice guide from samples, interview, and project context       |
 | `humanize`                   | Remove AI tells from a draft and rewrite it to sound human, on-brand-voice             |
 | `content-performance-review` | Analyze content performance data and generate iteration variants                       |
 | `session-wrap`               | Review session, promote deliverables to context, commit work                           |
