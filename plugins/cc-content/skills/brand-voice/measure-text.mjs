@@ -151,8 +151,9 @@ export function measure(text, lang) {
   const base = lang ? lang.toLowerCase().split(/[-_]/)[0] : null;
   const blocks = stripExcluded(text)
     .split(/\n\s*\n/)
-    .filter((b) => words(b).length);
-  const sentences = blocks.flatMap(sentencesOf);
+    .map(sentencesOf)
+    .filter((b) => b.length);
+  const sentences = blocks.flat();
   const all = sentences.map((s) => words(s.text));
   const total = all.reduce((n, w) => n + w.length, 0);
   if (!total) throw new Error("no text to measure");
@@ -211,7 +212,7 @@ export function measure(text, lang) {
       ...stats(sLens),
       over25Share: round(sLens.filter((n) => n > 25).length / sLens.length, 2),
     },
-    paragraphs: stats(blocks.map((b) => words(b).length)),
+    paragraphs: stats(blocks.map((b) => b.reduce((n, x) => n + words(x.text).length, 0))),
     questionShare: share(/\?[^\p{L}\p{N}]*$/u),
     exclamationShare: share(/!+[^\p{L}\p{N}]*$/u),
     per1000: {

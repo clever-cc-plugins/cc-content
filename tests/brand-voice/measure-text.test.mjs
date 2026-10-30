@@ -111,3 +111,8 @@ test("cli: files, --json, empty stdin", () => {
   assert.equal(empty.status, 1);
   assert.match(empty.stderr, /no text/);
 });
+test("list markers are not counted in paragraph lengths", () => {
+  const r = measure("1. alpha beta\n2. gamma delta", "en");
+  assert.equal(r.words, 4);
+  assert.deepEqual(r.paragraphs, { count: 1, mean: 4, median: 4, p90: 4 });
+});
