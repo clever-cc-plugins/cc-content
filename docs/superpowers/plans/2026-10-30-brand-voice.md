@@ -21,6 +21,7 @@
 - Learnings tag: `[cc-content:brand-voice] <text> — <date>`.
 - Default guide path `context/brand-voice.md`; disambiguated names `context/brand-voice-<scope>-<lang>.md` using only the needed parts (§4 Step 8).
 - Never commit the owner's guides or research reports from `~/Git-Repos/temp/`. Test fixtures are written fresh (§11).
+- The private input files (the owner's four guides, the seven research reports, the readability study excerpt) live in a secret gist of the owner's GitHub account described as "cc-content brand-voice skill: private input files (temporary, delete after the skill ships)". Never write its URL or ID into the repo; the repo is public and a secret gist is readable by anyone with the link. On a machine without `~/Git-Repos/temp/`, fetch it outside the repo with the owner's `gh` login: `gh gist list --secret | grep brand-voice` to get the ID, then `gh gist clone <id> ~/Git-Repos/temp`.
 - Reference files and `SKILL.md` are written in English; the guide the skill produces is written entirely in the target language.
 
 ## Review Focus
@@ -351,8 +352,19 @@ Expected: exit 0; for de-org `address.formal > 0` and `address.informal == 0`; f
   - **D — refine:** a scratch project with a five-line onboarding-style voice note registered, then run the skill. Expect: restructure offer, numbered change proposals, a change-log entry, and nothing overwritten without a yes. Then create a second guide and confirm Step 1 asks which guide to refine.
   - Repeat scenario A once with `node` hidden from `PATH`. Expect: a complete guide with _estimated_ labels.
 
-- [ ] **Step 4: Acceptance check** of every produced guide against `tests/brand-voice/README.md`'s checklist: sections per §8.1 (conditionals correct); priority core has 10–20 rules with must/should/may; every don't has an instead; examples carry evidence marks; header complete; exemplar texts 3–6 per text type (or fewer only in define mode with a note); registered row present. Then compare one guide side by side with the owner's local guides in `~/Git-Repos/temp/` (do not copy anything from them) and note gaps in depth.
+- [ ] **Step 4: Acceptance check** of every produced guide against `tests/brand-voice/README.md`'s checklist: sections per §8.1 (conditionals correct); priority core has 10–20 rules with must/should/may; every don't has an instead; examples carry evidence marks; header complete; exemplar texts 3–6 per text type (or fewer only in define mode with a note); registered row present. Then compare one guide side by side with the owner's local guides in `~/Git-Repos/temp/` (fetched from the secret gist per Global Constraints if missing; do not copy anything from them) and note gaps in depth.
 
 - [ ] **Step 5: Fix what the dry runs found** in Tasks 2–5 files, re-run the affected scenario, and repeat until the checklist passes.
 
 - [ ] **Step 6: Commit** — `✅ test(brand-voice): add fixtures and dry-run scenarios` (fixtures, README, and any fixes as separate commits with their own types).
+
+---
+
+### Task 7: Remove the private input files
+
+Run this only after the final whole-branch review is clean and the branch is merged, when the skill is finished and the input files are no longer needed. It is a controller/owner step, not a subagent task. Deleting the gist cannot be undone, so confirm with the owner before running it.
+
+- [ ] **Step 1: Confirm with the owner** that the skill is finished and the gist and local copies can go.
+- [ ] **Step 2: Delete the secret gist.** `gh gist list --secret | grep brand-voice` to get the ID, then `gh gist delete <id> --yes`. Verify with `gh gist list --secret | grep brand-voice` (no result).
+- [ ] **Step 3: Delete local copies** on every machine that has them: `rm -r ~/Git-Repos/temp` (check its contents first; it should hold only the twelve input files).
+- [ ] **Step 4: Update the handoff file.** In `docs/superpowers/plans/2026-10-30-brand-voice-progress.md`, mark the input files as deleted, and commit with `🔥 chore: record removal of brand-voice input files` plus the Co-Authored-By trailer.
