@@ -25,21 +25,15 @@ One flow covers three starting points, and it adapts to what the samples and ans
 
 This skill does not draft content. It produces the guide that drafting skills follow.
 
-**Languages.** Talk to the user in the language they write in. The guide is written entirely in its target language: headings, rules, examples, and the marks on them. One guide covers one language.
+**Languages.** Talk to the user in the language they write in, and translate the quoted prompts in this skill into it. The guide is written entirely in its target language: headings, rules, examples, and the marks on them. One guide covers one language.
 
 ## Step 0: Recall learnings
 
-If `.claude/learnings.md` exists, read it silently. Apply all entries relevant to this run, both `[cc-content:brand-voice]`-tagged entries and entries from other plugins that inform content quality or project constraints. Note entries that concern voice (tone, wording, phrasing, punctuation habits) from any skill: they are input for refine mode. Do not announce this step. If the file is absent, continue normally.
+If `.claude/learnings.md` exists, read it silently. Apply all entries relevant to this run, both `[cc-content:brand-voice]`-tagged entries and entries from other plugins that inform content quality or project constraints. Note entries that concern voice (tone, wording, phrasing, punctuation habits) from any skill, tagged or not: they are input for refine mode. Do not announce this step. If the file is absent, continue normally.
 
 ## Step 1: Detect what exists
 
-Read the context table from all loaded CLAUDE.md files:
-
-```bash
-grep -A 200 '## Context files' CLAUDE.md 2>/dev/null || echo "(no context table)"
-```
-
-CLAUDE.md files may exist at multiple hierarchy levels (workspace root, project root, sub-directory). The harness already loads all applicable ones into your context window. If multiple `## Context files` tables exist, rows from more specific CLAUDE.md files take precedence over less specific ones.
+Read the `## Context files` table from the CLAUDE.md files already loaded into your context window. They may exist at multiple hierarchy levels (workspace root, project root, sub-directory); if multiple tables exist, rows from more specific CLAUDE.md files take precedence over less specific ones. Only if no CLAUDE.md is loaded, read `./CLAUDE.md` directly and stop at the next heading after the table.
 
 **Arguments.** If `$ARGUMENTS` names the path of a voice guide, that is the guide to refine: go to [Refine mode](#refine-mode). Sample files or URLs in `$ARGUMENTS` are kept for Step 3.
 
@@ -49,7 +43,11 @@ CLAUDE.md files may exist at multiple hierarchy levels (workspace root, project 
 
   > "There is already a voice guide: `{path}` ({whose voice, scope, language, from its summary}). Should I refine it, or build a separate guide, for example for another scope or language?"
 
-- **Several guides found:** list them with whose voice, scope, and language from their summaries, then ask (if the user asked to update or refine a guide, ask only which one)
+- **Several guides found:** list them with whose voice, scope, and language from their summaries, then ask which one. If the user asked to update or refine a guide, ask only
+
+  > "Which of these guides should I refine?"
+
+  Otherwise ask
 
   > "Which of these guides should I refine, or should I build a new one?"
 
@@ -87,11 +85,11 @@ If the user has not offered samples yet, ask:
 
 > "Which texts represent the voice? Paste them, give me files or folders, or send URLs. More is better: about 2,000 words per text type is the minimum for a reliable picture."
 
-**Group.** Group the samples by language first, then by text type in scope (see "Group the corpus" in `analysis-criteria.md`). If some samples are in another language than the guide's, show which ones and ask:
+**Group.** Group the samples by language first, then by text type in scope (see "Group the corpus" in `analysis-criteria.md`). Propose a text type for each file and let the user correct it before measuring; file names rarely say. If some samples are in another language than the guide's, show which ones and ask:
 
 > "These texts are in {other language}: {list}. Do they belong to this guide, or should I leave them out? (A guide covers one language; they could seed or support a separate {other language} guide.)"
 
-**Measure.** Check for Node first:
+**Measure.** `${CLAUDE_SKILL_DIR}` below is the directory of this `SKILL.md`; if the variable is empty in your environment, use that path. Check for Node first:
 
 ```bash
 command -v node >/dev/null 2>&1 && echo "node available" || echo "node missing"
@@ -105,14 +103,14 @@ command -v node >/dev/null 2>&1 && echo "node available" || echo "node missing"
 
   The script reads files only: expand a folder into its text files (`.md`, `.txt`) first. For pasted or fetched text, pipe the group's text in on stdin instead of files (`... --lang <code> --json <<'EOF'` … `EOF`). The script exits 1 with "no text" when the input is empty: check the group's input and fix it before going on. Treat its numbers as approximate (sentence splitting is heuristic) and read the `notes` field.
 
-- **Node missing:** do not stop and do not ask the user to install anything. Estimate the same features by reading (word count; sentence and paragraph lengths; shares of questions and exclamations; dashes, colons, semicolons, parentheses, emoji, and list lines per 1,000 words; pronoun and address-form use; contractions in English) and label every one of them _estimated_. Record the measurement mode for the guide's section 0. Both paths must lead to a complete guide.
+- **Node missing:** do not stop and do not ask the user to install anything. Estimate the same features by reading (word count; sentence and paragraph lengths; shares of questions and exclamations; dashes, colons, semicolons, parentheses, emoji, and list lines per 1,000 words; pronoun and address-form use; contractions in English) and label every one of them _estimated_. Count sentences in at least 20 consecutive sentences per group (not a sample of the most striking ones), state targets as ranges, and prefer the lower figure when unsure: reading overestimates sentence length. Record the measurement mode for the guide's section 0. Both paths must lead to a complete guide.
 
 **Check.** Apply the sample checks from `analysis-criteria.md`, using `words` per group:
 
 - **Sufficiency per text type in scope:** under ~2,000 words is _low confidence_ (say so; ask for more fitting samples or plan interview questions for that text type); ~2,000–5,000 is workable; ~5,000 or more is comfortable. A text type in scope with no samples is covered by the interview and test drafts only.
 - **Scope fit:** if samples come from text types outside the scope, name the guide sections that will rest on thin evidence.
 - **Clustering:** if the samples split into clearly different voices (authors, eras, channels), show the clusters with quoted lines and key measurements and ask whether each is a tone variant of one voice, a separate voice (suggest a separate guide), or noise to exclude.
-- **Voice vs. noise:** spelling and grammar errors, inconsistent terminology, and features found in one author's texts only are not voice. Exclude them for an organizational voice. For a personal voice, show each with a quoted example and ask whether it is deliberate; only confirmed features become rules.
+- **Voice vs. noise:** spelling and grammar errors, inconsistent terminology, and features found in one author's texts only are not voice. Exclude them for an organizational voice. For a personal voice, show each with a quoted example and ask whether it is deliberate; only confirmed features become rules. Look for recurring openers and closers ("Hot take:", "P.S.", a closing question), sign-offs, and punctuation habits, and check each against the offered defaults in `guide-template.md`: where a sample habit breaks a default, ask whether to keep the habit as a rule, or follow the default.
 
 Show a short sample report: per group the language, text type, number of texts, words, and status. Record every low-confidence finding for section 0.
 
@@ -139,12 +137,12 @@ The answer becomes the trait's target; examples of the new target in the guide a
 
 Use the question banks in `interview-guide.md`. Ask only what the samples, the analysis, and the context did not answer. Ask one question at a time, in the user's language, and accept "skip": a skipped question leaves its point to the sample evidence or out of the guide, never filled with invented content.
 
-- **Define mode** (no usable samples, or text types without samples): desired impression and readers; reader relationship (new or familiar readers); "we are ___, but never ___" pairs; models and anti-models, and why; the wince test; the four tone scales.
+- **Define mode** (no usable samples, or text types without samples): desired impression and readers; reader relationship (new or familiar readers); whether the voice shifts between the text types in scope; "we are ___, but never ___" pairs; models and anti-models, and why; the wince test; the four tone scales. Targets the user sets here are marked as set by the owner (in the guide's language), not _measured_ or _estimated_.
 - **Tone-scale rating:** the one explicit exception to one question at a time. Ask the four scales as one question, and state the direction: 1 = the first-named (left) pole, 5 = the second pole (e.g. formal–casual: 1 formal, 5 casual).
 - **Values**, if none are in context: ask once. Without a usable answer, the guide omits section 2.
 - **Persuasion and ethics:** what the texts want readers to do, and the red lines, each with what the text does instead. Without a usable answer, the guide omits section 6.
 - **Language layer:** the decisions from `language-layer.md` that samples and context did not settle (address form and its exceptions per text type, contractions, inclusive-language policy, open typography choices, readability target).
-- **Hard bans:** ask once in **every** run, near the end of this step, even when samples and context cover everything else, unless the user already named bans in this session. Every ban gets its replacement:
+- **Hard bans:** (including whole classes such as "anglicisms where a German word exists") ask once in **every** run, near the end of this step, even when samples and context cover everything else, unless the user already named bans in this session. Every ban gets its replacement:
 
   > "Are there words, phrases, or punctuation habits you never want to see in your texts?"
 
@@ -165,7 +163,7 @@ Write the guide per `guide-template.md`: its skeleton (sections 0–10), its ins
 - **Section 4.9:** the readability target plus the six patterns from `../_shared/readability-patterns.md`, written out in full and adapted to the target language with native examples, with the citation kept.
 - **Section 4.10:** every applicable decision from `language-layer.md`, each as a rule with an example in the target language.
 - **Section 6:** only the principles from `../_shared/persuasion-principles.md` that fit this voice, applied to the brand, plus the ethics test and red lines. Never copy the library itself.
-- **Section 9:** 3–6 exemplars per text type from the samples, chosen for diversity and quality, each with a one-line note. In define mode, section 9 is filled in Step 7 from test passages the user approves; if none is approved for a text type, list that in section 0's low-confidence notes.
+- **Section 9:** 3–6 exemplars per text type from the samples, chosen for diversity and quality, each with a one-line note. When a text type has fewer than three usable samples (describe or reshape mode), use all of them and note the count in section 0's low-confidence notes. In define mode, section 9 is filled in Step 7 from test passages the user approves; if none is approved for a text type, list that in section 0's low-confidence notes.
 - **Section 10:** the first change-log entry records the creation and how the guide was built.
 - **Self-consistency:** the guide's own prose follows its language-layer rules and the readability patterns, and its examples contain no AI tells.
 
@@ -173,13 +171,13 @@ Keep the draft in the conversation until Step 8 writes it. Do not show the whole
 
 ## Step 7: Test drafts and self-check
 
-Write **one short test passage per text type in scope, three at most**, using only the draft guide as voice context, not the samples. With more than three text types, pick the three with the least sample evidence. Take a topic plausible for the user from the context; if none fits, ask:
+Write **one short test passage per text type in scope, three at most**, using only the draft guide as voice context, not the samples. With more than three text types, pick the three with the least sample evidence. Take a topic plausible for the user from the context or the samples; if none fits, ask:
 
 > "What topic should the test passages be about? Something you would really write about works best."
 
 Before showing a passage:
 
-1. **Measure it.** Write the passage to a temporary file or pipe it on stdin, run `node "${CLAUDE_SKILL_DIR}/measure-text.mjs" --lang <code> --json`, and compare the results with the guide's quantitative targets. Without Node, estimate the same features by reading.
+1. **Measure it.** Write the passage to a temporary file or pipe it on stdin, run `node "${CLAUDE_SKILL_DIR}/measure-text.mjs" --lang <code> --json`, and compare the results with the guide's quantitative targets; a value outside a target range is a failure. Without Node, estimate the same features by reading, and check them against the sample evidence as well as the guide's targets, so that a biased estimate cannot confirm itself.
 2. **Check it rule by rule** against the priority core (section 1): pass or fail for each rule, with the quoted evidence from the passage.
 3. **Run the readability pass** from `../_shared/readability-patterns.md`.
 4. **Fix every failure**, then show the passage with a one-line check result (e.g. "core rules: all pass; median sentence 13 words, target ≤ 14").
@@ -274,6 +272,8 @@ If it is unclear what should change, ask:
 1. **Read the guide.** Compare its structure with `guide-template.md`. If it does not follow the template, ask:
 
    > "This guide doesn't follow the template structure. Should I restructure it into the template, keeping all its content, or apply the changes within its current structure?"
+
+   A yes to restructuring is the consent to write the restructured guide. Ask once for section 0 fields the guide lacks (owner, scope) before restructuring. Mark rules the owner stated but samples do not show _stated in context_ (in the guide's language).
 
    Restructuring moves content without adding any. Template sections that stay empty are named as gaps; filling one needs input (samples or interview answers) and goes through the change proposals below.
 

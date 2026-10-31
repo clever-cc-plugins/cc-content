@@ -168,7 +168,7 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 
 ### 9. Exemplar texts
 
-> **What:** 3–6 complete texts per text type, chosen for diversity and quality, each with a one-line note on what it exemplifies. Trim long formats to a representative part (e.g. intro plus one section of a whitepaper).
+> **What:** 3–6 complete texts per text type, chosen for diversity and quality, each with a one-line note on what it exemplifies. When a text type has fewer usable samples, include all of them and note the count in section 0. Trim long formats to a representative part (e.g. intro plus one section of a whitepaper).
 >
 > **Evidence:** taken from the samples (_quoted_) or, in define mode, from test drafts the user approved (_approved test draft_).
 
@@ -182,7 +182,7 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 - **Positive phrasing first.** Say what to do. Hard bans stay, but every ban names its replacement ("instead: …").
 - **Measurable where possible**, e.g. "median sentence ≤ 18 words", "address the reader as 'Sie'". Numbers come from the measured corpus or from the user's decision.
 - **Priority marks:** every rule in the priority core (section 1) carries **must**, **should**, or **may**. Detailed rules default to _should_ unless marked.
-- **Evidence marks on examples:** _quoted_ (from the samples), _illustrative_ (written by the skill), _approved test draft_ (a test draft the user approved). Rules transferred from another language: _adapted, not observed_.
+- **Evidence marks on examples**, including examples in tables: _quoted_ (from the samples), _illustrative_ (written by the skill), _approved test draft_ (a test draft the user approved). Rules transferred from another language: _adapted, not observed_. Rules the owner stated that no sample shows: _stated in context_. All marks are written in the guide's language, for example German _zitiert_ / _illustrativ_ / _freigegebener Testentwurf_ / _übertragen, nicht beobachtet_ / _im Kontext genannt_, and **MUSS** / **SOLL** / **KANN**, _gemessen_ / _geschätzt_.
 - **Measurement marks on quantitative targets:** _measured_ (from the measurement script) or _estimated_ (estimated by reading).
 - **Perspective:** "we" for organizations, "I" for individuals.
 - **Self-consistency:** the guide's own prose follows the voice's language-layer rules and the readability patterns. Its examples must not contain AI tells.
@@ -192,8 +192,8 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 Three rules carried over from the plugin owner's taste. Offer each in the interview as written; the user confirms or drops it. A confirmed default becomes an ordinary rule in the matching section; a dropped one leaves no trace in the guide.
 
 1. **should** Write without social-media cringe patterns: no bait openers ("Unpopular opinion:", "Nobody talks about this."), no one-sentence-per-line drama, no engagement bait ("Comment YES below"), no emoji used as bullet points. Instead, open with the actual point and close with a question you want answered, or with no question at all.
-2. **should** (German and English only) Use em dashes, or spaced en dashes in German, sparingly: at most one per paragraph, or the measured rate if it is lower. Instead, use a comma, a colon, parentheses, or a full stop.
-3. **should** Avoid formulaic antitheses such as "It's not X, it's Y", "Not just X, but Y", or "This isn't about X. It's about Y." Instead, state Y directly, and name X only when readers actually believe it. (The "X, not Y" trait labels in sections 1 and 3 are a guide device, not prose, and are not affected.)
+2. **should** (German and English only) Use em dashes, or spaced en dashes in German, sparingly: at most one per paragraph, or the measured rate if it is lower (a measured rate of 0 makes the rule "none"). Instead, use a comma, a colon, parentheses, or a full stop.
+3. **should** Avoid formulaic antitheses such as "It's not X, it's Y", "Not just X, but Y", or "This isn't about X. It's about Y." Instead, state Y directly, and name X only when readers actually believe it. If the samples use the pattern as a deliberate device, scope the rule to the forms the samples avoid (for example the "It's not X, it's Y" setup) instead of banning the device. (The "X, not Y" trait labels in sections 1 and 3 are a guide device, not prose, and are not affected.)
 
 ## Micro-example (fictional)
 

@@ -20,7 +20,7 @@ All fixtures are fictional. Do not add real client texts or the owner's private 
 
 Run each in a scratch project outside the repo (empty `CLAUDE.md`) and follow `SKILL.md` literally, answering as the scripted user.
 
-- **A, describe, German org.** Corpus `de-org`, scope "website and blog", language de, owner "Brenner & Kollmann". Add a minimal `context/positioning.md` first. Answers: accept the hypotheses as shown, keep all traits, confirm Sie, exclude the English page. Expect: the English page is flagged and excluded, traits match the planted voice, and the guide is in German throughout (Sie rules, German typography, German readability examples).
+- **A, describe, German org.** Register `context/positioning.md` in the scratch `CLAUDE.md` first. Corpus `de-org`, scope "website and blog", language de, owner "Brenner & Kollmann". Add a minimal `context/positioning.md` first. Answers: accept the hypotheses as shown, keep all traits, confirm Sie, exclude the English page. Expect: the English page is flagged and excluded, traits match the planted voice, and the guide is in German throughout (Sie rules, German typography, German readability examples).
 - **B, reshape, English personal.** Corpus `en-personal`, scope "LinkedIn posts and newsletters", language en. Mark the trait "ironic asides" as "change" (answer: "less irony, more warmth"). Expect: the newsletter is flagged low confidence, the changed trait is reflected in the rules, "I" perspective is used.
 - **C, define, German, no samples.** Interview only. Answers: a small consulting firm, du-Ansprache, warm but precise, no anglicisms where a German word exists; for values and persuasion answer "skip". Expect: all examples marked illustrative, approved test drafts land in section 9, values and persuasion sections omitted.
 - **D, refine.** Scratch project with a five-line onboarding-style voice note registered under `## Context files`. Run the skill. Expect: restructure offer, numbered change proposals, a change-log entry, nothing overwritten without a yes. Then register a second guide and confirm Step 1 asks which guide to refine.
@@ -33,6 +33,6 @@ Run each in a scratch project outside the repo (empty `CLAUDE.md`) and follow `S
 - [ ] Every don't has an instead.
 - [ ] Examples carry evidence marks (quoted, illustrative, approved test draft, adapted).
 - [ ] The header is complete: owner, next review date, measurement mode, low-confidence notes.
-- [ ] 3 to 6 exemplar texts per text type (fewer only in define mode, with a note).
+- [ ] 3 to 6 exemplar texts per text type (fewer only in define mode, or when the corpus has fewer usable texts; section 0 notes the count).
 - [ ] The guide is registered in the `## Context files` table with a summary naming whose voice, scope and language.
 - [ ] The guide is written entirely in the target language.

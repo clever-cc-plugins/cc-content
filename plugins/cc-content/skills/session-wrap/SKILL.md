@@ -262,7 +262,7 @@ Confirm: "✓ Rule added to `CLAUDE.md`."
 
 **Option (c) — brand voice guide**:
 
-If several voice guides are registered, ask which one. Draft the rule per the rule conventions of the guide (one rule = observable behavior + scope + example; positive phrasing; a ban paired with an "instead"; a priority mark of must, should or may), show it to the owner, and ask for confirmation or edits. Then insert it into the matching section of the guide (section 3 or 4 for detailed rules, section 1 for a must-level core rule) and append a change-log entry (section 10) dated today.
+If several voice guides are registered, ask which one. Draft the rule per the rule conventions of the guide (one rule = observable behavior + scope + example; positive phrasing; a ban paired with an "instead"; a priority mark of must, should or may), show it to the owner, and ask for confirmation or edits. Then insert it into the matching section of the guide (section 3 or 4 for detailed rules, section 1 for a must-level core rule) and append a change-log entry (section 10) dated today. Update the as-of date in section 0.
 
 If the file has no numbered guide sections (for example a quick voice note from `content-onboarding`), append the rule under the most fitting existing heading, or under a new `Rules` heading, and add a dated change-log line at the end of the file, creating a `Change log` heading if absent. Mention that `/cc-content:brand-voice` in refine mode can give the file the full guide structure.
 
