@@ -5,7 +5,7 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 ## How to use this template
 
 - **Translate every heading** into the guide's language idiomatically: natural wording a native writer would choose, not a word-for-word rendering. Keep the section numbers. The English names below are the reference names; other files in this skill refer to sections by their numbers (0–10, 4.1–4.10).
-- **Section 0 is the title block.** The finished guide has its title as the only `#` heading, followed directly by the section 0 fields. Never emit a visible heading named "Header" (or its translation); "0. Header" is a reference name only.
+- **Section 0 is the title block.** The finished guide has its title as the only `#` heading, followed directly by the section 0 fields. Never emit a visible heading for section 0, in any language ("Header", "Kopfzeile", and so on); "0. Header" is a reference name only.
 - **Heading levels.** The skeleton's `###` headings for sections 1–10 become `##` in the guide, and its `####` headings become `###`.
 - **Placeholders** look like `{…}`. Replace each with content. The instruction blocks (the quoted **What / Size / Evidence** lines) tell you what to write; they never appear in the guide.
 - **Bracketed sections are conditional.** Section 2 (values) and section 6 (persuasion and ethics) are omitted when there is no input for them: no values in context and none from the interview, or no answer on persuasion and red lines. Never fill them with filler. Section 5 is omitted when the scope has a single text type. Drop the brackets in the guide's heading when the section is kept.
@@ -192,7 +192,7 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 Three rules carried over from the plugin owner's taste. Offer each in the interview as written; the user confirms or drops it. A confirmed default becomes an ordinary rule in the matching section; a dropped one leaves no trace in the guide.
 
 1. **should** Write without social-media cringe patterns: no bait openers ("Unpopular opinion:", "Nobody talks about this."), no one-sentence-per-line drama, no engagement bait ("Comment YES below"), no emoji used as bullet points. Instead, open with the actual point, and close with a question only if you want it answered.
-2. **should** (German and English only) Use em dashes, or spaced en dashes in German, sparingly: at most one per paragraph, or the measured rate if it is lower (a measured rate of 0 makes the rule "none"). Instead, use a comma, a colon, parentheses, or a full stop.
+2. **should** (German and English only) Use em dashes, or spaced en dashes in German, sparingly: at most one per paragraph, or the measured rate if it is lower (a measured rate of 0 makes the rule "none"; in define mode there is no measured rate, so the rule is "at most one per paragraph", marked _set by owner_). Instead, use a comma, a colon, parentheses, or a full stop.
 3. **should** Avoid formulaic antitheses such as "It's not X, it's Y", "Not just X, but Y", or "This isn't about X. It's about Y." Instead, state Y directly, and name X only when readers actually believe it. If the samples use the pattern as a deliberate device, scope the rule to the forms the samples avoid (for example the "It's not X, it's Y" setup) instead of banning the device. (The "X, not Y" trait labels in sections 1 and 3 are a guide device, not prose, and are not affected.)
 
 ## Micro-example (fictional)

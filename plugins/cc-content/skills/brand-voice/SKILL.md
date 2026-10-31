@@ -67,7 +67,7 @@ Ask the framing questions from `interview-guide.md`, one at a time and in this o
 
 1. **Whose voice:** an organization or one person, and the name the guide carries. This sets "we" or "I" throughout the guide.
 2. **Scope:** which kinds of text the guide governs and for which readers. Take the free answer and restate it as a short list of text types for confirmation, e.g. "LinkedIn posts, blog articles, newsletters".
-3. **Language:** the language of the texts the guide governs. Suggest it from the samples or the default-language entry. If the user wants a guide in a language for which only samples or a guide in another language exist, follow "Seeding from another language" in `language-layer.md`: carry the core across, write the language layer natively, mark transferred rules _adapted, not observed_, and plan mandatory test drafts in Step 7.
+3. **Language:** the language of the texts the guide governs. Suggest it from the samples, the default-language entry, or (in define mode) the language the user writes in. If the user wants a guide in a language for which only samples or a guide in another language exist, follow "Seeding from another language" in `language-layer.md`: carry the core across, write the language layer natively, mark transferred rules _adapted, not observed_, and plan mandatory test drafts in Step 7.
 4. **Starting point:** texts that already sound right (describe), texts that exist but should change (reshape), or no usable texts (define).
 
 With no usable samples at all, skip Steps 3 and 4 and continue with Step 5 in define mode. With samples for some text types only, run Steps 3 and 4 on those, and cover the others with define-mode questions in Step 5.
@@ -165,7 +165,7 @@ Write the guide per `guide-template.md`: its skeleton (sections 0–10), its ins
 - **Section 6:** only the principles from `../_shared/persuasion-principles.md` that fit this voice, applied to the brand, plus the ethics test and red lines. Never copy the library itself.
 - **Section 9:** 3–6 exemplars per text type from the samples, chosen for diversity and quality, each with a one-line note. Copy the body without the source's headings, which would break the guide's numbering. When a text type has fewer than three usable samples (describe or reshape mode), use all of them and note the count in section 0's low-confidence notes. In define mode, section 9 is filled in Step 7 from test passages the user approves; if none is approved for a text type, list that in section 0's low-confidence notes.
 - **Section 10:** the first change-log entry records the creation and how the guide was built.
-- **Self-consistency:** the guide's own prose follows its language-layer rules and the readability patterns, and its examples contain no AI tells.
+- **Self-consistency:** the guide's own prose follows its language-layer rules and the readability patterns, its examples contain no AI tells, and it breaks none of its own hard bans (check material imported from the shared files, such as the readability patterns, against them).
 
 Keep the draft in the conversation until Step 8 writes it. Do not show the whole draft before Step 7 tests it; afterwards offer to show it before saving, or save it and point to the file.
 
@@ -186,7 +186,7 @@ Then ask for the user's reaction in their own words:
 
 > "Does this sound like you? Tell me in your own words what fits and what doesn't, e.g. 'too stiff', 'that's me', or 'I'd never say that word'."
 
-Turn each reaction into a concrete rule change, as described in "Test-draft reactions" in `interview-guide.md`: pin a vague reaction down with one question, change the rule, scale position, or target (not the passage), and **show the diff of every changed rule** with its section number, and carry each change to every place the guide mirrors it (the trait text in section 3, section 5 overrides, the section 8 checklist, cited rule numbers). Regenerate a passage only if the user wants another round.
+Turn each reaction into a concrete rule change, as described in "Test-draft reactions" in `interview-guide.md`: pin a vague reaction down with one question, change the rule, scale position, or target (not the passage), and **show the diff of every changed rule** with its section number, and carry each change to every place the guide mirrors it (the trait text in section 3, section 5 overrides, the section 8 checklist, cited rule numbers). Regenerate a passage only if the user wants another round. After a changed core rule, re-check the passages already shown against it; if one now fails, say so and ask whether to keep it.
 
 In define mode, a passage the user approves ("that's me") can become an exemplar in section 9, marked _approved test draft_ in the guide's language; ask before adding it.
 

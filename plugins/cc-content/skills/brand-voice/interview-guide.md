@@ -58,7 +58,7 @@ Ask when: an item on the `language-layer.md` checklist applies to the guide's la
 - **Contractions** (English and similar). "Should the texts use contractions such as {examples}? Everywhere, only in some text types, or not at all?"
 - **Inclusive language.** Present the realistic options for the language with their normative status from `language-layer.md` and ask which one the guide follows. Record the choice, not a lecture.
 - **Typography.** Ask only about choices the language leaves open (e.g. US or UK spelling and punctuation in English, dash style), never about fixed conventions.
-- **Readability target.** "Who is the reader who finds your texts hardest? Roughly how well do they read this language?" Propose a CEFR level from the answer and the audience context, and ask for a yes or a correction.
+- **Readability target.** "Who is the reader who finds your texts hardest? Roughly how well do they read this language?" Propose a CEFR level from the answer and the audience context, and ask for a yes or a correction. In define mode also propose a median sentence length and a share of sentences over 25 words as targets (marked _set by owner_), because Step 7 checks passages against them.
 
 ## Hard bans
 
