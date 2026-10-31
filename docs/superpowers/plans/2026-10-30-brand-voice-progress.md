@@ -1,6 +1,6 @@
 # brand-voice — Execution Progress (handoff)
 
-Status on 2026-10-31: **Task 6 done except the comparison with the owner's private guides and the final whole-branch review**, on branch `feat/brand-voice-skill`. Fixtures (c2b3bd8), script checks (dd86750), the four dry-run scenarios plus the no-node rerun, and the resulting fix pass (9703714) are committed. Remaining dry-run findings not fixed are listed as deferred below.
+Status on 2026-10-31: **implementation complete, review clean, two dry-run rounds done, comparison with the owner's private guides done and its Important gaps fixed**, on branch `feat/brand-voice-skill`. Open: delete the private input gist and local `~/Git-Repos/temp` (plan Task 7, needs the owner's confirmation), push the branch, open the PR, and delete the git-ignored SDD workspace after the merge.
 
 ## How to resume (any machine)
 
@@ -101,3 +101,5 @@ PAUSED by user after Task 5 (2026-10-30). Task 6a dispatch stopped before writin
 
 Task 6: dry runs A, B, C, D and A without node done by subagents; fix pass 9703714.
 Task 6: minor (deferred): refine does not ask for scope/owner beyond one line; SKILL.md:206 registration consent vs register-context Step 4; tone-scale positions lack an evidence mark; number style missing from the interview bank; session-wrap has no non-git fallback and detects guides by a literal phrase; Step 7 round count undefined; Step 3 values not proposed from samples.
+
+Task 6: comparison with the owner's private guides done: depth gaps closed in the guide template, SKILL.md, interview guide and language layer (ethics-test items always in section 8, examples per section 4 subsection, connotation/passive share/CTA placement, fixed phrases, abbreviations, overcorrection guard, repeated sentence frames, rule self-consistency). Not adopted: icon bullets (conflict with offered default 1), rhetorical-device inventory in analysis V.3.
