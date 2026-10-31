@@ -1,6 +1,6 @@
 # brand-voice — Execution Progress (handoff)
 
-Status on 2026-10-31: **Task 6 partly done**, on branch `feat/brand-voice-skill`. Tasks 1–5 are implemented, reviewed and committed. Task 6a (fixtures and `tests/brand-voice/README.md`, commit c2b3bd8) and the script-level dry-run checks (both corpora, no-node path, folder argument; one fix, dd86750) are done. Still open: the LLM-simulated end-to-end scenarios A–D and the no-node rerun of A (guide generation plus the README acceptance checklist), the comparison with the owner's private guides, and the final whole-branch review.
+Status on 2026-10-31: **Task 6 done except the comparison with the owner's private guides and the final whole-branch review**, on branch `feat/brand-voice-skill`. Fixtures (c2b3bd8), script checks (dd86750), the four dry-run scenarios plus the no-node rerun, and the resulting fix pass (9703714) are committed. Remaining dry-run findings not fixed are listed as deferred below.
 
 ## How to resume (any machine)
 
@@ -98,3 +98,6 @@ Task 6: Ruling: split into sequential dispatches — 6a fixtures + tests/brand-v
 Task 5: fix round 1/5 (1 addressed, 0 open; commits 182864e..5da7dc9)
 Task 5: complete (commits 660de5c..5da7dc9, review clean)
 PAUSED by user after Task 5 (2026-10-30). Task 6a dispatch stopped before writing files; working tree clean. Resume at Task 6a (split per ruling above), then final whole-branch review.
+
+Task 6: dry runs A, B, C, D and A without node done by subagents; fix pass 9703714.
+Task 6: minor (deferred): refine does not ask for scope/owner beyond one line; SKILL.md:206 registration consent vs register-context Step 4; tone-scale positions lack an evidence mark; number style missing from the interview bank; session-wrap has no non-git fallback and detects guides by a literal phrase; Step 7 round count undefined; Step 3 values not proposed from samples.
