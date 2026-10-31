@@ -116,3 +116,11 @@ test("list markers are not counted in paragraph lengths", () => {
   assert.equal(r.words, 4);
   assert.deepEqual(r.paragraphs, { count: 1, mean: 4, median: 4, p90: 4 });
 });
+test("links, images, bare URLs and front matter are not prose", () => {
+  const r = measure(
+    "---\ntitle: Post\ndate: 2026-01-01\n---\n\nRead [the guide](https://example.com/a/b) now. ![logo](img/logo.png) See https://example.com too.",
+    "en",
+  );
+  assert.equal(r.words, 6);
+  assert.equal(r.per1000.colon, 0);
+});

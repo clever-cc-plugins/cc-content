@@ -79,7 +79,7 @@ With no usable samples at all, skip Steps 3 and 4 and continue with Step 5 in de
 - pasted text;
 - files or folders in the project;
 - URLs: fetch each with WebFetch and keep the main content only (the text itself, without navigation, footer, cookie notices, sidebars, or comments);
-- the registered samples file (`context/samples.md` by default): use the sample texts themselves as the corpus.
+- the registered samples file (`context/samples.md` by default): use the sample texts themselves as the corpus. Take each entry's content out of the file (not its `Output type` / `Key qualities` / `Caveats` lines), assign it to a language and text type from those lines, and pipe each group on stdin; do not pass the samples file itself to the script, which skips fenced code and would count the metadata lines instead.
 
 If the user has not offered samples yet, ask:
 
@@ -158,7 +158,7 @@ Write the guide per `guide-template.md`: its skeleton (sections 0–10), its ins
 - **Conditional sections:** omit section 2 without values, section 6 without persuasion input, section 5 when the scope has one text type. Never renumber the other sections, and drop or rewrite every reference to an omitted section, including in section 0's "how to use this guide".
 - **Section 0:** sample counts and the measurement mode from Step 3, context files used, whether an interview took place, low-confidence notes, and the precedence order for AI. Owner: ask once who owns the guide (a name or a role) if neither context nor conversation says; for a personal voice it is the person. Next review: one year after the as-of date unless the user names another date. For languages other than German and English, note that the language-layer rules were set from general language knowledge and should be checked by a native speaker.
 - **Perspective:** "we" for an organization, "I" for an individual, throughout.
-- **Marks in the target language.** Evidence marks, priority marks, and measurement marks are written in the guide's language. The English reference names are _quoted_ / _illustrative_ / _approved test draft_ / _adapted, not observed_; **must** / **should** / **may**; _measured_ / _estimated_; "fixed across text types". In a German guide, for example: _zitiert_ / _illustrativ_ / _freigegebener Testentwurf_ / _übertragen, nicht beobachtet_; **MUSS** / **SOLL** / **KANN**; _gemessen_ / _geschätzt_.
+- **Marks in the target language.** Evidence marks, priority marks, and measurement marks are written in the guide's language. The English reference names are _quoted_ / _illustrative_ / _approved test draft_ / _adapted, not observed_; **must** / **should** / **may**; _measured_ / _estimated_ / _set by owner_; _stated in context_; "fixed across text types". In a German guide, for example: _zitiert_ / _illustrativ_ / _freigegebener Testentwurf_ / _übertragen, nicht beobachtet_; **MUSS** / **SOLL** / **KANN**; _gemessen_ / _geschätzt_.
 - **Evidence by mode:** in describe and reshape mode, examples are quoted from the samples where possible. In define mode, and for traits the user changed, examples are written fresh and marked _illustrative_. Rules carried over from another language are marked _adapted, not observed_.
 - **Section 4.9:** the readability target plus the six patterns from `../_shared/readability-patterns.md`, written out in full and adapted to the target language with native examples, with the citation kept.
 - **Section 4.10:** every applicable decision from `language-layer.md`, each as a rule with an example in the target language.

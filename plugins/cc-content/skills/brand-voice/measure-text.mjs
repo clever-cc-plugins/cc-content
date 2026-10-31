@@ -97,10 +97,15 @@ function stats(lengths) {
   };
 }
 
-// Blank out headings and fenced code so they are excluded from everything.
+// Blank out front matter, headings and fenced code, and reduce links to their
+// text, so none of them distort the statistics.
 function stripExcluded(text) {
   let fenced = false;
   return text
+    .replace(/^---\r?\n[\s\S]*?\r?\n---[ \t]*(?:\r?\n|$)/, "")
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/https?:\/\/\S+/g, "")
     .split(/\r?\n/)
     .map((line) => {
       if (/^\s*(```|~~~)/.test(line)) {
