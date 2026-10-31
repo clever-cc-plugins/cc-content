@@ -8,7 +8,7 @@ Run `node --test tests/brand-voice/` from the repo root. Needs Node 18 or newer,
 
 All fixtures are fictional. Do not add real client texts or the owner's private guides.
 
-- `fixtures/de-org/`: seven German website-style texts of a fictional machinery company (Brenner & Kollmann Anlagentechnik GmbH), about 2,650 words in total. One text (`06-product-conveyor.md`) is an English product page. Planted voice: matter-of-fact, formal Sie, short sentences, no exclamation marks, colons before explanations, honest limits ("what we do not do").
+- `fixtures/de-org/`: seven German website-style texts (six German, one English) of a fictional machinery company (Brenner & Kollmann Anlagentechnik GmbH), about 2,650 words in total. One text (`06-product-conveyor.md`) is an English product page. Planted voice: matter-of-fact, formal Sie, short sentences, no exclamation marks, colons before explanations, honest limits ("what we do not do").
 - `fixtures/en-personal/`: ten LinkedIn-style posts and one newsletter intro of a fictional product designer (Dana), about 2,050 words in total. Planted voice: first person, contractions, ironic asides, posts that end with a question. The newsletter intro (about 270 words) is the thin second text type.
 
 ## Script check on the fixtures
@@ -20,7 +20,7 @@ All fixtures are fictional. Do not add real client texts or the owner's private 
 
 Run each in a scratch project outside the repo (empty `CLAUDE.md`) and follow `SKILL.md` literally, answering as the scripted user.
 
-- **A, describe, German org.** Register `context/positioning.md` in the scratch `CLAUDE.md` first. Corpus `de-org`, scope "website and blog", language de, owner "Brenner & Kollmann". Add a minimal `context/positioning.md` first. Answers: accept the hypotheses as shown, keep all traits, confirm Sie, exclude the English page. Expect: the English page is flagged and excluded, traits match the planted voice, and the guide is in German throughout (Sie rules, German typography, German readability examples).
+- **A, describe, German org.** Register `context/positioning.md` in the scratch `CLAUDE.md` first. Corpus `de-org`, scope "website and blog", language de, owner "Brenner & Kollmann". Create a minimal `context/positioning.md` for it. Answers: accept the hypotheses as shown, keep all traits, confirm Sie, exclude the English page. Expect: the English page is flagged and excluded, traits match the planted voice, and the guide is in German throughout (Sie rules, German typography, German readability examples).
 - **B, reshape, English personal.** Corpus `en-personal`, scope "LinkedIn posts and newsletters", language en. Mark the trait "ironic asides" as "change" (answer: "less irony, more warmth"). Expect: the newsletter is flagged low confidence, the changed trait is reflected in the rules, "I" perspective is used.
 - **C, define, German, no samples.** Interview only. Answers: a small consulting firm, du-Ansprache, warm but precise, no anglicisms where a German word exists; for values and persuasion answer "skip". Expect: all examples marked illustrative, approved test drafts land in section 9, values and persuasion sections omitted.
 - **D, refine.** Scratch project with a five-line onboarding-style voice note registered under `## Context files`. Run the skill. Expect: restructure offer, numbered change proposals, a change-log entry, nothing overwritten without a yes. Then register a second guide and confirm Step 1 asks which guide to refine.

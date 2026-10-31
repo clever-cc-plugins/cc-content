@@ -27,6 +27,7 @@ Ask when: there are no usable samples, or a text type in scope has none.
 
 - **Desired impression.** "How do you want to come across, and to whom?"
 - **Reader relationship.** "Do your readers mostly know you already, or do they meet you for the first time in these texts?" Informality builds trust with familiar readers and can cost it with unfamiliar ones; the answer sets the formal–casual position and goes into section 4.1.
+- **Shift between text types.** "Should the voice sound different between {the text types in scope}, for example more formal on the website than in the newsletter?" Ask only when the scope has more than one text type; each difference becomes a scale position or rule in section 5.
 - **Boundaries.** "Complete this sentence: we are ___, but never ___." Collect two to four pairs. They become the "X, not Y" traits in sections 1 and 3.
 - **Models and anti-models.** "Whose writing, a brand or a person, do you like or dislike, and why?" Take the reasons, not the voice: the guide must not copy another brand.
 - **Wince test.** "What would make you wince if you read it under your name?"
@@ -64,6 +65,7 @@ Ask when: an item on the `language-layer.md` checklist applies to the guide's la
 Ask when: always, once, near the end of Step 5, unless the user has already named bans.
 
 - "Are there words, phrases, or punctuation habits you never want to see in your texts?"
+- Class-level bans count, e.g. "no anglicisms where a German word exists" or "no sales jargon". Write them as a rule with the class, two examples, and the replacement habit.
 - For each ban: "What should we write instead?" Every ban in the guide names its replacement. If the user has none, propose one and ask for a yes.
 
 Then offer the three defaults from the section "Offered defaults" in `guide-template.md`, one at a time and as written there. The user confirms or drops each. The em-dash default applies only to German and English guides.

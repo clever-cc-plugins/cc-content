@@ -174,7 +174,7 @@ described — the following are starting points, not a fixed script:
 
 **For brand voice / writing style:**
 
-First offer the owner a choice: build a full brand voice guide now with `/cc-content:brand-voice` (recommended when writing samples exist or the voice matters for ongoing content), or capture a quick voice note with the five questions below. If the owner picks the full guide, hand off to `/cc-content:brand-voice` and continue with the next context file once it has registered the guide. If the owner picks the quick note, continue with question 1.
+First offer the owner a choice: build a full brand voice guide now with `/cc-content:brand-voice` (recommended when writing samples exist or the voice matters for ongoing content), or capture a quick voice note with the five questions below. If the owner picks the full guide, hand off to `/cc-content:brand-voice`, naming the paths of the context files confirmed so far (they are not in the table until Step 5, so it cannot find them itself), and continue with the next context file once it has registered the guide. If the owner picks the quick note, continue with question 1.
 
 1. "How would you describe the tone? (e.g. authoritative, conversational, warm, technical)"
 2. "What words or phrases does the brand use frequently?"

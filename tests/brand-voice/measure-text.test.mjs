@@ -124,3 +124,31 @@ test("links, images, bare URLs and front matter are not prose", () => {
   assert.equal(r.words, 6);
   assert.equal(r.per1000.colon, 0);
 });
+test("common abbreviations do not split", () => {
+  const r = measure("Fragen Sie Dr. Müller bzw. Frau Krause. Der Preis inkl. Versand ist fair.", "de");
+  assert.equal(r.sentences.count, 2);
+});
+test("german ordinals do not split", () => {
+  const r = measure("Wir treffen uns am 3. Oktober im Büro. Dann geht es los.", "de");
+  assert.equal(r.sentences.count, 2);
+});
+test("german closing quote splits", () => {
+  const r = measure("Er sagte „Das passt.“ Dann ging er.", "de");
+  assert.equal(r.sentences.count, 2);
+});
+test("setext headings, tables and html comments are excluded", () => {
+  const r = measure(
+    "Title line\n==========\n\n<!-- hidden note -->\n\n| a | b |\n|---|---|\n| one | two |\n\nBody text here.",
+    "en",
+  );
+  assert.equal(r.words, 3);
+});
+test("unterminated code fence is reported", () => {
+  const r = measure("Real text here.\n\n```\ncode never closed", "en");
+  assert.ok(r.notes.some((n) => n.includes("code fence")));
+});
+test("cli: --lang without a value errors", () => {
+  const r = spawnSync(process.execPath, [SCRIPT, "--lang"], { input: "Some text.", encoding: "utf8" });
+  assert.equal(r.status, 1);
+  assert.match(r.stderr, /--lang/);
+});

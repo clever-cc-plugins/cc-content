@@ -97,35 +97,44 @@ function stats(lengths) {
   };
 }
 
-// Blank out front matter, headings and fenced code, and reduce links to their
-// text, so none of them distort the statistics.
+// Blank out front matter, headings (ATX and setext), tables, HTML comments and
+// fenced code, and reduce links to their text, so none of them distort the
+// statistics. `open` is true when a code fence is never closed.
 function stripExcluded(text) {
   let fenced = false;
-  return text
+  const lines = text
     .replace(/^---\r?\n[\s\S]*?\r?\n---[ \t]*(?:\r?\n|$)/, "")
+    .replace(/<!--[\s\S]*?-->/g, "")
     .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
     .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
     .replace(/https?:\/\/\S+/g, "")
-    .split(/\r?\n/)
-    .map((line) => {
-      if (/^\s*(```|~~~)/.test(line)) {
-        fenced = !fenced;
-        return "";
-      }
-      return fenced || /^\s*#/.test(line) ? "" : line;
-    })
-    .join("\n");
+    .split(/\r?\n/);
+  const kept = lines.map((line, i) => {
+    if (/^\s*(```|~~~)/.test(line)) {
+      fenced = !fenced;
+      return "";
+    }
+    if (fenced || /^\s*(#|\|)/.test(line)) return "";
+    if (/^(=+|-+)\s*$/.test(line) && i > 0 && lines[i - 1].trim()) return "";
+    if (/^(=+|-+)\s*$/.test(lines[i + 1] ?? "") && line.trim()) return "";
+    return line;
+  });
+  return { text: kept.join("\n"), open: fenced };
 }
 
-function splitProse(text) {
+// Abbreviations that end in a period without ending the sentence.
+const ABBREVIATIONS = /(?:^|[^\p{L}\p{N}])(?:dr|prof|bzw|inkl|ca|vgl|nr|mr|mrs|ms|ggf|evtl|sog|zzgl)$/iu;
+
+function splitProse(text, de) {
   const out = [];
   let start = 0;
-  for (const m of text.matchAll(/[.!?…]+["'”’)»]*/g)) {
+  for (const m of text.matchAll(/[.!?…]+["'“”’)»]*/g)) {
     const end = m.index + m[0].length;
     const rest = text.slice(end);
     const before = text.slice(0, m.index);
     const boundary = /^\s*$/.test(rest) || /^\s+\p{Lu}/u.test(rest);
-    if (!boundary || /(?:^|[^\p{L}\p{N}])\p{L}$/u.test(before)) continue;
+    if (!boundary || /(?:^|[^\p{L}\p{N}])\p{L}$/u.test(before) || ABBREVIATIONS.test(before)) continue;
+    if (de && /^\.$/.test(m[0]) && /(?:^|[^\p{L}\p{N}])\d{1,2}$/u.test(before) && /^\s+\p{Lu}/u.test(rest)) continue;
     out.push(text.slice(start, end));
     start = end;
   }
@@ -134,11 +143,11 @@ function splitProse(text) {
 }
 
 // Returns sentences (with list flag) for one paragraph block.
-function sentencesOf(block) {
+function sentencesOf(block, de) {
   const out = [];
   let prose = [];
   const flush = () => {
-    if (prose.length) out.push(...splitProse(prose.join(" ")).map((text) => ({ text, list: false })));
+    if (prose.length) out.push(...splitProse(prose.join(" "), de).map((text) => ({ text, list: false })));
     prose = [];
   };
   for (const line of block.split("\n")) {
@@ -154,9 +163,10 @@ function sentencesOf(block) {
 
 export function measure(text, lang) {
   const base = lang ? lang.toLowerCase().split(/[-_]/)[0] : null;
-  const blocks = stripExcluded(text)
+  const stripped = stripExcluded(text);
+  const blocks = stripped.text
     .split(/\n\s*\n/)
-    .map(sentencesOf)
+    .map((b) => sentencesOf(b, base === "de"))
     .filter((b) => b.length);
   const sentences = blocks.flat();
   const all = sentences.map((s) => words(s.text));
@@ -167,6 +177,7 @@ export function measure(text, lang) {
   const sLens = all.map((w) => w.length);
   const share = (re) => round(sentences.filter((s) => re.test(s.text)).length / sentences.length, 2);
   const notes = [];
+  if (stripped.open) notes.push("a code fence is never closed: the rest of the text after it was excluded");
 
   // Head of each token before an apostrophe ("We'll" -> "we").
   const heads = all.flat().map((w) => w.split(/['’]/)[0].toLowerCase());
@@ -263,7 +274,10 @@ function cli(argv) {
   let json = false;
   const files = [];
   for (let i = 0; i < argv.length; i++) {
-    if (argv[i] === "--lang") lang = argv[++i];
+    if (argv[i] === "--lang") {
+      lang = argv[++i];
+      if (!lang || lang.startsWith("--")) throw new Error("--lang needs a language code");
+    }
     else if (argv[i] === "--json") json = true;
     else files.push(argv[i]);
   }

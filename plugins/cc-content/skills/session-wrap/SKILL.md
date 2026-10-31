@@ -233,7 +233,7 @@ For each group, ask:
 > (c) Add a rule to the brand voice guide `<path>`
 > (d) Dismiss — leave it in learnings for now"
 
-Show option (c) only when the pattern concerns voice (tone, wording, phrasing, punctuation habits) rather than format, and at least one voice guide is registered in the `## Context files` table. Detect a voice guide by its summary (a brand voice guide, tone, or writing style), not by its label. Without a voice pattern or a registered voice guide, show only (a), (b) and (d), and keep the letters (a), (b), (d).
+The block above shows all four options. Show option (c) only when the pattern concerns voice (tone, wording, phrasing, punctuation habits) rather than format, and at least one voice guide is registered in the `## Context files` table. Detect a voice guide by its summary (a brand voice guide, tone, or writing style), not by its label. Without a voice pattern or a registered voice guide, show only (a), (b) and (d), and keep the letters (a), (b), (d).
 
 Handle responses:
 

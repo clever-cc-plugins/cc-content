@@ -177,7 +177,7 @@ Write **one short test passage per text type in scope, three at most**, using on
 
 Before showing a passage:
 
-1. **Measure it.** Write the passage to a temporary file or pipe it on stdin, run `node "${CLAUDE_SKILL_DIR}/measure-text.mjs" --lang <code> --json`, and compare the results with the guide's quantitative targets; a value outside a target range is a failure. Without Node, estimate the same features by reading, and check them against the sample evidence as well as the guide's targets, so that a biased estimate cannot confirm itself.
+1. **Measure it.** Write the passage to a temporary file or pipe it on stdin, run `node "${CLAUDE_SKILL_DIR}/measure-text.mjs" --lang <code> --json`, and compare the results with the guide's quantitative targets; a value outside a target range is a failure. For the sentence-length percentile and the over-25 share, judge a passage only when it has at least 10 sentences; below that, check the median and the rules instead. Without Node, estimate the same features by reading, and check them against the sample evidence as well as the guide's targets, so that a biased estimate cannot confirm itself.
 2. **Check it rule by rule** against the priority core (section 1): pass or fail for each rule, with the quoted evidence from the passage.
 3. **Run the readability pass** from `../_shared/readability-patterns.md`.
 4. **Fix every failure**, then show the passage with a one-line check result (e.g. "core rules: all pass; median sentence 13 words, target ≤ 14").
@@ -279,7 +279,7 @@ If it is unclear what should change, ask:
 
 2. **Propose a short numbered list of changes.** Each item: rule added, changed, or removed; the section number; the before and after wording; the reason and its source (change request, sample measurement, context file, learning). Follow the rule-writing conventions in `guide-template.md` and write the rules in the guide's language with its marks. The user accepts or rejects each item by number.
 
-3. **Apply the accepted changes only**, with Edit. Never overwrite the guide, or write a restructured version over it, without the user's explicit consent. Keep the numbered headings stable. Update the as-of date in section 0, and append a change-log entry to section 10: date, what changed, why. If whose voice, scope, or language changed, update the guide's summary in the `## Context files` table and show the new row first.
+3. **Apply the accepted changes only**, with Edit. Never overwrite the guide, or write a restructured version over it, without the user's explicit consent. Keep the numbered headings stable. Update the as-of date in section 0, and append a change-log entry to section 10: date, what changed, why. If the guide keeps its own structure (no sections 0 and 10), put an "As of" line at the top and a "Change log" section at the end instead. If whose voice, scope, or language changed, update the guide's summary in the `## Context files` table and show the new row first.
 
 4. **Optional test draft.** Offer one test passage for the text type most affected by the changes, using the Step 7 logic.
 
