@@ -1,6 +1,6 @@
 # brand-voice — Execution Progress (handoff)
 
-Status on 2026-10-31: **implementation complete, review clean, two dry-run rounds done, comparison with the owner's private guides done and its Important gaps fixed**, on branch `feat/brand-voice-skill`. Open: delete the private input gist and local `~/Git-Repos/temp` (plan Task 7, needs the owner's confirmation), push the branch, open the PR, and delete the git-ignored SDD workspace after the merge.
+Status on 2026-10-31: **implementation complete, review clean, two dry-run rounds done, comparison with the owner's private guides done and its Important gaps fixed**, on branch `feat/brand-voice-skill`. The private input files are deleted (secret gist and local `~/Git-Repos/temp`, 2026-10-31, owner confirmed; plan Task 7 steps 1–3 done). Open: push the branch, open the PR, and delete the git-ignored SDD workspace after the merge.
 
 ## How to resume (any machine)
 
@@ -103,3 +103,5 @@ Task 6: dry runs A, B, C, D and A without node done by subagents; fix pass 97037
 Task 6: minor (deferred): refine does not ask for scope/owner beyond one line; SKILL.md:206 registration consent vs register-context Step 4; tone-scale positions lack an evidence mark; number style missing from the interview bank; session-wrap has no non-git fallback and detects guides by a literal phrase; Step 7 round count undefined; Step 3 values not proposed from samples.
 
 Task 6: comparison with the owner's private guides done: depth gaps closed in the guide template, SKILL.md, interview guide and language layer (ethics-test items always in section 8, examples per section 4 subsection, connotation/passive share/CTA placement, fixed phrases, abbreviations, overcorrection guard, repeated sentence frames, rule self-consistency). Not adopted: icon bullets (conflict with offered default 1), rhetorical-device inventory in analysis V.3.
+
+Task 7: input files deleted on 2026-10-31 (gist verified gone via `gh gist list --secret`; local ~/Git-Repos/temp removed after checking it held only the twelve input files plus .git).
