@@ -230,7 +230,10 @@ For each group, ask:
 > "This pattern has come up <N> times. Would you like to:
 > (a) Add a rule to `<skill-name>`'s format guidelines
 > (b) Add a rule to the project `CLAUDE.md`
-> (c) Dismiss — leave it in learnings for now"
+> (c) Add a rule to the brand voice guide `<path>`
+> (d) Dismiss — leave it in learnings for now"
+
+The block above shows all four options. Show option (c) only when the pattern concerns voice (tone, wording, phrasing, punctuation habits) rather than format, and at least one voice guide is registered in the `## Context files` table. Detect a voice guide by its summary (a brand voice guide, tone, or writing style), not by its label. Without a voice pattern or a registered voice guide, show only (a), (b) and (d), and keep the letters (a), (b), (d).
 
 Handle responses:
 
@@ -257,7 +260,15 @@ If no `## Learnings` section exists, add it before appending.
 
 Confirm: "✓ Rule added to `CLAUDE.md`."
 
-**Option (c) — dismiss**:
+**Option (c) — brand voice guide**:
+
+If several voice guides are registered, ask which one. Draft the rule per the rule conventions of the guide (one rule = observable behavior + scope + example; positive phrasing; a ban paired with an "instead"; a priority mark in the guide's language, e.g. must / should / may, or MUSS / SOLL / KANN in a German guide), show it to the owner, and ask for confirmation or edits. Then insert it into the matching section of the guide (section 3 or 4 for detailed rules, section 1 for a core rule of any priority (must, should or may), appended at the end of the core list so existing rule numbers stay valid) and append a change-log entry (section 10) dated today. Update the as-of date in section 0, and the matching line in the section 8 checklist if the rule changes what it checks.
+
+If the file has no numbered guide sections (for example a quick voice note from `content-onboarding`), append the rule under the most fitting existing heading, or under a new `Rules` heading, and add a dated change-log line at the end of the file, creating a `Change log` heading if absent. Mention that `/cc-content:brand-voice` in refine mode can give the file the full guide structure.
+
+Confirm: "✓ Rule added to `<path>`."
+
+**Option (d) — dismiss**:
 
 Say: "Pattern noted but not promoted. It will remain in `.claude/learnings.md`
 for future reference."
