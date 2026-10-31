@@ -77,7 +77,7 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 
 ### 4. Detailed specification
 
-> **What:** the full rule set, one subsection per area. Rules here default to _should_ unless marked otherwise. Do not repeat section 1 word for word; refer to it and add the detail.
+> **What:** the full rule set, one subsection per area. Rules here default to _should_ unless marked otherwise. Do not repeat section 1 word for word; refer to it and add the detail. Every subsection gives at least one do/don't pair or example; a subsection without one is incomplete.
 >
 > **Size:** the bulk of the guide; as long as the rules need.
 >
@@ -93,11 +93,11 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 
 #### 4.3 Diction
 
-> **What:** vocabulary; preferred and avoided terms, each avoided term with its replacement (a two-column table works well); jargon policy (which technical terms stay, which get explained, which are replaced).
+> **What:** vocabulary; preferred and avoided terms, each avoided term with its replacement (a two-column table works well); jargon policy (which technical terms stay, which get explained, which are replaced); connotation (words that carry the wrong association and their replacements); fixed phrases and slogans that are always written verbatim; abbreviations (spelled out at first mention or not).
 
 #### 4.4 Syntax and rhythm
 
-> **What:** quantitative targets from the measurement: sentence length (median, 90th percentile, share over 25 words), paragraph length, share of questions, punctuation habits (dashes, colons, semicolons, parentheses), list use. State each target as a number or range and mark it _measured_, _estimated_ or _set by owner_. Add how rhythm varies, e.g. where short sentences land.
+> **What:** quantitative targets from the measurement: sentence length (median, 90th percentile, share over 25 words), paragraph length, share of questions, passive share, punctuation habits (dashes, colons, semicolons, parentheses) including any structural exceptions such as a dash after a bold lead-in, list use, and whether parallel sections may open with the same sentence frame. State each target as a number or range and mark it _measured_, _estimated_ or _set by owner_. Add how rhythm varies, e.g. where short sentences land.
 
 #### 4.5 Content, argumentation, rhetoric
 
@@ -113,20 +113,20 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 
 #### 4.8 Interaction and calls to action
 
-> **What:** how the voice speaks to the reader directly, asks questions, invites replies, and phrases calls to action, including what pressure it never applies.
+> **What:** how the voice speaks to the reader directly, asks questions, invites replies, and phrases calls to action (placement and frequency, for example one per section), including what pressure it never applies.
 
 #### 4.9 Readability
 
 > **What:**
 >
 > - The readability target: audience plus CEFR level as the primary target, language-appropriate sentence-length proxies, and the language's readability formula (e.g. Amstad / Wiener Sachtextformel for German, Flesch for English, INFLESZ for Spanish, LIX for Nordic languages, none for CJK) as a trend indicator only, never a gate.
-> - The six patterns from `../_shared/readability-patterns.md`, written into the guide in full and adapted to the target language with native examples. The guide is also used outside cc-content, so a bare pointer to the shared file is not enough.
+> - The six patterns from `../_shared/readability-patterns.md`, written into the guide in full and adapted to the target language with native examples. The guide is also used outside cc-content, so a bare pointer to the shared file is not enough. Add the guidance of its sections "Reading brand-voice rules without falling into the traps" and "Don't overcorrect", so brevity and imagery rules are not read as licence to drop grammar.
 >
 > **Evidence:** keep the citation (Clark, Martin & Mahowald 2026, arXiv:2610.29162). English examples come from the study, German examples are the existing derived transfer, and for any other language mark the examples as derived from the English study, not evidenced in that language.
 
 #### 4.10 Language conventions
 
-> **What:** every decision from `language-layer.md` that applies to the language: form of address (with exceptions per text type), contractions, inclusive-language policy with its normative status, and typography (quotation marks, dashes, spaces before punctuation, number and date formats, capitalization). Write each as a rule with an example.
+> **What:** every decision from `language-layer.md` that applies to the language: form of address (with exceptions per text type; "no fixed form" is a valid decision if the owner chooses it), contractions, inclusive-language policy with its normative status, and typography (quotation marks, dashes, spaces before punctuation, number and date formats, capitalization). Write each as a rule with an example.
 >
 > **Evidence:** rules carried over from another language are marked _adapted, not observed_.
 
@@ -156,15 +156,15 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 
 ### 7. Phrasing patterns
 
-> **What:** typical wordings for openings, reasoning, transitions, establishing common ground, and calls to action; 2–4 per category.
+> **What:** typical wordings for openings, reasoning, transitions, establishing common ground, and calls to action; 2–4 per category. Add recurring section labels (for example the fixed subheadings of a repeating format) when the texts use them.
 >
 > **Evidence:** quoted from the samples where possible (_quoted_), otherwise _illustrative_.
 
 ### 8. Checklist
 
-> **What:** short yes/no questions that mirror the priority core and the readability patterns, for a final check of a draft.
+> **What:** short yes/no questions that mirror the priority core and the readability patterns, for a final check of a draft. Always include the ethics test as three items (is every claim accurate? does the reader gain from acting? would the reader still agree if they saw the technique?), also when section 6 is omitted. Include a check that parallel sections do not repeat the same sentence frame.
 >
-> **Size:** 10–15 items.
+> **Size:** 10–20 items, grouped by topic.
 
 ### 9. Exemplar texts
 

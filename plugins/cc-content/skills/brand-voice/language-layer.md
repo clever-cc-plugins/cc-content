@@ -39,6 +39,7 @@ Record which option the guide follows, with the normative status of the options 
 
 ### 4. Typography
 
+- Abbreviations: spelled out at first mention, or used as they are.
 - Quotation marks, including nested ones.
 - Dashes: which dash marks a break in thought, spaced or unspaced, and the dash for ranges.
 - Spaces before punctuation (French: a non-breaking space before ; : ! ? and inside « »).
