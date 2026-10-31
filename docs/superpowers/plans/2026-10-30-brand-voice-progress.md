@@ -1,6 +1,6 @@
 # brand-voice — Execution Progress (handoff)
 
-Status on 2026-10-30: **paused after Task 5 of 6**, on branch `feat/brand-voice-skill`. Tasks 1–5 are implemented, reviewed and committed. Task 6 (fixtures, dry runs, fixes) and the final whole-branch review are open.
+Status on 2026-10-31: **Task 6 partly done**, on branch `feat/brand-voice-skill`. Tasks 1–5 are implemented, reviewed and committed. Task 6a (fixtures and `tests/brand-voice/README.md`, commit c2b3bd8) and the script-level dry-run checks (both corpora, no-node path, folder argument; one fix, dd86750) are done. Still open: the LLM-simulated end-to-end scenarios A–D and the no-node rerun of A (guide generation plus the README acceptance checklist), the comparison with the owner's private guides, and the final whole-branch review.
 
 ## How to resume (any machine)
 
