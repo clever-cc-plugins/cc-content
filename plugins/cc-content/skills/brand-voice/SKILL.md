@@ -103,7 +103,7 @@ command -v node >/dev/null 2>&1 && echo "node available" || echo "node missing"
   node "${CLAUDE_SKILL_DIR}/measure-text.mjs" --lang <code> --json <file> [<file> ...]
   ```
 
-  For pasted or fetched text, pipe the group's text in on stdin instead of files (`... --lang <code> --json <<'EOF'` … `EOF`). The script exits 1 with "no text" when the input is empty: check the group's input and fix it before going on. Treat its numbers as approximate (sentence splitting is heuristic) and read the `notes` field.
+  The script reads files only: expand a folder into its text files (`.md`, `.txt`) first. For pasted or fetched text, pipe the group's text in on stdin instead of files (`... --lang <code> --json <<'EOF'` … `EOF`). The script exits 1 with "no text" when the input is empty: check the group's input and fix it before going on. Treat its numbers as approximate (sentence splitting is heuristic) and read the `notes` field.
 
 - **Node missing:** do not stop and do not ask the user to install anything. Estimate the same features by reading (word count; sentence and paragraph lengths; shares of questions and exclamations; dashes, colons, semicolons, parentheses, emoji, and list lines per 1,000 words; pronoun and address-form use; contractions in English) and label every one of them _estimated_. Record the measurement mode for the guide's section 0. Both paths must lead to a complete guide.
 
