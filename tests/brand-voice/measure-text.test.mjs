@@ -125,11 +125,17 @@ test("links, images, bare URLs and front matter are not prose", () => {
   assert.equal(r.per1000.colon, 0);
 });
 test("common abbreviations do not split", () => {
-  const r = measure("Fragen Sie Dr. Müller bzw. Frau Krause. Der Preis inkl. Versand ist fair.", "de");
+  const r = measure(
+    "Fragen Sie Dr. Müller bzw. Frau Krause. Der Preis inkl. Versand ist fair.",
+    "de",
+  );
   assert.equal(r.sentences.count, 2);
 });
 test("german ordinals do not split", () => {
-  const r = measure("Wir treffen uns am 3. Oktober im Büro. Dann geht es los.", "de");
+  const r = measure(
+    "Wir treffen uns am 3. Oktober im Büro. Dann geht es los.",
+    "de",
+  );
   assert.equal(r.sentences.count, 2);
 });
 test("german closing quote splits", () => {
@@ -148,7 +154,10 @@ test("unterminated code fence is reported", () => {
   assert.ok(r.notes.some((n) => n.includes("code fence")));
 });
 test("cli: --lang without a value errors", () => {
-  const r = spawnSync(process.execPath, [SCRIPT, "--lang"], { input: "Some text.", encoding: "utf8" });
+  const r = spawnSync(process.execPath, [SCRIPT, "--lang"], {
+    input: "Some text.",
+    encoding: "utf8",
+  });
   assert.equal(r.status, 1);
   assert.match(r.stderr, /--lang/);
 });
@@ -185,7 +194,26 @@ test("emoji sequences count once", () => {
   assert.equal(measure("Hi 👍🏽 ok", "en").per1000.emoji, 500);
 });
 test("cli: a directory argument gets a clear error", () => {
-  const r = spawnSync(process.execPath, [SCRIPT, "--lang", "en", "."], { encoding: "utf8" });
+  const r = spawnSync(process.execPath, [SCRIPT, "--lang", "en", "."], {
+    encoding: "utf8",
+  });
   assert.equal(r.status, 1);
   assert.match(r.stderr, /directory/);
+});
+test("opening quote after a sentence end still splits", () => {
+  const r = measure("Hello there. “Goodbye now.” Done.", "en");
+  assert.equal(r.sentences.count, 3);
+});
+test("languages without word spaces are flagged as unreliable", () => {
+  for (const lang of ["ja", "zh", "th"]) {
+    const r = measure("これはテストです。", lang);
+    assert.ok(
+      r.notes.some((n) => n.includes("no word spaces")),
+      lang,
+    );
+  }
+});
+test("a rule line right under text is a setext heading and is excluded", () => {
+  const r = measure("Paragraph line\n---\n\nBody text here.", "en");
+  assert.equal(r.words, 3);
 });

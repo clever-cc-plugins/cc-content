@@ -152,7 +152,7 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 >
 > **Size:** about half a page to one page.
 >
-> **Evidence:** examples carry an evidence mark. Omit the section if the interview gave no input on persuasion and red lines.
+> **Evidence:** examples carry an evidence mark. Omit the section only if the samples, the registered context, and the interview all gave no usable input on persuasion and red lines.
 
 ### 7. Phrasing patterns
 

@@ -4,10 +4,13 @@
 import { readFileSync, statSync } from "node:fs";
 import { pathToFileURL } from "node:url";
 
+// Scripts written without spaces between words; the word regex cannot segment them.
+const NO_WORD_SPACES = new Set(["ja", "zh", "th"]);
 const WORD = /[\p{L}\p{N}]+(?:['’]\p{L}+)*/gu;
 const LIST_LINE = /^\s*(?:[-*•]|\d+[.)])\s+/;
 // One emoji: a pictograph with modifiers and joined parts, or a flag pair.
-const EMOJI = /\p{Extended_Pictographic}(?:\uFE0F|\p{Emoji_Modifier})*(?:\u200D\p{Extended_Pictographic}(?:\uFE0F|\p{Emoji_Modifier})*)*|\p{Regional_Indicator}{2}/gu;
+const EMOJI =
+  /\p{Extended_Pictographic}(?:\uFE0F|\p{Emoji_Modifier})*(?:\u200D\p{Extended_Pictographic}(?:\uFE0F|\p{Emoji_Modifier})*)*|\p{Regional_Indicator}{2}/gu;
 const words = (s) => s.match(WORD) ?? [];
 const round = (x, d) => Math.round(x * 10 ** d) / 10 ** d;
 const per1000 = (n, total) => round((n / total) * 1000, 1);
@@ -70,7 +73,8 @@ const ADDRESS = {
   },
   es: {
     formal: "usted ustedes",
-    informal: "tú tu tus te ti contigo vosotros vosotras os vuestro vuestra vuestros vuestras",
+    informal:
+      "tú tu tus te ti contigo vosotros vosotras os vuestro vuestra vuestros vuestras",
     note: "address forms: ustedes is also the neutral plural in Latin America",
   },
   nl: {
@@ -82,6 +86,7 @@ const ADDRESS = {
 
 const set = (s) => new Set(s.split(" "));
 
+// stats() runs only on non-empty input: measure() throws "no text" first.
 function percentile(sorted, p) {
   return sorted[Math.ceil(p * sorted.length) - 1];
 }
@@ -125,7 +130,8 @@ function stripExcluded(text) {
 }
 
 // Abbreviations that end in a period without ending the sentence.
-const ABBREVIATIONS = /(?:^|[^\p{L}\p{N}])(?:dr|prof|bzw|inkl|ca|vgl|nr|mr|mrs|ms|ggf|evtl|sog|zzgl)$/iu;
+const ABBREVIATIONS =
+  /(?:^|[^\p{L}\p{N}])(?:dr|prof|bzw|inkl|ca|vgl|nr|mr|mrs|ms|ggf|evtl|sog|zzgl)$/iu;
 
 function splitProse(text, de) {
   const out = [];
@@ -134,9 +140,20 @@ function splitProse(text, de) {
     const end = m.index + m[0].length;
     const rest = text.slice(end);
     const before = text.slice(0, m.index);
-    const boundary = /^\s*$/.test(rest) || /^\s+\p{Lu}/u.test(rest);
-    if (!boundary || /(?:^|[^\p{L}\p{N}])\p{L}$/u.test(before) || ABBREVIATIONS.test(before)) continue;
-    if (de && /^\.$/.test(m[0]) && /(?:^|[^\p{L}\p{N}])\d{1,2}$/u.test(before) && /^\s+\p{Lu}/u.test(rest)) continue;
+    const boundary = /^\s*$/.test(rest) || /^\s+["'“„«‘]?\p{Lu}/u.test(rest);
+    if (
+      !boundary ||
+      /(?:^|[^\p{L}\p{N}])\p{L}$/u.test(before) ||
+      ABBREVIATIONS.test(before)
+    )
+      continue;
+    if (
+      de &&
+      /^\.$/.test(m[0]) &&
+      /(?:^|[^\p{L}\p{N}])\d{1,2}$/u.test(before) &&
+      /^\s+["'“„«‘]?\p{Lu}/u.test(rest)
+    )
+      continue;
     out.push(text.slice(start, end));
     start = end;
   }
@@ -149,7 +166,13 @@ function sentencesOf(block, de) {
   const out = [];
   let prose = [];
   const flush = () => {
-    if (prose.length) out.push(...splitProse(prose.join(" "), de).map((text) => ({ text, list: false })));
+    if (prose.length)
+      out.push(
+        ...splitProse(prose.join(" "), de).map((text) => ({
+          text,
+          list: false,
+        })),
+      );
     prose = [];
   };
   for (const line of block.split("\n")) {
@@ -177,9 +200,16 @@ export function measure(text, lang) {
 
   const body = sentences.map((s) => s.text).join("\n");
   const sLens = all.map((w) => w.length);
-  const share = (re) => round(sentences.filter((s) => re.test(s.text)).length / sentences.length, 2);
+  const share = (re) =>
+    round(
+      sentences.filter((s) => re.test(s.text)).length / sentences.length,
+      2,
+    );
   const notes = [];
-  if (stripped.open) notes.push("a code fence is never closed: the rest of the text after it was excluded");
+  if (stripped.open)
+    notes.push(
+      "a code fence is never closed: the rest of the text after it was excluded",
+    );
 
   // Head of each token before an apostrophe ("We'll" -> "we").
   const heads = all.flat().map((w) => w.split(/['’]/)[0].toLowerCase());
@@ -193,6 +223,10 @@ export function measure(text, lang) {
   let contractionsPer1000 = null;
   if (!base) notes.push("language not given");
   else {
+    if (NO_WORD_SPACES.has(base))
+      notes.push(
+        `no word spaces in ${base}: word and sentence counts are unreliable, treat every figure as estimated`,
+      );
     if (PRONOUNS[base]) {
       const p = PRONOUNS[base];
       pronouns = {
@@ -210,15 +244,24 @@ export function measure(text, lang) {
       for (const w of all) {
         w.forEach((word, i) => {
           const head = word.split(/['’]/)[0];
-          if (a.capitalized ? i > 0 && formal.has(head) : formal.has(head.toLowerCase())) address.formal++;
+          if (
+            a.capitalized
+              ? i > 0 && formal.has(head)
+              : formal.has(head.toLowerCase())
+          )
+            address.formal++;
           if (informal.has(head.toLowerCase())) address.informal++;
         });
       }
       notes.push(a.note);
-    } else if (base !== "en") notes.push(`address forms: not measured for ${base}`);
+    } else if (base !== "en")
+      notes.push(`address forms: not measured for ${base}`);
 
     if (base === "en") {
-      const n = count(all.flat().join(" "), /\p{L}(?:n['’]t|['’](?:re|ve|ll|d|m))(?!\p{L})/giu);
+      const n = count(
+        all.flat().join(" "),
+        /\p{L}(?:n['’]t|['’](?:re|ve|ll|d|m))(?!\p{L})/giu,
+      );
       contractionsPer1000 = per1000(n, total);
     }
   }
@@ -230,7 +273,9 @@ export function measure(text, lang) {
       ...stats(sLens),
       over25Share: round(sLens.filter((n) => n > 25).length / sLens.length, 2),
     },
-    paragraphs: stats(blocks.map((b) => b.reduce((n, x) => n + words(x.text).length, 0))),
+    paragraphs: stats(
+      blocks.map((b) => b.reduce((n, x) => n + words(x.text).length, 0)),
+    ),
     questionShare: share(/\?[^\p{L}\p{N}]*$/u),
     exclamationShare: share(/!+[^\p{L}\p{N}]*$/u),
     per1000: {
@@ -263,16 +308,23 @@ function format(r) {
   ];
   if (r.pronouns) {
     const q = r.pronouns;
-    lines.push(`pronouns (counts): first singular ${q.firstSingular}, first plural ${q.firstPlural}, second ${q.second}`);
+    lines.push(
+      `pronouns (counts): first singular ${q.firstSingular}, first plural ${q.firstPlural}, second ${q.second}`,
+    );
   }
-  if (r.address) lines.push(`address forms (counts): formal ${r.address.formal}, informal ${r.address.informal}`);
-  if (r.contractionsPer1000 !== null) lines.push(`contractions per 1000 words: ${r.contractionsPer1000}`);
+  if (r.address)
+    lines.push(
+      `address forms (counts): formal ${r.address.formal}, informal ${r.address.informal}`,
+    );
+  if (r.contractionsPer1000 !== null)
+    lines.push(`contractions per 1000 words: ${r.contractionsPer1000}`);
   for (const n of r.notes) lines.push(`note: ${n}`);
   return lines.join("\n");
 }
 
 function readTextFile(f) {
-  if (statSync(f).isDirectory()) throw new Error(`${f} is a directory; pass the files inside it`);
+  if (statSync(f).isDirectory())
+    throw new Error(`${f} is a directory; pass the files inside it`);
   return readFileSync(f, "utf8");
 }
 
@@ -283,9 +335,9 @@ function cli(argv) {
   for (let i = 0; i < argv.length; i++) {
     if (argv[i] === "--lang") {
       lang = argv[++i];
-      if (!lang || lang.startsWith("--")) throw new Error("--lang needs a language code");
-    }
-    else if (argv[i] === "--json") json = true;
+      if (!lang || lang.startsWith("--"))
+        throw new Error("--lang needs a language code");
+    } else if (argv[i] === "--json") json = true;
     else files.push(argv[i]);
   }
   const text = files.length
@@ -295,7 +347,10 @@ function cli(argv) {
   console.log(json ? JSON.stringify(report, null, 2) : format(report));
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+if (
+  process.argv[1] &&
+  import.meta.url === pathToFileURL(process.argv[1]).href
+) {
   try {
     cli(process.argv.slice(2));
   } catch (err) {

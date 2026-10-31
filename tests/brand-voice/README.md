@@ -4,6 +4,10 @@
 
 Run `node --test tests/brand-voice/` from the repo root. Needs Node 18 or newer, no dependencies.
 
+## When to re-run
+
+The script tests cover only `measure-text.mjs`. After changing `SKILL.md`, `guide-template.md`, or the reference files, re-run the dry-run scenarios below that touch the changed part, and run the acceptance checklist on the guides they produce.
+
 ## Fixtures
 
 All fixtures are fictional. Do not add real client texts or the owner's private guides.

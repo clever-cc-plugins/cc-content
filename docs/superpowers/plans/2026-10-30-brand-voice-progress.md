@@ -6,12 +6,12 @@ Status on 2026-10-31: **implementation complete, review clean, two dry-run round
 
 1. `git fetch && git switch feat/brand-voice-skill && git pull`
 2. Restore the execution ledger: run the superpowers `subagent-driven-development` skill's `scripts/sdd-workspace docs/superpowers/plans/2026-10-30-brand-voice.md` to get the workspace path, then copy the **Ledger** section below (from its `# SDD ledger` line to the end) into `<workspace>/progress.md`. The skill then resumes at the first task without a `complete` line.
-3. Continue with Task 6 as split in the Task 6 ruling below (6a fixtures + README, 6b dry runs A+B, 6c dry runs C+D+no-node, 6d one fix dispatch), then the final whole-branch review, which also triages the deferred minors below. After merge, plan Task 7 removes the private input files.
+3. Historical: Tasks 1–7 are all complete (see the ledger below). The only open work is PR #12: address its review comments, merge, and delete the git-ignored SDD workspace. Do not redo Task 6 or Task 7.
 4. Optional, git hooks: `core.hooksPath` was not set on the original clone, so the pre-commit hook (gitleaks, CLAUDE.md table sync) never ran on this branch. Run `git config core.hooksPath .githooks` if the repo is meant to use them, and run gitleaks once over the branch.
 
 Notes:
 
-- Private input files (the owner's four voice guides, seven research reports, readability study excerpt) are never committed, because the repo is public. They are in a secret gist on the owner's GitHub account (description starts with "cc-content brand-voice skill: private input files"). On another machine, fetch them outside the repo with the owner's `gh` login: `gh gist list --secret | grep brand-voice`, then `gh gist clone <id> ~/Git-Repos/temp`. Never paste the gist URL or ID into the repo.
+- Private input files (the owner's four voice guides, seven research reports, readability study excerpt) were never committed, because the repo is public. They were in a secret gist, now deleted (Task 7) on the owner's GitHub account (description starts with "cc-content brand-voice skill: private input files"). On another machine, fetch them outside the repo with the owner's `gh` login: `gh gist list --secret | grep brand-voice`, then `gh gist clone <id> ~/Git-Repos/temp`. Never paste the gist URL or ID into the repo.
 - After the skill is finished and merged, plan Task 7 deletes the gist and all local copies (with the owner's confirmation).
 - Task briefs, reports and review packages from the original run were scratch files and are not needed; the commits and this ledger carry the state.
 
