@@ -31,7 +31,7 @@ Ask when: there are no usable samples, or a text type in scope has none.
 - **Boundaries.** "Complete this sentence: we are ___, but never ___." Collect two to four pairs. They become the "X, not Y" traits in sections 1 and 3.
 - **Models and anti-models.** "Whose writing, a brand or a person, do you like or dislike, and why?" Take the reasons, not the voice: the guide must not copy another brand.
 - **Wince test.** "What would make you wince if you read it under your name?"
-- **Tone scales.** "Quick rating, 1 to 5, for each pair: formal–casual, serious–funny, respectful–irreverent, matter-of-fact–enthusiastic." Ask the four as one question with the scale shown; this is the one place where a single question has several parts.
+- **Tone scales.** "Quick rating, 1 to 5, for each pair: formal–casual, serious–funny, respectful–irreverent, matter-of-fact–enthusiastic." Ask the four as one question with the scale shown (1 is the first-named pole, 5 the second); this is the one place where a single question has several parts.
 
 ## Values
 

@@ -156,7 +156,7 @@ Write the guide per `guide-template.md`: its skeleton (sections 0–10), its ins
 
 - **Title block:** the title is the only `#` heading, followed by the section 0 fields; no visible "Header" heading. Translate every heading idiomatically and keep the section numbers.
 - **Conditional sections:** omit section 2 without values, section 6 without persuasion input, section 5 when the scope has one text type. Never renumber the other sections, and drop or rewrite every reference to an omitted section, including in section 0's "how to use this guide".
-- **Section 0:** sample counts and the measurement mode from Step 3, context files used, whether an interview took place, low-confidence notes, and the precedence order for AI. Owner: ask once who owns the guide (a name or a role) if neither context nor conversation says; for a personal voice it is the person. Next review: one year after the as-of date unless the user names another date. For languages other than German and English, note that the language-layer rules were set from general language knowledge and should be checked by a native speaker.
+- **Section 0:** sample counts and the measurement mode from Step 3, context files used, whether an interview took place, low-confidence notes, and the precedence order for AI. Owner: ask once who owns the guide (a name or a role) if neither context nor conversation says; for a personal voice it is the person. Next review: one year after the as-of date unless the user names another date. In define mode the measurement mode is _set by owner_ (in the guide's language), plus _measured_ for the test passages if Node ran. For languages other than German and English, note that the language-layer rules were set from general language knowledge and should be checked by a native speaker.
 - **Perspective:** "we" for an organization, "I" for an individual, throughout.
 - **Marks in the target language.** Evidence marks, priority marks, and measurement marks are written in the guide's language. The English reference names are _quoted_ / _illustrative_ / _approved test draft_ / _adapted, not observed_; **must** / **should** / **may**; _measured_ / _estimated_ / _set by owner_; _stated in context_; "fixed across text types". In a German guide, for example: _zitiert_ / _illustrativ_ / _freigegebener Testentwurf_ / _übertragen, nicht beobachtet_; **MUSS** / **SOLL** / **KANN**; _gemessen_ / _geschätzt_.
 - **Evidence by mode:** in describe and reshape mode, examples are quoted from the samples where possible. In define mode, and for traits the user changed, examples are written fresh and marked _illustrative_. Rules carried over from another language are marked _adapted, not observed_.
@@ -167,7 +167,7 @@ Write the guide per `guide-template.md`: its skeleton (sections 0–10), its ins
 - **Section 10:** the first change-log entry records the creation and how the guide was built.
 - **Self-consistency:** the guide's own prose follows its language-layer rules and the readability patterns, and its examples contain no AI tells.
 
-Keep the draft in the conversation until Step 8 writes it. Do not show the whole draft yet; Step 7 tests it first.
+Keep the draft in the conversation until Step 8 writes it. Do not show the whole draft before Step 7 tests it; afterwards offer to show it before saving, or save it and point to the file.
 
 ## Step 7: Test drafts and self-check
 
@@ -175,9 +175,9 @@ Write **one short test passage per text type in scope, three at most**, using on
 
 > "What topic should the test passages be about? Something you would really write about works best."
 
-Before showing a passage:
+Work through the passages one at a time: finish the steps below and the reaction round for one passage before starting the next. Before showing a passage:
 
-1. **Measure it.** Write the passage to a temporary file or pipe it on stdin, run `node "${CLAUDE_SKILL_DIR}/measure-text.mjs" --lang <code> --json`, and compare the results with the guide's quantitative targets; a value outside a target range is a failure. For the sentence-length percentile and the over-25 share, judge a passage only when it has at least 10 sentences; below that, check the median and the rules instead. Without Node, estimate the same features by reading, and check them against the sample evidence as well as the guide's targets, so that a biased estimate cannot confirm itself.
+1. **Measure it.** If Node was not checked yet (define mode), check it as in Step 3. Write the passage to a temporary file or pipe it on stdin, run `node "${CLAUDE_SKILL_DIR}/measure-text.mjs" --lang <code> --json`, and compare the results with the guide's quantitative targets; a value outside a target range is a failure. For the sentence-length percentile and the over-25 share, judge a passage only when it has at least 10 sentences; below that, check the median and the rules instead. Without Node, estimate the same features by reading, and check them against the sample evidence as well as the guide's targets, so that a biased estimate cannot confirm itself.
 2. **Check it rule by rule** against the priority core (section 1): pass or fail for each rule, with the quoted evidence from the passage.
 3. **Run the readability pass** from `../_shared/readability-patterns.md`.
 4. **Fix every failure**, then show the passage with a one-line check result (e.g. "core rules: all pass; median sentence 13 words, target ≤ 14").
@@ -186,11 +186,11 @@ Then ask for the user's reaction in their own words:
 
 > "Does this sound like you? Tell me in your own words what fits and what doesn't, e.g. 'too stiff', 'that's me', or 'I'd never say that word'."
 
-Turn each reaction into a concrete rule change, as described in "Test-draft reactions" in `interview-guide.md`: pin a vague reaction down with one question, change the rule, scale position, or target (not the passage), and **show the diff of every changed rule** with its section number. Regenerate a passage only if the user wants another round.
+Turn each reaction into a concrete rule change, as described in "Test-draft reactions" in `interview-guide.md`: pin a vague reaction down with one question, change the rule, scale position, or target (not the passage), and **show the diff of every changed rule** with its section number, and carry each change to every place the guide mirrors it (the trait text in section 3, section 5 overrides, the section 8 checklist, cited rule numbers). Regenerate a passage only if the user wants another round.
 
 In define mode, a passage the user approves ("that's me") can become an exemplar in section 9, marked _approved test draft_ in the guide's language; ask before adding it.
 
-If the user wants to skip testing, skip it, except for a guide seeded from another language: there the test drafts are mandatory.
+If the user wants to skip testing, skip it, except for a guide seeded from another language: there the test drafts are mandatory. A skipped test round goes into section 0's low-confidence notes.
 
 ## Step 8: Save and register
 

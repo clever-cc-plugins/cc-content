@@ -44,12 +44,12 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 > **What:**
 >
 > - 3–5 traits, each as "X, not Y" with a one-line meaning (e.g. "Direct, not curt: …").
-> - Tone-scale positions on the four Nielsen Norman Group scales: formal–casual, serious–funny, respectful–irreverent, matter-of-fact–enthusiastic. Give each a position from 1 to 5 between the two poles plus a one-line note.
-> - 10–20 numbered rules marked **must / should / may**, in priority order: the most important rule first. Rules added later go at the end of the list, never into the middle; whoever removes or inserts a core rule updates every rule number cited in sections 5 and 8. Mark a rule "fixed across text types" when section 5 must not change it for any text type.
+> - Tone-scale positions on the four Nielsen Norman Group scales: formal–casual, serious–funny, respectful–irreverent, matter-of-fact–enthusiastic. Give each a position from 1 to 5 between the two poles (1 is the first-named pole, 5 the second) plus a one-line note, marked _estimated_ (read from the samples) or _set by owner_.
+> - 10–20 numbered rules marked **must / should / may**, in priority order: the most important rule first. Rules added later go at the end of the list, never into the middle; whoever removes or inserts a core rule updates every rule number cited in sections 5 and 8. Mark a rule "fixed across text types" when section 5 must not change it for any text type. A core rule applies to every text type unless its own Scope line names fewer.
 > - A do/don't table with the columns Do / Don't / Instead. Every "don't" has an "instead": the concrete wording to use in its place.
 > - 2–3 before/after rewrites, each one or two sentences, showing several rules at once.
 >
-> **Size:** about one page. This is both the human quick reference and the always-on rule set for LLMs, so every rule here must earn its place.
+> **Size:** about one page. This is both the human quick reference and the always-on rule set for LLMs, so every rule here must earn its place. If it runs over, keep in this order: the must rules, the traits, the table, the rewrites.
 >
 > **Evidence:** every rule follows the conventions below. Examples carry an evidence mark. A "before" may be _quoted_ (reshape mode) or _illustrative_.
 
@@ -191,7 +191,7 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 
 Three rules carried over from the plugin owner's taste. Offer each in the interview as written; the user confirms or drops it. A confirmed default becomes an ordinary rule in the matching section; a dropped one leaves no trace in the guide.
 
-1. **should** Write without social-media cringe patterns: no bait openers ("Unpopular opinion:", "Nobody talks about this."), no one-sentence-per-line drama, no engagement bait ("Comment YES below"), no emoji used as bullet points. Instead, open with the actual point and close with a question you want answered, or with no question at all.
+1. **should** Write without social-media cringe patterns: no bait openers ("Unpopular opinion:", "Nobody talks about this."), no one-sentence-per-line drama, no engagement bait ("Comment YES below"), no emoji used as bullet points. Instead, open with the actual point, and close with a question only if you want it answered.
 2. **should** (German and English only) Use em dashes, or spaced en dashes in German, sparingly: at most one per paragraph, or the measured rate if it is lower (a measured rate of 0 makes the rule "none"). Instead, use a comma, a colon, parentheses, or a full stop.
 3. **should** Avoid formulaic antitheses such as "It's not X, it's Y", "Not just X, but Y", or "This isn't about X. It's about Y." Instead, state Y directly, and name X only when readers actually believe it. If the samples use the pattern as a deliberate device, scope the rule to the forms the samples avoid (for example the "It's not X, it's Y" setup) instead of banning the device. (The "X, not Y" trait labels in sections 1 and 3 are a guide device, not prose, and are not affected.)
 
@@ -207,15 +207,15 @@ Tallowby Ledger is a fictional invoicing app for self-employed tradespeople. Its
 >
 > - Scale position: formal–casual 4 of 5 (casual, never slangy); matter-of-fact–enthusiastic 2 of 5.
 > - Intensity limit: at most one trade metaphor per piece; never a joke about late-paying customers.
-> - Rules: name the task, not the feature ("send an invoice", not "use the invoicing module"). Explain a required step in one sentence before the step itself. Keep help-article sentences to a median of 14 words or fewer (_measured_: 13 across 42 texts).
+> - Rules: name the task, not the feature ("send an invoice", not "use the invoicing module"). Explain a required step in one sentence before the step itself. Keep help-article sentences to a median of 14 words or fewer (_measured_: 13 across 42 texts). Scope: help articles. Example (_quoted_): "Tap Send. Your customer gets the invoice and a payment link."
 > - Example (_quoted_): "You can send the invoice from your phone before you leave the driveway. We'll email your customer a copy and a payment link."
 
 **Excerpt from section 1, three rules and one table row:**
 
-> 1. **must** Name the job the reader is doing, in their words. Scope: all text types. Never write "solution", "streamline", or "empower"; instead say what changes in the reader's day. Example (_quoted_): "Your quote turns into an invoice with one tap."
-> 2. **should** Keep the median sentence at 14 words or fewer (_measured_: 13). Scope: help articles and onboarding emails. Example (_illustrative_): "Add your bank details once. Every invoice after that shows them."
+> 1. **must** Name the job the reader is doing, in their words. Fixed across text types. Never write "solution", "streamline", or "empower"; instead say what changes in the reader's day. Example (_quoted_): "Your quote turns into an invoice with one tap."
+> 2. **should** Keep the median sentence at 14 words or fewer (_measured_: 13 in help articles). Scope: help articles. Section 5 overrides this rule for blog posts (median 18 or fewer). Example (_illustrative_): "Add your bank details once. Every invoice after that shows them."
 > 3. **may** Use one picture from the trade when it makes a feature easier to grasp. Scope: blog posts. Example (_illustrative_): "Think of recurring invoices like a service contract. You set it up once and it runs."
 >
 > | Do                                    | Don't                                                            | Instead                                                            |
 > | ------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------ |
-> | Lead with what the reader can do now. | "Our platform empowers trades businesses to streamline billing." | "Send the invoice from the van, before you drive to the next job." |
+> | Lead with what the reader can do now. | "Our platform empowers trades businesses to streamline billing." (_illustrative_) | "Send the invoice from the van, before you drive to the next job." (_illustrative_) |

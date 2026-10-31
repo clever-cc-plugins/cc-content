@@ -61,7 +61,7 @@ Added for this skill: the reader relationship (new or familiar readers, and how 
 2. Degree of formality and form of address: formal or informal, how direct.
 3. Attitude towards the reader: eye level, mentor, empathy.
 
-Added for this skill: a position on each of the four Nielsen Norman Group tone scales (formal–casual, serious–funny, respectful–irreverent, matter-of-fact–enthusiastic), 1 to 5 between the two poles, wherever the samples show it.
+Added for this skill: a position on each of the four Nielsen Norman Group tone scales (formal–casual, serious–funny, respectful–irreverent, matter-of-fact–enthusiastic), 1 to 5 between the two poles (1 is the first-named pole, 5 the second), wherever the samples show it.
 
 ## III. Language style and word choice (vocabulary and diction)
 
@@ -126,6 +126,7 @@ Reading the report:
 - `pronouns` and `address` are raw counts. Compare them with each other, or convert them to a rate per 1,000 words with `words`, before stating a target.
 - `pronouns`, `address`, and `contractionsPer1000` are `null` when the script has no word list or measure for the language (address forms: de, fr, es, nl, it; pronouns: en, de, fr, es, nl, it; contractions: en only). For a missing word list, `notes` says "not measured". Estimate the feature by reading where the language has it, and mark it _estimated_.
 - For German and Italian, `address.formal` skips formal forms at the start of a sentence, where capitalization says nothing (a sentence-initial German "Sie" could mean "they"). The count is a lower bound; confirm the address form by reading.
+- For French, Spanish and Dutch the counts carry the caveats in `notes`: `vous` is also the plural, `ustedes` is the neutral plural in Latin America, and Dutch `je` is also the generic "one". Confirm the address form by reading.
 - For German and Italian, `pronouns.second` counts only the informal forms; formal address ("Sie", "Lei") shows up only in `address.formal`. Add `pronouns.second` and `address.formal` before judging how much the texts address the reader.
 - The script splits sentences heuristically. Treat its numbers as approximate and round targets accordingly ("median about 14 words", not "13.6").
 - If `node` is not available, estimate the same features by reading and mark every number _estimated_.
