@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 // Measures observable text features so brand-voice analysis is grounded in numbers.
 // Usage: node measure-text.mjs [--lang <code>] [--json] [file ...]  (stdin when no files)
-import { readFileSync } from "node:fs";
+import { readFileSync, statSync } from "node:fs";
 import { pathToFileURL } from "node:url";
 
 const WORD = /[\p{L}\p{N}]+(?:['’]\p{L}+)*/gu;
 const LIST_LINE = /^\s*(?:[-*•]|\d+[.)])\s+/;
+// One emoji: a pictograph with modifiers and joined parts, or a flag pair.
+const EMOJI = /\p{Extended_Pictographic}(?:\uFE0F|\p{Emoji_Modifier})*(?:\u200D\p{Extended_Pictographic}(?:\uFE0F|\p{Emoji_Modifier})*)*|\p{Regional_Indicator}{2}/gu;
 const words = (s) => s.match(WORD) ?? [];
 const round = (x, d) => Math.round(x * 10 ** d) / 10 ** d;
 const per1000 = (n, total) => round((n / total) * 1000, 1);
@@ -237,7 +239,7 @@ export function measure(text, lang) {
       colon: per1000(count(body, /:/g), total),
       semicolon: per1000(count(body, /;/g), total),
       parenthesis: per1000(count(body, /\(/g), total),
-      emoji: per1000(count(body, /\p{Extended_Pictographic}/gu), total),
+      emoji: per1000(count(body, EMOJI), total),
       listLine: per1000(sentences.filter((s) => s.list).length, total),
     },
     pronouns,
@@ -269,6 +271,11 @@ function format(r) {
   return lines.join("\n");
 }
 
+function readTextFile(f) {
+  if (statSync(f).isDirectory()) throw new Error(`${f} is a directory; pass the files inside it`);
+  return readFileSync(f, "utf8");
+}
+
 function cli(argv) {
   let lang;
   let json = false;
@@ -282,7 +289,7 @@ function cli(argv) {
     else files.push(argv[i]);
   }
   const text = files.length
-    ? files.map((f) => readFileSync(f, "utf8")).join("\n\n")
+    ? files.map(readTextFile).join("\n\n")
     : readFileSync(0, "utf8");
   const report = measure(text, lang);
   console.log(json ? JSON.stringify(report, null, 2) : format(report));

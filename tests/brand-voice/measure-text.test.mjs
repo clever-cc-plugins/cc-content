@@ -152,3 +152,40 @@ test("cli: --lang without a value errors", () => {
   assert.equal(r.status, 1);
   assert.match(r.stderr, /--lang/);
 });
+test("fr, es, nl, it address tables", () => {
+  const cases = {
+    fr: ["Vous pouvez nous écrire. Tu viens aussi.", 1, 1],
+    es: ["Puede escribir a usted mismo. Tú vienes también.", 1, 1],
+    nl: ["Wij helpen u graag. Jij komt ook.", 1, 1],
+    it: ["Vi scriviamo oggi. Chiamare La domani.", 1, 1],
+  };
+  for (const [lang, [text, formal, informal]] of Object.entries(cases)) {
+    const r = measure(text, lang);
+    assert.equal(r.address.formal >= formal, true, `${lang} formal`);
+    assert.equal(r.address.informal >= informal, true, `${lang} informal`);
+    assert.ok(r.pronouns, `${lang} pronouns`);
+    assert.ok(r.notes.length >= 1, `${lang} note`);
+  }
+});
+test("locale codes are normalized", () => {
+  const r = measure("We don't know.", "en-US");
+  assert.equal(r.lang, "en");
+  assert.ok(r.contractionsPer1000 > 0);
+});
+test("no language: notes say so", () => {
+  const r = measure("Just words here.");
+  assert.equal(r.lang, null);
+  assert.equal(r.pronouns, null);
+  assert.equal(r.address, null);
+  assert.ok(r.notes.some((n) => n.includes("language not given")));
+});
+test("emoji sequences count once", () => {
+  assert.equal(measure("Hi 👩‍💻 ok", "en").per1000.emoji, 500);
+  assert.equal(measure("Hi 🇩🇪 ok", "en").per1000.emoji, 500);
+  assert.equal(measure("Hi 👍🏽 ok", "en").per1000.emoji, 500);
+});
+test("cli: a directory argument gets a clear error", () => {
+  const r = spawnSync(process.execPath, [SCRIPT, "--lang", "en", "."], { encoding: "utf8" });
+  assert.equal(r.status, 1);
+  assert.match(r.stderr, /directory/);
+});
