@@ -68,7 +68,7 @@ Ask when: always, once, near the end of Step 5, unless the user has already name
 - Class-level bans count, e.g. "no anglicisms where a German word exists" or "no sales jargon". Write them as a rule with the class, two examples, and the replacement habit.
 - For each ban: "What should we write instead?" Every ban in the guide names its replacement. If the user has none, propose one and ask for a yes.
 
-Then offer the three defaults from the section "Offered defaults" in `guide-template.md`, one at a time and as written there. The user confirms or drops each. The em-dash default applies only to German and English guides.
+Then offer the three defaults from the section "Offered defaults" in `guide-template.md`, one at a time and as written there. The user confirms or drops each; an unanswered default counts as dropped and leaves no trace. The em-dash default applies only to German and English guides.
 
 ## Test-draft reactions (Step 7)
 

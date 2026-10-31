@@ -9,7 +9,7 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 - **Heading levels.** The skeleton's `###` headings for sections 1–10 become `##` in the guide, and its `####` headings become `###`.
 - **Placeholders** look like `{…}`. Replace each with content. The instruction blocks (the quoted **What / Size / Evidence** lines) tell you what to write; they never appear in the guide.
 - **Bracketed sections are conditional.** Section 2 (values) and section 6 (persuasion and ethics) are omitted when there is no input for them: no values in context and none from the interview, or no answer on persuasion and red lines. Never fill them with filler. Section 5 is omitted when the scope has a single text type. Drop the brackets in the guide's heading when the section is kept.
-- **Omitting a section never renumbers the others.** The guide's numbered headings are stable, so rules can be cited by number and refine mode and `session-wrap` can insert a rule into the matching section.
+- **Omitting a section never renumbers the others, and leaves no heading or stub behind.** The guide's numbered headings are stable, so rules can be cited by number and refine mode and `session-wrap` can insert a rule into the matching section.
 - **No references to omitted sections.** When a section is omitted, drop or rewrite every reference to it elsewhere in the guide, including the "how to use this guide" paragraphs in section 0 (e.g. "sections 2–4, 6, 7" becomes "sections 3, 4, 7" when sections 2 and 6 are omitted).
 - **Perspective:** write the guide as "we" for an organization and "I" for an individual, throughout.
 - **Length:** no hard cap. Depth is wanted for LLM use. Section 1 stays at about one page; the priority core and the exemplars do most of the work, and the detailed specification (section 4) is where humans look things up.
@@ -29,7 +29,7 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 > - Scope: {text types}, as a short list.
 > - Built from: samples ({n texts / words} per text type), context files used ({paths}), interview (yes / no).
 > - Owner: {name or role}. Next review: {date}, by default one year after the as-of date.
-> - Measurement: _measured_ (the measurement script ran on the samples), _estimated_ (features estimated by reading because `node` was not available), or _set by owner_ (define mode: no samples, targets come from the interview).
+> - Measurement: _measured_ (the measurement script ran on the samples), _estimated_ (features estimated by reading because `node` was not available), _set by owner_ (define mode: no samples, targets come from the interview), or _none_ (a refined guide without samples or targets yet).
 > - Low-confidence notes: every text type with fewer than ~2,000 words of samples; text types with no samples, covered by interview and test drafts only; sections that rest on samples from outside the scope; rules carried over from a guide or samples in another language; for languages other than German and English, a note that the language-layer rules were set from general language knowledge and should be checked by a native speaker.
 > - **How to use this guide**, two short paragraphs:
 >   - _For writers:_ start with section 1, check section 5 for the text type at hand, look up details in section 4, and run the checklist in section 8 before handing in.
@@ -168,7 +168,7 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 
 ### 9. Exemplar texts
 
-> **What:** 3–6 complete texts per text type, chosen for diversity and quality, each with a one-line note on what it exemplifies. When a text type has fewer usable samples, include all of them and note the count in section 0. Trim long formats to a representative part (e.g. intro plus one section of a whitepaper).
+> **What:** 3–6 complete texts per text type, chosen for diversity and quality, each with a one-line note on what it exemplifies. When a text type has fewer usable samples, include all of them and note the count in section 0. Prefer samples that follow the confirmed rules; where an exemplar breaks one, name the rule in its note. Trim long formats to a representative part (e.g. intro plus one section of a whitepaper).
 >
 > **Evidence:** taken from the samples (_quoted_) or, in define mode, from test drafts the user approved (_approved test draft_).
 
@@ -182,7 +182,7 @@ The section skeleton for every guide this skill writes (Step 6) and the referenc
 - **Positive phrasing first.** Say what to do. Hard bans stay, but every ban names its replacement ("instead: …").
 - **Measurable where possible**, e.g. "median sentence ≤ 18 words", "address the reader as 'Sie'". Numbers come from the measured corpus or from the user's decision.
 - **Priority marks:** every rule in the priority core (section 1) carries **must**, **should**, or **may**. Detailed rules default to _should_ unless marked.
-- **Evidence marks on examples**, including examples in tables: _quoted_ (from the samples), _illustrative_ (written by the skill), _approved test draft_ (a test draft the user approved). Rules transferred from another language: _adapted, not observed_. Rules the owner stated that no sample shows: _stated in context_. All marks are written in the guide's language, for example German _zitiert_ / _illustrativ_ / _freigegebener Testentwurf_ / _übertragen, nicht beobachtet_ / _im Kontext genannt_, and **MUSS** / **SOLL** / **KANN**, _gemessen_ / _geschätzt_.
+- **Evidence marks on examples**, including examples in tables: _quoted_ (from the samples), _illustrative_ (written by the skill), _approved test draft_ (a test draft the user approved). Rules transferred from another language: _adapted, not observed_. Rules the owner stated that no sample shows: _stated in context_. All marks are written in the guide's language, for example German _zitiert_ / _illustrativ_ / _freigegebener Testentwurf_ / _übertragen, nicht beobachtet_ / _im Kontext genannt_, "fixed across text types" as "über alle Textsorten fest", and **MUSS** / **SOLL** / **KANN**, _gemessen_ / _geschätzt_.
 - **Measurement marks on quantitative targets:** _measured_ (from the measurement script), _estimated_ (estimated by reading) or _set by owner_ (decided in the interview, no sample evidence); in a German guide _gemessen_ / _geschätzt_ / _vom Inhaber festgelegt_.
 - **Perspective:** "we" for organizations, "I" for individuals.
 - **Self-consistency:** the guide's own prose follows the voice's language-layer rules and the readability patterns. Its examples must not contain AI tells.

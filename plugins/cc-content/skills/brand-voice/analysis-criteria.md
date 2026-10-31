@@ -124,6 +124,7 @@ Section numbers follow `guide-template.md`. Field names are those of the script'
 Reading the report:
 
 - `pronouns` and `address` are raw counts. Compare them with each other, or convert them to a rate per 1,000 words with `words`, before stating a target.
+- `contractionsPer1000` leaves out `'s` (it's, what's), which is ambiguous with the possessive.
 - `pronouns`, `address`, and `contractionsPer1000` are `null` when the script has no word list or measure for the language (address forms: de, fr, es, nl, it; pronouns: en, de, fr, es, nl, it; contractions: en only). For a missing word list, `notes` says "not measured". Estimate the feature by reading where the language has it, and mark it _estimated_.
 - For German and Italian, `address.formal` skips formal forms at the start of a sentence, where capitalization says nothing (a sentence-initial German "Sie" could mean "they"). The count is a lower bound; confirm the address form by reading.
 - For French, Spanish and Dutch the counts carry the caveats in `notes`: `vous` is also the plural, `ustedes` is the neutral plural in Latin America, and Dutch `je` is also the generic "one". Confirm the address form by reading.
