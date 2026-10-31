@@ -31,7 +31,7 @@ content creation skills for marketing projects.
 | `plugins/cc-content/skills/gated-long-form-content/SKILL.md`    | Skill: Draft gated long-form lead-generation content (whitepapers, guides, ebooks)            |
 | `plugins/cc-content/skills/humanize/SKILL.md`                   | Skill: Remove AI tells from a draft and rewrite it to sound human, on-brand-voice             |
 | `plugins/cc-content/skills/instagram-post/SKILL.md`             | Skill: Draft Instagram posts and captions                                                     |
-| `plugins/cc-content/skills/landing-page/SKILL.md`               | TODO: add description                                                                         |
+| `plugins/cc-content/skills/landing-page/SKILL.md`               | Skill: Draft landing pages                                                                    |
 | `plugins/cc-content/skills/linkedin-post/SKILL.md`              | Skill: Draft LinkedIn posts                                                                   |
 | `plugins/cc-content/skills/long-tail-copy/SKILL.md`             | Skill: Draft text for any format without a dedicated skill; supports multi-format atomization |
 | `plugins/cc-content/skills/marketing-email/SKILL.md`            | Skill: Draft marketing and sales emails                                                       |
@@ -54,24 +54,25 @@ Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containi
 | ---------------------------- | -------------------------------------------------------------------------------------- |
 | `content-onboarding`         | Register and create context files; guide project setup                                 |
 | `register-context`           | Register a single file as context in CLAUDE.md (mid-session)                           |
-| `research-prompt`            | Generate a vendor-neutral deep-research prompt for a topic                             |
-| `linkedin-post`              | Draft LinkedIn posts                                                                   |
-| `blog-article`               | Draft blog articles                                                                    |
-| `press-release`              | Draft press releases                                                                   |
-| `facebook-post`              | Draft Facebook posts                                                                   |
-| `marketing-email`            | Draft marketing and sales emails                                                       |
-| `instagram-post`             | Draft Instagram posts and captions                                                     |
-| `content-ideation`           | Generate strategic content angles from an inspiration input                            |
-| `atomize`                    | Repurpose one core message across multiple formats in a single run                     |
-| `long-tail-copy`             | Draft text for any format without a dedicated skill; supports multi-format atomization |
-| `x-post`                     | Draft X (Twitter) posts                                                                |
-| `samples-curation`           | Save and annotate gold-standard content examples                                       |
 | `brand-voice`                | Build or refine a brand voice guide from samples, interview, and project context       |
+| `samples-curation`           | Save and annotate gold-standard content examples                                       |
+| `research-prompt`            | Generate a vendor-neutral deep-research prompt for a topic                             |
+| `content-ideation`           | Generate strategic content angles from an inspiration input                            |
+| `linkedin-post`              | Draft LinkedIn posts                                                                   |
+| `x-post`                     | Draft X (Twitter) posts                                                                |
+| `facebook-post`              | Draft Facebook posts                                                                   |
+| `instagram-post`             | Draft Instagram posts and captions                                                     |
+| `blog-article`               | Draft blog articles                                                                    |
+| `marketing-email`            | Draft marketing and sales emails                                                       |
+| `press-release`              | Draft press releases                                                                   |
+| `landing-page`               | Draft landing pages                                                                    |
+| `gated-long-form-content`    | Draft gated long-form lead-generation content (whitepapers, guides, ebooks)            |
+| `long-tail-copy`             | Draft text for any format without a dedicated skill; supports multi-format atomization |
+| `atomize`                    | Repurpose one core message across multiple formats in a single run                     |
 | `humanize`                   | Remove AI tells from a draft and rewrite it to sound human, on-brand-voice             |
 | `content-performance-review` | Analyze content performance data and generate iteration variants                       |
 | `session-wrap`               | Review session, promote deliverables to context, commit work                           |
 | `new-content-skill`          | Build a new content-production skill from research                                     |
-| `gated-long-form-content`    | Draft gated long-form lead-generation content (whitepapers, guides, ebooks)            |
 
 ## Don't
 

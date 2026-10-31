@@ -21,25 +21,25 @@ The content-production skills work for any industry, audience, and output langua
 | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `/cc-content:content-onboarding`         | Interviews you about your brand, voice, and audience, then populates `context/` with structured context files that all other skills can read                                                        |
 | `/cc-content:register-context`           | Registers a single file as context in `CLAUDE.md` mid-session, without re-running full onboarding                                                                                                   |
-| `/cc-content:research-prompt`            | Generates a vendor-neutral deep-research prompt for a topic, ready to paste into Claude, ChatGPT, Gemini, Perplexity, or similar                                                                    |
-| `/cc-content:linkedin-post`              | Drafts LinkedIn posts that match your brand voice, format guidelines, and audience — with a built-in feedback step                                                                                  |
-| `/cc-content:blog-article`               | Drafts blog articles calibrated to your audience type (B2B / B2C), content goal, funnel stage, and reader expertise                                                                                 |
-| `/cc-content:landing-page`               | Drafts landing pages — from short single-CTA gated-content/webinar registration pages to longer direct-sales pages — calibrated to funnel stage, audience type, and EU/German consent requirements  |
-| `/cc-content:press-release`              | Drafts press releases for direct-to-journalist pickup, SEO/backlink value via wire placement, or owned newsroom records                                                                             |
-| `/cc-content:facebook-post`              | Drafts Facebook posts optimized for Pages and Groups, with awareness of platform reach mechanics and audience-warmth-matched length guidance                                                        |
-| `/cc-content:marketing-email`            | Drafts marketing and sales emails — campaign email, newsletters, nurture sequences, and cold/warm sales outreach — with subject line and preview text                                               |
-| `/cc-content:instagram-post`             | Drafts Instagram posts and captions (feed, carousel, Reels) calibrated to your audience type, format choice, content goal, and funnel stage                                                         |
-| `/cc-content:content-ideation`           | Generates several distinct strategic angles (thesis / goal / perspective) from an article, briefing, or topic — the idea step before writing                                                        |
-| `/cc-content:atomize`                    | Repurposes one core message across multiple formats in a single run, keeping claims and proof points identical while adapting structure, tone, and CTA per platform                                 |
-| `/cc-content:long-tail-copy`             | Drafts a finished text for any format without a dedicated skill (e.g., whitepaper, newsletter …), routing you to a dedicated skill (like press release or landing-page) when one fits better        |
-| `/cc-content:samples-curation`           | Saves gold-standard content examples with annotations to the samples file registered in the `## Context files` table (default `context/samples.md`) so skills can use them as reference material    |
 | `/cc-content:brand-voice`                | Builds or refines a brand voice guide from your texts, an interview, or both, in any language, for writers and AI                                                                                   |
+| `/cc-content:samples-curation`           | Saves gold-standard content examples with annotations to the samples file registered in the `## Context files` table (default `context/samples.md`) so skills can use them as reference material    |
+| `/cc-content:research-prompt`            | Generates a vendor-neutral deep-research prompt for a topic, ready to paste into Claude, ChatGPT, Gemini, Perplexity, or similar                                                                    |
+| `/cc-content:content-ideation`           | Generates several distinct strategic angles (thesis / goal / perspective) from an article, briefing, or topic — the idea step before writing                                                        |
+| `/cc-content:linkedin-post`              | Drafts LinkedIn posts that match your brand voice, format guidelines, and audience — with a built-in feedback step                                                                                  |
+| `/cc-content:x-post`                     | Drafts X (Twitter) posts optimized for engagement, conversation, and goal-driven CTAs — with support for single posts and threads                                                                   |
+| `/cc-content:facebook-post`              | Drafts Facebook posts optimized for Pages and Groups, with awareness of platform reach mechanics and audience-warmth-matched length guidance                                                        |
+| `/cc-content:instagram-post`             | Drafts Instagram posts and captions (feed, carousel, Reels) calibrated to your audience type, format choice, content goal, and funnel stage                                                         |
+| `/cc-content:blog-article`               | Drafts blog articles calibrated to your audience type (B2B / B2C), content goal, funnel stage, and reader expertise                                                                                 |
+| `/cc-content:marketing-email`            | Drafts marketing and sales emails — campaign email, newsletters, nurture sequences, and cold/warm sales outreach — with subject line and preview text                                               |
+| `/cc-content:press-release`              | Drafts press releases for direct-to-journalist pickup, SEO/backlink value via wire placement, or owned newsroom records                                                                             |
+| `/cc-content:landing-page`               | Drafts landing pages — from short single-CTA gated-content/webinar registration pages to longer direct-sales pages — calibrated to funnel stage, audience type, and EU/German consent requirements  |
+| `/cc-content:gated-long-form-content`    | Drafts gated long-form lead-generation assets — whitepapers, guides, ebooks — calibrated to audience type, content goal, funnel stage, and reader expertise, with an explicit gating recommendation |
+| `/cc-content:long-tail-copy`             | Drafts a finished text for any format without a dedicated skill (e.g., whitepaper, newsletter …), routing you to a dedicated skill (like press release or landing-page) when one fits better        |
+| `/cc-content:atomize`                    | Repurposes one core message across multiple formats in a single run, keeping claims and proof points identical while adapting structure, tone, and CTA per platform                                 |
 | `/cc-content:humanize`                   | Removes AI "tells" from an existing draft and rewrites it to read as human-written, calibrated to your brand voice                                                                                  |
 | `/cc-content:content-performance-review` | Analyzes how published pieces performed from data you paste in, and generates iteration variants for the next piece                                                                                 |
 | `/cc-content:session-wrap`               | Reviews session deliverables, logs feedback and corrections, detects recurring patterns, and commits your work                                                                                      |
 | `/cc-content:new-content-skill`          | Turns research notes into a complete content-production skill for a new output format. Use it to build project-local custom skills, or add `--plugin` to create a pre-built skill for the plugin.   |
-| `/cc-content:x-post`                     | Drafts X (Twitter) posts optimized for engagement, conversation, and goal-driven CTAs — with support for single posts and threads                                                                   |
-| `/cc-content:gated-long-form-content`    | Drafts gated long-form lead-generation assets — whitepapers, guides, ebooks — calibrated to audience type, content goal, funnel stage, and reader expertise, with an explicit gating recommendation |
 
 ---
 
@@ -94,7 +94,7 @@ Open your marketing project in Claude Code and run the onboarding skill:
 /cc-content:content-onboarding
 ```
 
-This populates `context/` with your brand voice, company profile, and buyer personas. The other skills read this context automatically.
+This populates `context/` with your brand voice, company profile, and buyer personas. The other skills read this context automatically. If your voice matters for ongoing content, build a full guide from your existing texts, an interview, or both with `/cc-content:brand-voice`.
 
 **Step 2 — Create content**
 
