@@ -3,7 +3,7 @@
 This repository distributes the `cc-content` Claude Code plugin — a suite of
 content creation skills for marketing projects.
 
-<!-- cc-config: last-optimize-run: 2026-07-31 247b4c0376af08a78871008a669dbbad11582d2f -->
+<!-- cc-config: last-optimize-run: 2026-11-05 9a062978778431d0c9498da8f832af68340fb479 -->
 
 ## Key Config Files
 
@@ -11,15 +11,14 @@ content creation skills for marketing projects.
 | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `.claude/format-markdown.sh`                                    | PostToolUse hook: formats Markdown files with prettier after edits                            |
 | `.claude/guard-secret-files.sh`                                 | PreToolUse hook: blocks reads/edits/writes of secret .env files                               |
-| `.claudeignore`                                                 | Paths excluded from Claude Code indexing                                                      |
 | `.claude/learnings.md`                                          | Corrections and observations logged during config/session-wrap runs                           |
-| `CLAUDE.md`                                                     | Project instructions, loaded every message                                                    |
 | `.claude/settings.json`                                         | Permissions, hooks, environment variables                                                     |
 | `.githooks/pre-commit`                                          | Secret scanning (gitleaks) + CLAUDE.md table sync                                             |
 | `.github/workflows/claude-code-review.yml`                      | Automatic PR review via Claude Code                                                           |
 | `.github/workflows/claude.yml`                                  | Trigger Claude via @claude mentions in issues/PRs                                             |
 | `.github/workflows/release.yml`                                 | Triggers shared plugin-release workflow — version bump + GitHub release — on push to main     |
 | `.gitignore`                                                    | Git ignore patterns                                                                           |
+| `CLAUDE.md`                                                     | Project instructions, loaded every message                                                    |
 | `plugins/cc-content/.claude-plugin/plugin.json`                 | Plugin manifest                                                                               |
 | `plugins/cc-content/skills/atomize/SKILL.md`                    | Skill: Repurpose one core message across multiple formats in a single run                     |
 | `plugins/cc-content/skills/blog-article/SKILL.md`               | Skill: Draft blog articles                                                                    |
@@ -48,37 +47,14 @@ content creation skills for marketing projects.
 
 Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containing a `SKILL.md` and any companion files. Shared reference files go in `plugins/cc-content/skills/_shared/`.
 
-## Skills
+## Tests
 
-| Skill                        | Purpose                                                                                |
-| ---------------------------- | -------------------------------------------------------------------------------------- |
-| `content-onboarding`         | Register and create context files; guide project setup                                 |
-| `register-context`           | Register a single file as context in CLAUDE.md (mid-session)                           |
-| `brand-voice`                | Build or refine a brand voice guide from samples, interview, and project context       |
-| `samples-curation`           | Save and annotate gold-standard content examples                                       |
-| `research-prompt`            | Generate a vendor-neutral deep-research prompt for a topic                             |
-| `content-ideation`           | Generate strategic content angles from an inspiration input                            |
-| `linkedin-post`              | Draft LinkedIn posts                                                                   |
-| `x-post`                     | Draft X (Twitter) posts                                                                |
-| `facebook-post`              | Draft Facebook posts                                                                   |
-| `instagram-post`             | Draft Instagram posts and captions                                                     |
-| `blog-article`               | Draft blog articles                                                                    |
-| `marketing-email`            | Draft marketing and sales emails                                                       |
-| `press-release`              | Draft press releases                                                                   |
-| `landing-page`               | Draft landing pages                                                                    |
-| `gated-long-form-content`    | Draft gated long-form lead-generation content (whitepapers, guides, ebooks)            |
-| `long-tail-copy`             | Draft text for any format without a dedicated skill; supports multi-format atomization |
-| `atomize`                    | Repurpose one core message across multiple formats in a single run                     |
-| `humanize`                   | Remove AI tells from a draft and rewrite it to sound human, on-brand-voice             |
-| `content-performance-review` | Analyze content performance data and generate iteration variants                       |
-| `session-wrap`               | Review session, promote deliverables to context, commit work                           |
-| `new-content-skill`          | Build a new content-production skill from research                                     |
+Run `node --test tests/brand-voice/` from the repo root (Node 18+, no dependencies). See `tests/brand-voice/README.md` for the dry-run scenarios.
 
 ## Don't
 
 - Don't commit secrets or credentials to git
 - Don't use `--force` flags — fix the underlying issue instead
-- Don't modify CLAUDE.md directly when logging a correction — append to `.claude/learnings.md`
 - Don't recommend algorithm-gaming tactics in content-skill guidelines (e.g., hiding
   a link in the first comment to dodge a suspected reach penalty, engagement-bait
   CTAs) even when tutorials or coaches currently present them as best practice —

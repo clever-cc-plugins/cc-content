@@ -137,3 +137,7 @@ Show the proposed row before writing:
 - **Edit**: ask what to change, update label/summary/path, show again.
 
 - **Skip**: say "Registration cancelled — nothing was written." and exit.
+
+## Feedback
+
+After a successful registration, ask: "Did this meet your expectations? If not, I'll log a correction to `.claude/learnings.md`." If the owner gives a correction, append it as `[cc-content:register-context] <correction> — <YYYY-MM-DD>` (create the file with a `# Learnings` heading if missing). If they confirm or skip, exit.
