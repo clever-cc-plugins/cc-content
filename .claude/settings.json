@@ -7,7 +7,17 @@
     "CLAUDE_CODE_SUBAGENT_MODEL": "haiku"
   },
   "permissions": {
-    "allow": ["Bash(git *)", "Bash(chmod +x *)"],
+    "allow": [
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(git branch *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git switch *)",
+      "Bash(chmod +x *)"
+    ],
     "ask": ["Bash(git push*)", "Bash(git -C * push*)"],
     "deny": [
       "Read(./.env)",
