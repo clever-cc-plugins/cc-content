@@ -2,14 +2,14 @@
 name: long-tail-copy
 description: >
   Use this skill to draft a finished marketing or PR text for an output format
-  that does NOT have its own dedicated skill — for example a newsletter,
-  whitepaper, landing-page copy, product description, email, webinar
-  abstract, or ad copy. Invoke when the user says
-  "draft a newsletter", "write the copy for this landing page", "turn this idea
-  into a <format>", or names any text deliverable without a dedicated skill. This
+  that does NOT have its own dedicated skill — for example a product
+  description, webinar abstract, ad copy, or event invitation. Invoke when the
+  user says "write a webinar abstract", "draft the ad copy for this", "turn this
+  idea into a <format>", or names any text deliverable without a dedicated skill. This
   is the general-purpose writer for the long tail of formats. It deliberately
   defers: if a dedicated skill exists for the requested format (such as a blog
-  article or LinkedIn post, or a project-specific skill), it points the owner
+  article, newsletter, press release, landing page, whitepaper, or LinkedIn
+  post, or a project-specific skill), it points the owner
   there first. Do NOT use it for formats that already have a dedicated skill.
 allowed-tools: Read, Write, Bash
 argument-hint: "[optional: path to campaign briefing or inspiration file]"
