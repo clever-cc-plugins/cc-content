@@ -1,10 +1,10 @@
 # brand-voice tests
 
-## Script tests
+## Script Tests
 
 Run `node --test tests/brand-voice/` from the repo root. Needs Node 18 or newer, no dependencies.
 
-## When to re-run
+## When to Re-Run
 
 The script tests cover only `measure-text.mjs`. After changing `SKILL.md`, `guide-template.md`, or the reference files, re-run the dry-run scenarios below that touch the changed part, and run the acceptance checklist on the guides they produce.
 
@@ -15,12 +15,12 @@ All fixtures are fictional. Do not add real client texts or the owner's private 
 - `fixtures/de-org/`: seven German website-style texts (six German, one English) of a fictional machinery company (Brenner & Kollmann Anlagentechnik GmbH), about 2,650 words in total. One text (`06-product-conveyor.md`) is an English product page. Planted voice: matter-of-fact, formal Sie, short sentences, no exclamation marks, colons before explanations, honest limits ("what we do not do").
 - `fixtures/en-personal/`: ten LinkedIn-style posts and one newsletter intro of a fictional product designer (Dana), about 2,050 words in total. Planted voice: first person, contractions, ironic asides, posts that end with a question. The newsletter intro (about 270 words) is the thin second text type.
 
-## Script check on the fixtures
+## Script Check on the Fixtures
 
 - `node plugins/cc-content/skills/brand-voice/measure-text.mjs --lang de tests/brand-voice/fixtures/de-org/0[1-5]*.md tests/brand-voice/fixtures/de-org/07*.md`: exit 0, `address.formal > 0`, `address.informal == 0`.
 - `node plugins/cc-content/skills/brand-voice/measure-text.mjs --lang en tests/brand-voice/fixtures/en-personal/*.md`: exit 0, `contractionsPer1000 > 0`.
 
-## Dry-run scenarios
+## Dry-Run Scenarios
 
 Run each in a scratch project outside the repo (empty `CLAUDE.md`) and follow `SKILL.md` literally, answering as the scripted user.
 
@@ -30,7 +30,7 @@ Run each in a scratch project outside the repo (empty `CLAUDE.md`) and follow `S
 - **D, refine.** Scratch project with a five-line onboarding-style voice note registered under `## Context files`. Run the skill. Expect: restructure offer, numbered change proposals, a change-log entry, nothing overwritten without a yes. Then register a second guide and confirm Step 1 asks which guide to refine.
 - **A, no node.** Repeat A with `node` hidden from `PATH`. Expect: a complete guide whose measurements are labelled estimated.
 
-## Acceptance checklist for every produced guide
+## Acceptance Checklist for Every Produced Guide
 
 - [ ] Sections follow spec §8.1; conditional sections are present or omitted correctly.
 - [ ] The priority core has 10 to 20 rules, each marked must, should or may (in the guide's language).
