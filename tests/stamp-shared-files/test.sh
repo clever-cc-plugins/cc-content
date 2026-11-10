@@ -6,6 +6,8 @@ here="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 script="$here/scripts/stamp-shared-files.sh"
 today="$(date +%F)"
 fail=0
+tmpdirs=()
+trap 'rm -rf "${tmpdirs[@]}"' EXIT
 
 assert_eq() {
   if [[ "$2" != "$3" ]]; then echo "FAIL: $1 -- expected '$2', got '$3'"; fail=1; else echo "ok: $1"; fi
@@ -13,6 +15,7 @@ assert_eq() {
 
 new_repo() {
   tmp="$(mktemp -d)"
+  tmpdirs+=("$tmp")
   cd "$tmp" || exit 1
   git init -q
   git config user.email t@example.com
@@ -74,5 +77,27 @@ bash scripts/stamp-shared-files.sh >/dev/null
 assert_eq "the staged copy is stamped" "_Last updated: ${today}_" "$(staged_line3 $f)"
 assert_eq "an unstaged edit stays unstaged" "0" "$(git show ":$f" | grep -c 'unstaged extra line')"
 assert_eq "and stays in the working copy" "1" "$(grep -c 'unstaged extra line' $f)"
+
+new_repo
+printf '# Title\n\n_Last updated: 2026-01-01_\n\nold\n\n\n' > $f; git add -A; git commit -qm init
+printf '# Title\n\n_Last updated: 2026-01-01_\n\nnew\n\n\n' > $f; git add $f
+bash scripts/stamp-shared-files.sh >/dev/null
+assert_eq "multiple trailing blank lines are preserved byte for byte" "$(printf '# Title\n\n_Last updated: %s_\n\nnew\n\n\n' "$today" | git hash-object --stdin)" "$(git rev-parse ":$f")"
+
+new_repo
+printf '# Title\n\n_Last updated: 2026-01-01_\n\nold' > $f; git add -A; git commit -qm init
+printf '# Title\n\n_Last updated: 2026-01-01_\n\nnew' > $f; git add $f
+bash scripts/stamp-shared-files.sh >/dev/null
+assert_eq "a missing final newline stays missing" "$(printf '# Title\n\n_Last updated: %s_\n\nnew' "$today" | git hash-object --stdin)" "$(git rev-parse ":$f")"
+
+new_repo
+write_file $f 2026-01-01 "old body"; git add -A; git commit -qm init
+write_file $f 2026-01-01 "new body"; git add $f
+mkdir -p .githooks
+printf '#!/usr/bin/env bash\nbash scripts/stamp-shared-files.sh || exit 1\n' > .githooks/pre-commit
+chmod +x .githooks/pre-commit
+git config core.hooksPath .githooks
+git commit -qm "via hook" >/dev/null 2>&1
+assert_eq "the pre-commit hook stamps the committed file" "_Last updated: ${today}_" "$(git show HEAD:$f | sed -n 3p)"
 
 exit $fail
