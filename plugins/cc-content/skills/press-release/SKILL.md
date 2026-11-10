@@ -243,7 +243,7 @@ _Explicit feedback._ Ask whether the output met expectations:
 > "Does this press release work for your needs? If you'd like changes, tell me what
 > to adjust, and I'll revise."
 
-If the user provides a correction, apply it, record it per the protocol's **Writing** section with source `corrected`, and re-present the release. Then ask:
+If the user provides a correction or states a standing preference, apply it, record it per the protocol's **Writing** section (source `corrected` for a correction, `stated` for a preference), and re-present the release. Then ask:
 
 > "Better? Anything else?"
 

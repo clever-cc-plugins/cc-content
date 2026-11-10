@@ -419,7 +419,7 @@ _Auto-store phase._ Read `../_shared/learnings-protocol.md` and follow its **Wri
 
 _Explicit feedback._ Ask whether the output met expectations.
 
-- If the user provides a correction, record it per the protocol's **Writing** section with source `corrected`.
+- If the user provides a correction or states a standing preference, record it per the protocol's **Writing** section, with source `corrected` for a correction and `stated` for a preference.
 - Then follow the protocol's **Confirming** section, deliver a closing line and exit.
 
 **End-user mode:** include a `[TODO: ...]` for a format-specific delivery note (e.g.,

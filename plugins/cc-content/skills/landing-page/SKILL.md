@@ -178,5 +178,5 @@ This step has two phases:
 
 **Explicit feedback.** Ask whether the output met expectations.
 
-- If the user provides a correction, record it per the protocol's **Writing** section with source `corrected`.
+- If the user provides a correction or states a standing preference, record it per the protocol's **Writing** section, with source `corrected` for a correction and `stated` for a preference.
 - Then follow the protocol's **Confirming** section. Then deliver a closing line and exit. Tailor the closing delivery note to what was actually produced rather than a fixed phrase: if the confirmed audience was EU/German, remind the owner to have the consent-checkbox wording reviewed before publishing; if format-specific rules context named a page builder, CMS, or form/CRM provider, reference handing the copy off there; otherwise default to a generic "ready to hand off to your web developer or landing-page builder."

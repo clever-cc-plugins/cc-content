@@ -363,5 +363,5 @@ format — the protocol's Writing section applies to the batch as a whole.
 > "Did this batch of formats meet expectations? Any corrections or notes for future
 > atomization runs — or press Enter to finish."
 
-- If the user provides a correction, record it per the protocol's **Writing** section with source `corrected`.
+- If the user provides a correction or states a standing preference, record it per the protocol's **Writing** section, with source `corrected` for a correction and `stated` for a preference.
 - Then follow the protocol's **Confirming** section. Then exit.

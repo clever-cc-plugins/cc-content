@@ -180,5 +180,5 @@ This step has two phases:
 
 **Explicit feedback.** Ask whether the output met expectations.
 
-- If the user provides a correction, record it per the protocol's **Writing** section with source `corrected`.
+- If the user provides a correction or states a standing preference, record it per the protocol's **Writing** section, with source `corrected` for a correction and `stated` for a preference.
 - Then follow the protocol's **Confirming** section. Then deliver a closing line: "✓ Draft ready. Move it into your design template for layout, then route it through legal/compliance review (if applicable) before publishing behind the gate." and exit.

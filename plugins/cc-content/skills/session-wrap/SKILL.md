@@ -33,7 +33,7 @@ If git status reports **no changes**:
 > "No changes detected in git. Would you still like to collect feedback and
 > review learnings? (yes / no)"
 
-If the owner says no, skip to Step 5. If yes, continue but skip the file summary.
+If the owner says no, skip to Step 6. If yes, continue but skip the file summary.
 
 If changes **exist**, group them into four categories and present them:
 
@@ -154,7 +154,7 @@ After collecting feedback for all listed skills, proceed to Step 4.
 
 ## Step 4: Append to learnings
 
-Record each correction from Step 3 per the protocol's **Writing** section (`../_shared/learnings-protocol.md`), tagged `[cc-content:<skill-name>]`, source `corrected`. Then follow its **Confirming** section.
+Record each correction from Step 3 per the protocol's **Writing** section (`../_shared/learnings-protocol.md`), tagged with the skill's own plugin and name, `[<plugin>:<skill-name>]`, source `corrected`. A name the owner gave as `cc-email:newsletter` keeps its own plugin prefix, and an unqualified name uses `cc-content`. Then follow its **Confirming** section.
 
 If no corrections were collected, skip this step silently.
 
@@ -188,6 +188,8 @@ For each group or single entry, state the entry count, the sources and a one-lin
 > (b) the project `CLAUDE.md`
 > (c) the brand voice guide `<path>`
 > Or: (d) Keep it in learnings, or (e) Retire it."
+
+Option (a) covers the format guidelines of one skill. When a group spans several skills, propose one (a) target per skill, and remove only the entries each chosen target covers.
 
 Show option (c) only when the entry concerns voice (tone, wording, phrasing, punctuation habits) rather than format, and at least one voice guide is registered in the `## Context files` table. Detect a voice guide by its summary (a brand voice guide, tone, or writing style), not by its label. Without a voice entry or a registered voice guide, show only (a), (b), (d) and (e), and keep the letters.
 
@@ -232,7 +234,7 @@ Leave the entries unchanged in `.claude/learnings.md`. Say: "Kept in `.claude/le
 
 Remove the entries from `.claude/learnings.md`; when no entries remain below the header, delete the file, or leave only the header if you cannot delete files. Tell the user the reason and, if applicable, the file that already covers the entry (the protocol's Retire rule). Say: "✓ Retired from `.claude/learnings.md`."
 
-After a promotion (a), (b) or (c), remove the promoted entries from `.claude/learnings.md` as well, as the protocol's **Reviewing** section requires.
+After a promotion (a), (b) or (c), remove only the entries the chosen target covers from `.claude/learnings.md`, as the protocol's **Reviewing** section requires.
 
 Process all groups and entries in scope before moving on.
 
