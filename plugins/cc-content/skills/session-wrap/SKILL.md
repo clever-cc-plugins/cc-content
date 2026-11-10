@@ -2,7 +2,7 @@
 name: session-wrap
 description: >
   Use this skill at the end of a content creation session to review deliverables,
-  collect feedback, detect recurring correction patterns, and create a git commit.
+  collect feedback, review learnings (promote, keep or retire), and create a git commit.
   Invoke when the user says "wrap up", "end session", "session wrap", "wrap session",
   "commit session work", or "close out this session".
 allowed-tools: Read, Write, Edit, Bash
@@ -12,8 +12,8 @@ disable-model-invocation: true
 # Session Wrap Skill
 
 You are closing out a content creation session. The goals are: (1) review what
-was produced, (2) collect corrections for any skills used, (3) surface recurring
-patterns from past learnings, (4) promote patterns if warranted, and (5) commit
+was produced, (2) collect corrections for any skills used, (3) review the
+learnings (promote, keep or retire), and (4) commit
 all session work with a clean, well-labelled message.
 
 ## Step 0: Recall learnings
@@ -31,7 +31,7 @@ git status --short
 If git status reports **no changes**:
 
 > "No changes detected in git. Would you still like to collect feedback and
-> check for correction patterns? (yes / no)"
+> review learnings? (yes / no)"
 
 If the owner says no, skip to Step 5. If yes, continue but skip the file summary.
 
@@ -162,7 +162,7 @@ If no corrections were collected, skip this step silently.
 
 Read `../_shared/learnings-protocol.md` and follow its **Reviewing** section. Scope: entries prefixed `[cc-content:` that are dated today, plus older `[cc-content:` entries that group with them. Entries from other plugins are managed by their own tooling and must not be surfaced or promoted here. If the owner says "review all", the scope is every `[cc-content:` entry.
 
-If `.claude/learnings.md` is absent or no entry is in scope: say "No learnings to review." and proceed to Step 6.
+If `.claude/learnings.md` is absent or no entry is in scope: say "No new learnings to review. Say "review all" to include older entries." and proceed to Step 6.
 
 Otherwise present each group or single entry:
 

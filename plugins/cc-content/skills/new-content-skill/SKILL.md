@@ -278,7 +278,7 @@ name: <format-name>
 description: >
   Use this skill when the owner wants to write, draft, or generate a [FORMAT].
   Invoke when the user says "[TRIGGER PHRASES]".
-allowed-tools: Read, Write, Bash
+allowed-tools: Read, Write, Edit, Bash
 argument-hint: "[optional: path to campaign briefing file]"
 ---
 ```
