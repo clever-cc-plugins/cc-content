@@ -13,15 +13,15 @@ while IFS= read -r f; do
   [[ -n "$f" ]] || continue
   [[ "$f" == */_shared/learnings-protocol.md ]] && continue
 
-  staged="$(git show ":$f")"
-  [[ "$(sed -n 3p <<<"$staged")" =~ $marker ]] || continue
+  line3="$(git show ":$f" | sed -n 3p)"
+  [[ "$line3" =~ $marker ]] || continue
 
-  # Same body (everything except line 3) as HEAD: nothing to stamp.
-  [[ "$(git show "HEAD:$f" | sed '3d')" == "$(sed '3d' <<<"$staged")" ]] && continue
-  [[ "$(sed -n 3p <<<"$staged")" == "_Last updated: ${today}_" ]] && continue
+  # Same body (everything except line 3) as HEAD: nothing to stamp. Compared as a stream so trailing newlines count.
+  diff -q <(git show "HEAD:$f" | sed '3d') <(git show ":$f" | sed '3d') >/dev/null && continue
+  [[ "$line3" == "_Last updated: ${today}_" ]] && continue
 
-  # Rewrite line 3 of the staged blob, so unstaged edits are not pulled into the commit.
-  blob="$(sed "3s/.*/_Last updated: ${today}_/" <<<"$staged" | git hash-object -w --stdin)"
+  # Rewrite line 3 of the staged blob as a stream (bytes preserved), so unstaged edits are not pulled into the commit.
+  blob="$(git show ":$f" | sed "3s/.*/_Last updated: ${today}_/" | git hash-object -w --stdin)"
   mode="$(git ls-files -s -- "$f" | cut -d' ' -f1)"
   git update-index --cacheinfo "${mode},${blob},${f}"
   sed -i "3s/^_Last updated: .*_\$/_Last updated: ${today}_/" "$f"

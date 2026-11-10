@@ -7,7 +7,7 @@ else
 fi
 
 # Stamp the 'Last updated' date of changed shared files
-bash scripts/stamp-shared-files.sh
+bash scripts/stamp-shared-files.sh || exit 1
 
 # Keep CLAUDE.md config file table in sync
 bash scripts/sync-config-table.sh
