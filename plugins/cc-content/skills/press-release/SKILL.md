@@ -5,7 +5,7 @@ description: >
   Invoke when the user says "write a press release", "draft a press release",
   "create a press release", "generate a press release announcement", or similar
   requests for announcement-format content.
-allowed-tools: Read, Write, Bash
+allowed-tools: Read, Write, Edit, Bash
 argument-hint: "[optional: path to campaign briefing file]"
 ---
 
@@ -29,10 +29,7 @@ from the loaded context and confirming them with the owner.
 
 ## Step 0: Recall learnings
 
-If `.claude/learnings.md` exists, read it silently. Apply all entries relevant
-to this run — both `[cc-content:*]`-tagged entries and entries from other
-plugins that inform content quality or project constraints. Do not announce
-this step. If the file is absent, continue normally.
+Read `../_shared/learnings-protocol.md` and follow its **Recall** section.
 
 ## Step 1: Load context
 
@@ -239,33 +236,21 @@ Proceed to Step 8.
 
 This step has two phases:
 
-_Auto-store phase._ Before asking the user for feedback, review the run for qualifying
-observations. For each, append one tagged line to `.claude/learnings.md` (create with
-standard header if missing), tagged `[cc-content:press-release]`. Qualifies:
-content preferences or constraints not already in any loaded context file or `CLAUDE.md`;
-corrections the user made; project-specific facts that would change future output;
-accepted/rejected suggestions deviating from best practices. Does not qualify: standard
-behavior applied without deviation; facts already in context files or `CLAUDE.md`;
-anything derivable by re-reading context files; facts semantically equivalent to any
-existing `.claude/learnings.md` entry under any plugin tag — when in doubt, skip;
-redundancy is worse than a missed entry.
+_Auto-store phase._ Read `../_shared/learnings-protocol.md` and follow its **Writing** section. Tag entries `[cc-content:press-release]`; the source is `inferred` unless the user said it. Worth recording in this skill: content preferences or constraints, corrections the owner made to the output, project-specific facts that would change future output, and accepted or rejected deviations from best practices.
 
 _Explicit feedback._ Ask whether the output met expectations:
 
 > "Does this press release work for your needs? If you'd like changes, tell me what
 > to adjust, and I'll revise."
 
-If the user provides a correction, apply it and re-present the release. Then ask:
+If the user provides a correction or states a standing preference, apply it, record it per the protocol's **Writing** section (source `corrected` for a correction, `stated` for a preference), and re-present the release. Then ask:
 
 > "Better? Anything else?"
 
 Repeat until the user confirms quality or explicitly says "ship it" / "that's ready"
 / "this looks good."
 
-When the user confirms quality or skips feedback: if any entries were auto-stored,
-confirm:
-
-> "✓ N learning(s) auto-saved to `.claude/learnings.md`."
+When the user confirms quality or skips feedback, follow the protocol's **Confirming** section.
 
 Then deliver a closing line:
 

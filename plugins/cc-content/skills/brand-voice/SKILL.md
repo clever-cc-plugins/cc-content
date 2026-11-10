@@ -29,7 +29,7 @@ This skill does not draft content. It produces the guide that drafting skills fo
 
 ## Step 0: Recall learnings
 
-If `.claude/learnings.md` exists, read it silently. Apply all entries relevant to this run, both `[cc-content:brand-voice]`-tagged entries and entries from other plugins that inform content quality or project constraints. Note entries that concern voice (tone, wording, phrasing, punctuation habits) from any skill, tagged or not: they are input for refine mode. Do not announce this step. If the file is absent, continue normally.
+Read `../_shared/learnings-protocol.md` and follow its **Recall** section. Note entries that concern voice (tone, wording, phrasing, punctuation habits) from any skill, tagged or not: they are input for refine mode.
 
 ## Step 1: Detect what exists
 
@@ -216,39 +216,14 @@ Never overwrite an existing file without the user's explicit consent. Write the 
 
 ## Step 9: Feedback
 
-**Auto-store phase.** Before asking for feedback, review this run. For each qualifying observation, append one tagged line to `.claude/learnings.md` (create with the standard header if missing):
-
-```text
-[cc-content:brand-voice] <concise observation> — <YYYY-MM-DD>
-```
-
-Qualifies: preferences about how the guide is built that are not already in a loaded context file or `CLAUDE.md` (e.g. "owner wants test passages on recruiting topics only"); corrections the owner made to the flow or the draft; project-specific facts that would change a future run of this skill.
-
-Does not qualify: voice rules themselves (they belong in the guide, which is now a context file); standard behavior applied without deviation; facts already in context files or `CLAUDE.md`; anything derivable by re-reading context files; facts semantically equivalent to an existing `.claude/learnings.md` entry under any plugin tag. When in doubt, skip: redundancy is worse than a missed entry.
-
-Check for the file before appending:
-
-```bash
-ls .claude/learnings.md 2>/dev/null && echo "exists" || echo "missing"
-```
-
-Standard header when creating the file:
-
-```markdown
-# Learnings
-
-Corrections and feedback collected during content sessions.
-Entries are tagged by skill and dated.
-
----
-```
+**Auto-store phase.** Read `../_shared/learnings-protocol.md` and follow its **Writing** section. Tag entries `[cc-content:brand-voice]`; the source is `inferred` unless the user said it. Worth recording in this skill: preferences about how the guide is built (e.g. "owner wants test passages on recruiting topics only"), corrections the owner made to the flow or the draft, and project-specific facts that would change a future run of this skill. Voice rules themselves do not belong here: they belong in the guide, which is now a context file.
 
 **Explicit feedback.** After the auto-store phase, ask:
 
 > "Did the guide and the way we built it work for you? Any corrections or notes for future runs, or press Enter to finish."
 
-- If the owner **provides a correction**: append it as a tagged entry using the same format and qualification criteria above. Confirm: "✓ N learning(s) saved to `.claude/learnings.md`."
-- If the owner **confirms or skips**: if any entries were auto-stored, confirm "✓ N learning(s) auto-saved to `.claude/learnings.md`." Then exit. If nothing was stored, exit directly.
+- If the user provides a correction or states a standing preference, record it per the protocol's **Writing** section, with source `corrected` for a correction and `stated` for a preference.
+- Then follow the protocol's **Confirming** section. Then exit.
 
 ## Refine mode
 

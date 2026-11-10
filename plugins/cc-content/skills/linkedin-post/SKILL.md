@@ -4,7 +4,7 @@ description: >
   Use this skill when the owner wants to write, draft, or generate a LinkedIn post.
   Invoke when the user says "write a LinkedIn post", "draft a post for LinkedIn",
   "create a LinkedIn update", "generate a LinkedIn post", or "post on LinkedIn".
-allowed-tools: Read, Write, Bash
+allowed-tools: Read, Write, Edit, Bash
 argument-hint: "[optional: path to campaign briefing file]"
 ---
 
@@ -25,10 +25,7 @@ loaded context files and the owner's topic input.
 
 ## Step 0: Recall learnings
 
-If `.claude/learnings.md` exists, read it silently. Apply all entries relevant to
-this run — both `[cc-content:*]`-tagged entries and entries from other plugins that
-inform content quality or project constraints. Do not announce this step. If the file
-is absent, continue normally.
+Read `../_shared/learnings-protocol.md` and follow its **Recall** section.
 
 ## Step 1: Load context
 
@@ -192,49 +189,12 @@ If the output is degraded (brand voice or organization context missing), prepend
 
 ## Step 5: Feedback
 
-**Auto-store phase.** Before asking for feedback, review this run. For each qualifying
-observation, append one tagged line to `.claude/learnings.md` (create with standard
-header if missing):
-
-```text
-[cc-content:linkedin-post] <concise observation> — <YYYY-MM-DD>
-```
-
-Qualifies: content preferences or constraints not already in any loaded `context/` file
-or `CLAUDE.md`; corrections the owner made to the output; project-specific facts that
-would change future output; accepted/rejected suggestions deviating from best practices.
-
-Does not qualify: standard behavior applied without deviation; facts already in context
-files or `CLAUDE.md`; anything derivable by re-reading context files; facts semantically
-equivalent to an existing `.claude/learnings.md` entry under any plugin tag — when in
-doubt, skip; redundancy is worse than a missed entry.
-
-Check for the file before appending:
-
-```bash
-ls .claude/learnings.md 2>/dev/null && echo "exists" || echo "missing"
-```
-
-Standard header when creating the file:
-
-```markdown
-# Learnings
-
-Corrections and feedback collected during content sessions.
-Entries are tagged by skill and dated.
-
----
-```
+**Auto-store phase.** Read `../_shared/learnings-protocol.md` and follow its **Writing** section. Tag entries `[cc-content:linkedin-post]`; the source is `inferred` unless the user said it. Worth recording in this skill: content preferences or constraints, corrections the owner made to the output, project-specific facts that would change future output, and accepted or rejected deviations from best practices.
 
 **Explicit feedback.** After the auto-store phase, ask:
 
 > "Did this post meet expectations? If you have any corrections or notes for
 > future posts, share them here — or press Enter to finish."
 
-- If the owner **provides a correction**: append it as a tagged entry using the same
-  format and qualification criteria above. Confirm total entries written across both
-  phases: "✓ N learning(s) saved to `.claude/learnings.md`."
-- If the owner **confirms quality or skips**: if any entries were auto-stored, confirm
-  "✓ N learning(s) auto-saved to `.claude/learnings.md`." Then say "Great — the post
-  is ready to publish. Copy it above and paste directly into LinkedIn." and exit. If
-  nothing was stored, skip the confirmation and exit directly.
+- If the user provides a correction or states a standing preference, record it per the protocol's **Writing** section, with source `corrected` for a correction and `stated` for a preference.
+- Then follow the protocol's **Confirming** section. Then say "Great — the post is ready to publish. Copy it above and paste directly into LinkedIn." and exit.

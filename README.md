@@ -38,7 +38,7 @@ The content-production skills work for any industry, audience, and output langua
 | `/cc-content:atomize`                    | Repurposes one core message across multiple formats in a single run. Claims and proof points stay identical, while structure, tone, and CTA adapt to each platform                                    |
 | `/cc-content:humanize`                   | Removes AI tells from an existing draft and rewrites it to read as human-written, calibrated to your brand voice                                                                                      |
 | `/cc-content:content-performance-review` | Analyzes how published pieces performed, based on data you paste in, and generates iteration variants for the next piece                                                                              |
-| `/cc-content:session-wrap`               | Reviews session deliverables, logs feedback and corrections, detects recurring patterns, and commits your work                                                                                        |
+| `/cc-content:session-wrap`               | Reviews session deliverables, logs feedback and corrections, reviews learnings and promotes, keeps or retires them, and commits your work                                                             |
 | `/cc-content:new-content-skill`          | Turns research notes into a complete content-production skill for a new output format. Build a project-local custom skill, or add `--plugin` to create a pre-built skill for the plugin               |
 
 ---

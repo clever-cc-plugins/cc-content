@@ -140,4 +140,4 @@ Show the proposed row before writing:
 
 ## Feedback
 
-After a successful registration, ask: "Did this meet your expectations? If not, I'll log a correction to `.claude/learnings.md`." If the owner gives a correction, append it as `[cc-content:register-context] <correction> — <YYYY-MM-DD>` (create the file with a `# Learnings` heading if missing). If they confirm or skip, exit.
+After a successful registration, ask: "Did this meet your expectations? If not, tell me what to change." If the owner gives a correction, read `../_shared/learnings-protocol.md` and record it per its **Writing** section (tag `[cc-content:register-context]`, source `corrected`), then follow its **Confirming** section. If they confirm or skip, exit.

@@ -2,7 +2,7 @@
 name: session-wrap
 description: >
   Use this skill at the end of a content creation session to review deliverables,
-  collect feedback, detect recurring correction patterns, and create a git commit.
+  collect feedback, review learnings (promote, keep or retire), and create a git commit.
   Invoke when the user says "wrap up", "end session", "session wrap", "wrap session",
   "commit session work", or "close out this session".
 allowed-tools: Read, Write, Edit, Bash
@@ -12,15 +12,13 @@ disable-model-invocation: true
 # Session Wrap Skill
 
 You are closing out a content creation session. The goals are: (1) review what
-was produced, (2) collect corrections for any skills used, (3) surface recurring
-patterns from past learnings, (4) promote patterns if warranted, and (5) commit
+was produced, (2) collect corrections for any skills used, (3) review the
+learnings (promote, keep or retire), and (4) commit
 all session work with a clean, well-labelled message.
 
 ## Step 0: Recall learnings
 
-If `.claude/learnings.md` exists, read it silently. This ensures pattern detection
-in Step 5 operates on the most current state of the file. Do not announce this step.
-If the file is absent, continue normally.
+Read `../_shared/learnings-protocol.md` and follow its **Recall** section.
 
 ## Step 1: Review deliverables
 
@@ -33,9 +31,9 @@ git status --short
 If git status reports **no changes**:
 
 > "No changes detected in git. Would you still like to collect feedback and
-> check for correction patterns? (yes / no)"
+> review learnings? (yes / no)"
 
-If the owner says no, skip to Step 5. If yes, continue but skip the file summary.
+If the owner says no, skip to Step 6. If yes, continue but skip the file summary.
 
 If changes **exist**, group them into four categories and present them:
 
@@ -86,19 +84,21 @@ to register a file immediately, without waiting for session wrap.
 
 ## Step 1c: Check shared reference files for updates
 
-`new-content-skill` (end-user mode) copies two shared reference files into
-project-local custom skills: `.claude/skills/_shared/persuasion-principles.md`
-and `.claude/skills/_shared/storytelling-frameworks.md`. That copy happens once,
+`new-content-skill` (end-user mode) copies four shared reference files into
+project-local custom skills: `.claude/skills/_shared/storytelling-frameworks.md`,
+`.claude/skills/_shared/persuasion-principles.md`,
+`.claude/skills/_shared/readability-patterns.md` and
+`.claude/skills/_shared/learnings-protocol.md`. That copy happens once,
 at creation time — plugin updates to these files never reach a project
 automatically. This step closes that gap.
 
-Check whether either file exists in the project:
+Check which of these files exist in the project:
 
 ```bash
-ls .claude/skills/_shared/persuasion-principles.md .claude/skills/_shared/storytelling-frameworks.md 2>/dev/null
+ls .claude/skills/_shared/storytelling-frameworks.md .claude/skills/_shared/persuasion-principles.md .claude/skills/_shared/readability-patterns.md .claude/skills/_shared/learnings-protocol.md 2>/dev/null
 ```
 
-If **neither exists**: skip this step silently — the project has no project-local
+If **none exists**: skip this step silently — the project has no project-local
 custom skill using these files.
 
 For each file that **does** exist, compare it against this plugin's own bundled
@@ -154,86 +154,44 @@ After collecting feedback for all listed skills, proceed to Step 4.
 
 ## Step 4: Append to learnings
 
-For each correction collected in Step 3, append a tagged, dated entry to
-`.claude/learnings.md`.
-
-First, check whether the file exists:
-
-```bash
-ls .claude/learnings.md 2>/dev/null && echo "exists" || echo "missing"
-```
-
-If **missing**, create it with a header:
-
-```markdown
-# Learnings
-
-Corrections and feedback collected during content sessions.
-Entries are tagged by skill and dated.
-
----
-```
-
-Then append each correction as:
-
-```
-[<skill-name>] <correction summary> — <YYYY-MM-DD>
-```
-
-Use today's date (available from the session context: `currentDate`).
-
-After all entries are appended, confirm:
-
-> "✓ <N> learning(s) saved to `.claude/learnings.md`."
+Record each correction from Step 3 per the protocol's **Writing** section (`../_shared/learnings-protocol.md`), tagged with the skill's own plugin and name, `[<plugin>:<skill-name>]`, source `corrected`. A name the owner gave as `cc-email:newsletter` keeps its own plugin prefix, and an unqualified name uses `cc-content`. Then follow its **Confirming** section.
 
 If no corrections were collected, skip this step silently.
 
-## Step 5: Detect recurring patterns
+## Step 5: Review learnings
 
-Read `.claude/learnings.md` (if it exists):
+Read `../_shared/learnings-protocol.md` and follow its **Reviewing** section. Scope: entries prefixed `[cc-content:` that are dated today, plus older `[cc-content:` entries that group with them. Entries from other plugins are managed by their own tooling and must not be surfaced or promoted here. If the owner says "review all", the scope is every `[cc-content:` entry.
 
-```bash
-cat .claude/learnings.md 2>/dev/null
-```
+If `.claude/learnings.md` is absent or no entry is in scope, say:
 
-Only scan entries prefixed `[cc-content:` — entries from other plugins are managed
-by their own tooling and must not be surfaced or promoted here.
+> No new learnings to review. Say `review all` to include older entries.
 
-Parse the filtered entries that follow the `[cc-content:<skill-name>] <text> — <date>` format.
-Group them by skill tag. For each skill tag, look for three or more entries that
-express **semantically similar** corrections — same underlying concern, even if
-worded differently.
+Then proceed to Step 6.
 
-Examples of semantically similar corrections:
-
-- "hooks are too long" / "opening line rambles" / "first two lines need to be
-  punchier" → all about hook brevity/impact
-
-If **no skill tag has three or more similar entries**: say "No recurring patterns
-detected." and proceed to Step 6.
-
-If **one or more patterns are detected**: present each group:
+Otherwise present each group or single entry:
 
 ```
 ─────────────────────────────────────────────
-Recurring pattern detected: <skill-name>
+Learnings review: <skill-name>
 ─────────────────────────────────────────────
-The following corrections appear related:
-  • [<date>] <correction 1>
-  • [<date>] <correction 2>
-  • [<date>] <correction 3>
+  • [<date>] <entry 1> (<source>)
+  • [<date>] <entry 2> (<source>)
 ─────────────────────────────────────────────
 ```
 
-For each group, ask:
+After the last group, show the footer once: "Older entries are not shown. Say `review all` to include them."
 
-> "This pattern has come up <N> times. Would you like to:
-> (a) Add a rule to `<skill-name>`'s format guidelines
-> (b) Add a rule to the project `CLAUDE.md`
-> (c) Add a rule to the brand voice guide `<path>`
-> (d) Dismiss — leave it in learnings for now"
+For each group or single entry, state the entry count, the sources and a one-line reason, then propose Promote, Keep or Retire. Ask:
 
-The block above shows all four options. Show option (c) only when the pattern concerns voice (tone, wording, phrasing, punctuation habits) rather than format, and at least one voice guide is registered in the `## Context files` table. Detect a voice guide by its summary (a brand voice guide, tone, or writing style), not by its label. Without a voice pattern or a registered voice guide, show only (a), (b) and (d), and keep the letters (a), (b), (d).
+> "What should I do with this? Promote to:
+> (a) `<skill-name>`'s format guidelines
+> (b) the project `CLAUDE.md`
+> (c) the brand voice guide `<path>`
+> Or: (d) Keep it in learnings, or (e) Retire it."
+
+Option (a) covers the format guidelines of one skill. When a group spans several skills, propose one (a) target per skill, and remove only the entries each chosen target covers.
+
+Show option (c) only when the entry concerns voice (tone, wording, phrasing, punctuation habits) rather than format, and at least one voice guide is registered in the `## Context files` table. Detect a voice guide by its summary (a brand voice guide, tone, or writing style), not by its label. Without a voice entry or a registered voice guide, show only (a), (b), (d) and (e), and keep the letters.
 
 Handle responses:
 
@@ -268,12 +226,17 @@ If the file has no numbered guide sections (for example a quick voice note from 
 
 Confirm: "✓ Rule added to `<path>`."
 
-**Option (d) — dismiss**:
+**Option (d) — keep**:
 
-Say: "Pattern noted but not promoted. It will remain in `.claude/learnings.md`
-for future reference."
+Leave the entries unchanged in `.claude/learnings.md`. Say: "Kept in `.claude/learnings.md`."
 
-Process all detected patterns before moving on.
+**Option (e) — retire**:
+
+Remove the entries from `.claude/learnings.md`; when no entries remain below the header, delete the file, or leave only the header if you cannot delete files. Tell the user the reason and, if applicable, the file that already covers the entry (the protocol's Retire rule). Say: "✓ Retired from `.claude/learnings.md`."
+
+After a promotion (a), (b) or (c), remove only the entries the chosen target covers from `.claude/learnings.md`, as the protocol's **Reviewing** section requires.
+
+Process all groups and entries in scope before moving on.
 
 ## Step 6: Commit
 
@@ -346,6 +309,7 @@ Session complete
 Deliverables reviewed:   <N files>
 Learnings logged:        <N entries (or "none")>
 Patterns promoted:       <N (or "none")>
+Learnings retired:       <N (or "none")>
 Committed:               <hash> (or "not committed")
 ─────────────────────────────────────────────
 ```

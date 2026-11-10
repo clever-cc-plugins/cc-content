@@ -7,7 +7,7 @@ description: >
   outreach email", "create a newsletter email", "write a cold email", "draft a nurture
   email", or "generate an email campaign". Not for everyday personal or internal
   professional correspondence.
-allowed-tools: Read, Write, Bash
+allowed-tools: Read, Write, Edit, Bash
 argument-hint: "[optional: path to campaign briefing file]"
 ---
 
@@ -32,8 +32,7 @@ loaded context files, the campaign briefing (if any), and the owner's topic inpu
 
 ## Step 0: Recall learnings
 
-If `.claude/learnings.md` exists, read it silently. Apply all relevant entries to
-inform this run. Do not announce this step. If the file is absent, continue normally.
+Read `../_shared/learnings-protocol.md` and follow its **Recall** section.
 
 ## Step 1: Load context
 
@@ -213,37 +212,9 @@ If output is degraded (a required context need is uncovered), prepend:
 
 This step has two phases:
 
-**Auto-store phase.** Before asking the user for feedback, review the run for
-qualifying observations. For each, append one tagged line to `.claude/learnings.md`
-(create with standard header if missing), tagged `[cc-content:marketing-email]`.
-Qualifies: content preferences or constraints not already in any loaded context file
-or `CLAUDE.md`; corrections the user made; project-specific facts that would change
-future output; accepted/rejected suggestions deviating from best practices. Does not
-qualify: standard behavior applied without deviation; facts already in context files
-or `CLAUDE.md`; anything derivable by re-reading context files; facts semantically
-equivalent to any existing `.claude/learnings.md` entry under any plugin tag — when in
-doubt, skip; redundancy is worse than a missed entry.
+**Auto-store phase.** Read `../_shared/learnings-protocol.md` and follow its **Writing** section. Tag entries `[cc-content:marketing-email]`; the source is `inferred` unless the user said it. Worth recording in this skill: content preferences or constraints, corrections the owner made to the output, project-specific facts that would change future output, and accepted or rejected deviations from best practices.
 
-Check for the file before appending:
+**Explicit feedback.** Ask whether the output met expectations.
 
-```bash
-ls .claude/learnings.md 2>/dev/null && echo "exists" || echo "missing"
-```
-
-Standard header when creating the file:
-
-```markdown
-# Learnings
-
-Corrections and feedback collected during content sessions.
-Entries are tagged by skill and dated.
-
----
-```
-
-**Explicit feedback.** Ask whether the output met expectations. If the user provides a
-correction, append it as a tagged entry using the same criteria. Confirm total entries
-written across both phases: "✓ N learning(s) saved to `.claude/learnings.md`." If the
-user confirms quality or skips: if any entries were auto-stored, confirm
-"✓ N learning(s) auto-saved to `.claude/learnings.md`." Then deliver a closing line —
-`Paste into your email marketing tool.` — and exit.
+- If the user provides a correction or states a standing preference, record it per the protocol's **Writing** section, with source `corrected` for a correction and `stated` for a preference.
+- Then follow the protocol's **Confirming** section. Then deliver a closing line — `Paste into your email marketing tool.` — and exit.
