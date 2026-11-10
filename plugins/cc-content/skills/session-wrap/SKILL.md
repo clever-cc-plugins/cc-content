@@ -162,7 +162,7 @@ If no corrections were collected, skip this step silently.
 
 Read `../_shared/learnings-protocol.md` and follow its **Reviewing** section. Scope: entries prefixed `[cc-content:` that are dated today, plus older `[cc-content:` entries that group with them. Entries from other plugins are managed by their own tooling and must not be surfaced or promoted here. If the owner says "review all", the scope is every `[cc-content:` entry.
 
-If `.claude/learnings.md` is absent or no entry is in scope: say "No new learnings to review. Say "review all" to include older entries." and proceed to Step 6.
+If `.claude/learnings.md` is absent or no entry is in scope, say: No new learnings to review. Say `review all` to include older entries. Then proceed to Step 6.
 
 Otherwise present each group or single entry:
 
@@ -173,9 +173,9 @@ Learnings review: <skill-name>
   • [<date>] <entry 1> (<source>)
   • [<date>] <entry 2> (<source>)
 ─────────────────────────────────────────────
-Older entries are not shown. Say "review all" to include them.
-─────────────────────────────────────────────
 ```
+
+After the last group, show the footer once: "Older entries are not shown. Say `review all` to include them."
 
 For each group or single entry, state the entry count, the sources and a one-line reason, then propose Promote, Keep or Retire. Ask:
 
@@ -226,7 +226,7 @@ Leave the entries unchanged in `.claude/learnings.md`. Say: "Kept in `.claude/le
 
 **Option (e) — retire**:
 
-Remove the entries from `.claude/learnings.md`, and delete the file when no entries remain below the header. Say: "✓ Retired from `.claude/learnings.md`."
+Remove the entries from `.claude/learnings.md`; when no entries remain below the header, delete the file, or leave only the header if you cannot delete files. Tell the user the reason and, if applicable, the file that already covers the entry (the protocol's Retire rule). Say: "✓ Retired from `.claude/learnings.md`."
 
 After a promotion (a), (b) or (c), remove the promoted entries from `.claude/learnings.md` as well, as the protocol's **Reviewing** section requires.
 
