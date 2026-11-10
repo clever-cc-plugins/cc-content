@@ -8,7 +8,7 @@ description: >
   this before drafting", or "generate a prompt I can run in ChatGPT/Perplexity for
   research". This produces only the prompt text — it does not run research itself,
   call any external tool, or save results anywhere.
-allowed-tools: Read, Write, Bash
+allowed-tools: Read, Write, Edit, Bash
 argument-hint: "[optional: research topic]"
 ---
 
@@ -24,8 +24,7 @@ entirely up to them.
 
 ## Step 0: Recall learnings
 
-If `.claude/learnings.md` exists, read it silently. Apply all entries relevant to this
-run. Do not announce this step. If the file is absent, continue normally.
+Read `../_shared/learnings-protocol.md` and follow its **Recall** section.
 
 ## Step 1: Gather the topic
 
@@ -80,45 +79,11 @@ Follow it with one line:
 
 ## Step 5: Feedback
 
-**Auto-store phase.** Before asking for feedback, review this run. For each
-qualifying observation, append one tagged line to `.claude/learnings.md` (create with
-the standard header if missing):
-
-```text
-[cc-content:research-prompt] <concise observation> — <YYYY-MM-DD>
-```
-
-Qualifies: recurring scope or format preferences not already in context (e.g. "owner
-always wants a competitor-landscape sub-section"); corrections the owner made.
-
-Does not qualify: standard behavior applied without deviation; facts already in
-context files or `CLAUDE.md`; facts semantically equivalent to an existing
-`.claude/learnings.md` entry under any plugin tag — when in doubt, skip.
-
-Check for the file before appending:
-
-```bash
-ls .claude/learnings.md 2>/dev/null && echo "exists" || echo "missing"
-```
-
-Standard header when creating the file:
-
-```markdown
-# Learnings
-
-Corrections and feedback collected during content sessions.
-Entries are tagged by skill and dated.
-
----
-```
+**Auto-store phase.** Read `../_shared/learnings-protocol.md` and follow its **Writing** section. Tag entries `[cc-content:research-prompt]`; the source is `inferred` unless the user said it. Worth recording in this skill: recurring scope or format preferences (e.g. "owner always wants a competitor-landscape sub-section") and corrections the owner made.
 
 **Explicit feedback.** After the auto-store phase, ask:
 
 > "Does this prompt cover what you need? Any corrections — or press Enter to finish."
 
-- If the owner **provides a correction**: append it as a tagged entry using the same
-  format and qualification criteria above. Confirm: "✓ N learning(s) saved to
-  `.claude/learnings.md`."
-- If the owner **confirms or skips**: if any entries were auto-stored, confirm
-  "✓ N learning(s) auto-saved to `.claude/learnings.md`." Then exit. If nothing was
-  stored, exit directly.
+- If the user provides a correction, record it per the protocol's **Writing** section with source `corrected`.
+- Then follow the protocol's **Confirming** section. Then exit.

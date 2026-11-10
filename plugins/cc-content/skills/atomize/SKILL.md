@@ -10,7 +10,7 @@ description: >
   across channels. For a single format, use the dedicated format skill (e.g.
   blog-article) or long-tail-copy instead — this skill is for the
   fan-out case specifically.
-allowed-tools: Read, Write, Bash, Agent
+allowed-tools: Read, Write, Edit, Bash, Agent
 argument-hint: "[optional: path to campaign briefing; defaults to brief.md if present]"
 ---
 
@@ -35,8 +35,7 @@ algorithms both punish.
 
 ## Step 0: Recall learnings
 
-If `.claude/learnings.md` exists, read it silently, `[cc-content:*]` tags plus any
-cross-plugin entries relevant to distribution/repurposing. Never announce.
+Read `../_shared/learnings-protocol.md` and follow its **Recall** section. In particular, entries about distribution and repurposing.
 
 ## Step 1: Load context
 
@@ -357,52 +356,12 @@ here: newsletter, Twitter/X thread."
 Run this feedback step once for the whole batch of drafted formats, not once per
 format — the same tag and qualification rules apply to the batch as a whole.
 
-**Auto-store phase.** Before asking for feedback, review this run, including the
-one-line notes each Step 5 subagent returned for the batch learnings step. For each
-qualifying observation, append one tagged line to `.claude/learnings.md` (create with
-the standard header if missing):
-
-```text
-[cc-content:atomize] <concise observation> — <YYYY-MM-DD>
-```
-
-Qualifies: content preferences or constraints not already in any loaded context file
-or `CLAUDE.md`; corrections the owner made to the output; project-specific facts that
-would change future output (e.g. "repurposing always targets these exact five
-formats"); accepted/rejected deviations from best practices; observations about which
-formats atomize well from the core message (relates to research findings on reliable
-vs. unreliable format pairs).
-
-Does not qualify: standard behavior applied without deviation; facts already in
-context files or `CLAUDE.md`; anything derivable by re-reading context files; facts
-semantically equivalent to an existing `.claude/learnings.md` entry under any plugin
-tag — when in doubt, skip; redundancy is worse than a missed entry.
-
-Check for the file before appending:
-
-```bash
-ls .claude/learnings.md 2>/dev/null && echo "exists" || echo "missing"
-```
-
-Standard header when creating the file:
-
-```markdown
-# Learnings
-
-Corrections and feedback collected during content sessions.
-Entries are tagged by skill and dated.
-
----
-```
+**Auto-store phase.** Read `../_shared/learnings-protocol.md` and follow its **Writing** section. Tag entries `[cc-content:atomize]`; the source is `inferred` unless the user said it. Worth recording in this skill: content preferences or constraints for repurposing (e.g. "repurposing always targets these exact five formats"), corrections the owner made to the output, accepted or rejected deviations from best practices, and which formats atomize well from the core message (relates to the research findings on reliable vs. unreliable format pairs). Include the one-line notes each Step 5 subagent returned for the batch learnings step.
 
 **Explicit feedback.** After the auto-store phase, ask:
 
 > "Did this batch of formats meet expectations? Any corrections or notes for future
 > atomization runs — or press Enter to finish."
 
-- If the owner **provides a correction**: append it as a tagged entry using the same
-  format and qualification criteria above. Confirm: "✓ N learning(s) saved to
-  `.claude/learnings.md`."
-- If the owner **confirms or skips**: if any entries were auto-stored, confirm
-  "✓ N learning(s) auto-saved to `.claude/learnings.md`." Then exit. If nothing was
-  stored, exit directly.
+- If the user provides a correction, record it per the protocol's **Writing** section with source `corrected`.
+- Then follow the protocol's **Confirming** section. Then exit.

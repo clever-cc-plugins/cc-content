@@ -11,7 +11,7 @@ description: >
   any source — the owner's own writing, another tool's output, or a previous
   cc-content skill's draft. Do NOT use it to generate new content from scratch; it
   only revises an existing draft.
-allowed-tools: Read, Write, Bash
+allowed-tools: Read, Write, Edit, Bash
 argument-hint: "[optional: path to the draft to humanize]"
 ---
 
@@ -31,10 +31,7 @@ rewrites of the same input.
 
 ## Step 0: Recall learnings
 
-If `.claude/learnings.md` exists, read it silently. Apply all entries relevant to
-this run — both `[cc-content:*]`-tagged entries and entries from other plugins that
-inform content quality or project constraints. Do not announce this step. If the
-file is absent, continue normally.
+Read `../_shared/learnings-protocol.md` and follow its **Recall** section.
 
 ## Step 1: Load context
 
@@ -231,49 +228,12 @@ human-writing conventions only
 
 ## Step 6: Feedback
 
-**Auto-store phase.** Before asking for feedback, review this run. For each
-qualifying observation, append one tagged line to `.claude/learnings.md` (create with
-the standard header if missing):
-
-```text
-[cc-content:humanize] <concise observation> — <YYYY-MM-DD>
-```
-
-Qualifies: humanization preferences not already in any loaded context file or
-`CLAUDE.md` (e.g. "owner always wants contractions even in the formal-voice
-project"); corrections the owner made to the rewritten draft; project-specific
-facts that would change future humanization passes.
-
-Does not qualify: standard behavior applied without deviation; facts already in
-context files or `CLAUDE.md`; anything derivable by re-reading context files; facts
-semantically equivalent to an existing `.claude/learnings.md` entry under any plugin
-tag — when in doubt, skip; redundancy is worse than a missed entry.
-
-Check for the file before appending:
-
-```bash
-ls .claude/learnings.md 2>/dev/null && echo "exists" || echo "missing"
-```
-
-Standard header when creating the file:
-
-```markdown
-# Learnings
-
-Corrections and feedback collected during content sessions.
-Entries are tagged by skill and dated.
-
----
-```
+**Auto-store phase.** Read `../_shared/learnings-protocol.md` and follow its **Writing** section. Tag entries `[cc-content:humanize]`; the source is `inferred` unless the user said it. Worth recording in this skill: humanization preferences (e.g. "owner always wants contractions even in the formal-voice project"), corrections the owner made to the rewritten draft, and project-specific facts that would change future humanization passes.
 
 **Explicit feedback.** After the auto-store phase, ask:
 
 > "Did this humanized version work for you? Any corrections or notes for future
 > passes — or press Enter to finish."
 
-- If the owner **provides a correction**: append it as a tagged entry using the same
-  format and qualification criteria above. Confirm: "✓ N learning(s) saved to
-  `.claude/learnings.md`."
-- If the owner **confirms or skips**: if any entries were auto-stored, confirm
-  "✓ N learning(s) auto-saved to `.claude/learnings.md`." Then exit. If nothing was
-  stored, exit directly.
+- If the user provides a correction, record it per the protocol's **Writing** section with source `corrected`.
+- Then follow the protocol's **Confirming** section. Then exit.

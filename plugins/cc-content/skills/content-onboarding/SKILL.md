@@ -25,9 +25,7 @@ If `$ARGUMENTS` contains a file path, skip to Step 3 using that file as the star
 
 ## Step 0: Recall learnings
 
-If `.claude/learnings.md` exists, read it silently. Apply relevant entries — in particular,
-path preferences, rejected interview answers, or project constraints discovered in prior runs.
-Do not announce this step. If the file is absent, continue normally.
+Read `../_shared/learnings-protocol.md` and follow its **Recall** section. In particular, path preferences, rejected interview answers, or project constraints discovered in prior runs.
 
 ## Step 1: Discover existing context
 
@@ -369,38 +367,6 @@ Then say:
 Before ending, review the interview for nuances that were discovered but not formalized
 into any context file created during this run.
 
-For each qualifying observation, append one tagged line to `.claude/learnings.md`
-(create with standard header if missing):
+**Auto-store phase.** Read `../_shared/learnings-protocol.md` and follow its **Writing** section. Tag entries `[cc-content:content-onboarding]`; the source is `inferred` unless the user said it. Worth recording in this skill: a preference, constraint or project fact revealed during the interview that is not captured in any context file written this run.
 
-```text
-[cc-content:content-onboarding] <concise observation> — <YYYY-MM-DD>
-```
-
-**Qualifies:** a preference, constraint, or project fact revealed during the interview
-that is not already captured in any context file written this run, in `CLAUDE.md`, or
-in any existing `.claude/learnings.md` entry under any plugin tag.
-
-**Does not qualify:** information written into a context file just now; facts already
-in `CLAUDE.md`; standard onboarding behavior applied without deviation; facts
-semantically equivalent to any existing entry — when in doubt, skip; redundancy is
-worse than a missed entry.
-
-Check for the file before appending:
-
-```bash
-ls .claude/learnings.md 2>/dev/null && echo "exists" || echo "missing"
-```
-
-Standard header when creating the file:
-
-```markdown
-# Learnings
-
-Corrections and feedback collected during content sessions.
-Entries are tagged by skill and dated.
-
----
-```
-
-If any entries were written, confirm: "✓ N learning(s) saved to `.claude/learnings.md`."
-If nothing qualified, skip silently.
+Then follow the protocol's **Confirming** section.

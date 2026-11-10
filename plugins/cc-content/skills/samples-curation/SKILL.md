@@ -6,7 +6,7 @@ description: >
   annotate a piece of content for future reference. Invoke when the user says
   "save this as a sample", "add to samples", "curate an example", "record this
   good post", or "update samples.md".
-allowed-tools: Read, Write, Bash
+allowed-tools: Read, Write, Edit, Bash
 ---
 
 # Samples Curation Skill
@@ -19,8 +19,7 @@ generation.
 
 ## Step 0: Recall learnings
 
-If `.claude/learnings.md` exists, read it silently. Apply all entries relevant to
-this run. Do not announce this step. If the file is absent, continue normally.
+Read `../_shared/learnings-protocol.md` and follow its **Recall** section.
 
 ## Step 1: Identify the content
 
@@ -141,42 +140,8 @@ Ask: "Would you like to curate another example? (yes / no)"
 
 Evaluate the full curation session — not individual loops — for patterns worth storing.
 
-For each qualifying observation, append one tagged line to `.claude/learnings.md`
-(create with standard header if missing):
+**Auto-store phase.** Read `../_shared/learnings-protocol.md` and follow its **Writing** section. Tag entries `[cc-content:samples-curation]`; the source is `inferred` unless the user said it. Worth recording in this skill: patterns discovered across the session (e.g. consistent length or format preferences in the samples selected, recurrently skipped annotation fields, or constraints the owner mentioned about what counts as a good sample), but not individual sample content or facts about what was saved, which are in the samples file.
 
-```text
-[cc-content:samples-curation] <concise observation> — <YYYY-MM-DD>
-````
-
-**Qualifies:** patterns discovered across the session — e.g., consistent length or
-format preferences in the samples selected, recurrently skipped annotation fields,
-or constraints the owner mentioned about what counts as a good sample — that are not
-already captured in any `context/` file, `CLAUDE.md`, or any existing
-`.claude/learnings.md` entry under any plugin tag.
-
-**Does not qualify:** individual sample content; facts about what was saved (those
-are in the samples file); standard curation behavior applied without deviation;
-facts semantically equivalent to an existing entry under any plugin tag — when in
-doubt, skip; redundancy is worse than a missed entry.
-
-Check for the file before appending:
-
-```bash
-ls .claude/learnings.md 2>/dev/null && echo "exists" || echo "missing"
-```
-
-Standard header when creating the file:
-
-```markdown
-# Learnings
-
-Corrections and feedback collected during content sessions.
-Entries are tagged by skill and dated.
-
----
-```
-
-If any entries were written, confirm: "✓ N learning(s) saved to `.claude/learnings.md`."
-If nothing qualified, skip silently.
+Then follow the protocol's **Confirming** section.
 
 Then say: "Samples curation complete. You can invoke this skill again any time to add more."

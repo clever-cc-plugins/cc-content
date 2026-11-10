@@ -9,7 +9,7 @@ description: >
   the company could pick up the topic. This is the idea-generation step that
   precedes writing — it produces distinct strategic angles the owner can then hand
   to a writing skill. Do NOT use it to write the finished text itself.
-allowed-tools: Read, Write, Bash
+allowed-tools: Read, Write, Edit, Bash
 argument-hint: "[optional: path to an inspiration file or campaign briefing]"
 ---
 
@@ -32,10 +32,7 @@ through the loaded context files and the owner's input.
 
 ## Step 0: Recall learnings
 
-If `.claude/learnings.md` exists, read it silently. Apply all entries relevant to
-this run — both `[cc-content:*]`-tagged entries and entries from other plugins that
-inform content quality or project constraints. Do not announce this step. If the
-file is absent, continue normally.
+Read `../_shared/learnings-protocol.md` and follow its **Recall** section.
 
 ## Step 1: Load context
 
@@ -174,49 +171,12 @@ Do not auto-draft. Wait for the owner to choose.
 
 ## Step 5: Feedback
 
-**Auto-store phase.** Before asking for feedback, review this run. For each
-qualifying observation, append one tagged line to `.claude/learnings.md` (create
-with the standard header if missing):
-
-```text
-[cc-content:content-ideation] <concise observation> — <YYYY-MM-DD>
-```
-
-Qualifies: angle preferences or constraints not already in any loaded context file
-or `CLAUDE.md` (e.g. "owner dislikes contrarian theses", "always wants a customer-
-story angle in the mix"); corrections the owner made; project-specific facts that
-would change future ideation.
-
-Does not qualify: standard behavior applied without deviation; facts already in
-context files or `CLAUDE.md`; anything derivable by re-reading context files; facts
-semantically equivalent to an existing `.claude/learnings.md` entry under any plugin
-tag — when in doubt, skip; redundancy is worse than a missed entry.
-
-Check for the file before appending:
-
-```bash
-ls .claude/learnings.md 2>/dev/null && echo "exists" || echo "missing"
-```
-
-Standard header when creating the file:
-
-```markdown
-# Learnings
-
-Corrections and feedback collected during content sessions.
-Entries are tagged by skill and dated.
-
----
-```
+**Auto-store phase.** Read `../_shared/learnings-protocol.md` and follow its **Writing** section. Tag entries `[cc-content:content-ideation]`; the source is `inferred` unless the user said it. Worth recording in this skill: angle preferences or constraints (e.g. "owner dislikes contrarian theses", "always wants a customer-story angle in the mix"), corrections the owner made, and project-specific facts that would change future ideation.
 
 **Explicit feedback.** After the auto-store phase, ask:
 
 > "Do these angles work for you? Any corrections or notes for future ideation —
 > or press Enter to finish."
 
-- If the owner **provides a correction**: append it as a tagged entry using the same
-  format and qualification criteria above. Confirm: "✓ N learning(s) saved to
-  `.claude/learnings.md`."
-- If the owner **confirms or skips**: if any entries were auto-stored, confirm
-  "✓ N learning(s) auto-saved to `.claude/learnings.md`." Then exit. If nothing was
-  stored, exit directly.
+- If the user provides a correction, record it per the protocol's **Writing** section with source `corrected`.
+- Then follow the protocol's **Confirming** section. Then exit.

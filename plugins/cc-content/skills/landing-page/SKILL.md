@@ -4,7 +4,7 @@ description: >
   Use this skill when the owner wants to write, draft, or generate a landing page.
   Invoke when the user says "write a landing page", "draft a registration page",
   "create a webinar landing page".
-allowed-tools: Read, Write, Bash
+allowed-tools: Read, Write, Edit, Bash
 argument-hint: "[optional: path to campaign briefing file]"
 ---
 
@@ -32,10 +32,7 @@ brief, and asks the owner directly whenever that inference isn't confident.
 
 ## Step 0: Recall learnings
 
-If `.claude/learnings.md` exists, read it silently. Apply all entries relevant to
-this run — both `[cc-content:landing-page]`-tagged entries and entries from other
-plugins that inform content quality or project constraints. Do not announce this
-step. If the file is absent, continue normally.
+Read `../_shared/learnings-protocol.md` and follow its **Recall** section.
 
 ## Step 1: Load context
 
@@ -177,42 +174,9 @@ If output is degraded (a required context need is uncovered), prepend:
 
 This step has two phases:
 
-**Auto-store phase.** Before asking the user for feedback, review the run for
-qualifying observations. For each, append one tagged line to `.claude/learnings.md`
-(create with standard header if missing), tagged `[cc-content:landing-page]`.
-Qualifies: content preferences or constraints not already in any loaded context file
-or `CLAUDE.md`; corrections the user made; project-specific facts that would change
-future output; accepted/rejected suggestions deviating from best practices. Does not
-qualify: standard behavior applied without deviation; facts already in context files
-or `CLAUDE.md`; anything derivable by re-reading context files; facts semantically
-equivalent to any existing `.claude/learnings.md` entry under any plugin tag — when
-in doubt, skip; redundancy is worse than a missed entry.
+**Auto-store phase.** Read `../_shared/learnings-protocol.md` and follow its **Writing** section. Tag entries `[cc-content:landing-page]`; the source is `inferred` unless the user said it. Worth recording in this skill: content preferences or constraints, corrections the owner made to the output, project-specific facts that would change future output, and accepted or rejected deviations from best practices.
 
-Check for the file before appending:
+**Explicit feedback.** Ask whether the output met expectations.
 
-```bash
-ls .claude/learnings.md 2>/dev/null && echo "exists" || echo "missing"
-```
-
-Standard header when creating the file:
-
-```markdown
-# Learnings
-
-Corrections and feedback collected during content sessions.
-Entries are tagged by skill and dated.
-
----
-```
-
-**Explicit feedback.** Ask whether the output met expectations. If the user provides
-a correction, append it as a tagged entry using the same criteria. Confirm total
-entries written across both phases: "✓ N learning(s) saved to `.claude/learnings.md`."
-If the user confirms quality or skips: if any entries were auto-stored, confirm
-"✓ N learning(s) auto-saved to `.claude/learnings.md`." Then deliver a closing line
-and exit. Tailor the closing delivery note to what was actually produced rather than
-a fixed phrase: if the confirmed audience was EU/German, remind the owner to have the
-consent-checkbox wording reviewed before publishing; if format-specific rules context
-named a page builder, CMS, or form/CRM provider, reference handing the copy off there;
-otherwise default to a generic "ready to hand off to your web developer or landing-page
-builder."
+- If the user provides a correction, record it per the protocol's **Writing** section with source `corrected`.
+- Then follow the protocol's **Confirming** section. Then deliver a closing line and exit. Tailor the closing delivery note to what was actually produced rather than a fixed phrase: if the confirmed audience was EU/German, remind the owner to have the consent-checkbox wording reviewed before publishing; if format-specific rules context named a page builder, CMS, or form/CRM provider, reference handing the copy off there; otherwise default to a generic "ready to hand off to your web developer or landing-page builder."
