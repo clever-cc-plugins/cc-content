@@ -162,7 +162,11 @@ If no corrections were collected, skip this step silently.
 
 Read `../_shared/learnings-protocol.md` and follow its **Reviewing** section. Scope: entries prefixed `[cc-content:` that are dated today, plus older `[cc-content:` entries that group with them. Entries from other plugins are managed by their own tooling and must not be surfaced or promoted here. If the owner says "review all", the scope is every `[cc-content:` entry.
 
-If `.claude/learnings.md` is absent or no entry is in scope, say: No new learnings to review. Say `review all` to include older entries. Then proceed to Step 6.
+If `.claude/learnings.md` is absent or no entry is in scope, say:
+
+> No new learnings to review. Say `review all` to include older entries.
+
+Then proceed to Step 6.
 
 Otherwise present each group or single entry:
 

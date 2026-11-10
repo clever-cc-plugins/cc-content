@@ -140,4 +140,4 @@ Show the proposed row before writing:
 
 ## Feedback
 
-After a successful registration, ask: "Did this meet your expectations? If not, If not, tell me what to change." If the owner gives a correction, read `../_shared/learnings-protocol.md` and record it per its **Writing** section (tag `[cc-content:register-context]`, source `corrected`), then follow its **Confirming** section. If they confirm or skip, exit.
+After a successful registration, ask: "Did this meet your expectations? If not, tell me what to change." If the owner gives a correction, read `../_shared/learnings-protocol.md` and record it per its **Writing** section (tag `[cc-content:register-context]`, source `corrected`), then follow its **Confirming** section. If they confirm or skip, exit.
