@@ -118,17 +118,17 @@ For `learnings-protocol.md`, use the content check at the end of this step. For 
    > is older than the plugin's version (last updated <plugin-date>). Refresh it
    > with the plugin's version? This overwrites any local edits to the file.
    > (yes / no / show diff)"
-   - **show diff**: run `diff .claude/skills/_shared/<file> ${CLAUDE_SKILL_DIR}/../_shared/<file>`,
+   - **show diff**: run `diff .claude/skills/_shared/<file> "${CLAUDE_SKILL_DIR}/../_shared/<file>"`,
      show the output, then re-ask yes/no.
    - **yes**: copy the plugin's file over the project's copy, preserving the
      project path. Confirm: "✓ Refreshed `.claude/skills/_shared/<file>` (now
      <plugin-date>)."
    - **no**: leave the file as-is. Note it will ask again at the next session wrap.
 
-**`learnings-protocol.md` — compare by content.** It is a shared protocol that nobody should customize, and a date is bumped by hand and can be missed. Run `diff -q .claude/skills/_shared/learnings-protocol.md ${CLAUDE_SKILL_DIR}/../_shared/learnings-protocol.md` and act on its exit code:
+**`learnings-protocol.md` — compare by content.** It is a shared protocol that nobody should customize, and a date is bumped by hand and can be missed. Run `diff -q .claude/skills/_shared/learnings-protocol.md "${CLAUDE_SKILL_DIR}/../_shared/learnings-protocol.md"` and act on its exit code:
 
 - **0** (identical): say nothing and move on.
-- **1** (the files differ): ask "Your project's copy of `learnings-protocol.md` differs from the plugin's current version (it can also be newer, for example after a plugin downgrade; "show diff" shows which). Refresh it with the plugin's version? This overwrites any local edits to the file. (yes / no / show diff)". On **show diff**, run `diff` on the two files, show the output, then re-ask yes/no. On **yes**, copy the plugin's file over the project's copy and confirm: "✓ Refreshed `.claude/skills/_shared/learnings-protocol.md`." On **no**, leave the file as-is; it will ask again at the next session wrap.
+- **1** (the files differ): ask "Your project's copy of `learnings-protocol.md` differs from the plugin's current version (it can also be newer, for example after a plugin downgrade; "show diff" shows which). Refresh it with the plugin's version? This overwrites any local edits to the file. (yes / no / show diff)". On **show diff**, run `diff .claude/skills/_shared/learnings-protocol.md "${CLAUDE_SKILL_DIR}/../_shared/learnings-protocol.md"`, show the output, then re-ask yes/no. On **yes**, copy the plugin's file over the project's copy and confirm: "✓ Refreshed `.claude/skills/_shared/learnings-protocol.md`." On **no**, leave the file as-is; it will ask again at the next session wrap.
 - **anything else** (for example 2, when a path does not resolve): report the error in one line and do not offer a refresh.
 
 Do not overwrite silently under any circumstance — the project's copy may have
