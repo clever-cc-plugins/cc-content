@@ -106,27 +106,29 @@ it in the `## Context files` table.
 
 Then append the entry in this format:
 
-```markdown
+````markdown
 ## Sample: <output-type> — <YYYY-MM-DD>
 
 **Output type:** <type>
 **Key qualities:** <qualities>
 **Caveats:** <caveats>
+
 ```
 
 <content>
 ```
 
 ---
-
 ````
 
 Omit `**Key qualities:**` and `**Caveats:**` lines if the owner skipped those fields.
 
 After writing, confirm:
+
 > "✓ Saved to `<target-path>`."
 
 Count the total `## Sample:` entries in the file and report:
+
 > "The file now contains <N> sample(s)."
 
 ## Step 5: Loop
