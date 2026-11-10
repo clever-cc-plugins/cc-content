@@ -106,7 +106,7 @@ copy at `${CLAUDE_SKILL_DIR}/../_shared/<file>.md` (relative to this skill's own
 directory — same plugin, so this path always resolves regardless of install
 location):
 
-`learnings-protocol.md` is the exception: it is a shared protocol that nobody should customize, so compare contents instead of dates (a date is bumped by hand and can be missed). Run `diff -q .claude/skills/_shared/learnings-protocol.md ${CLAUDE_SKILL_DIR}/../_shared/learnings-protocol.md`. If the files are identical, say nothing and move to the next file. Otherwise ask: "Your project's copy of `learnings-protocol.md` differs from the plugin's current version. Refresh it with the plugin's version? This overwrites any local edits to the file. (yes / no / show diff)", and handle the answers exactly as in step 3 below. For the other three files, use the dates:
+For `learnings-protocol.md`, use the content check at the end of this step. For the other three files, use the dates:
 
 1. Read the `_Last updated: YYYY-MM-DD_` line (line 3) from both the project's
    copy and the plugin's bundled copy. If the project's copy has no such line,
@@ -124,6 +124,12 @@ location):
      project path. Confirm: "✓ Refreshed `.claude/skills/_shared/<file>` (now
      <plugin-date>)."
    - **no**: leave the file as-is. Note it will ask again at the next session wrap.
+
+**`learnings-protocol.md` — compare by content.** It is a shared protocol that nobody should customize, and a date is bumped by hand and can be missed. Run `diff -q .claude/skills/_shared/learnings-protocol.md ${CLAUDE_SKILL_DIR}/../_shared/learnings-protocol.md` and act on its exit code:
+
+- **0** (identical): say nothing and move on.
+- **1** (the files differ): ask "Your project's copy of `learnings-protocol.md` differs from the plugin's current version (it can also be newer, for example after a plugin downgrade; "show diff" shows which). Refresh it with the plugin's version? This overwrites any local edits to the file. (yes / no / show diff)". On **show diff**, run `diff` on the two files, show the output, then re-ask yes/no. On **yes**, copy the plugin's file over the project's copy and confirm: "✓ Refreshed `.claude/skills/_shared/learnings-protocol.md`." On **no**, leave the file as-is; it will ask again at the next session wrap.
+- **anything else** (for example 2, when a path does not resolve): report the error in one line and do not offer a refresh.
 
 Do not overwrite silently under any circumstance — the project's copy may have
 been deliberately customized.
@@ -193,7 +199,7 @@ For each group or single entry, state the entry count, the sources and a one-lin
 
 Option (a) covers the format guidelines of one skill. When a group spans several skills, propose one (a) target per skill, and remove only the entries each chosen target covers.
 
-Show option (a) only when that skill's format guidelines live inside the current project: a project-local skill under `.claude/skills/`, or you are working in the plugin's own repository (the resolved path is under the project root, not in a plugin cache or install directory). A plugin installed from a marketplace keeps its guidelines outside the project, so a rule written there would apply to every project and be lost on the next plugin update. For such a skill, leave (a) out and say in one line that (b) keeps the rule in this project.
+Show option (a) only when that skill's format guidelines live inside the current project: a project-local skill under `.claude/skills/`, or you are working in the plugin's own repository (the resolved path begins with the project root and does not contain `/plugins/cache/`). A plugin installed from a marketplace keeps its guidelines outside the project, so a rule written there would apply to every project and be lost on the next plugin update. For such a skill, leave (a) out and say in one line that (b) keeps the rule in this project.
 
 Show option (c) only when the entry concerns voice (tone, wording, phrasing, punctuation habits) rather than format, and at least one voice guide is registered in the `## Context files` table. Detect a voice guide by its summary (a brand voice guide, tone, or writing style), not by its label. Show only the options that apply among (a), (b), (c), (d) and (e), and keep the letters.
 
@@ -203,7 +209,7 @@ Handle responses:
 
 Ask: "How should I phrase the rule? (Or describe the correction and I'll draft it.)"
 
-Determine the skill's format guidelines path. For `cc-content:linkedin-post`,
+This option is offered only for project-local skills or inside the plugin's own repository, so the paths below point inside the project. Determine the skill's format guidelines path. For `cc-content:linkedin-post`,
 the format guidelines file is at `${CLAUDE_SKILL_DIR}/../linkedin-post/format-guidelines.md`
 (relative to this skill's directory). For other skills, look for a `format-guidelines.md`
 inside the skill's directory.
