@@ -106,6 +106,8 @@ copy at `${CLAUDE_SKILL_DIR}/../_shared/<file>.md` (relative to this skill's own
 directory — same plugin, so this path always resolves regardless of install
 location):
 
+`learnings-protocol.md` is the exception: it is a shared protocol that nobody should customize, so compare contents instead of dates (a date is bumped by hand and can be missed). Run `diff -q .claude/skills/_shared/learnings-protocol.md ${CLAUDE_SKILL_DIR}/../_shared/learnings-protocol.md`. If the files are identical, say nothing and move to the next file. Otherwise ask: "Your project's copy of `learnings-protocol.md` differs from the plugin's current version. Refresh it with the plugin's version? This overwrites any local edits to the file. (yes / no / show diff)", and handle the answers exactly as in step 3 below. For the other three files, use the dates:
+
 1. Read the `_Last updated: YYYY-MM-DD_` line (line 3) from both the project's
    copy and the plugin's bundled copy. If the project's copy has no such line,
    treat it as predating the marker — always older than the plugin's copy.
@@ -191,7 +193,9 @@ For each group or single entry, state the entry count, the sources and a one-lin
 
 Option (a) covers the format guidelines of one skill. When a group spans several skills, propose one (a) target per skill, and remove only the entries each chosen target covers.
 
-Show option (c) only when the entry concerns voice (tone, wording, phrasing, punctuation habits) rather than format, and at least one voice guide is registered in the `## Context files` table. Detect a voice guide by its summary (a brand voice guide, tone, or writing style), not by its label. Without a voice entry or a registered voice guide, show only (a), (b), (d) and (e), and keep the letters.
+Show option (a) only when that skill's format guidelines live inside the current project: a project-local skill under `.claude/skills/`, or you are working in the plugin's own repository (the resolved path is under the project root, not in a plugin cache or install directory). A plugin installed from a marketplace keeps its guidelines outside the project, so a rule written there would apply to every project and be lost on the next plugin update. For such a skill, leave (a) out and say in one line that (b) keeps the rule in this project.
+
+Show option (c) only when the entry concerns voice (tone, wording, phrasing, punctuation habits) rather than format, and at least one voice guide is registered in the `## Context files` table. Detect a voice guide by its summary (a brand voice guide, tone, or writing style), not by its label. Show only the options that apply among (a), (b), (c), (d) and (e), and keep the letters.
 
 Handle responses:
 
