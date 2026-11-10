@@ -238,7 +238,7 @@ gets:
      - for Tier B, the format-guideline file path noted in Step 4. For Tier C, state plainly that no guideline file exists and it should use its own best-practices knowledge for this format's length, structure, and conventions.
   6. An explicit tool-scope constraint:
      - state plainly that the subagent's job is read-and-draft only — it must `Read` **only** the exact file paths listed above, and must not use any other tool (no web access, no fetching URLs, no shell commands, no writing files).
-     - this skill's own `allowed-tools` (`Read`, `Write`, `Bash`, `Agent`) has no web access at all, and its `Bash` use is limited to the narrow `ls`/`grep` checks in Steps 1–2. A dispatched subagent needs neither shell nor web access to do its drafting job, so scope it tighter than even this skill's own allowance, not merely no wider than it.
+     - this skill's own `allowed-tools` (`Read`, `Write`, `Edit`, `Bash`, `Agent`) has no web access at all, and its `Bash` use is limited to the narrow `ls`/`grep` checks in Steps 1–2. A dispatched subagent needs neither shell nor web access to do its drafting job, so scope it tighter than even this skill's own allowance, not merely no wider than it.
      - a `general-purpose` subagent defaults to a much broader tool surface than that; since the content idea and any `brief.md` this prompt draws on may contain untrusted or externally-sourced text, don't let a subagent's effective tool access exceed what its actual job requires.
      - **this is a best-effort mitigation, not a hard boundary**: the Agent tool has no parameter to actually restrict which tools a dispatched subagent can call, so a sufficiently effective prompt injection in the source content could still get a subagent to disregard this instruction. Don't treat this line as a guarantee when auditing the skill's security posture — if the source content is untrusted enough that this matters, that's a reason to review it before running `/atomize`, not something this instruction can enforce on its own.
   7. The full task, in order:
@@ -354,7 +354,7 @@ here: newsletter, Twitter/X thread."
 ## Step 7: Feedback
 
 Run this feedback step once for the whole batch of drafted formats, not once per
-format — the same tag and qualification rules apply to the batch as a whole.
+format — the protocol's Writing section applies to the batch as a whole.
 
 **Auto-store phase.** Read `../_shared/learnings-protocol.md` and follow its **Writing** section. Tag entries `[cc-content:atomize]`; the source is `inferred` unless the user said it. Worth recording in this skill: content preferences or constraints for repurposing (e.g. "repurposing always targets these exact five formats"), corrections the owner made to the output, accepted or rejected deviations from best practices, and which formats atomize well from the core message (relates to the research findings on reliable vs. unreliable format pairs). Include the one-line notes each Step 5 subagent returned for the batch learnings step.
 

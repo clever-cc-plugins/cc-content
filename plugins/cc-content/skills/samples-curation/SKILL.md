@@ -121,7 +121,7 @@ Then append the entry in this format:
 ---
 ````
 
-Omit `**Key qualities:**` and `**Caveats:**` lines if the owner skipped those fields.
+Omit any optional field the owner skipped (`**Key qualities:**`, `**Caveats:**`) together with its line, so no stray blank line is left before the closing fence.
 
 After writing, confirm:
 
