@@ -6,5 +6,8 @@ else
   echo "Install: brew install gitleaks (macOS) or https://github.com/gitleaks/gitleaks"
 fi
 
+# Stamp the 'Last updated' date of changed shared files
+bash scripts/stamp-shared-files.sh
+
 # Keep CLAUDE.md config file table in sync
 bash scripts/sync-config-table.sh

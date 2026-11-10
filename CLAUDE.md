@@ -41,6 +41,7 @@ content creation skills for marketing projects.
 | `plugins/cc-content/skills/samples-curation/SKILL.md`           | Skill: Save and annotate gold-standard content examples                                       |
 | `plugins/cc-content/skills/session-wrap/SKILL.md`               | Skill: Review session, promote deliverables to context, commit work                           |
 | `plugins/cc-content/skills/x-post/SKILL.md`                     | Skill: Draft X (Twitter) posts                                                                |
+| `scripts/stamp-shared-files.sh`                                 | Pre-commit: stamps `_Last updated_` on changed `_shared/*.md`                                 |
 | `scripts/sync-config-table.sh`                                  | Keeps Key Config Files table in sync on each commit                                           |
 
 ## Plugin Structure
@@ -49,7 +50,7 @@ Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containi
 
 ## Tests
 
-Run `node --test tests/brand-voice/` from the repo root (Node 18+, no dependencies). See `tests/brand-voice/README.md` for the dry-run scenarios.
+Run `node --test tests/brand-voice/` from the repo root (Node 18+, no dependencies). See `tests/brand-voice/README.md` for the dry-run scenarios. Run `bash tests/stamp-shared-files/test.sh` to test the pre-commit date stamping.
 
 ## Don't
 
