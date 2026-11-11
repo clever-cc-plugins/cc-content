@@ -35,6 +35,7 @@ content creation skills for marketing projects.
 | `plugins/cc-content/skills/long-tail-copy/SKILL.md`             | Skill: Draft text for any format without a dedicated skill; supports multi-format atomization |
 | `plugins/cc-content/skills/marketing-email/SKILL.md`            | Skill: Draft marketing and sales emails                                                       |
 | `plugins/cc-content/skills/new-content-skill/SKILL.md`          | Skill: Build a new content-production skill from research                                     |
+| `plugins/cc-content/skills/personal-email/SKILL.md`             | Skill: Draft and reply to personal one-to-one emails, professional or private                 |
 | `plugins/cc-content/skills/press-release/SKILL.md`              | Skill: Draft press releases                                                                   |
 | `plugins/cc-content/skills/register-context/SKILL.md`           | Skill: Register a single file as context in CLAUDE.md (mid-session)                           |
 | `plugins/cc-content/skills/research-prompt/SKILL.md`            | Skill: Generate a vendor-neutral deep-research prompt for a topic                             |

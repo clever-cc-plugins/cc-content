@@ -6,7 +6,7 @@ description: >
   sales outreach. Invoke when the user says "write a marketing email", "draft a sales
   outreach email", "create a newsletter email", "write a cold email", "draft a nurture
   email", or "generate an email campaign". Not for everyday personal or internal
-  professional correspondence.
+  professional correspondence — that is personal-email.
 allowed-tools: Read, Write, Edit, Bash
 argument-hint: "[optional: path to campaign briefing file]"
 ---
@@ -26,7 +26,7 @@ goals.
 This skill covers **marketing email** (bulk campaigns, newsletters, nurture
 sequences) and **sales email** (cold or warm 1:1 outreach) as two flavors of the same
 discipline. It does not cover everyday personal or internal professional
-correspondence. This skill is **language-, industry-, and audience-neutral**. It works
+correspondence — use `personal-email` for that. This skill is **language-, industry-, and audience-neutral**. It works
 for any output language and any B2B or B2C context. Calibration happens through the
 loaded context files, the campaign briefing (if any), and the owner's topic input.
 

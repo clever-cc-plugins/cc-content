@@ -5,7 +5,8 @@ _Last updated: 2026-08-03_
 These apply to every marketing or sales email regardless of audience type, goal, or
 funnel stage. This skill covers business/campaign email — bulk marketing campaigns,
 newsletters, nurture sequences, and 1:1 sales outreach (cold and warm). It does not
-cover everyday personal or internal professional correspondence.
+cover everyday personal or internal professional correspondence — see
+`../personal-email/format-guidelines.md` for that.
 
 Throughout this file, **Marketing** denotes bulk/segmented campaign email (built with
 templates and automated triggers, sent to a list) and **Sales** denotes 1:1 outreach
