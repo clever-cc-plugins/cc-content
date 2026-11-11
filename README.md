@@ -7,7 +7,7 @@
 
 # <img src="assets/icon.svg" width="40" height="40" align="top" alt="" />&nbsp;cc-content
 
-A [Claude Code](https://claude.ai/code) plugin with a suite of content-creation skills for marketing projects, including blog articles, social posts, press releases, and more. The skills read your brand voice before they write a word, which is more than most first drafts can say.
+A [Claude Code](https://claude.ai/code) plugin with a suite of content-creation skills for marketing and personal-branding projects, including blog articles, social posts, press releases, marketing and personal emails, and more. The skills read your brand voice before they write a word, which is more than most first drafts can say.
 
 > **Breaking change (v1.0.0):** Skill names dropped the `cc-content-` prefix (for example `cc-content-blog-article` became `blog-article`). Claude Code already namespaces plugin skills as `cc-content:<skill-name>`, so the prefix was redundant. Six names also changed wording to stay specific and to avoid collisions: `cc-content-email` became `marketing-email`, `cc-content-text` became `long-tail-copy`, `cc-content-promote` became `register-context`, `cc-content-onboarding` became `content-onboarding`, `cc-content-performance-review` became `content-performance-review`, and `cc-content-new-skill` became `new-content-skill`. Update any saved `/cc-content-...` invocations to the new names.
 

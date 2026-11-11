@@ -1,7 +1,7 @@
 # cc-content
 
 This repository distributes the `cc-content` Claude Code plugin — a suite of
-content creation skills for marketing projects.
+content creation skills for marketing and personal-branding projects.
 
 <!-- cc-config: last-optimize-run: 2026-11-05 9a062978778431d0c9498da8f832af68340fb479 -->
 
