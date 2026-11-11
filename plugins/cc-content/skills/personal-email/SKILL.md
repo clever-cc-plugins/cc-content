@@ -81,7 +81,7 @@ ls brief.md 2>/dev/null && echo "found" || echo "missing"
 ```
 
 - **An incoming email or thread:** this is the main input. Note the sender, their register (formal or informal, Sie or Du, length), every question they asked and in what order, and any deadline. Confirm: "✓ Replying to <sender> — <n> question(s) to answer."
-- **A briefing or notes file:** note the recipient, purpose, constraints and deadlines. Confirm: "✓ Briefing loaded from `<path>`."
+- **A briefing or notes file:** note the recipient, purpose, constraints and deadlines. Confirm: "✓ Briefing loaded from `<path>`." If the file was only found as `brief.md` in the working directory (not passed or named by the owner), it may belong to unrelated marketing work: ask once whether it is meant for this email, and ignore it if not.
 - **Nothing found:** note "No incoming email or briefing — working from your description." and continue.
 
 ## Step 3: Infer and confirm the email profile
@@ -105,7 +105,7 @@ This is the content-production-specific step for personal email. It replaces the
 
 ## Step 4: Collect the missing inputs
 
-Check what the email still needs and ask for everything missing in **one** consolidated question — never a series of questions. If Step 3 already has to ask the owner something, put these questions in the same message so a quick reply costs one round trip, not two. Typical gaps:
+Check what the email still needs and ask for everything missing in **one** consolidated question — never a series of questions. If Step 3 already has to ask the owner something, put these questions in the same message so a quick reply costs one round trip, not two. If the request and source material already cover everything below, skip this step. Typical gaps:
 
 - **Recipient**: name, title, and how the owner knows them (if not clear from the material)
 - **Purpose or ask**: the one thing the email should achieve — or confirmation that it deliberately has no ask (thanks, congratulations, condolences)
@@ -146,7 +146,7 @@ Produce a complete email that:
 
 **Add a recipients note** when the recipient fields matter: a double opt-in introduction (new thread, both in To), moving an introducer to BCC, a private group email (BCC), or a CC that should be announced in the text.
 
-**Legal check (EU/DACH).** If the email promotes the owner's or their employer's paid goods or services to someone who has not consented — e.g. "networking" that ends with an offer of paid services, or pitching paid work to a stranger — flag it before presenting the draft, point to the legal-boundaries section in `format-guidelines.md`, and suggest reframing the email as genuinely non-commercial, getting a warm introduction, or using `/cc-content:marketing-email` if it is in fact sales outreach. This is a risk flag, not legal advice.
+**Legal check (EU/DACH).** If the recipient has not consented and the email promotes the owner's or their employer's paid goods or services — e.g. "networking" that ends with an offer of paid services, or pitching paid work to a stranger — or asks a customer for satisfaction feedback or a testimonial, flag the potential advertising risk before presenting the draft. Point to the legal-boundaries section in `format-guidelines.md` and, where it fits, suggest reframing the email as genuinely non-commercial, asking for a non-commercial warm introduction, or using `/cc-content:marketing-email` if it is in fact sales outreach. A warm introduction alone is not consent to advertising. This is a risk flag, not legal advice.
 
 Before the checklist, run the **readability pass** from `../_shared/readability-patterns.md` on the finished draft as its own step: scan for the six patterns and fix only the passages with a hit, keeping content, tone and names intact. Then remove AI tells named in `format-guidelines.md` (stacked enthusiasm, adjective triads, generic praise, stiff transitions) — the email must not be sendable unchanged to someone else.
 
@@ -188,4 +188,5 @@ This step has two phases:
 **Explicit feedback.** Ask whether the output met expectations.
 
 - If the user provides a correction or states a standing preference, record it per the protocol's **Writing** section, with source `corrected` for a correction and `stated` for a preference.
+- If the correction changes the draft, apply it, re-run the readability pass and the quality checklist from Step 7, and present the revised draft in the same delimited block before continuing.
 - Then follow the protocol's **Confirming** section. Then deliver a closing line and exit. Derive it from the run: if the session has an email tool or connector available, offer to save the email there as a draft (never to send it); otherwise close with `Ready to paste into your email client — sending stays with you.` If the Step 7 legal check raised a flag, repeat it in one line.

@@ -187,21 +187,21 @@ Some trainers flag "Danke im Voraus" as presumptuous.
 
 ### Legal boundaries for unsolicited one-to-one email (EU/DACH)
 
-**Not legal advice.** The core distinction: a genuinely personal or networking message (asking for advice, an informational interview, an introduction; an application; a thank-you) is generally _not_ advertising. A message promoting the sender's or employer's goods or services generally _is_, even when written by hand to one person.
+**Not legal advice; status as of November 2026 — laws and case law change, so verify before relying on it.** The core distinction: a genuinely personal or networking message (asking for advice, an informational interview, an introduction; an application; a thank-you) is generally _not_ advertising. A message promoting the sender's or employer's goods or services generally _is_, even when written by hand to one person.
 
 - **Germany:** § 7 Abs. 2 Nr. 2 UWG treats email advertising without _prior express consent_ as an unreasonable nuisance, toward businesses as well as consumers. A single email can be enough (BGH, I ZR 218/07). A published contact address is not consent (BGH, I ZR 201/07); a LinkedIn connection is not consent either (AG Düsseldorf, Nov 2025). "Advertising" is read broadly — a satisfaction survey attached to an invoice email counted (BGH, VI ZR 225/17).
-- **Austria:** § 174 Abs. 3 TKG 2021 bans email for direct marketing without prior consent, except to existing customers, with no business/consumer distinction.
+- **Austria:** § 174 Abs. 3 TKG 2021 bans email for direct marketing without prior consent, with no business/consumer distinction. The existing-customer exception in § 174 Abs. 4 is narrow: being a customer is not enough — it requires, among other conditions, that the address was obtained in connection with a sale, that the email markets the sender's own similar products or services, and that the recipient could opt out at collection and in every message. Verify the conditions before relying on it.
 - **Switzerland:** UWG Art. 3 Abs. 1 lit. o targets _mass_ advertising; individually sent email is mostly outside it, but a single researched 1:1 commercial email is disputed.
 - **GDPR** applies on top: an email address is personal data. A legitimate interest does not override the UWG/TKG consent rules.
 
-| Message type                                                    | Typical classification (DE/AT)                                  |
-| --------------------------------------------------------------- | --------------------------------------------------------------- |
-| Advice, informational-interview or intro request with no offer  | Generally not advertising                                       |
-| Job application; thanks; condolences                            | Not advertising                                                 |
-| "Networking" email ending with an offer of your paid services   | Likely advertising → needs consent                              |
-| Pitching yourself as a paid speaker or freelancer to a stranger | Grey zone leaning advertising; get consent or a warm intro      |
-| Story pitch to a journalist                                     | Usually press relations, but unsettled; keep it non-promotional |
-| Asking a client for a testimonial                               | Possibly advertising (cf. BGH survey ruling)                    |
+| Message type                                                    | Typical classification (DE/AT)                                                 |
+| --------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Advice, informational-interview or intro request with no offer  | Generally not advertising                                                      |
+| Job application; thanks; condolences                            | Not advertising                                                                |
+| "Networking" email ending with an offer of your paid services   | Likely advertising → needs consent                                             |
+| Pitching yourself as a paid speaker or freelancer to a stranger | Grey zone leaning advertising; get consent — a warm intro alone is not consent |
+| Story pitch to a journalist                                     | Usually press relations, but unsettled; keep it non-promotional                |
+| Asking a client for a testimonial                               | Possibly advertising (cf. BGH survey ruling)                                   |
 
 ### Persuasion principles
 
