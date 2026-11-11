@@ -97,7 +97,7 @@ This is the content-production-specific step for personal email. It replaces the
 
    If the material genuinely does not support a confident inference on any of these, ask the owner the missing question directly rather than guessing. **Never switch from a formal to an informal register (e.g. Sie to Du) on your own** — only if the recipient already did or the owner says so.
 
-2. Present a one-line inference summary, for example: "Family: asks & favours (reference request) · Tie: warm, upward · Position: first contact · Topic: expert · Language: de, Sie, 'Liebe Frau Dr. Weber'"
+2. Present a one-line inference summary, for example: "Family: asks & favours (reference request) · Tie: dormant, upward · Position: reconnecting after a gap · Topic: expert · Language: de, Sie, 'Liebe Frau Dr. Weber'"
 
 3. Ask the owner to confirm or correct before generating. Do not silently apply assumptions. Include any missing inputs from Step 4 in this same message; when Step 4 has nothing to ask, this confirmation is the only question round before the draft.
 
@@ -183,7 +183,7 @@ If the email has an ask, add one line after the block with the follow-through pl
 
 This step has two phases:
 
-**Auto-store phase.** Read `../_shared/learnings-protocol.md` and follow its **Writing** section. Tag entries `[cc-content:personal-email]`; the source is `inferred` unless the user said it. Worth recording in this skill: the owner's preferences and defaults — sign-offs per register, default formality, signature conventions, phrases they always or never use, how they like asks framed — corrections the owner made to the output, and accepted or rejected deviations from best practice. **Do not record personal data about third parties** (a recipient's allergies, family situation, health, or whom the owner is on first-name terms with): it is not the owner's preference, and the learnings file is shared project memory.
+**Auto-store phase.** Read `../_shared/learnings-protocol.md` and follow its **Writing** section. Tag entries `[cc-content:personal-email]`; the source is `inferred` unless the user said it. Worth recording in this skill: the owner's preferences and defaults — sign-offs per register, default formality, signature conventions, phrases they always or never use, how they like asks framed — corrections the owner made to the output, and accepted or rejected deviations from best practice. Example of a good entry: `[cc-content:personal-email] Owner signs off with "Viele Grüße" to Sie contacts and "Liebe Grüße" only to friends (stated) — <date>`. **Do not record personal data about third parties** (a recipient's allergies, family situation, health, or whom the owner is on first-name terms with): it is not the owner's preference, and the learnings file is shared project memory.
 
 **Explicit feedback.** Ask whether the output met expectations.
 
