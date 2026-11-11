@@ -57,7 +57,7 @@ CLAUDE.md files may exist at multiple hierarchy levels (workspace root, project 
 
 Where multiple files plausibly cover the same need, pick the one whose Summary best fits the task at hand and note the choice. A company brand-voice file is a weaker match for sender voice than a personal one: use it only when no personal voice file exists, and note that.
 
-Warn on **semantic absence, not label absence** — "No sender voice context found", never "no `writing-style` row". Gate on two needs only: if no loaded file plausibly covers **sender voice**, or none covers **sender profile**, ask once:
+Warn on **semantic absence, not label absence** — "No sender voice context found", never "no `writing-style` row". Gate on two needs only: if no loaded file plausibly covers **sender voice**, or none covers **sender profile**, ask once. If the request is clearly private (an invitation, a note to friends, family or neighbours), gate on sender voice only — the owner's name is enough as a profile there:
 
 > "I don't see any [personal writing style / sender profile] context. Is this intentional, or should I pause while you run `/content-onboarding`?"
 >
@@ -99,7 +99,7 @@ This is the content-production-specific step for personal email. It replaces the
 
 2. Present a one-line inference summary, for example: "Family: asks & favours (reference request) · Tie: warm, upward · Position: first contact · Topic: expert · Language: de, Sie, 'Liebe Frau Dr. Weber'"
 
-3. Ask the owner to confirm or correct before generating. Do not silently apply assumptions.
+3. Ask the owner to confirm or correct before generating. Do not silently apply assumptions. Include any missing inputs from Step 4 in this same message; when Step 4 has nothing to ask, this confirmation is the only question round before the draft.
 
 4. Based on the confirmed values, state which variations from `format-guidelines.md` you are applying and why (e.g., "Applying the reference-request pattern — ask whether they can give a _strong_ reference, supply materials, 2–4 weeks' lead time — with the upward-power adjustments: recommendation first, binary ask").
 

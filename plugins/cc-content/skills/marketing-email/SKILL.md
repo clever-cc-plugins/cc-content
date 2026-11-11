@@ -26,9 +26,10 @@ goals.
 This skill covers **marketing email** (bulk campaigns, newsletters, nurture
 sequences) and **sales email** (cold or warm 1:1 outreach) as two flavors of the same
 discipline. It does not cover everyday personal or internal professional
-correspondence — use `personal-email` for that. This skill is **language-, industry-, and audience-neutral**. It works
-for any output language and any B2B or B2C context. Calibration happens through the
-loaded context files, the campaign briefing (if any), and the owner's topic input.
+correspondence — use `personal-email` for that. This skill is **language-, industry-,
+and audience-neutral**. It works for any output language and any B2B or B2C context.
+Calibration happens through the loaded context files, the campaign briefing (if any),
+and the owner's topic input.
 
 ## Step 0: Recall learnings
 
