@@ -1,6 +1,6 @@
 # Email Format Guidelines
 
-_Last updated: 2026-08-03_
+_Last updated: 2026-11-11_
 
 These apply to every marketing or sales email regardless of audience type, goal, or
 funnel stage. This skill covers business/campaign email — bulk marketing campaigns,
