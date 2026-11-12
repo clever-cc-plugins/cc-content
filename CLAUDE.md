@@ -1,9 +1,8 @@
 # cc-content
 
-This repository distributes the `cc-content` Claude Code plugin — a suite of
-content creation skills for marketing and personal-branding projects.
+This repository distributes the `cc-content` Claude Code plugin — a suite of content creation skills for marketing and personal-branding projects.
 
-<!-- cc-config: last-optimize-run: 2026-11-05 9a062978778431d0c9498da8f832af68340fb479 -->
+<!-- cc-config: last-optimize-run: 2026-11-12 72ca16a1dee587147feaa44fa457ab9346288f15 -->
 
 ## Key Config Files
 
@@ -11,7 +10,6 @@ content creation skills for marketing and personal-branding projects.
 | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `.claude/format-markdown.sh`                                    | PostToolUse hook: formats Markdown files with prettier after edits                            |
 | `.claude/guard-secret-files.sh`                                 | PreToolUse hook: blocks reads/edits/writes of secret .env files                               |
-| `.claude/learnings.md`                                          | Corrections and observations logged during config/session-wrap runs                           |
 | `.claude/settings.json`                                         | Permissions, hooks, environment variables                                                     |
 | `.githooks/pre-commit`                                          | Secret scanning (gitleaks) + CLAUDE.md table sync                                             |
 | `.github/workflows/claude-code-review.yml`                      | Automatic PR review via Claude Code                                                           |
@@ -57,15 +55,7 @@ Run `node --test tests/brand-voice/` from the repo root (Node 18+, no dependenci
 
 - Don't commit secrets or credentials to git
 - Don't use `--force` flags — fix the underlying issue instead
-- Don't recommend algorithm-gaming tactics in content-skill guidelines (e.g., hiding
-  a link in the first comment to dodge a suspected reach penalty, engagement-bait
-  CTAs) even when tutorials or coaches currently present them as best practice —
-  platforms iterate to detect and penalize exactly these tricks, so they're
-  short-lived by design. Same dynamic as black-hat SEO: keyword stuffing and link
-  farms didn't survive algorithm updates; genuine value and good UX did, because
-  that's what the algorithm was a proxy for. Prefer durable, user-aligned practices
-  over trend-chasing tricks, and file gaming tactics under "common mistakes /
-  outdated tactics" rather than as guidance to follow
+- Don't recommend algorithm-gaming tactics in content-skill guidelines (e.g., hiding a link in the first comment to dodge a suspected reach penalty, engagement-bait CTAs), even when tutorials present them as best practice. Platforms iterate to detect and penalize them, so they are short-lived; prefer durable, user-aligned practices and file gaming tactics under "common mistakes / outdated tactics"
 
 ## Compact Instructions
 
@@ -73,5 +63,4 @@ When compacting, preserve: list of modified files, current open TODOs, and key d
 
 ## Learnings
 
-When the user corrects a mistake or points out a recurring issue, record a one-line
-summary in `.claude/learnings.md` by `plugins/cc-content/skills/_shared/learnings-protocol.md`: add a source marker, and replace a contradicted entry instead of appending a second one. Don't modify CLAUDE.md directly.
+When the user corrects a mistake or points out a recurring issue, record a one-line summary in `.claude/learnings.md` by `plugins/cc-content/skills/_shared/learnings-protocol.md`: add a source marker, and replace a contradicted entry instead of appending a second one. Don't modify CLAUDE.md directly.
