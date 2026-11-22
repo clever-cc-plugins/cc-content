@@ -111,6 +111,108 @@ test("cc-research entries are present", () => {
   }
 });
 
+// Structural problems the row checks above can't see: unknown headers,
+// missing separators, split tables, ineffective status outside its section.
+function structureErrors(text) {
+  const known = [
+    JSON.stringify(HEADER),
+    JSON.stringify(["Key", "Source", "Type", "License", "Last checked"]),
+  ];
+  const errors = [];
+  const lines = text.split("\n");
+  let section = "";
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    if (line.startsWith("## ")) section = line;
+    if (!line.trim().startsWith("|")) continue;
+    if (!known.includes(JSON.stringify(cells(line)))) {
+      errors.push(`line ${i + 1}: table line outside a recognized table`);
+      continue;
+    }
+    if (!isSeparator(lines[i + 1] ?? "")) {
+      errors.push(`line ${i + 2}: separator row missing after header`);
+    }
+    const isEntry = JSON.stringify(cells(line)) === known[0];
+    let j = i + 2;
+    for (; j < lines.length && lines[j].trim().startsWith("|"); j++) {
+      if (!isEntry) continue;
+      const status = cells(lines[j])[4];
+      const inIneffective =
+        section === "## Ineffective indicators (never count)";
+      if ((status === "ineffective") !== inIneffective) {
+        errors.push(
+          `line ${j + 1}: status "${status}" not allowed in ${section}`,
+        );
+      }
+    }
+    i = j - 1;
+  }
+  return errors;
+}
+
+// Errors if a named cc-research entry is missing or lost its cc-research key.
+function ccResearchErrors(text) {
+  const rows = tables(text, HEADER);
+  return ["Rhetorical question opener", "Reflex closing question"].flatMap(
+    (name) => {
+      const row = rows.find((r) => r[0] === name);
+      if (!row) return [`missing entry "${name}"`];
+      return keysOf(row).includes("cc-research")
+        ? []
+        : [`"${name}" lost its cc-research source`];
+    },
+  );
+}
+
+const mutate = (from, to) => {
+  const text = read();
+  assert.ok(text.includes(from), `mutation anchor not found: ${from}`);
+  return text.replace(from, to);
+};
+
+test("catalog structure is valid", () => {
+  assert.deepEqual(structureErrors(read()), []);
+  assert.deepEqual(ccResearchErrors(read()), []);
+});
+
+test("structure check rejects a mistyped header", () => {
+  const bad = mutate("| Tell ", "| Tells ");
+  assert.notDeepEqual(structureErrors(bad), []);
+});
+
+test("structure check rejects a missing separator row", () => {
+  const text = read();
+  const lines = text.split("\n");
+  const sep = lines.findIndex(
+    (l, i) =>
+      i > 0 && lines[i - 1].startsWith("| Tell ") && /^\|[\s:|-]+\|$/.test(l),
+  );
+  lines.splice(sep, 1);
+  assert.notDeepEqual(structureErrors(lines.join("\n")), []);
+});
+
+test("structure check rejects a table split by a blank line", () => {
+  const bad = mutate(
+    "\n| Inflated significance",
+    "\n\n| Inflated significance",
+  );
+  assert.notDeepEqual(structureErrors(bad), []);
+});
+
+test("structure check rejects ineffective status in a counting table", () => {
+  const lines = read().split("\n");
+  const i = lines.findIndex((l) => l.startsWith("| Importance flagging"));
+  lines[i] = lines[i].replace("| current |", "| ineffective |");
+  assert.notDeepEqual(structureErrors(lines.join("\n")), []);
+});
+
+test("cc-research check rejects a named entry without its cc-research key", () => {
+  const lines = read().split("\n");
+  const i = lines.findIndex((l) => l.startsWith("| Reflex closing question"));
+  lines[i] = lines[i].replace(/cc-research\s*\|\s*$/, "wiki-en |");
+  assert.notDeepEqual(ccResearchErrors(lines.join("\n")), []);
+});
+
 test("required sections exist", () => {
   const text = read();
   for (const s of SECTIONS)
