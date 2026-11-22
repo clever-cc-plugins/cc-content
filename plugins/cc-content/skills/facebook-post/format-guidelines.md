@@ -304,7 +304,7 @@ Before presenting output, verify:
 - [ ] Length matches goal (under ~150 chars for awareness/conversion, 150–300 for consideration/education)
 - [ ] One idea per post
 - [ ] CTA, if any, is singular (never stack multiple asks)
-- [ ] No reflex closing question; any question is one the author genuinely wants answered
+- [ ] No reflex closing question; a closing question is one the author genuinely wants answered
 - [ ] The post earns responses through content, not engagement-bait phrasing ("Like if you agree", "Comment YES", "Tag a friend", "Share to win") or comment-/DM-for-content funnels
 - [ ] Tone matches audience (B2B: expertise-signaling; B2C: personality-driven)
 - [ ] Channel confirmed (Personal Profile / Professional Mode / Page / Group) and reach expectations set accordingly

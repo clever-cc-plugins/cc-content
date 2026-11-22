@@ -557,7 +557,7 @@ just launched a new feature for..." every time.
 Open loops, mysteries, and incomplete patterns hold attention until the brain
 gets resolution. Useful at the hook level (a setup that demands the body to
 resolve it), and within the body to keep readers moving through long content.
-For social posts, open the loop with a specific claim or detail rather than a question: 2026 platform data shows question openers underperforming, and each format's hook rules take precedence.
+For social posts, open the loop with a specific claim or detail rather than a question. On LinkedIn, 2026 platform data shows question openers underperforming; no study isolates question openers on X, Facebook, or Instagram, so their format guidelines apply the nearest available evidence by analogy. Each format's hook rules take precedence.
 
 Don't overuse this — clickbait that doesn't deliver resolution is the canonical
 failure mode and trains the audience to ignore future hooks.

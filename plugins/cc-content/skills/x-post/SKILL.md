@@ -158,10 +158,10 @@ opener leads with limited-time value").
 Produce a complete X post (single or thread) that:
 
 - **Single post (280 characters max):**
-  - Opens with a strong hook (grabs attention in 1 second per format-guidelines.md): a claim, not a rhetorical question
+  - Opens with a strong hook (grabs attention in 1 second per format-guidelines.md): a claim by default; a specific question only if the post answers it right away; never a rhetorical question
   - Contains one clear idea or call-to-action
   - Uses 0–2 hashtags only (never 3+)
-  - Earns replies through its point, not a closing prompt: no reflex closing question, a question only if the author genuinely wants the answers, at most one real next step, and never engagement bait ("like if you agree", "follow for more", "RT to win") or a reply-/DM-for-content funnel — see format-guidelines.md
+  - Earns replies through its point, not a reflex closing prompt: no reflex closing question, a question only if the author genuinely wants the answers, at most one real next step, and never engagement bait ("like if you agree", "follow for more", "RT to win") or a reply-/DM-for-content funnel — see format-guidelines.md
   - Includes 1–2 emojis at natural pauses (if brand voice permits)
   - Omits links from the main post (or places them in the first reply) unless the click
     itself is the goal — links measurably reduce reach across independent 2026 studies

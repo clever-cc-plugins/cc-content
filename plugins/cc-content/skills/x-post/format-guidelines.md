@@ -311,7 +311,7 @@ Before presenting output, verify:
 - [ ] Character count appropriate for goal (280 chars for single posts, 5–8 posts for threads)
 - [ ] One idea per post (single post) or one idea per thread post
 - [ ] CTA, if any, is singular (never stack multiple asks)
-- [ ] No reflex closing question; any question is one the author genuinely wants answered
+- [ ] No reflex closing question; a closing question is one the author genuinely wants answered
 - [ ] The post earns responses through content, not engagement-bait phrasing ("like if you
       agree", "follow for more", "comment YES", "tag a friend", "RT to win") or reply-/DM-for-content funnels
 - [ ] Hashtags: 0–2 only (not 3+)

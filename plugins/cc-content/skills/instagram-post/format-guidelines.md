@@ -266,8 +266,8 @@ Before presenting output, verify:
 - [ ] Length matches goal and format choice (see Layer 3 tables)
 - [ ] One idea per caption
 - [ ] CTA, if any, is singular (never stack multiple asks)
-- [ ] CTA is specific and save/send-oriented, not vague or generic bait ("Comment YES" style prompts) and never a comment-/DM-for-content funnel
-- [ ] No reflex closing question; any question is one the author genuinely wants answered
+- [ ] If a CTA is present, it is specific (save/send, tap the link, another real next step, or a genuine question), not vague or generic bait ("Comment YES" style prompts), and never a comment-/DM-for-content funnel
+- [ ] No reflex closing question; a closing question is one the author genuinely wants answered
 - [ ] Tone matches audience (B2B: expertise-signaling; B2C: personality-driven)
 - [ ] Post format choice (single-image / carousel / Reels / Stories) aligns with goal and funnel stage (per Layer 3)
 - [ ] Hashtag count: 3–5 max (hard platform cap is ~5), chosen for relevance over volume

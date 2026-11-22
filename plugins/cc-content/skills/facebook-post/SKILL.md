@@ -149,7 +149,7 @@ concrete pain point").
 
 Produce a complete Facebook post that:
 
-- **Opens with a strong hook** that stands alone within ~125–140 characters (mobile truncation): a claim, not a rhetorical question
+- **Opens with a strong hook** that stands alone within ~125–140 characters (mobile truncation): a claim by default; a specific question only if the post answers it right away; never a rhetorical question
 - **Fits the length target** for its goal (under ~150 chars for awareness/conversion; 150–300 for
   consideration/education)
 - **Contains one clear idea or call-to-action**

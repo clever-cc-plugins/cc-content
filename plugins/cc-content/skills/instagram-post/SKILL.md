@@ -148,7 +148,7 @@ concrete pain point, CTA is specific call-to-action").
 
 Produce a complete Instagram caption that:
 
-- **Opens with a strong hook** (grabs attention within 1–3 seconds per format-guidelines.md; for Reels, the hook must also work as on-screen text): a claim, not a rhetorical question
+- **Opens with a strong hook** (grabs attention within 1–3 seconds per format-guidelines.md; for Reels, the hook must also work as on-screen text): a claim by default; a specific question only if the caption answers it right away; never a rhetorical question
 - **Fits the length target** for its format and goal (100–220 chars for awareness/Reels; 126–800 chars for consideration/carousel; see Layer 3 tables for other goals)
 - **Contains one clear idea or call-to-action**
 - **Hook does NOT start with an emoji** (emojis reserved for later natural pauses, 1–5 max depending on format)
@@ -173,7 +173,7 @@ Internal verification checklist from `format-guidelines.md`:
 - Length appropriate for format and goal (see Layer 3 tables in format-guidelines.md)
 - One idea per caption
 - CTA, if any, is singular
-- CTA is specific and save/send-oriented, not vague or generic bait, and never a comment-/DM-for-content funnel
+- If a CTA is present, it is specific (save/send, tap the link, another real next step, or a genuine question), not vague or generic bait, and never a comment-/DM-for-content funnel
 - No reflex closing question
 - Emojis: 1–5 max depending on format, placed at natural pauses (not in opening hook)
 - Tone matches audience (B2B vs. B2C calibration)
