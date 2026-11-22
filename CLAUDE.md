@@ -50,7 +50,7 @@ Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containi
 
 ## Tests
 
-Run `node --test tests/brand-voice/` from the repo root (Node 18+, no dependencies). See `tests/brand-voice/README.md` for the dry-run scenarios. Run `bash tests/stamp-shared-files/test.sh` to test the pre-commit date stamping.
+Run `node --test tests/brand-voice/` from the repo root (Node 18+, no dependencies). See `tests/brand-voice/README.md` for the dry-run scenarios. Run `bash tests/stamp-shared-files/test.sh` to test the pre-commit date stamping. Run `node --test tests/ai-tells/` after editing `_shared/ai-tells.md` (checks the catalog's table format, allowed values, and source keys).
 
 ## Don't
 
