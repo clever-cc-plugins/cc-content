@@ -249,10 +249,7 @@ Check and fix:
    not sensational. Defuse exaggeration, clickbait phrasing, and manufactured drama.
 4. **Style drift.** Bring any passage that drifts from the brand voice or the format
    guideline back into line — including new sentences you add while editing.
-5. **AI tells — em-dash insertions.** Find parenthetical insertions set off by dashes
-   ("–" or "—") and rewrite them as clean sentences so none of those enclosing dashes
-   remain. This is a frequent, recognizable tell; removing it makes the text read as
-   human-written.
+5. **AI tells.** Run the AI-tell check from `../_shared/ai-tells.md` by its "How to use this catalog" rules. Dashes count only above the brand voice's rate (default: more than one per paragraph); don't strip every dash, since dash-free comma chains are a tell of their own.
 6. **Readability patterns.** Run the readability pass from
    `../_shared/readability-patterns.md` as the last check: scan for the six patterns
    (coinages, long subject–verb gaps, dropped signpost words, noun stacks, ad-hoc

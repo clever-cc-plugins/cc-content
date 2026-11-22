@@ -265,9 +265,9 @@ gets:
        heavily rewrite if a fix would require it); unsupported claims about the
        organization not traceable to the loaded context (soften, rephrase, or
        remove); hype and over-dramatization; style drift from brand voice or the
-       format guideline (including in sentences added while editing); em-dash-set-off
-       parenthetical insertions ("–"/"—"), rewritten as clean sentences — a frequent
-       AI tell; and a final check that the substance layer is still present and
+       format guideline (including in sentences added while editing); AI tells per
+       `../_shared/ai-tells.md` (dashes only above the brand voice's rate, default
+       more than one per paragraph); and a final check that the substance layer is still present and
        unchanged (abbreviating a statistic to fit platform constraints is fine as
        long as the number and meaning survive). If a Tier-B guideline specifies an
        optimal length, use the full range rather than coming in thin.
