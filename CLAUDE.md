@@ -2,7 +2,7 @@
 
 This repository distributes the `cc-content` Claude Code plugin — a suite of content creation skills for marketing and personal-branding projects.
 
-<!-- cc-config: last-optimize-run: 2026-11-12 72ca16a1dee587147feaa44fa457ab9346288f15 -->
+<!-- cc-config: last-optimize-run: 2026-11-22 a03d5eff7a54a9c04e8c56a8a7951eccd607bfd9 -->
 
 ## Key Config Files
 
@@ -10,7 +10,6 @@ This repository distributes the `cc-content` Claude Code plugin — a suite of c
 | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `.claude/format-markdown.sh`                                    | PostToolUse hook: formats Markdown files with prettier after edits                            |
 | `.claude/guard-secret-files.sh`                                 | PreToolUse hook: blocks reads/edits/writes of secret .env files                               |
-| `.claude/learnings.md`                                          | Corrections and standing preferences, per `_shared/learnings-protocol.md`                     |
 | `.claude/settings.json`                                         | Permissions, hooks, environment variables                                                     |
 | `.claude/skills/refresh-ai-tells/SKILL.md`                      | Maintainer skill: manual, reviewed refresh of the AI-tells catalog (not shipped)              |
 | `.githooks/pre-commit`                                          | Secret scanning (gitleaks) + CLAUDE.md table sync                                             |
@@ -51,7 +50,7 @@ Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containi
 
 ## Tests
 
-Run `node --test tests/brand-voice/` from the repo root (Node 18+, no dependencies). See `tests/brand-voice/README.md` for the dry-run scenarios. Run `bash tests/stamp-shared-files/test.sh` to test the pre-commit date stamping. Run `node --test tests/ai-tells/` after editing `_shared/ai-tells.md` (checks the catalog's table format, allowed values, and source keys).
+Run `node --test tests/brand-voice/` from the repo root (Node 18+, no dependencies). See `tests/brand-voice/README.md` for the dry-run scenarios. Run `bash tests/stamp-shared-files/test.sh` to test the pre-commit date stamping. Run `node --test tests/ai-tells/` after editing `_shared/ai-tells.md` (checks the catalog's table format, allowed values, and source keys). After changing `humanize/SKILL.md` or the counting rules in `_shared/ai-tells.md`, re-run the dry-run scenarios in `tests/humanize/README.md`.
 
 ## Don't
 

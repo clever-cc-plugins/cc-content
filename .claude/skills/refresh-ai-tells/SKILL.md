@@ -6,6 +6,7 @@ description: >
   language versions of "Signs of AI writing", tropes.fyi, Graphite) as a reviewed
   proposal. Invoke when the user says "refresh the AI tells", "update the AI-tells
   catalog", or "check Wikipedia for new AI signs".
+disable-model-invocation: true
 ---
 
 # Refresh the AI-tells catalog
