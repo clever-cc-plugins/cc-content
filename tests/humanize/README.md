@@ -24,12 +24,12 @@ Run each in a scratch project outside the repo. Register a short brand-voice not
 
 ### H2, German blog paragraphs
 
-- **Must count:** negative parallelism („nicht nur schneller, sondern auch sparsamer“); the vocabulary cluster in paragraph 3 („In der heutigen Zeit“, „zuverlässig“, „eine weitere Dimension“: three catalog words in one paragraph), reported as one line `AI vocabulary [A]: 1`.
+- **Must count:** reflexive "not only… but also" („nicht nur schneller, sondern auch sparsamer“, tier B); the vocabulary cluster in paragraph 3 („In der heutigen Zeit“, „zuverlässig“, „eine weitere Dimension“: three catalog words in one paragraph), reported as one line `AI vocabulary [A]: 1`.
 - **Must not count:** the spaced en dashes (one per paragraph; the brand voice says „sparsam“ without a number, so the default of one per paragraph applies); the single „Darüber hinaus“ in paragraph 4 (transition word alone is an ineffective indicator).
 - **Variant:** add „Wir verwenden ‚zuverlässig‘ bewusst als Kernbegriff“ to the brand-voice note and rerun. „zuverlässig“ must not count, and the paragraph-3 cluster drops to two words, so the vocabulary marker disappears.
 
 ### H3, personal email
 
 - **Must stay and must not count:** "I hope this helps." It is written by the sender to the recipient, not chatbot meta-talk.
-- **Must not count:** the offer "If you want, I can introduce you…" (a real next step, not a reflex question).
+- **Must not count:** the offer "If you want, I can introduce you…" (a real next step); the ask "Would Thursday at 10 work for a short call?" (an email ask phrased as a question is the call to action, not a reflex closing question).
 - Expected result: few or no markers; the draft comes back nearly unchanged.

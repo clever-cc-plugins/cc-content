@@ -4,7 +4,7 @@ Hi Priya,
 
 Attached is the list of the four packaging suppliers we worked with last year, with a note on each. Greenfold was the fastest; Boxwell was the cheapest but missed two delivery dates in March.
 
-If you want, I can introduce you to our contact at Greenfold next week.
+If you want, I can introduce you to our contact at Greenfold next week. Would Thursday at 10 work for a short call?
 
 I hope this helps.
 
