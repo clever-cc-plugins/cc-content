@@ -1,6 +1,6 @@
 # Landing Page Format Guidelines
 
-_Last updated: 2026-08-05_
+_Last updated: 2026-11-22_
 
 Format-scope rules for the landing-page skill. These constraints apply to every
 generated landing page regardless of campaign briefing or brand voice. Synthesized
@@ -76,6 +76,7 @@ A single-goal landing page needs, in order:
   the reverse
 - Useful headline template: `[Achieve outcome] without [pain point]`, or name the
   audience + the specific outcome + the obstacle removed
+- Prefer a benefit statement to a question headline. In published A/B comparisons, question headlines lost to statements (MarketingSherpa: a statement converted 167% better; Unbounce: the question headline came last in three tests). These are vendor case studies, but they point the same way
 - Avoid vague curiosity-gap teases; lead with a real number, a named outcome, or a
   precise claim
 
