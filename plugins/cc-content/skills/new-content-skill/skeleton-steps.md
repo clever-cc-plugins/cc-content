@@ -73,7 +73,7 @@ a pre-suasive opener strategy. Note the choices in working notes.
 Produce a complete [FORMAT] that applies the confirmed format-guidelines variant, the chosen
 framework, the selected persuasion principles, and any loaded brand-voice and audience
 context. Then run the readability pass from `readability-patterns.md` on the finished
-draft as its own step, fixing only the passages with a hit. Internally verify against
+draft as its own step, including its AI-tell check against `ai-tells.md`, fixing only the passages with a hit. Internally verify against
 the quality checklist in `format-guidelines.md`. For every unmet gate, revise the
 draft and re-check — do not present until every gate passes or the failure genuinely
 cannot be fixed (e.g. missing context), in which case surface it in the output rather than

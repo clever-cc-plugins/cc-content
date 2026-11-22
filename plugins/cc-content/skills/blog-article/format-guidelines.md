@@ -1,6 +1,6 @@
 # Blog Article Format Guidelines
 
-_Last updated: 2026-07-16_
+_Last updated: 2026-11-22_
 
 Format-scope rules for the `blog-article` skill. These rules are language-
 and industry-neutral: they describe **structure, calibration, and persuasion architecture**,
@@ -62,8 +62,8 @@ sections may be re-titled, merged, or expanded — but every job must be perform
 
 1. **Headline (H1).** The primary conversion point _before_ the article begins. It must
    promise specific value, name an entity or number where possible, and earn the click.
-   List-format headlines and how-to / question-style headlines empirically over-perform
-   on traffic and backlinks. Posts with 14+ word headlines historically out-share short
+   List-format and how-to headlines empirically over-perform on traffic and backlinks.
+   Question titles are contested: Backlinko found 23% more shares across 912M posts, while Fang & Wheeler (2026, _Journal of Consumer Psychology_; four studies including news-headline A/B tests) found question titles lower engagement because readers see them as less informative. A specific question that matches a real search query ("How long does a heat pump installation take?") can work; a rhetorical one ("Is your marketing broken?") can't. Posts with 14+ word headlines historically out-share short
    ones — but a vague long headline still loses to a sharp short one.
 2. **Hook / introduction (first 50–200 words).** Earns the scroll past the fold. States
    who the post is for, what it covers, and why it matters — in the reader's language.

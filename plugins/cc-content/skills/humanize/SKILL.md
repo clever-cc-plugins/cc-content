@@ -10,12 +10,15 @@ description: >
   overuses (coinages, noun stacks, objects acting like people). Works on drafts from
   any source — the owner's own writing, another tool's output, or a previous
   cc-content skill's draft. Do NOT use it to generate new content from scratch; it
-  only revises an existing draft.
+  only revises an existing draft. It revises text for human readers and is not a
+  tool for evading AI detectors.
 allowed-tools: Read, Write, Edit, Bash
 argument-hint: "[optional: path to the draft to humanize]"
 ---
 
 @../\_shared/readability-patterns.md **Read when:** detecting markers in Step 3 and rewriting in Step 4
+
+@../\_shared/ai-tells.md **Read when:** detecting markers in Step 3 and rewriting in Step 4
 
 # Humanize Skill
 
@@ -81,16 +84,25 @@ Resolve the draft to humanize, in this order:
 
 ## Step 3: Detect AI markers (Pass 1)
 
-Scan the draft for these markers and count each type:
+**Catalog markers.** Scan the draft against `../_shared/ai-tells.md` and count each catalog entry as its own marker type (vocabulary rows together as one), by that file's "How to use this catalog" rules:
 
-- **Em-dash parentheticals** — insertions set off by "–" or "—".
-- **Overused transitions** — "Moreover," "Furthermore," "In today's world," and
-  similar formulaic connectors.
+- Count entries whose scope fits the draft: `all` always; `marketing` for social posts, ads, landing pages, and marketing emails; `social` for social posts only.
+- Tier A and B entries with status `current`, `rising`, or `fading`: every hit counts.
+- Counting unit: a paragraph of prose; in social posts and other line-broken formats, the whole post (each thread post on its own).
+- Tier C entries and `historical` entries: count only when two or more different such entries appear in the same counting unit. Vocabulary rows are exempt from this rule. Chatbot residue rows always count, whatever their status.
+- Vocabulary rows: count only when three or more catalog words, from any vocabulary row, appear in one counting unit. Report them as one marker, `AI vocabulary`, tagged with the highest tier among the words found.
+- Never count `ineffective` entries (a lone "Moreover" is not a marker).
+- Words, devices, and punctuation the loaded brand voice or audience uses are not hits.
+- Dashes count only above the brand voice's rate. A pair of dashes around one insertion counts as one. If the brand voice names no number, the default is more than one per paragraph of prose, or more than two per social post. The spaced dash is normal typography in German, Russian, and Serbian.
+- Hedges count only as clusters that add no information. A qualifier that changes what a sentence claims ("may lower the risk", "in most cases") is content, not a marker.
+- Read each entry's "Looks like" cell for what is not a hit (for example, an email ask phrased as a question is not a reflex closing question).
+
+Also note every entry from the catalog's "Content-level slop (report only)" table that applies. These are reported in Step 5, never rewritten in Step 4.
+
+**Structural markers.** Then scan for these, which the catalog doesn't cover. Too-perfect parallel structure replaces the catalog's "Template repetition" entry, so count that pattern only here:
+
 - **Formulaic structure** — a rigid intro–3 points–conclusion shape with no
   variation.
-- **Generic AI phrases** — "dive into," "unlock," "elevate," "transform," unless the
-  loaded brand voice explicitly uses these terms as part of its established
-  vocabulary.
 - **Excessive colons/semicolons** — used as a crutch for list-like sentences instead
   of natural prose.
 - **Too-perfect parallel structure** — this marker has two cases; scan for both:
@@ -139,9 +151,6 @@ Scan the draft for these markers and count each type:
     marker count can still hide a document that reads as "too polished" once
     repeated section templates are counted.
 
-- **Hedge words** — "arguably," "potentially," "seemingly," used to soften claims
-  without adding information.
-
 Then scan for the six **readability patterns** defined in
 `../_shared/readability-patterns.md`, each counted as its own marker type:
 
@@ -162,7 +171,7 @@ genuine stalls, not every compound.
 
 Present the counts and one brief example per marker type found, **before**
 rewriting — the owner should see the diagnosis first, in the single-line-per-marker
-format Step 5 defines. For too-perfect parallel structure: if the cross-section
+format Step 5 defines. Catalog markers carry their tier in brackets (`Importance flagging [A]`); structural markers and readability patterns carry no tier. For too-perfect parallel structure: if the cross-section
 count is zero, report a plain `<count>`, same as every other marker. Otherwise
 keep the two cases visible instead of collapsing them into one number — report
 `<count>` as `<total> (N within-passage, M cross-section)` — and use the
@@ -176,33 +185,14 @@ fits on Step 5's one line.
 
 Produce the rewritten draft. Rules:
 
-1. **Preserve every factual claim and the original structure's intent.** This is a
-   style pass, not a content rewrite — do not add, remove, or change what the draft
-   asserts.
-2. **Remove every marker counted in Step 3.** None should remain in the output.
-   Fix readability patterns with the fixes in `readability-patterns.md` — usually a
-   second sentence, a relative clause, a preposition, or a named actor. Only what
-   Step 3 counted is a marker: under that file's "don't overcorrect" limits, single
-   compounds, audience terms, and verbatim quotes aren't hits and stay as they are.
-3. **Compress content, not grammar.** When cutting hedges, transitions, or filler,
-   keep the grammatical signpost words ("that", „dass“, relative pronouns,
-   prepositions that break up noun chains). Removing one AI tell must not create
-   another.
+1. **Preserve every factual claim and the original structure's intent.** This is a style pass, not a content rewrite — do not add, remove, or change what the draft asserts. Qualifiers that carry meaning ("may", "in most cases", "not a medical device") stay, because removing them changes the claim. Content-level slop from Step 3 stays as it is; Step 5 reports it.
+2. **Fix every marker counted in Step 3.** None should remain in the output. Fix catalog markers toward the catalog's "Signs of human writing" targets, and check that no replacement creates another catalog entry (for example, dashes turned into comma chains, or claims cut into fragments). Fix readability patterns with the fixes in `readability-patterns.md` — usually a second sentence, a relative clause, a preposition, or a named actor. Only what Step 3 counted is a marker: under that file's "don't overcorrect" limits, single compounds, audience terms, and verbatim quotes aren't hits and stay as they are.
+3. **Compress content, not grammar.** When cutting the hedges and transitions Step 3 counted, keep the grammatical signpost words ("that", „dass“, relative pronouns, prepositions that break up noun chains). Removing one AI tell must not create another. Don't shorten a padded paragraph that Step 3 noted as content-level slop; fix only its counted style markers and leave the rest to Step 5's content findings.
 4. **Calibrate reintroduced human texture to the loaded brand voice:**
-   - If the brand voice allows casualness: use contractions, allow sentences to
-     start with "And" or "But" where it reads naturally, vary sentence rhythm (mix
-     short punchy sentences with longer natural ones), replace vague time references
-     with concrete ones ("last Tuesday" instead of "recently"), and use specific
-     detail in place of generic examples.
-   - If the brand voice is formal: keep contractions and casual openers out, but
-     still vary sentence rhythm, replace vague generalities with specific detail, and
-     remove the same AI markers — formality and human-sounding prose are not
-     opposites.
-   - If no brand voice is loaded (degraded per Step 1): default to varied rhythm,
-     concrete detail, and marker removal only — do not guess a tone.
-5. **Intervene as much as necessary but as little as possible.** Preserve what
-   already works in the draft; change only what a marker-removal or tone-calibration
-   rule requires.
+   - If the brand voice allows casualness: use contractions, allow sentences to start with "And" or "But" where it reads naturally, vary sentence length, and use concrete times and specific details where the draft or the loaded context supplies them ("last Tuesday" instead of "recently" only if the date is known). Never invent a detail; list a missing one under Step 5's content findings.
+   - If the brand voice is formal: keep contractions and casual openers out, but still vary sentence length, use specific details the draft or context supplies (never invented ones), and remove the same AI markers — formality and human-sounding prose are not opposites.
+   - If no brand voice is loaded (degraded per Step 1): default to varied sentence length, concrete detail only where the draft supplies it, and marker removal only — do not guess a tone.
+5. **Intervene as much as necessary but as little as possible.** Preserve what already works in the draft; change only what a marker-removal or tone-calibration rule requires.
 
 ## Step 5: Delimited output
 
@@ -210,14 +200,22 @@ Produce the rewritten draft. Rules:
 ─────────────────────────────────────────────
 AI markers detected
 ─────────────────────────────────────────────
-<marker type>: <count> — <brief example from the draft>
-[one line per marker type found; omit types with zero occurrences]
+<marker type> [<tier>]: <count> — <brief example from the draft>
+[one line per marker type found; omit types with zero occurrences; the [<tier>]
+tag only for catalog markers]
 ─────────────────────────────────────────────
 Humanized draft
 ─────────────────────────────────────────────
 <the rewritten text only — no preamble, no commentary inside the block>
 ─────────────────────────────────────────────
+Content findings (unchanged)
+─────────────────────────────────────────────
+<content-level slop type>: <brief example from the draft>
+[one line per type from the catalog's content-level table, or "none"]
+─────────────────────────────────────────────
 ```
+
+Content findings name problems a style pass must not fix, such as padding or statements that could fit any company. The owner decides whether to cut or rewrite them, or to rerun the drafting skill.
 
 If the output is degraded (no brand voice context), prepend:
 

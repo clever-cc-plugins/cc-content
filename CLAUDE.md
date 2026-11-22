@@ -12,6 +12,7 @@ This repository distributes the `cc-content` Claude Code plugin — a suite of c
 | `.claude/guard-secret-files.sh`                                 | PreToolUse hook: blocks reads/edits/writes of secret .env files                               |
 | `.claude/learnings.md`                                          | Corrections and standing preferences, per `_shared/learnings-protocol.md`                     |
 | `.claude/settings.json`                                         | Permissions, hooks, environment variables                                                     |
+| `.claude/skills/refresh-ai-tells/SKILL.md`                      | Maintainer skill: manual, reviewed refresh of the AI-tells catalog (not shipped)              |
 | `.githooks/pre-commit`                                          | Secret scanning (gitleaks) + CLAUDE.md table sync                                             |
 | `.github/workflows/claude-code-review.yml`                      | Automatic PR review via Claude Code                                                           |
 | `.github/workflows/claude.yml`                                  | Trigger Claude via @claude mentions in issues/PRs                                             |
@@ -50,7 +51,7 @@ Skills live in `plugins/cc-content/skills/`, one subdirectory per skill containi
 
 ## Tests
 
-Run `node --test tests/brand-voice/` from the repo root (Node 18+, no dependencies). See `tests/brand-voice/README.md` for the dry-run scenarios. Run `bash tests/stamp-shared-files/test.sh` to test the pre-commit date stamping.
+Run `node --test tests/brand-voice/` from the repo root (Node 18+, no dependencies). See `tests/brand-voice/README.md` for the dry-run scenarios. Run `bash tests/stamp-shared-files/test.sh` to test the pre-commit date stamping. Run `node --test tests/ai-tells/` after editing `_shared/ai-tells.md` (checks the catalog's table format, allowed values, and source keys).
 
 ## Don't
 

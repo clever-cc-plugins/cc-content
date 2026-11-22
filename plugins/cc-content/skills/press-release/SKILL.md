@@ -202,7 +202,7 @@ Produce a complete press release that applies:
 
 Before the checklist, run the **readability pass** from
 `../_shared/readability-patterns.md` on the finished draft as its own step: scan
-for the six patterns and fix only the passages with a hit, keeping content, tone,
+for the six patterns, run its AI-tell check, and fix only the passages with a hit, keeping content, tone,
 and audience terms intact. Where the brand voice asks for brevity or imagery, read
 it the way that file defines it — cut redundancy, not grammatical signposts.
 
@@ -217,7 +217,7 @@ it the way that file defines it — cut redundancy, not grammatical signposts.
 - [ ] Attribution format correct (full name + title first, last name after)
 - [ ] Boilerplate 50–100 words, third person, covers who/what/where
 - [ ] Media contact info present
-- [ ] Readability pass run: no clusters of the six patterns in `readability-patterns.md`
+- [ ] Readability pass run: no clusters of the six patterns in `readability-patterns.md`; AI-tell check run
 
 For every unchecked box, revise the draft and re-check — do not present until
 every gate passes or the failure genuinely cannot be fixed (e.g. missing
