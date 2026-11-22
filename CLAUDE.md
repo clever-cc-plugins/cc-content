@@ -12,6 +12,7 @@ This repository distributes the `cc-content` Claude Code plugin — a suite of c
 | `.claude/guard-secret-files.sh`                                 | PreToolUse hook: blocks reads/edits/writes of secret .env files                               |
 | `.claude/learnings.md`                                          | Corrections and standing preferences, per `_shared/learnings-protocol.md`                     |
 | `.claude/settings.json`                                         | Permissions, hooks, environment variables                                                     |
+| `.claude/skills/refresh-ai-tells/SKILL.md`                      | Maintainer skill: manual, reviewed refresh of the AI-tells catalog (not shipped)              |
 | `.githooks/pre-commit`                                          | Secret scanning (gitleaks) + CLAUDE.md table sync                                             |
 | `.github/workflows/claude-code-review.yml`                      | Automatic PR review via Claude Code                                                           |
 | `.github/workflows/claude.yml`                                  | Trigger Claude via @claude mentions in issues/PRs                                             |
