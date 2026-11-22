@@ -1,6 +1,6 @@
 # X (Twitter) Post Format Guidelines
 
-_Last updated: 2026-08-05_
+_Last updated: 2026-11-22_
 
 Format-scope rules for the x-post skill. These constraints apply to every
 generated post regardless of campaign briefing or brand voice.
@@ -48,7 +48,7 @@ Every X post contains these structural elements in order:
 
 1. **Hook / Opening** (required) — the first line deciding readability; 1–2 sentences max
 2. **Body** (varies) — 0 or more lines delivering substance; leave blank for pure hook posts
-3. **Call to Action (CTA)** (conditional) — present if post serves a goal beyond pure engagement
+3. **Call to Action (CTA)** (optional) — only when there is one real next step, or a question the author genuinely wants answered
 
 ### Hook / Opening
 
@@ -56,16 +56,16 @@ The first line is the hook — readers have "about 1 second" to decide whether t
 
 Effective hook types:
 
-- Captivating questions (e.g. "What if you could ship code 50% faster?")
 - Surprising facts or statistics (e.g. "Posts with links see 50-90% reach reduction")
 - Bold or contrarian statements (e.g. "Everything you know about Twitter growth is wrong")
 - Specific-result framing (e.g. "I went from 0 to 10,000 followers in 57 days" beats vague goals)
 
 Rules:
 
-- Open with the strongest claim or question first — never bury the lead
+- Open with the strongest claim first — never bury the lead
 - Keep it short — you have about 1 second to grab attention, so lead with your
-  strongest claim or question before anything else
+  strongest claim before anything else
+- **Don't open with a question by default.** No study isolates question openers on X, and the closest evidence points both ways: a 2013 Twitter experiment found question headlines drew more link clicks, while a 2026 _Journal of Consumer Psychology_ paper (four studies, including news-headline A/B tests) and 2026 within-creator LinkedIn data (−17% reactions) find question openers lower engagement, and rhetorical question openers now read as AI copy. Use a question only if it is specific and the post answers it right away; never a rhetorical "What if you could…?" or "Ever wondered…?" opener
 - One idea only — avoid compound sentences in the hook
 - Avoid clichéd openers: "Just a thought...", "Hot take:", "Unpopular opinion:"
 - Use concrete specifics over vague praise
@@ -75,15 +75,15 @@ Rules:
 Replies and genuine conversation are directionally weighted well above passive likes across
 independent 2026 analyses of X's ranking system (exact multipliers are contested — see the
 note at the top of this document — but the direction is consistent). Conversation-inviting
-posts outperform like-optimized posts.
+posts outperform like-optimized posts. People reply to a point they want to add to or argue with, so earn replies through the content itself, not through a closing prompt.
 
 Rules:
 
 - Focus on a **single primary action** — multiple asks in one post compete and typically
   produce zero action
-- Make CTAs specific and easy to answer — focused questions drive more engagement than vague asks
-- Good CTA examples: "Drop your answer in the comments", "What's your take?", "What's the
-  biggest bottleneck you've hit with X?"
+- **Don't close with a question by default.** The reflex closing question ("What's your take?", "What about you?") reads as AI or template output on every platform, and 2026 within-author data from LinkedIn shows little or no payoff from it. A post that ends on its sharpest line is complete
+- **Ask a question only when the author genuinely wants the answers** and could act on them, e.g. "Writing a follow-up on failed migrations: what was the first warning sign in yours?" If you can't say what the author would do with the replies, drop the question
+- If there is a next step, name one real step (read the report, register for the event), with the link where it serves the reader
 - Avoid vague CTAs: "Let me know what you think", "Share if you relate"
 
 **Do not use engagement-bait CTAs.** Phrases like "like if you agree," "follow for more,"
@@ -93,17 +93,19 @@ This mirrors black-hat SEO's trajectory: platforms iterate to detect exactly the
 so they are short-lived by design. Earn the reply or reshare through content worth
 responding to, not through a solicitation.
 
+**Do not use reply- or DM-for-content funnels** ("Reply GUIDE and I'll DM it to you", "DM me the word CHECKLIST"). They trade the reader's goodwill for reply counts and lead capture. If a resource is worth sharing, link it directly.
+
 ### Thread vs. Single Post
 
 Single post or thread — choose based on content structure, not length.
 
-| Dimension          | Single Post | Thread                                                                                                 |
-| ------------------ | ----------- | ------------------------------------------------------------------------------------------------------ |
-| **When to use**    | One idea    | Multi-step process, story, detailed breakdown                                                          |
-| **Minimum length** | 1 post      | 5 posts minimum (shorter threads work as single posts)                                                 |
-| **Ideal length**   | N/A         | 5-8 posts (sources converge on 5-7 to 6-8; treat as a range, not a fixed number)                       |
-| **Avoid**          | N/A         | 10+ posts (sharp completion drop-off)                                                                  |
-| **Thread anatomy** | N/A         | Hook post (with "1/N" indicator + value promise) → body posts (1 idea each, self-contained) → CTA post |
+| Dimension          | Single Post | Thread                                                                                                                                      |
+| ------------------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **When to use**    | One idea    | Multi-step process, story, detailed breakdown                                                                                               |
+| **Minimum length** | 1 post      | 5 posts minimum (shorter threads work as single posts)                                                                                      |
+| **Ideal length**   | N/A         | 5-8 posts (sources converge on 5-7 to 6-8; treat as a range, not a fixed number)                                                            |
+| **Avoid**          | N/A         | 10+ posts (sharp completion drop-off)                                                                                                       |
+| **Thread anatomy** | N/A         | Hook post (with "1/N" indicator + value promise) → body posts (1 idea each, self-contained) → closing post (takeaway or one real next step) |
 
 Threads shorter than 5 posts usually work better as a single longer post.
 
@@ -273,11 +275,11 @@ prominence); advocacy earns reshares through a genuinely shareable win, not a so
 
 ### By Funnel Stage (TOFU / MOFU / BOFU)
 
-| Stage             | Vocabulary                  | Claim specificity | Proof type          | CTA directness       | Optimal length             | Reader mindset        | Common mistake                   |
-| ----------------- | --------------------------- | ----------------- | ------------------- | -------------------- | -------------------------- | --------------------- | -------------------------------- |
-| **TOFU (Top)**    | Accessible, problem-focused | Broad/provocative | Story or stat       | Low (invite a reply) | 280 chars (single)         | Unaware, passive      | Too technical or feature-focused |
-| **MOFU (Middle)** | Domain-familiar             | Specific options  | Comparison or depth | Moderate (engage)    | 280–1400 chars (thread OK) | Considering, active   | Overwhelming with options        |
-| **BOFU (Bottom)** | Technical/specific          | High specificity  | Proof, testimonial  | High (direct ask)    | 280 chars (single)         | Ready, decision-maker | Unclear next step or friction    |
+| Stage             | Vocabulary                  | Claim specificity | Proof type          | CTA directness                    | Optimal length             | Reader mindset        | Common mistake                   |
+| ----------------- | --------------------------- | ----------------- | ------------------- | --------------------------------- | -------------------------- | --------------------- | -------------------------------- |
+| **TOFU (Top)**    | Accessible, problem-focused | Broad/provocative | Story or stat       | Low (none, or a genuine question) | 280 chars (single)         | Unaware, passive      | Too technical or feature-focused |
+| **MOFU (Middle)** | Domain-familiar             | Specific options  | Comparison or depth | Moderate (engage)                 | 280–1400 chars (thread OK) | Considering, active   | Overwhelming with options        |
+| **BOFU (Bottom)** | Technical/specific          | High specificity  | Proof, testimonial  | High (direct ask)                 | 280 chars (single)         | Ready, decision-maker | Unclear next step or friction    |
 
 ⚠ KNOWLEDGE-BASED — no research source directly addressed TOFU/MOFU/BOFU staging for X.
 Adaptation: TOFU posts lead with a hook for cold out-of-network reach (bold statement,
@@ -305,12 +307,13 @@ credible claim.
 
 Before presenting output, verify:
 
-- [ ] Hook grabs attention in the first line (strong opening in ~1 second, no clichés)
+- [ ] Hook grabs attention in the first line (strong opening in ~1 second, no clichés, no rhetorical question opener)
 - [ ] Character count appropriate for goal (280 chars for single posts, 5–8 posts for threads)
 - [ ] One idea per post (single post) or one idea per thread post
-- [ ] CTA is singular and easy to answer (never stack multiple asks)
-- [ ] CTA earns the response through content, not engagement-bait phrasing ("like if you
-      agree", "follow for more", "comment YES", "tag a friend", "RT to win")
+- [ ] CTA, if any, is singular (never stack multiple asks)
+- [ ] No reflex closing question; a closing question is one the author genuinely wants answered
+- [ ] The post earns responses through content, not engagement-bait phrasing ("like if you
+      agree", "follow for more", "comment YES", "tag a friend", "RT to win") or reply-/DM-for-content funnels
 - [ ] Hashtags: 0–2 only (not 3+)
 - [ ] Links omitted from the main post (or placed in the first reply) unless the click itself
       is the goal
@@ -322,6 +325,5 @@ Before presenting output, verify:
       coinages, long subject–verb gaps, dropped signpost words, noun stacks, ad-hoc
       noun-verbs, or objects acting like people; character-limit cuts removed content,
       not function words
-- [ ] If thread: 5–8 posts max, with hook post (1/N), body posts (one idea each), CTA post
-- [ ] Conversation-inviting elements present (a specific, answerable question or similar)
+- [ ] If thread: 5–8 posts max, with hook post (1/N), body posts (one idea each), closing post
 - [ ] Emojis: 1–2 max, placed at natural pauses (not as bullet substitutes)

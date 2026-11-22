@@ -148,11 +148,11 @@ concrete pain point, CTA is specific call-to-action").
 
 Produce a complete Instagram caption that:
 
-- **Opens with a strong hook** (grabs attention within 1–3 seconds per format-guidelines.md; for Reels, the hook must also work as on-screen text)
+- **Opens with a strong hook** (grabs attention within 1–3 seconds per format-guidelines.md; for Reels, the hook must also work as on-screen text): a claim by default; a specific question only if the caption answers it right away; never a rhetorical question
 - **Fits the length target** for its format and goal (100–220 chars for awareness/Reels; 126–800 chars for consideration/carousel; see Layer 3 tables for other goals)
 - **Contains one clear idea or call-to-action**
 - **Hook does NOT start with an emoji** (emojis reserved for later natural pauses, 1–5 max depending on format)
-- **Includes a singular CTA** if the goal extends beyond pure reach (e.g., "Save this post", "Tap the link in bio", "Share this with someone who needs it") — avoid generic bait prompts ("Comment YES")
+- **Includes a singular CTA** only when the goal needs one real ask (e.g., "Save this post", "Tap the link in bio", "Share this with someone who needs it") or the author genuinely wants answers to a question — no reflex closing question, no generic bait prompts ("Comment YES"), and never a comment-/DM-for-content funnel ("Comment LINK and I'll DM it to you")
 - **Applies selected storytelling framework and persuasion principles**
 - **Reflects tone and vocabulary** from loaded brand voice context and audience context
 - **For post format:** if Reels, keep caption short and let the video carry the narrative; if carousel, assume reader will swipe and can handle longer/multi-part captions; if single-image, hook must stand alone within the truncation point (~125 characters Feed)
@@ -169,17 +169,17 @@ it the way that file defines it — cut redundancy, not grammatical signposts.
 Internal verification checklist from `format-guidelines.md`:
 
 - Hook grabs attention in first line (within 1–3 seconds, ideally under 125 characters for mobile truncation, ~55 for Reels)
-- Hook does NOT start with emoji; for Reels, hook also appears as on-screen text
+- Hook does NOT start with emoji and is not a rhetorical question; for Reels, hook also appears as on-screen text
 - Length appropriate for format and goal (see Layer 3 tables in format-guidelines.md)
 - One idea per caption
-- CTA is singular and easy to answer
-- CTA is specific and save/send-oriented, not vague or generic bait
+- CTA, if any, is singular
+- If a CTA is present, it is specific (save/send, tap the link, another real next step, or a genuine question), not vague or generic bait, and never a comment-/DM-for-content funnel
+- No reflex closing question
 - Emojis: 1–5 max depending on format, placed at natural pauses (not in opening hook)
 - Tone matches audience (B2B vs. B2C calibration)
 - Hashtag count: 3–5, topically relevant
 - Post format choice aligns with goal and funnel stage (per Layer 3)
 - Content is native/original — no unaltered reposts or watermarked video
-- Conversation-inviting element present (question, call for saves/shares, or community hook)
 - Readability pass run: no clusters of the six patterns in `readability-patterns.md`
 
 For every unmet item, revise the draft and re-check — do not present until

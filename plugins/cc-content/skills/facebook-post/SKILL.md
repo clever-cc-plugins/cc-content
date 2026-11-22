@@ -149,15 +149,13 @@ concrete pain point").
 
 Produce a complete Facebook post that:
 
-- **Opens with a strong hook** that stands alone within ~125–140 characters (mobile truncation)
+- **Opens with a strong hook** that stands alone within ~125–140 characters (mobile truncation): a claim by default; a specific question only if the post answers it right away; never a rhetorical question
 - **Fits the length target** for its goal (under ~150 chars for awareness/conversion; 150–300 for
   consideration/education)
 - **Contains one clear idea or call-to-action**
 - **Uses 0–2 emojis** at natural pauses (if brand voice permits) and 0–3 hashtags only if they
   serve a specific campaign/event/location purpose (never as a discovery tactic)
-- **Includes a singular CTA** if the goal is conversion or consideration (e.g., "Leave your answer
-  below", "Watch the demo") — never an engagement-bait phrase ("Like if you agree", "Comment YES",
-  "Tag a friend", "Share to win")
+- **Includes a singular CTA** only when there is one real next step (e.g., "Watch the demo") or a question the author genuinely wants answered — no reflex closing question, never an engagement-bait phrase ("Like if you agree", "Comment YES", "Tag a friend", "Share to win"), and never a comment-/DM-for-content funnel ("Comment GUIDE and I'll send it")
 - **Applies selected storytelling framework and persuasion principles**
 - **Reflects tone and vocabulary** from loaded brand voice context and audience context
 - **Acknowledges channel reach dynamics:** Page posts reach ~1–6% of followers organically;
@@ -179,11 +177,12 @@ it the way that file defines it — cut redundancy, not grammatical signposts.
 
 Internal verification checklist from `format-guidelines.md`:
 
-- Hook grabs attention in first line and stands alone within ~125–140 characters
+- Hook grabs attention in first line and stands alone within ~125–140 characters; no rhetorical question opener
 - Length appropriate for goal (under ~150 chars for awareness/conversion; 150–300 for
   consideration/education)
 - One idea per post
-- CTA is singular, easy to answer, and free of engagement-bait phrasing
+- CTA, if any, is singular and free of engagement-bait phrasing and comment-/DM-for-content funnels
+- No reflex closing question
 - Emojis: 0–2 max; hashtags: 0–3 max and only if purposeful
 - Tone matches audience (B2B vs. B2C calibration)
 - Channel confirmed (Personal Profile / Professional Mode / Page / Group) and reach
@@ -192,7 +191,6 @@ Internal verification checklist from `format-guidelines.md`:
   personal-profile share if low reach is a risk for the stated goal
 - If Group post: adjusted for community tone (peer-to-peer, less promotional)
 - If link included: placed in the post body, not hidden in the first comment
-- Conversation-inviting element present (question or call for input)
 - Readability pass run: no clusters of the six patterns in `readability-patterns.md`
 
 For every unmet item, revise the draft and re-check — do not present until

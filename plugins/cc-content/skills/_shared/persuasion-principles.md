@@ -1,6 +1,6 @@
 # Persuasion Principles — Shared Reference
 
-_Last updated: 2026-08-04_
+_Last updated: 2026-11-22_
 
 Shared reference for all content-output skills that aim to influence reader
 behavior — buy, sign up, click, agree, donate, share, change their mind, trust
@@ -357,7 +357,7 @@ own carries more conviction than the same conclusion stated as a claim.
   naturally the reader forms it a beat before you state it.
 - Use questions that lead the reader to the answer rather than assertions
   that hand it to them: "What would it take to cut that in half?" before
-  revealing the answer.
+  revealing the answer. Use these inside the body, not as the opening line of a social post: the social-post skills' hook rules (lead with the claim, not a question) take precedence.
 - In UGC or community content, structure prompts so participants articulate
   the brand's key claim in their own words (reviews, testimonials, comments).
 
@@ -555,9 +555,9 @@ just launched a new feature for..." every time.
 ### Use unfinished thoughts to hold attention
 
 Open loops, mysteries, and incomplete patterns hold attention until the brain
-gets resolution. Useful at the hook level (a question or a setup that
-demands the body to resolve it), and within the body to keep readers moving
-through long content.
+gets resolution. Useful at the hook level (a setup that demands the body to
+resolve it), and within the body to keep readers moving through long content.
+For social posts, open the loop with a specific claim or detail rather than a question. On LinkedIn, 2026 platform data shows question openers underperforming; no study isolates question openers on X, Facebook, or Instagram, so their format guidelines apply the nearest available evidence by analogy. Each format's hook rules take precedence.
 
 Don't overuse this — clickbait that doesn't deliver resolution is the canonical
 failure mode and trains the audience to ignore future hooks.
