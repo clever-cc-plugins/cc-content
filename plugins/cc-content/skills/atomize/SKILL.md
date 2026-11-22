@@ -234,7 +234,7 @@ gets:
   4. The single target **format** this subagent is drafting — nothing else.
   5. File paths for the subagent to `Read` itself:
      - the brand-voice and organization-background context file(s) identified in Step 1 (project-relative, same as the context table).
-     - the three shared reference files — but **resolve `${CLAUDE_SKILL_DIR}` to an absolute path yourself first** (e.g. run `echo "$CLAUDE_SKILL_DIR"`) and embed that resolved absolute path in the prompt, as `<resolved-path>/../_shared/storytelling-frameworks.md`, `<resolved-path>/../_shared/persuasion-principles.md`, and `<resolved-path>/../_shared/readability-patterns.md`. A dispatched subagent has no `CLAUDE_SKILL_DIR` of its own to expand, and a hardcoded `plugins/cc-content/skills/_shared/...` guess only resolves inside this dev checkout, not a normal plugin install.
+     - the four shared reference files — but **resolve `${CLAUDE_SKILL_DIR}` to an absolute path yourself first** (e.g. run `echo "$CLAUDE_SKILL_DIR"`) and embed that resolved absolute path in the prompt, as `<resolved-path>/../_shared/storytelling-frameworks.md`, `<resolved-path>/../_shared/persuasion-principles.md`, `<resolved-path>/../_shared/readability-patterns.md`, and `<resolved-path>/../_shared/ai-tells.md`. A dispatched subagent has no `CLAUDE_SKILL_DIR` of its own to expand, and a hardcoded `plugins/cc-content/skills/_shared/...` guess only resolves inside this dev checkout, not a normal plugin install.
      - for Tier B, the format-guideline file path noted in Step 4. For Tier C, state plainly that no guideline file exists and it should use its own best-practices knowledge for this format's length, structure, and conventions.
   6. An explicit tool-scope constraint:
      - state plainly that the subagent's job is read-and-draft only — it must `Read` **only** the exact file paths listed above, and must not use any other tool (no web access, no fetching URLs, no shell commands, no writing files).
@@ -265,8 +265,8 @@ gets:
        heavily rewrite if a fix would require it); unsupported claims about the
        organization not traceable to the loaded context (soften, rephrase, or
        remove); hype and over-dramatization; style drift from brand voice or the
-       format guideline (including in sentences added while editing); AI tells per
-       `../_shared/ai-tells.md` (dashes only above the brand voice's rate, default
+       format guideline (including in sentences added while editing); AI tells per the
+       `ai-tells.md` file listed above (dashes only above the brand voice's rate, default
        more than one per paragraph); and a final check that the substance layer is still present and
        unchanged (abbreviating a statistic to fit platform constraints is fine as
        long as the number and meaning survive). If a Tier-B guideline specifies an

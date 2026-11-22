@@ -17,14 +17,15 @@ Tells drift with model generations: a word that marked 2023 output can be rare i
 ## How to use this catalog
 
 1. **Match the scope.** `all` applies to any text. `marketing` applies to social posts, ads, landing pages, and marketing emails. `social` applies to social posts only.
-2. **Count by tier.** Tier A (measured in a corpus or performance study) and tier B (curated by a large editor community, or consistent across several independent sources): each hit counts when the status is `current`, `rising`, or `fading`. Tier C (a single practitioner source) and every `historical` entry: count only when two or more different such entries appear in the same paragraph.
-3. **Vocabulary needs density.** Entries in the vocabulary table count only when three or more catalog words appear in one paragraph.
-4. **Never count `ineffective` entries.**
-5. **The brand voice wins.** Words, devices, or punctuation the loaded brand voice or audience uses are not hits.
-6. **Dashes count only above the brand voice's rate**, by default more than one per paragraph (the brand-voice skill's offered default). The spaced en dash is normal German typography.
-7. **Hedges and transitions count only as clusters that add no information.** A qualifier that changes what a sentence claims ("may lower the risk") is content, not a tell.
-8. **Content-level slop is a separate check.** Drafting skills fix it while drafting, because they own the content. Revision skills such as `humanize` report it without rewriting, because they must not change claims.
-9. **Fix toward the "Signs of human writing" targets**, and re-check that the fix created no new catalog entry.
+2. **Count by tier.** Tier A (measured in a corpus or performance study) and tier B (curated by a large editor community, or consistent across several independent sources): each hit counts when the status is `current`, `rising`, or `fading`. Tier C (a single practitioner source) and every `historical` entry: count only when two or more different such entries appear in the same counting unit (rule 4). Rows of the vocabulary table follow rule 3 instead.
+3. **Vocabulary needs density.** Rows of the vocabulary table follow only this rule, never rule 2. They count when three or more catalog words, from any vocabulary row, appear in one counting unit, and they are reported as one marker, "AI vocabulary", tagged with the highest tier among the words found.
+4. **Counting unit.** A paragraph of prose. In social posts and other line-broken formats, where most paragraphs are one or two sentences, the unit is the whole post (each post of a thread on its own).
+5. **Never count `ineffective` entries.**
+6. **The brand voice wins.** Words, devices, or punctuation the loaded brand voice or audience uses are not hits.
+7. **Dashes count only above the brand voice's rate.** A pair of dashes around one insertion counts as one. If the brand voice names no number, the default is more than one per paragraph of prose (the brand-voice skill's offered default), or more than two per social post. The spaced dash is normal typography in German, Russian, and Serbian.
+8. **Hedges and transitions count only as clusters that add no information.** A qualifier that changes what a sentence claims ("may lower the risk") is content, not a tell.
+9. **Content-level slop is a separate check.** Drafting skills fix it while drafting, because they own the content. Revision skills such as `humanize` report it without rewriting, because they must not change claims.
+10. **Fix toward the "Signs of human writing" targets**, and re-check that the fix created no new catalog entry.
 
 ---
 
@@ -67,7 +68,7 @@ Tells drift with model generations: a word that marked 2023 output can be rare i
 
 ## Vocabulary (dated)
 
-These entries count only at density (three or more catalog words in one paragraph). Model families have their own favorites; the dates show when each list was observed.
+These rows count only at density: three or more catalog words in one counting unit, reported together as one "AI vocabulary" marker (rule 3). Model families have their own favorites; the dates show when each list was observed.
 
 | Tell                       | Looks like                                                                                             | Tier | Scope | Status     | Sources            |
 | -------------------------- | ------------------------------------------------------------------------------------------------------ | ---- | ----- | ---------- | ------------------ |
@@ -99,7 +100,7 @@ These entries count only at density (three or more catalog words in one paragrap
 
 | Tell                    | Looks like                                                                                                                                                                                                                                    | Tier | Scope  | Status  | Sources                                     |
 | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | ------ | ------- | ------------------------------------------- |
-| Dash overuse            | Dashes above the brand voice's rate, default more than one per paragraph, often where a comma, colon, or parentheses would do                                                                                                                 | A    | all    | fading  | slopbench, wiki-en                          |
+| Dash overuse            | Dashes above the brand voice's rate (rule 7: a pair counts as one; default more than one per paragraph or two per social post), often where a comma, colon, or parentheses would do                                                           | A    | all    | fading  | slopbench, wiki-en                          |
 | Dash-avoidance chains   | Text that avoids dashes entirely and strings clauses together with commas and full stops instead. Newer models are often tuned to avoid dashes, so this is becoming its own sign                                                              | B    | all    | rising  | wiki-en                                     |
 | Bold overuse            | Bolded phrases throughout prose, or every bullet opening with a bold label                                                                                                                                                                    | B    | all    | current | wiki-en, tropes                             |
 | Emoji decoration        | Emoji as bullets or in front of headings                                                                                                                                                                                                      | B    | all    | current | wiki-en, wiki-de                            |

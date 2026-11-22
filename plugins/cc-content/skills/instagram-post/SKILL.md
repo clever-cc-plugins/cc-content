@@ -162,7 +162,7 @@ Produce a complete Instagram caption that:
 
 Before the checklist, run the **readability pass** from
 `../_shared/readability-patterns.md` on the finished draft as its own step: scan
-for the six patterns and fix only the passages with a hit, keeping content, tone,
+for the six patterns, run its AI-tell check, and fix only the passages with a hit, keeping content, tone,
 and audience terms intact. Where the brand voice asks for brevity or imagery, read
 it the way that file defines it — cut redundancy, not grammatical signposts.
 
@@ -180,7 +180,7 @@ Internal verification checklist from `format-guidelines.md`:
 - Hashtag count: 3–5, topically relevant
 - Post format choice aligns with goal and funnel stage (per Layer 3)
 - Content is native/original — no unaltered reposts or watermarked video
-- Readability pass run: no clusters of the six patterns in `readability-patterns.md`
+- Readability pass run: no clusters of the six patterns in `readability-patterns.md`; AI-tell check run
 
 For every unmet item, revise the draft and re-check — do not present until
 every item is satisfied or the failure genuinely cannot be fixed (e.g. missing

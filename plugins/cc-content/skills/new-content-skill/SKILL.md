@@ -133,6 +133,7 @@ mkdir -p .claude/skills/_shared
 cp -n "${CLAUDE_SKILL_DIR}/../_shared/storytelling-frameworks.md" ".claude/skills/_shared/" 2>/dev/null
 cp -n "${CLAUDE_SKILL_DIR}/../_shared/persuasion-principles.md" ".claude/skills/_shared/" 2>/dev/null
 cp -n "${CLAUDE_SKILL_DIR}/../_shared/readability-patterns.md" ".claude/skills/_shared/" 2>/dev/null
+cp -n "${CLAUDE_SKILL_DIR}/../_shared/ai-tells.md" ".claude/skills/_shared/" 2>/dev/null
 cp -n "${CLAUDE_SKILL_DIR}/../_shared/learnings-protocol.md" ".claude/skills/_shared/" 2>/dev/null
 ```
 
@@ -228,7 +229,7 @@ these universal items:
 
 - Audience type, goal, and funnel stage inferences confirmed with user
 - Tone consistent with brand voice (if loaded)
-- Readability pass run (`readability-patterns.md`): no clusters of the six patterns
+- Readability pass run (`readability-patterns.md`): no clusters of the six patterns; AI-tell check run
 - CTA is singular and matches the stated goal
 
 ---
@@ -302,6 +303,7 @@ Required @-imports at the top of the body (after frontmatter) — paths differ b
 @.claude/skills/_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework
 @.claude/skills/_shared/persuasion-principles.md **Read when:** selecting persuasion principles
 @.claude/skills/_shared/readability-patterns.md **Read when:** running the readability pass in Step 7
+@.claude/skills/_shared/ai-tells.md **Read when:** running the AI-tell check in the readability pass
 ```
 
 **Plugin-dev mode** (relative paths, same pattern as `linkedin-post`):
@@ -311,6 +313,7 @@ Required @-imports at the top of the body (after frontmatter) — paths differ b
 @../_shared/storytelling-frameworks.md **Read when:** selecting a narrative framework
 @../_shared/persuasion-principles.md **Read when:** selecting persuasion principles
 @../_shared/readability-patterns.md **Read when:** running the readability pass in Step 7
+@../_shared/ai-tells.md **Read when:** running the AI-tell check in the readability pass
 ```
 
 Required skill steps — Read `skeleton-steps.md` (in this skill's folder) now and write every step it lists (Step 0 through Step 8) into the generated `SKILL.md` as a level-2 heading with full prose instructions, applying its end-user / plugin-dev mode rules.
@@ -339,6 +342,7 @@ Shared reference files (copied to project if not already present):
   .claude/skills/_shared/storytelling-frameworks.md
   .claude/skills/_shared/persuasion-principles.md
   .claude/skills/_shared/readability-patterns.md
+  .claude/skills/_shared/ai-tells.md
   .claude/skills/_shared/learnings-protocol.md
 ```
 

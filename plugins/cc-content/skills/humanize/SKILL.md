@@ -84,15 +84,16 @@ Resolve the draft to humanize, in this order:
 
 ## Step 3: Detect AI markers (Pass 1)
 
-**Catalog markers.** Scan the draft against `../_shared/ai-tells.md` and count each catalog entry as its own marker type, by that file's "How to use this catalog" rules:
+**Catalog markers.** Scan the draft against `../_shared/ai-tells.md` and count each catalog entry as its own marker type (vocabulary rows together as one), by that file's "How to use this catalog" rules:
 
 - Count entries whose scope fits the draft: `all` always; `marketing` for social posts, ads, landing pages, and marketing emails; `social` for social posts only.
 - Tier A and B entries with status `current`, `rising`, or `fading`: every hit counts.
-- Tier C entries and `historical` entries: count only when two or more different such entries appear in the same paragraph.
-- Vocabulary entries: count only when three or more catalog words appear in one paragraph.
+- Counting unit: a paragraph of prose; in social posts and other line-broken formats, the whole post (each thread post on its own).
+- Tier C entries and `historical` entries: count only when two or more different such entries appear in the same counting unit. Vocabulary rows are exempt from this rule.
+- Vocabulary rows: count only when three or more catalog words, from any vocabulary row, appear in one counting unit. Report them as one marker, `AI vocabulary`, tagged with the highest tier among the words found.
 - Never count `ineffective` entries (a lone "Moreover" is not a marker).
 - Words, devices, and punctuation the loaded brand voice or audience uses are not hits.
-- Dashes count only above the brand voice's rate (default: more than one per paragraph); the spaced en dash is normal German typography.
+- Dashes count only above the brand voice's rate. A pair of dashes around one insertion counts as one. If the brand voice names no number, the default is more than one per paragraph of prose, or more than two per social post. The spaced dash is normal typography in German, Russian, and Serbian.
 - Hedges count only as clusters that add no information. A qualifier that changes what a sentence claims ("may lower the risk", "in most cases") is content, not a marker.
 - Read each entry's "Looks like" cell for what is not a hit (for example, an email ask phrased as a question is not a reflex closing question).
 
@@ -196,22 +197,22 @@ Produce the rewritten draft. Rules:
    second sentence, a relative clause, a preposition, or a named actor. Only what
    Step 3 counted is a marker: under that file's "don't overcorrect" limits, single
    compounds, audience terms, and verbatim quotes aren't hits and stay as they are.
-3. **Compress content, not grammar.** When cutting hedges, transitions, or filler,
+3. **Compress content, not grammar.** When cutting the hedges and transitions Step 3 counted,
    keep the grammatical signpost words ("that", „dass“, relative pronouns,
    prepositions that break up noun chains). Removing one AI tell must not create
-   another.
+   another. Don't shorten a padded paragraph that Step 3 noted as content-level slop; fix only its counted style markers and leave the rest to Step 5's content findings.
 4. **Calibrate reintroduced human texture to the loaded brand voice:**
    - If the brand voice allows casualness: use contractions, allow sentences to
-     start with "And" or "But" where it reads naturally, vary sentence rhythm (mix
-     short punchy sentences with longer natural ones), replace vague time references
-     with concrete ones ("last Tuesday" instead of "recently"), and use specific
-     detail in place of generic examples.
+     start with "And" or "But" where it reads naturally, vary sentence length, and
+     use concrete times and specific details where the draft or the loaded context
+     supplies them ("last Tuesday" instead of "recently" only if the date is known).
+     Never invent a detail; list a missing one under Step 5's content findings.
    - If the brand voice is formal: keep contractions and casual openers out, but
-     still vary sentence rhythm, replace vague generalities with specific detail, and
-     remove the same AI markers — formality and human-sounding prose are not
+     still vary sentence length, use specific details the draft or context supplies
+     (never invented ones), and remove the same AI markers — formality and human-sounding prose are not
      opposites.
-   - If no brand voice is loaded (degraded per Step 1): default to varied rhythm,
-     concrete detail, and marker removal only — do not guess a tone.
+   - If no brand voice is loaded (degraded per Step 1): default to varied sentence length,
+     concrete detail only where the draft supplies it, and marker removal only — do not guess a tone.
 5. **Intervene as much as necessary but as little as possible.** Preserve what
    already works in the draft; change only what a marker-removal or tone-calibration
    rule requires.

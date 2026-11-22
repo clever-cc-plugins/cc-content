@@ -159,7 +159,7 @@ Produce a complete LinkedIn post that:
 
 Before the checklist, run the **readability pass** from
 `../_shared/readability-patterns.md` on the finished draft as its own step: scan
-for the six patterns and fix only the passages with a hit, keeping content, tone,
+for the six patterns, run its AI-tell check, and fix only the passages with a hit, keeping content, tone,
 and audience terms intact. Where the brand voice asks for brevity or imagery, read
 it the way that file defines it — cut redundancy, not grammatical signposts.
 

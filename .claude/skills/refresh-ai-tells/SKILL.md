@@ -43,10 +43,10 @@ This repo denies `curl` and `wget`; use WebFetch for every request.
 Apply the gaming-tactics filter in `plugins/cc-content/skills/new-content-skill/SKILL.md` ("Filter out algorithm-gaming tactics"), then:
 
 - Skip Wikipedia-specific signs: citations, references, wiki markup, notability, article sections such as "Awards and recognition", edit summaries, talk-page behavior.
-- Respect the sources' own moves: a pattern moved to "historical" or "ineffective" changes the catalog entry's status, not just its wording.
+- Status moves: when a source moves a pattern to "historical" or "ineffective", apply the move directly only if that source is the entry's only source. If the entry has other sources, make it a proposal item that names the conflict (for example, Wikipedia files dash overuse as historical while a 2026 corpus study still measures it). Never change the status of a `cc-research` entry without the user's explicit decision.
 - Check context flips: a sign of human writing in an encyclopedia (superlatives, for example) can be puffery in marketing copy, and vice versa.
 - From non-English pages, take only language-specific tells (phrases, typography, grammar); most of those pages translate the English one.
-- Never remove an entry that still has another source; remove only the source key. Never remove `cc-research` entries.
+- Never remove an entry that still has another source; remove only the source key, then recompute the tier from the remaining sources (for example, an entry left with only `tropes` drops to C). Never remove `cc-research` entries.
 - Tier: A needs a figure measured against human text; B needs an editor-curated source or several independent sources; a single practitioner source is C.
 
 ## Step 6: Propose

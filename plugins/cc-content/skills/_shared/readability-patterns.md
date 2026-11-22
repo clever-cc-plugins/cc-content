@@ -207,7 +207,7 @@ reliable than a separate pass.
    or entity names stay exactly as given.
 3. Re-check anything the fix touched against the format's own constraints (length,
    hook, character limits) and against the brand voice.
-4. **AI-tell check.** Scan the draft against `ai-tells.md` using its "How to use this catalog" rules: entries whose scope fits the format; tier C entries, historical entries, and single vocabulary words only in clusters; never the ineffective indicators; nothing the brand voice uses. Fix hits toward the "Signs of human writing" targets, and make sure a fix creates no other catalog entry.
+4. **AI-tell check.** Scan the draft against `ai-tells.md` using its "How to use this catalog" rules: entries whose scope fits the format; tier C and historical entries only in clusters, and vocabulary only at three or more catalog words per counting unit (a prose paragraph, or a whole social post); never the ineffective indicators; nothing the brand voice uses. Fix hits toward the "Signs of human writing" targets, and make sure a fix creates no other catalog entry.
 
 The pass is silent by default: don't list the changes unless the owner asks or the
 calling skill's output format includes a diagnosis (as `humanize` does).
