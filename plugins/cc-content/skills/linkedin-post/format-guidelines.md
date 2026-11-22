@@ -1,6 +1,6 @@
 # LinkedIn Post Format Guidelines
 
-_Last updated: 2026-08-04_
+_Last updated: 2026-11-22_
 
 Format-scope rules for the linkedin-post skill. These constraints apply to every
 generated post regardless of campaign briefing or brand voice.
@@ -50,7 +50,8 @@ trigger truncation well before the character count runs out.
 
 Rules:
 
-- Open with the strongest claim, question, or tension — never bury the lead
+- Open with the strongest claim or tension — never bury the lead
+- **Don't open with a question.** Every 2026 LinkedIn study we found shows question openers underperforming: −17% reactions against the same creator's other openers (685 creators; only 3 in 10 did better), last of five hook types in a 309,614-post study, and −28% to −34% likes in raw comparisons of 360,000+ and 1.2M posts. A 2026 _Journal of Consumer Psychology_ paper (four studies, including news-headline A/B tests) finds question titles lower engagement because readers see them as less informative. Lead with the answer or claim the question was hiding: "Most onboarding fails in week two" beats "Why does onboarding fail?"
 - Keep the hook as tight, unbroken prose within ~140 characters (including the
   opening emoji); avoid inserting a blank line inside the first three lines — save
   line breaks for the body, after the hook has already earned the click
@@ -59,7 +60,8 @@ Rules:
   believe this" tension
 - Avoid openers: "I'm excited to share…", "Proud to announce…", "Just wanted to…",
   "Nobody talks about this…", "I wasn't going to post this, but…", "This changed
-  everything ↓", "Agree?", and fake-vulnerability bait-and-switch openers (e.g. "I was
+  everything ↓", "Agree?", rhetorical question openers ("Ever wondered…?", "Have you
+  ever…?", "What if you could…?"), and fake-vulnerability bait-and-switch openers (e.g. "I was
   fired. (Just kidding…)") — these read as formula and are increasingly pattern-matched
   and scrolled past by readers and down-ranked by the algorithm
 - Avoid the humblebrag arc ("I just hit 100K followers. Here's what I learned.") and
@@ -93,24 +95,20 @@ Rules:
   consistently ranks saves and sustained reading time among the strongest engagement
   signals, well above raw likes
 
-### 3. Call to Action (CTA)
+### 3. Close
 
-The final line or short paragraph. Every post needs one.
+The final line or short paragraph. End on what the post has earned: its sharpest point, a concrete consequence, or one real next step. A call to action is optional.
 
 Rules:
 
-- One CTA per post — do not stack multiple asks
-- Make it specific and easy to answer — a focused question drives significantly more
-  engagement than a vague ask; favor prompts that invite a substantive reply over a
-  one-word reaction
-- Good examples: "Drop your answer in the comments", "DM me the word GUIDE",
-  "What's the biggest misconception about [specific topic]?"
-- Avoid vague CTAs: "Let me know what you think", "Share if you agree", "Thoughts?"
-- **Never use engagement-bait CTAs** — "Comment YES if you agree", "Like if you agree",
-  "Agree? 👇", "Tag someone who needs this", "Repost if you agree". These are explicitly
-  named across 2026 platform guidance and independent analyses as patterns LinkedIn's
-  ranking system detects and actively suppresses, not just weak copy
-- CTA should match the post's purpose: engagement, lead gen, or awareness
+- **Don't close with a question by default.** The reflex closing question ("What about you?", "What's your take?", "What would you add?") has become one of the most recognizable AI and template patterns on LinkedIn. Within-author data from 2026 shows little or no payoff: about half an extra comment and ~7% fewer reactions in one 116,000-post study, a ~3% reach gain in another
+- **Ask a question only when the author genuinely wants the answers**, for example to collect cases for a follow-up piece or to test a decision they are actually facing. It must grow out of the post's own argument and be specific enough that the author could act on the replies. If you can't say what the author would do with the answers, drop the question
+- **A strong statement is a complete close.** The last line can be the post's sharpest point, a concrete consequence, or an open thought, without asking the reader for anything
+- **If there is a next step, make it one real step** (read the full report, register for the webinar, apply for the role), with the link in the post. One ask per post — don't stack them
+- Avoid vague asks: "Let me know what you think", "Share if you agree", "Thoughts?"
+- **Never use engagement-bait CTAs** — "Comment YES if you agree", "Like if you agree", "Agree? 👇", "Tag someone who needs this", "Repost if you agree". These are explicitly named across 2026 platform guidance and independent analyses as patterns LinkedIn's ranking system detects and actively suppresses, not just weak copy
+- **Never use comment- or DM-for-content funnels** ("Comment GUIDE and I'll send it to you", "DM me the word CHECKLIST"). They trade the reader's goodwill for comment counts and lead capture, and LinkedIn's own guidance counts explicit requests for comments as engagement bait. If a resource is worth sharing, link it directly
+- The close should match the post's purpose: a thought for thought leadership, a single next step for offers or announcements (webinar, report)
 
 ---
 
@@ -139,13 +137,13 @@ optional, low-priority lever, not a required element of every post.
 LinkedIn sits between Twitter's informality and a business article's formality.
 Calibrate by post purpose:
 
-| Purpose               | Tone target                                                                                       |
-| --------------------- | ------------------------------------------------------------------------------------------------- |
-| Thought leadership    | Confident, direct, first-person singular; share a specific stance                                 |
-| Company news / launch | Professional but warm; "we" is fine; avoid corporate-speak                                        |
-| Educational / tips    | Practical, peer-to-peer; write like explaining to a smart colleague                               |
-| Personal story        | Honest and specific; vulnerability is credible, not sentimental                                   |
-| Discussion-oriented   | Conversational; end with a genuine, substantive question — never a manufactured engagement prompt |
+| Purpose               | Tone target                                                                                                                  |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Thought leadership    | Confident, direct, first-person singular; share a specific stance                                                            |
+| Company news / launch | Professional but warm; "we" is fine; avoid corporate-speak                                                                   |
+| Educational / tips    | Practical, peer-to-peer; write like explaining to a smart colleague                                                          |
+| Personal story        | Honest and specific; vulnerability is credible, not sentimental                                                              |
+| Discussion-oriented   | Conversational; close with a question only if the author genuinely wants the answers — never a reflex or manufactured prompt |
 
 Regardless of purpose:
 
@@ -228,6 +226,7 @@ the problem; publishing generic output with no specific insight is. Concretely:
 - **Never use these clichés**: "in today's fast-paced [industry/digital] landscape",
   "unlock the power of", "delve into", "robust", "synergy", "game-changer", "I'm
   humbled to share", "it's not just X, it's Y" (see the antithesis rule above)
+- **No reflex questions at either end** — no rhetorical question opener ("Ever wondered…?") and no reflex closing question ("What about you?", "Thoughts?", "What would you add?"); see the Hook and Close rules above
 - **Avoid uniform sentence rhythm.** Vary sentence length; an unbroken run of
   same-length sentences reads as machine-generated
 - **Every claim needs a specific anchor** — a real number, a named example, a
@@ -254,14 +253,14 @@ pages organically reaching on the order of 1–2% of their followers versus a
 high-single/low-double-digit percentage for personal profiles. Determine which one
 this post is for (see SKILL.md Step 3a) and calibrate accordingly:
 
-| Dimension           | Personal profile                                                                  | Company page                                                               |
-| ------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| Voice / POV         | First-person "I" / "we" — opinion, lived experience                               | Brand "we" — factual, on-brand, less "diary"                               |
-| Content type        | Thought leadership, commentary, contrarian takes, behind-the-scenes, lessons      | Product news, hiring, partnerships, customer wins, official announcements  |
-| Length              | Full recommended target, 1,300–2,500 characters; supports longer narrative arcs   | Tighter, ≤700–800 characters for announcements; scannable over narrative   |
-| Vulnerability/humor | Effective when genuine and tied to a professional insight                         | Limited use; indirect at most                                              |
-| CTA                 | Open, peer-to-peer discussion questions (peers comment on peers far more readily) | Clear business next step (register, download, learn more) — still not bait |
-| Emojis / tone       | Slightly more latitude                                                            | More conservative; keep casual tone and emoji use restrained               |
+| Dimension           | Personal profile                                                                                            | Company page                                                                                 |
+| ------------------- | ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Voice / POV         | First-person "I" / "we" — opinion, lived experience                                                         | Brand "we" — factual, on-brand, less "diary"                                                 |
+| Content type        | Thought leadership, commentary, contrarian takes, behind-the-scenes, lessons                                | Product news, hiring, partnerships, customer wins, official announcements                    |
+| Length              | Full recommended target, 1,300–2,500 characters; supports longer narrative arcs                             | Tighter, ≤700–800 characters for announcements; scannable over narrative                     |
+| Vulnerability/humor | Effective when genuine and tied to a professional insight                                                   | Limited use; indirect at most                                                                |
+| Close               | Sharpest takeaway or open thought; a peer-to-peer question only when the author genuinely wants the answers | Clear business next step (register, download, learn more) when there is one — still not bait |
+| Emojis / tone       | Slightly more latitude                                                                                      | More conservative; keep casual tone and emoji use restrained                                 |
 
 Posting page-style content (announcement, third-person "we") on a personal profile
 wastes the profile's credibility; posting personal-style content (first-person story)
@@ -276,14 +275,13 @@ add much of their own framing.
 
 Before presenting output, verify:
 
-- [ ] Hook is tight, unbroken prose within ~140 characters, no blank line before the fold
+- [ ] Hook is tight, unbroken prose within ~140 characters, no blank line before the fold, and a claim rather than a question
 - [ ] Character count matches the target for the account type (1,300–2,500 personal /
       ≤700–800 company page)
 - [ ] At least 14 short paragraphs (personal-profile posts); sentences average
       10–19 words, trending toward the shorter end
 - [ ] 0–3 emojis, used structurally, not decoratively (skip if brand voice prohibits)
-- [ ] CTA is specific, singular, easy to answer, and invites substantive reply — not a
-      binary reaction or engagement-bait phrase
+- [ ] Close lands the post's strongest point; any question is one the author genuinely wants answered (no reflex question), any next step is a single real step; no engagement bait, no comment- or DM-for-content funnel
 - [ ] Hashtags, if used, are 3–5 relevant tags at the end (omitting is a fine default)
 - [ ] If a link is included, it's in the post body where it adds real value — not
       hidden in the first comment as a reach workaround

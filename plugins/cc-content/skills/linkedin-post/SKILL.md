@@ -112,14 +112,14 @@ Wait for the answer, then proceed.
 ## Step 3a: Determine account type (personal profile vs. company page)
 
 Format guidance in `format-guidelines.md` now diverges meaningfully between personal
-profiles and company pages — voice, length, CTA style, and tone all differ (see
+profiles and company pages — voice, length, closing style, and tone all differ (see
 "Personal Profile vs. Company Page" in that file). Infer the account type from the
 campaign briefing or loaded context if it's stated there. If it isn't, ask once:
 
 > "Is this post for a personal profile (first-person, founder/employee voice) or a
 > company page (brand voice)?"
 
-Note the answer — it drives length target, voice, and CTA style in Step 4.
+Note the answer — it drives length target, voice, and closing style in Step 4.
 
 ## Step 3b: Select a storytelling framework
 
@@ -138,13 +138,13 @@ opener primes credibility").
 Produce a complete LinkedIn post that:
 
 - Opens with a tight, unbroken hook within ~140 characters (mobile fold), no blank
-  line before the fold, starting with one structural emoji
-- Is calibrated to the account type from Step 3a — voice, length target, and CTA
+  line before the fold, starting with one structural emoji; the hook is a claim, not a
+  question
+- Is calibrated to the account type from Step 3a — voice, length target, and closing
   style per the "Personal Profile vs. Company Page" table in `format-guidelines.md`
 - Is structured according to the framework chosen in Step 3b (if applicable)
 - Includes a body delivering the substance the hook promises
-- Ends with a specific, singular CTA that invites a substantive reply — never an
-  engagement-bait phrase ("Comment YES", "Agree?", "Tag someone who needs this")
+- Ends on a close that lands the post's strongest point (see "3. Close" in `format-guidelines.md`): a question only if the author genuinely wants the answers, at most one real next step, and never a reflex question ("What about you?"), engagement bait ("Comment YES", "Agree?", "Tag someone who needs this"), or a comment- or DM-for-content funnel ("Comment GUIDE and I'll send it")
 - Uses 0–3 emojis placed structurally, not decoratively (omit if brand voice prohibits)
 - Hashtags are optional — if used, 3–5 relevant tags at the end; omitting them is a
   fine default, not a compromise

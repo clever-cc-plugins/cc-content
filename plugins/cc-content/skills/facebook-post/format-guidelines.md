@@ -1,6 +1,6 @@
 # Facebook Post Format Guidelines
 
-_Last updated: 2026-08-05_
+_Last updated: 2026-11-22_
 
 Format-scope rules for the facebook-post skill. These constraints apply to every
 generated post regardless of campaign briefing, brand voice, or platform channel (Personal
@@ -47,7 +47,7 @@ Every Facebook post contains these structural elements in order:
 
 1. **Hook / Opening** (required) — the first line deciding engagement; must earn the "See more" click or stand alone if not expanded
 2. **Body** (varies) — 0 or more lines delivering substance; may be omitted for pure hook posts
-3. **Call to Action (CTA)** (conditional) — present if post serves a goal beyond pure engagement
+3. **Call to Action (CTA)** (optional) — only when there is one real next step, or a question the author genuinely wants answered
 
 ### Hook / Opening
 
@@ -55,7 +55,6 @@ The first line is the single most important element — readers decide to expand
 
 Effective hook families (converging across reports):
 
-- **Questions** — trigger the brain's pattern-completion instinct; readers start answering before consciously deciding to engage (e.g., "Is your current tool slowing you down?")
 - **Problem-agitation / pain-point** — name a specific pain point and intensify it before presenting the resolution (e.g., "You're losing 10 hours a week to manual data entry")
 - **Specific result framing** — concrete outcomes over vague promises (e.g., "We cut onboarding from 4 weeks to 2 weeks")
 - **Curiosity / bold or counter-intuitive statement** — a claim specific enough to be checkable, not a withheld-information tease
@@ -65,10 +64,11 @@ Rules:
 
 - State the problem or promise in the first sentence — don't bury the lead; front-load the
   substance, since the truncation window (~125–140 characters) is all most readers see
-- Open with your strongest claim or question first
+- Open with your strongest claim first
+- **Don't open with a question by default.** No study isolates question openers on Facebook, but the nearest evidence agrees: a 2026 _Journal of Consumer Psychology_ paper (four studies, including news-headline A/B tests) finds question titles lower engagement because readers see them as less informative, and 2026 within-creator LinkedIn data shows question openers costing ~17% of reactions. Rhetorical question openers also read as AI copy. Use a question only if it is specific and the post answers it right away; otherwise lead with the answer the question was hiding: "You're losing 10 hours a week to manual data entry" beats "Is your current tool slowing you down?"
 - One idea only — avoid compound sentences in the hook
 - Don't open with your brand name — it wastes the highest-value opening words
-- Avoid clichéd openers: "Just a thought...", "Hot take:", "Unpopular opinion:"
+- Avoid clichéd openers: "Just a thought...", "Hot take:", "Unpopular opinion:", and rhetorical questions ("Ever wondered…?", "What if you could…?")
 - Avoid vague curiosity gaps ("You won't believe what happened next") — be specific rather
   than withholding basic information; this reads as clickbait and both hurts trust and is
   actively demoted
@@ -85,7 +85,9 @@ Rules:
 - Focus on a **single primary action** — multiple asks in one post reduce conversion via choice overload
 - Name the action AND set the expectation for what follows (e.g., "See pricing" vs. "Unlock your potential")
 - Direct, specific CTAs consistently outperform vague or aspirational ones
-- Good CTA examples: "Share your answer in the comments", "Tell us which step was unclear", "Watch the demo before you try it"
+- **Don't close with a question by default.** The reflex closing question ("What about you?", "Share your answer in the comments") reads as AI or template output, and 2026 within-author data from LinkedIn shows little or no payoff from it. A post that ends on its strongest line is complete
+- **Ask a question only when the author genuinely wants the answers** and could act on them, e.g. "Tell us which step was unclear" under a tutorial the author will revise. If you can't say what the author would do with the replies, drop the question
+- Good CTA examples: "Watch the demo before you try it", "Register for Thursday's session: [link]"
 - Avoid vague CTAs: "Let me know what you think", "Share if you relate"
 
 **Do not use engagement-bait CTAs.** Phrases like "Like if you agree," "Comment YES if…,"
@@ -95,6 +97,8 @@ fake-engagement networks (roughly 500,000 accounts actioned in H1 2025 per Meta'
 Newsroom reporting). This mirrors black-hat SEO's trajectory: platforms iterate to detect
 and penalize exactly these tricks, so they are short-lived by design. Earn the comment or
 share through content worth responding to, not through a solicitation.
+
+**Do not use comment- or DM-for-content funnels** ("Comment GUIDE and I'll send it to you", "Message us the word CHECKLIST"). They trade the reader's goodwill for comment counts and lead capture. If a resource is worth sharing, link it directly.
 
 **Sources:** Claude synthesis (Meta, 2017; Meta Newsroom, 2025); Copilot synthesis; DeepSeek synthesis; Perplexity synthesis
 
@@ -167,8 +171,7 @@ worth surfacing when relevant.)_
   transformed content (reaction clips, re-uploaded viral videos, watermarked cross-posts);
   original, source-identifiable production is now a distribution factor, not just a branding
   preference
-- **Engagement hooks** (questions, problem-agitation) drive more comments and shares than
-  static announcements
+- **Engagement hooks** (problem-agitation, specific results, a checkable bold claim) drive more comments and shares than static announcements; question openers are the exception (see Hook / Opening)
 - **Prompt community management** — replying to comments, especially in the first hour,
   correlates with stronger distribution across multiple independent reports, though avoid
   treating any specific reply-count multiplier as settled fact
@@ -250,14 +253,14 @@ The following Cialdini principles and cognitive biases are most effective on Fac
 
 ### By Content Goal
 
-| Goal              | Length             | Proof type             | CTA directness               | Hook strategy                           | Promotional level      |
-| ----------------- | ------------------ | ---------------------- | ---------------------------- | --------------------------------------- | ---------------------- |
-| **Awareness**     | Under ~150 chars   | Visual/stat            | Low (invite a comment/share) | Surprising stat or bold claim           | Low (pure reach focus) |
-| **Consideration** | 150–300 characters | Educational content    | Moderate (engagement)        | Problem hook + value promise            | Medium (educate)       |
-| **Conversion**    | Under ~150 chars   | Proof/testimonial      | High (direct CTA)            | Result-specific ("Saved 10 hours/week") | High (specific ask)    |
-| **Retention**     | 80–150 characters  | Personal/behind-scenes | Low (community)              | Personality, insider access             | Very low (community)   |
-| **Advocacy**      | 80–150 characters  | Social proof           | Moderate (invite a share)    | User wins or peer success               | Medium (amplify wins)  |
-| **Education**     | 150–300 characters | Examples, steps        | Low (conversation)           | Problem recognition                     | Low (value-driven)     |
+| Goal              | Length             | Proof type             | CTA directness                    | Hook strategy                           | Promotional level      |
+| ----------------- | ------------------ | ---------------------- | --------------------------------- | --------------------------------------- | ---------------------- |
+| **Awareness**     | Under ~150 chars   | Visual/stat            | Low (none, or a genuine question) | Surprising stat or bold claim           | Low (pure reach focus) |
+| **Consideration** | 150–300 characters | Educational content    | Moderate (engagement)             | Problem hook + value promise            | Medium (educate)       |
+| **Conversion**    | Under ~150 chars   | Proof/testimonial      | High (direct CTA)                 | Result-specific ("Saved 10 hours/week") | High (specific ask)    |
+| **Retention**     | 80–150 characters  | Personal/behind-scenes | Low (community)                   | Personality, insider access             | Very low (community)   |
+| **Advocacy**      | 80–150 characters  | Social proof           | Moderate (invite a share)         | User wins or peer success               | Medium (amplify wins)  |
+| **Education**     | 150–300 characters | Examples, steps        | Low (conversation)                | Problem recognition                     | Low (value-driven)     |
 
 ⚠ KNOWLEDGE-BASED for goal-by-goal breakdown — sources establish platform mechanics (hooks, CTAs, format hierarchy) but do not enumerate Facebook-specific tactics per goal. Adapt findings: awareness favors native video/Reels + broad hook; consideration favors longer educational posts (image/album or text); conversion favors short, single-CTA posts; advocacy leans on Group-style community content and genuine peer wins (never a share-to-win solicitation).
 
@@ -300,18 +303,18 @@ Before presenting output, verify:
 - [ ] Hook grabs attention in the first line and stands alone within ~125–140 characters
 - [ ] Length matches goal (under ~150 chars for awareness/conversion, 150–300 for consideration/education)
 - [ ] One idea per post
-- [ ] CTA is singular and easy to answer (never stack multiple asks)
-- [ ] CTA earns the response through content, not engagement-bait phrasing ("Like if you agree", "Comment YES", "Tag a friend", "Share to win")
+- [ ] CTA, if any, is singular (never stack multiple asks)
+- [ ] No reflex closing question; any question is one the author genuinely wants answered
+- [ ] The post earns responses through content, not engagement-bait phrasing ("Like if you agree", "Comment YES", "Tag a friend", "Share to win") or comment-/DM-for-content funnels
 - [ ] Tone matches audience (B2B: expertise-signaling; B2C: personality-driven)
 - [ ] Channel confirmed (Personal Profile / Professional Mode / Page / Group) and reach expectations set accordingly
 - [ ] For Page posts: acknowledge lower organic reach (~1–6%); if conversion goal, recommend paid amplification or a Group/personal-profile share alongside it
 - [ ] For Group posts: tone adjusted for community context (peer-to-peer, less promotional)
-- [ ] No clichéd openers ("Just a thought", "Hot take", "Unpopular opinion") and no vague clickbait curiosity gaps
+- [ ] No clichéd openers ("Just a thought", "Hot take", "Unpopular opinion"), no rhetorical question opener, and no vague clickbait curiosity gaps
 - [ ] Hashtags: 0–3 max, relevant only — not a discovery mechanism on this platform
 - [ ] Emojis: 0–2 max, placed at natural pauses (not as bullet substitutes)
 - [ ] If post includes a link: placed directly in the post body (not hidden in the first comment as a reach workaround); reach trade-off noted to the owner
 - [ ] If post includes an image or video: alt text / captions planned for accessibility
-- [ ] Conversation-inviting element present (question, call for input, or community hook)
 - [ ] Audience type, goal, funnel stage, and channel inferences confirmed with user
 - [ ] Tone consistent with brand voice (if loaded)
 - [ ] Readability pass run (`../_shared/readability-patterns.md`): no clusters of

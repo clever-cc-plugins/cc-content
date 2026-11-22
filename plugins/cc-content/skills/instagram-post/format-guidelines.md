@@ -1,6 +1,6 @@
 # Instagram Post Format Guidelines
 
-_Last updated: 2026-08-05_
+_Last updated: 2026-11-22_
 
 Format-scope rules for the instagram-post skill. These constraints apply to every
 generated post regardless of campaign briefing, brand voice, audience type, or post format (single-image, carousel, Reels, or Stories).
@@ -39,7 +39,7 @@ Every Instagram caption contains these structural elements in order:
 
 1. **Hook / Opening** (required) — the first line deciding engagement; must earn the "…more" tap or stand alone if not expanded
 2. **Body** (varies) — 0 or more lines delivering substance; may be omitted for pure hook posts
-3. **Call to Action (CTA)** (conditional) — present if post goal extends beyond pure reach/awareness
+3. **Call to Action (CTA)** (optional) — only when the goal needs one real ask (a save, a send, a next step) or the author genuinely wants answers to a question
 
 ### Hook / Opening
 
@@ -47,7 +47,6 @@ The first line is the single most important element — readers decide to expand
 
 Effective hook types:
 
-- **Questions** — trigger the brain's pattern-completion instinct; readers start answering before consciously deciding to engage (e.g., "What's your biggest productivity blocker?")
 - **Problem-agitation** — name a specific pain point and intensify it before presenting the resolution (e.g., "Your captions get scrolled past 20 times a day before anyone reads them")
 - **Specific result framing** — concrete outcomes over vague promises, ideally with a number (e.g., "We grew engagement by 200% in 8 weeks — here's how")
 - **Bold claim or contrarian statement** — e.g., "Most Instagram advice is outdated"
@@ -55,7 +54,8 @@ Effective hook types:
 Rules:
 
 - State the problem or promise in the first second — don't bury the lead
-- Open with your strongest claim or question first
+- Open with your strongest claim first
+- **Don't open with a question by default.** No study isolates question openers on Instagram, but the nearest evidence agrees: a 2026 _Journal of Consumer Psychology_ paper (four studies, including news-headline A/B tests) finds question titles lower engagement because readers see them as less informative, and 2026 within-creator LinkedIn data shows question openers costing ~17% of reactions. Rhetorical question openers ("Ever wondered…?", "What if you could…?") also read as AI copy. Use a question only if it is specific and the caption answers it right away; otherwise lead with the answer the question was hiding — this applies to on-screen Reels text too
 - One idea only — avoid compound sentences in the hook
 - Avoid emojis in the opening hook line specifically — they can make text harder to read and dilute impact
 - Use concrete specifics over vague language
@@ -69,9 +69,9 @@ The Hook-Value-CTA (HVC) structure is the most reliable caption formula for Inst
 
 - **Hook:** grabs attention (1 line, within the truncation point)
 - **Value:** delivers substance, story, or context in short micro-paragraphs (1–3 sentences per paragraph, separated by line breaks)
-- **CTA:** invites action — saves, shares, comments, or follows (1 line, single ask)
+- **CTA (optional):** one ask when the goal needs it — a save, a send, a next step, or a question the author genuinely wants answered (1 line); otherwise end on the value itself
 
-Structured captions with a clear CTA outperform unstructured ones. Line breaks are not optional polish — Instagram has no bold/italic formatting, so white space is the only structuring tool available on mobile.
+Structured captions outperform unstructured ones. Line breaks are not optional polish — Instagram has no bold/italic formatting, so white space is the only structuring tool available on mobile.
 
 **Sources:** Claude, Perplexity, Gemini, DeepSeek research reports
 
@@ -82,8 +82,10 @@ Rules:
 - Focus on a **single primary action** — multiple asks in one post reduce conversion via choice overload
 - **Specificity matters:** specific, concrete CTAs (e.g., "Save this for later," "Send this to someone who needs it") consistently outperform vague or aspirational ones (e.g., "Let me know what you think")
 - Prioritize CTAs that invite **saves and DM shares** over comment-bait — these align with the signals Instagram's ranking systems actually weight most heavily (see Formatting Conventions below)
-- Good CTA examples: "Save this for later", "Share this with someone who needs it", "Tell us your experience in the comments"
+- **Don't close with a question by default.** The reflex closing question ("What about you?", "Tell us your experience in the comments") reads as AI or template output, and 2026 within-author data from LinkedIn shows little or no payoff from it. Ask only when the author genuinely wants the answers and could act on them; if you can't say what the author would do with the replies, drop the question
+- Good CTA examples: "Save this for later", "Share this with someone who needs it"
 - Avoid generic single-word bait prompts ("Comment YES," "Type FIRE," "Tag 3 friends") — these are explicitly flagged across 2026 research as devalued engagement bait that Instagram's ranking systems increasingly discount; a specific, genuinely useful CTA outperforms a bait prompt
+- **Never use comment- or DM-for-content funnels** ("Comment LINK and I'll DM it to you", "DM me the word GUIDE"), including automated keyword-DM tools. They trade the reader's goodwill for comment counts and lead capture. If a resource is worth sharing, point to it directly (link in bio, link sticker, or the caption itself)
 
 **Sources:** Claude, Perplexity, Gemini, DeepSeek, Consensus research reports
 
@@ -112,7 +114,7 @@ Instagram in 2026 runs separate ranking systems per surface (Feed, Reels, Storie
 **Single-image posts** (feed, not Stories) — lowest-performing format on both reach and engagement, used sparingly:
 
 - Weakest of the major formats on both reach (roughly 13–22% below carousels/Reels) and engagement rate (roughly 0.30–0.45%)
-- Short (2 lines: hook + CTA) for pure reach/awareness goals; medium (3–6 lines) as a fallback default
+- Short (2 lines: hook + one supporting line or CTA) for pure reach/awareness goals; medium (3–6 lines) as a fallback default
 - Best use: quick announcements, brand-aesthetic anchoring, and situations where a single strong visual carries the message — not a primary growth format in 2026
 - Long-form / educational single-image captions (150–220 words / 801–2,200 characters) still work for case-study or teaching content, trading reach for saves and comment depth
 
@@ -146,7 +148,7 @@ Hashtags count toward the 2,200-character limit (each `#` symbol and letter coun
 Practical implications for caption writing:
 
 - **CTAs should target saves and sends** over comment-bait wherever the goal allows it
-- **Genuinely inviting replies** (a specific question, not "comment below 👇") produces higher-value engagement than generic prompts
+- **Replies come from substance:** the long, high-value comments Instagram weights come from a caption worth answering, not from a closing prompt; ask a question only when the author genuinely wants the answers, never by reflex or as "comment below 👇"
 - **Line breaks:** essential, not optional — break every 1–2 sentences for mobile scannability; Instagram has no native bold/italic, so white space is the only structuring tool
 - **Emojis:** cap at roughly 1–5 per caption depending on format and tone; use as visual anchors/bullet substitutes at natural pauses, never as word replacements, never stacked, and never in the opening hook line
 - **Originality:** accounts that repost others' content 10+ times within a rolling 30-day window lose eligibility for non-follower recommendation entirely (this policy, first applied to Reels, extended to photos and carousels platform-wide in 2026); watermarked reposts (TikTok/CapCut branding) are actively demoted by computer-vision detection — always publish clean, native, first-generation content
@@ -156,10 +158,10 @@ Practical implications for caption writing:
 
 ### What Separates High from Low Performers
 
-- **Hook strength:** strong question, problem-agitation, or bold-claim openers drive significantly more engagement than neutral statements, and must also work as on-screen text for Reels
+- **Hook strength:** strong problem-agitation, specific-result, or bold-claim openers drive significantly more engagement than neutral statements, and must also work as on-screen text for Reels; question openers are the exception (see Hook / Opening)
 - **Signal-aligned CTAs:** CTAs that are specific and invite saves/sends (not just comments) align with 2026 ranking weights
 - **Format-goal matching:** Reels dominate reach (TOFU); carousels dominate engagement rate and saves (MOFU/education); single images suit quick announcements only
-- **Structured captions:** the HVC structure functions as a persuasion mechanism in its own right — structured captions with a clear CTA consistently outperform unstructured ones
+- **Structured captions:** the HVC structure functions as a persuasion mechanism in its own right — structured captions consistently outperform unstructured ones
 - **Genuine engagement over volume:** accounts that post less often but deliver real value consistently outperform high-frequency, low-value posting; Instagram's ranking systems now discount coordinated or bait-driven engagement
 - **Originality:** native-to-Instagram, first-generation content outperforms reposted or watermarked content, which is structurally excluded from non-follower recommendation
 - **Audience warmth:** cold/unfamiliar audiences need context and explicit value-framing; warm/familiar audiences convert better with references to prior context
@@ -263,12 +265,13 @@ Before presenting output, verify:
 - [ ] For Reels, the hook also appears as on-screen text within the first 1–3 seconds
 - [ ] Length matches goal and format choice (see Layer 3 tables)
 - [ ] One idea per caption
-- [ ] CTA is singular and easy to answer (never stack multiple asks)
-- [ ] CTA is specific and save/send-oriented, not vague or generic bait ("Comment YES" style prompts)
+- [ ] CTA, if any, is singular (never stack multiple asks)
+- [ ] CTA is specific and save/send-oriented, not vague or generic bait ("Comment YES" style prompts) and never a comment-/DM-for-content funnel
+- [ ] No reflex closing question; any question is one the author genuinely wants answered
 - [ ] Tone matches audience (B2B: expertise-signaling; B2C: personality-driven)
 - [ ] Post format choice (single-image / carousel / Reels / Stories) aligns with goal and funnel stage (per Layer 3)
 - [ ] Hashtag count: 3–5 max (hard platform cap is ~5), chosen for relevance over volume
-- [ ] No clichéd openers ("Just a thought", "Hot take", "Unpopular opinion") and no generic engagement bait
+- [ ] No clichéd openers ("Just a thought", "Hot take", "Unpopular opinion"), no rhetorical question opener, and no generic engagement bait
 - [ ] Emojis: 1–5 max depending on format; placed at natural pauses, never in the opening hook, never replacing words
 - [ ] Content is native/original to Instagram — no unaltered reposts or watermarked video
 - [ ] Audience type, goal, funnel stage, and post format inferences confirmed with user

@@ -156,7 +156,7 @@ user-approved gaps, and mark those sections with
 "growth hacker" coaches, and marketing blogs often carry tactics whose sole purpose
 is manipulating a ranking algorithm rather than serving the reader (e.g., hiding a
 useful link in the first comment to dodge a suspected reach penalty, engagement-bait
-CTAs, keyword-stuffed profiles). Do not carry these into `format-guidelines.md` as
+CTAs, "comment/DM the word X to get Y" lead funnels, reflex closing questions added only to farm comments, keyword-stuffed profiles). Do not carry these into `format-guidelines.md` as
 recommended practice, even when a research file presents them as current best
 practice — platforms iterate to detect and penalize exactly these tricks, so they
 have a short shelf life by design (the same dynamic as black-hat SEO: keyword

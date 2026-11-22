@@ -158,11 +158,10 @@ opener leads with limited-time value").
 Produce a complete X post (single or thread) that:
 
 - **Single post (280 characters max):**
-  - Opens with a strong hook (grabs attention in 1 second per format-guidelines.md)
+  - Opens with a strong hook (grabs attention in 1 second per format-guidelines.md): a claim, not a rhetorical question
   - Contains one clear idea or call-to-action
   - Uses 0–2 hashtags only (never 3+)
-  - Invites conversation via a specific, singular, non-bait CTA (never "like if you agree",
-    "follow for more", "RT to win", or similar solicitation — see format-guidelines.md)
+  - Earns replies through its point, not a closing prompt: no reflex closing question, a question only if the author genuinely wants the answers, at most one real next step, and never engagement bait ("like if you agree", "follow for more", "RT to win") or a reply-/DM-for-content funnel — see format-guidelines.md
   - Includes 1–2 emojis at natural pauses (if brand voice permits)
   - Omits links from the main post (or places them in the first reply) unless the click
     itself is the goal — links measurably reduce reach across independent 2026 studies
@@ -173,8 +172,7 @@ Produce a complete X post (single or thread) that:
 - **Thread (5–8 posts):**
   - Post 1 (hook post): numbered "1/[N]" with value promise
   - Posts 2–[N-1] (body): one self-contained idea per post, clear logical flow
-  - Post [N] (final): explicit, non-bait CTA (a specific question, not a follow/retweet
-    solicitation)
+  - Post [N] (final): the takeaway or one real next step; a question only if the author genuinely wants the answers; never a follow/retweet solicitation
   - Each post ≤280 characters
   - Total structure applies selected framework and persuasion principles
 
@@ -186,17 +184,17 @@ it the way that file defines it — cut redundancy, not grammatical signposts.
 
 Internal verification checklist from `format-guidelines.md`:
 
-- Hook grabs attention in first line (strong opening within ~1 second)
+- Hook grabs attention in first line (strong opening within ~1 second, no rhetorical question opener)
 - Character count appropriate (280 for single posts; 5–8 posts for threads)
 - One idea per post
-- CTA is singular, easy to answer, and free of engagement-bait phrasing
+- CTA, if any, is singular and free of engagement-bait phrasing and reply-/DM-for-content funnels
+- No reflex closing question
 - Hashtags: 0–2 only
 - Links omitted from the main post (or in the first reply) unless the click is the goal
 - Media choice serves the message, not an assumed algorithmic bonus
 - Any factual/statistical claim would hold up to a Community Note
 - Tone matches audience (B2B vs. B2C calibration)
-- If thread: 5–8 posts, hook/body/CTA structure
-- Conversation-inviting element present
+- If thread: 5–8 posts, hook/body/closing structure
 - Emojis: 1–2 max
 - Readability pass run: no clusters of the six patterns in `readability-patterns.md`
 
