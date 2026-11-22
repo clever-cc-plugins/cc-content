@@ -109,9 +109,14 @@ function stats(lengths) {
 // statistics. `open` is true when a code fence is never closed.
 function stripExcluded(text) {
   let fenced = false;
-  const lines = text
-    .replace(/^---\r?\n[\s\S]*?\r?\n---[ \t]*(?:\r?\n|$)/, "")
-    .replace(/<!--[\s\S]*?-->/g, "")
+  let body = text.replace(/^---\r?\n[\s\S]*?\r?\n---[ \t]*(?:\r?\n|$)/, "");
+  // Repeat until stable so nested markers such as `<!<!-- x -->-- y -->` cannot
+  // leave a comment behind.
+  for (let prev; prev !== body;) {
+    prev = body;
+    body = body.replace(/<!--[\s\S]*?-->/g, "");
+  }
+  const lines = body
     .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
     .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
     .replace(/https?:\/\/\S+/g, "")
